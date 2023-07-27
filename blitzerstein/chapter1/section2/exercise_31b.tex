@@ -1,0 +1,16 @@
+\begin{exercise}{31b}
+Define notation for the sample space of the problem, and use this to compute the
+probabilities from (a) and show that they are the same.
+\end{exercise}
+
+\begin{proof}
+    The sample space of the problem is the set of $r$ red balls and $g$ green balls.
+
+    When extracting a ball, the probability that the first ball is green is $\frac{g}{r+g}$.
+
+    After the extraction of the first ball, the sample space size is reduced by one. If the first ball was red, then
+the probability that the second ball is green is $\frac{r}{r+g} \cdot \frac{g}{r+g-1}$. If the first ball was green, then the probability that the second ball is also green is $\frac{g}{r+g} \cdot \frac{g-1}{r+g-1}$, leading to a total probability that the second ball is green of
+
+$$ \frac{r}{r+g} \cdot \frac{g}{r+g-1} + \frac{g}{r+g} \cdot \frac{g-1}{r+g-1} = \frac{rg+g^2-g}{(r+g)(r+g-1)} = \frac{g(r+g-1)}{(r+g)(r+g-1)} = \frac{g}{r+g}$$
+\end{proof}
+

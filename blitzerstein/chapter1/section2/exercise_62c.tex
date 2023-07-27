@@ -1,0 +1,46 @@
+\begin{exercise}{62c}
+    The famous arithmetic mean-geometric mean inequality says that for $x,y \geq 0$,
+
+    $$\frac{x+y}{2} \geq \sqrt{xy}$$
+
+    This inequality follows from adding $4xy$ to both sides of $x^2-2xy+y^2=(x-y)^2\geq0$.
+
+    Define $r = (r_1, \dots, r_{365})$ by $r_1 = r_2 = (p_1+p_2)/2$, $r_j = p_j$ for $3 \leq j \leq 365$. Using the arithmetic mean-geometric mean bound and the fact, which you should verify, that
+
+    $$e_k(x_1, \dots x_n) = x_1x_2e_{k-2}(x_3, \dots, x_n) + (x_1+x_2)e_{k-1}(x_3, \dots, x_n) + e_k(e_3, \dots, x_n)$$, 
+
+    show that
+
+    $$P(\text{at least one birthday match} | p) \geq P(\text{at least one birthday match}|r)$$
+
+    , with strict inequality if $p \neq r$, where the "given r" notation means that the birthday probabilities are given by $r$. Using this, show that the value of $p$ that minimizes the probability of at least one match is given by $p_j=\frac{1}{365}$ for all $j$.
+\end{exercise}
+
+\begin{proof}
+    The property that
+    
+    $$e_k(x_1, \dots x_n) = x_1x_2e_{k-2}(x_3, \dots, x_n) + (x_1+x_2)e_{k-1}(x_3, \dots, x_n) + e_k(x_3, \dots, x_n)$$
+
+    can be seen to hold by noting that $e_k(x_1, \dots x_n)$ is a sum of products of $k$ out of the $n$ values $x_1, \dots, x_n$. Some of these products do not contain neither $x_1$ nor $x_2$: exactly the ones part of $e_k(e_3, \dots, x_n)$. Some of these products contain $x_1$, but not $x_2$, which are contained in the term $x_1e_{k-1}(x_3, \dots, x_n)$ - note that we had to consider now only $k-1$ additional items, since the first one was fixed to be $x_1$. Similarly, $x_2e_{k-1}(x_3, \dots, x_n)$ sums products that contain $x_2$ but not $x_1$. Finally, $x_1x_2e_{k-2}(x_3, \dots, x_n)$ sums the products which contain $x_1$ and $x_2$.
+
+    Note that $r_1+r_2 = p_1+p_2$. 
+
+    Let $p_{3n} = p_3, \dots, p_n$ and $r_{3n} = r_3, \dots, r_n$. We then have
+
+    \begin{align*}
+    P(\text{at least one birthday match | p}) &\geq P(\text{at least one birthday match}|r) \\
+    1 - e_k(p) &\geq 1-e_k(r) \\
+     e_k(p) &\leq e_k(r) \\
+    p_1p_2e_{k-2}(p_{3n}) + (p_1+p_2)e_{k-1}(p_{3n}) + e_k(p_{3n}) &\leq r_1r_2e_{k-2}(r_{3n}) + (r_1+r_2)e_{k-1}(r_{3n}) + e_k(r_{3n}) \\
+    p_1p_2e_{k-2}(p_{3n}) + (p_1+p_2)e_{k-1}(p_{3n}) + e_k(p_{3n}) &\leq r_1r_2e_{k-2}(r_{3n}) + (r_1+r_2)e_{k-1}(r_{3n}) + e_k(r_{3n}) \\
+    p_1p_2e_{k-2}(p_{3n}) + (p_1+p_2)e_{k-1}(p_{3n}) + e_k(p_{3n}) &\leq r_1r_2e_{k-2}(p_{3n}) + (p_1+p_2)e_{k-1}(p_{3n}) + e_k(p_{3n}) \\
+    p_1p_2e_{k-2}(p_{3n}) &\leq r_1r_2e_{k-2}(p_{3n}) \\
+    p_1p_2 &\leq r_1r_2 \\
+    p_1p_2 &\leq \frac{p_1+p_2}{2} \cdot \frac{p_1+p_2}{2} \\
+    \sqrt{p_1p_2} &\leq \frac{p_1+p_2}{2}
+    \end{align*}
+
+    , which holds from the arithmetic mean-geometric mean inequality. Throughout the above we have used the fact that $e_k(p)$ and the other similar expressions are sums and products of probabilities, and hence are all positive.
+    
+\end{proof}
+

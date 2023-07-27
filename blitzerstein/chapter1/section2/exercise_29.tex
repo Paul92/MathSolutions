@@ -1,0 +1,16 @@
+\begin{exercise}{29}
+Elk dwell in a certain forest. There are $N$ elk, of which a simple random sample of
+size $n$ are captured and tagged (“simple random sample” means that all $N \choose n$ sets of $n$
+elk are equally likely). The captured elk are returned to the population, and then a new
+sample is drawn, this time with size $m$. This is an important method that is widely used
+in ecology, known as capture-recapture. What is the probability that exactly $k$ of the $m$
+elk in the new sample were previously tagged? (Assume that an elk that was captured
+before doesn’t become more or less likely to be captured again.)
+\end{exercise}
+
+\begin{proof}
+After the first sample is released into the wild, the elk population of $N$ individuals is split into two groups of $n$ tagged individuals and $N-n$ untagged individuals. In order to have $k$ tagged individuals captured, one has to capture $m-k$ untagged individuals. This means that the probability is $\frac{{N-n \choose m-k}{n \choose k}}{{N \choose m}}$. 
+\end{proof}
+
+
+

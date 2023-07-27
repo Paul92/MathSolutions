@@ -1,0 +1,9 @@
+\subsection*{1.5} Let $(W_1, <_1)$ and $(W_2, <_2)$ be disjoint well-ordered sets, each isomorphic to $(N, <)$. Show that the sum of the two linearly ordered sets (as defined in Lemma 4.5 in Chapter 4) is a well-ordering, and is isomorphic to the ordinal number $\omega + \omega=  \{0, 1, 2, ... ,\omega,\omega + 1,\omega + 2, \dots \}$.
+
+\begin{proof}
+    Let $W = W_1 \cup W_2$ with the sum order. Let $S \subset W$. Then, either $S \subset W_1$ or $S \subset W_2$, cases in which $S$ has a least element since both $W_1$ and $W_2$ are well orders, or $S \cap W_1 \neq \emptyset$ and $S \cap W_2 \neq \emptyset$. Let $w_1$ be the least element of $S \cap W_1$ and $w_2$ be the least element of $S \cap W_2$. By the sum order, $w_1 < w_2$ and hence $w_1$ is the least element of $S$. It follows that $W$ with the sum order is a well ordered set.
+
+    We can bijectively map $W$ into $\omega + \omega$ by $w = w$ if $w \in W_1$ and $w = \omega + w$ if $w \in W_2$. The conclusion follows.
+\end{proof}
+
+

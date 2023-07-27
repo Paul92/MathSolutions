@@ -1,0 +1,22 @@
+\subsection*{5.5} Let $\alpha \leq \beta$. The equation $\xi + \alpha = \beta$ may have $0, 1$ or infinitely many solutions.
+
+\begin{proof}
+    Will start by showing that the three cases are indeed possible. If $\alpha = 2$ and $\beta = \omega$, then the equation $\xi + 2 = \omega$ does not have solution.
+
+    On the other hand, the equation $\xi + 0 = \omega$ does have the unique solution $\xi = \omega$.
+
+    Finally, the equation $\xi + \omega = \omega$ has infinitely many solutions.
+
+    Remains to show that is not possible to have $n > 1$ solutions. Assume to the contrary that the equation $\xi + \alpha = \beta$ has 2 solutions, $\mu$ and $\nu$.
+    Then, $\mu + \alpha = \nu + \alpha$. By the previous exercise, we can write $\mu = \tau + m$ and $\nu = \theta + n$, with $\tau$ and $\theta$ limit ordinals.
+    We can also write $\alpha = \gamma + a$, with $\gamma$ a limit ordinal. The equation then becomes
+
+    $$\tau + m + \gamma + a = \theta + n + \gamma + a$$
+
+    which, via associativity of addition, is equivalent to
+
+    $$\tau + \gamma = \theta + \gamma$$
+
+    We note that the $m$ and $n$ terms got cancelled, being absorbed in an addition to the right with $\gamma$. This implies that their value does not matter, and hence, if $\tau + n$ is a solution, so is $\tau + k$ for all $k$ natural.
+\end{proof}
+

@@ -1,0 +1,31 @@
+\subsection*{3.4} 
+
+\begin{itemize}
+    \item If $f$ is invertible, $f^{-1} \circ f = Id_{dom~f}$, $f \circ f^{-1} = Id_{ran~f}$.
+    
+    \begin{proof}
+        We have from Exercise 2.4 e), that $f^{-1} \circ f \supseteq Id_{dom~f}$. 
+        
+        Pick some $a \in dom~f$. Then, there is some $b$ unique (since $f$ is an invertible function) such that $f(a) = b$. But then, $f^{-1}(f(a)) = a$ for all $a \in dom~f$. It follows that $f^{-1} \circ f = Id_{dom~f}$.
+        
+        \vspace{1em}
+        
+        For the second statement, pick some $b \in ran~f$. Then, there is some $a \in dom~f$ unique such that $f(a) = b$. But then $f(f^{-1}(b)) = f(a) = b$ for all $b \in ran~f$ and hence $f \circ f^{-1} = Id_{ran~f}$.
+    \end{proof}
+\newpage
+    \item Let $f$ be a function. If there is some $g$ such that $g\circ f = Id_{dom~f} $ then $f$ is invertible and $f^{-1} = g \upharpoonright ran~f$. If there exists a function $h$ such that $f \circ h = Id_{ran~f}$, then $f$ may fail to be invertible.
+    
+    \begin{proof}
+        Note that the identity function is injective. Therefore, $g \circ f = f(g(x))$ is injective. Let $\hat{g} = g \upharpoonright ran~f$ and note that $g \circ f = \hat{g} \circ f$. Assume to the contrary that $\hat{g}$ is not injective. It follows that for $x \neq y$ we have $\hat{g}(x) = g(y)$ and hence $f(\hat{g}(x)) = f(\hat{g}(y))$, which contradicts the previous statement that $\hat{g} \circ f$ is injective. Hence, $\hat{g}$ is injective. From a similar argument, it follows that $f$ is also injective and thus invertible. Since $\hat{g}\circ f = Id_{dom~f} $, the inverse of $f$ is $\hat{g}$.
+        
+        \vspace{1em}
+        
+        Now assume that there exists a function $h$ such that $f \circ h = Id_{ran~f}$. For example, let
+        
+        $$f(4) = 2, f(8) = 2$$
+        $$h(2) = 4$$
+        
+        Then, $f \circ h = \{(2, 2)\} = Id_{ran~f}$ but $f$ is not injective and hence is not the invertible.
+    \end{proof}
+\end{itemize}
+

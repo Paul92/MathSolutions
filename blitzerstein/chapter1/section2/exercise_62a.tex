@@ -1,0 +1,22 @@
+\begin{exercise}{62a}
+In the birthday problem, we assumed that all 365 days of the year are equally likely (and excluded Feburary 29). In reality, some days are slightly more likely as birthdays than others. For example, scientists have long struggled to understand why more babies are born 9 months after a holiday. Let $p = (p_1, \dots, p_{365})$ be the vector of birthday probabilities, with $p_j$ be the probability of being born on the $j$'th day of the year (February 29 excluded).
+
+The $k$th elementary symmetric polynomial in the variables $x_1, \dots, x_n$ is defined by
+
+$$e_k(x_1, \dots, x_n) = \sum_{1 \leq j_1 < \dots < n_j \leq n} x_{j_1}\dots x_{j_n} $$
+
+This just says to add up all the $n \choose k$ terms we can get by choosing and multiplying $k$ of the variables. For example, $e_1(x_1, x_2, x_3) = x_1+x_2+x_3$, $e_2(x_1, x_2, x_3) = x_1x_2 + x_1x_3 + x_2x_3$ and $e_3(x_1,x_2,x_3)=x_1x_2x_3$. 
+
+Now let $k \geq 2$ be the number of people.
+
+Find a simple expression for the probability that there is at least one birthday match, in terms of $p$ and a symmetric polynomial.
+\end{exercise}
+
+\begin{proof}
+    The probability that a person is born on the day $i$ is $p_i$. The probability that a person is born on the day $i$ and another person is born on the day $j$ is $p_ip_j$. Hence, the probability that a set of people is born at a given set of days is given by the product of the probabilities of a person being born in a day.
+
+    In order to find the probability that there is at least one birthday match in the set of $k$ people, we start by computing the complement, that is, the probability that there is no birthday match. This can be computed by forming all $k$-tuples of possible distinct birthdays, computing the probability that the $k$ people are born on the selected dates, and adding up all the possible products. This is exactly given by $e_k(p)$. Hence, the probability that there is at least one birthday match is
+
+    $$p = 1 - e_k(p)$$
+\end{proof}
+

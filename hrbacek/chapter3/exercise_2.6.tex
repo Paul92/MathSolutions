@@ -1,0 +1,10 @@
+\subsection*{2.6} Prove that each natural number is the set of all smaller natural numbers, i.e.
+
+$$ n = \{m \in \mathbb{N}| m < n\}$$
+
+\begin{proof}
+Denote the above property by $P(n)$. We have, by definition, that $0 = \emptyset$ and therefore $P(0)$ holds vacuously.
+
+Now consider $P(n+1)$ for some $n \in \mathbb{N}$. $n+1 = S(n) = n \cup \{n\} = \{m \in \mathbb{N}| m < n\} \cup \{n\} = \{m \in \mathbb{N}| m < n+1\}$ and hence $P(n+1)$ holds. Hence, by induction, $P(n)$ holds for all $n \in \mathbb{N}$.
+\end{proof}
+

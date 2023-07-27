@@ -1,0 +1,18 @@
+\subsection*{3.7} The axiom of pair, axiom of union and axiom of power set can be replaced by the following weaker versions. Weak axiom of pair: For any $A$, $B$, there is a set $C$ such that $A \in C$ and $B \in C$. Weak axiom of union: for any $S$, there is $U$ such that if $X \in A$ and $A \in S$, then $X \in U$. Weak axiom of power set: for any set $S$ there is a set $P$ such that $X \subseteq S$ implies $X \in P$.
+
+Prove the axiom of pair, axiom of union and the axiom of power set using these weaker versions.
+
+\begin{proof}
+
+Let $A$, $B$ be sets. By the weak axiom of pair, we have that there is some $C$ such that $A \in C$ and $B \in C$. We apply the axiom schema of comprehension to obtain the set $X = \{S \in C~|~S = A~or~S=B\}$. Note that, by construction, $A \in X$ and $B \in X$. It also follows that there are no other elements contained in $X$. This construction is equivalent to the original axiom of pair.
+
+
+
+
+The axiom of union, in its original form, states that for any set $S$ there is a set $\hat{U}$ such that $x \in \hat{U}$ if and only if $x \in A$ for some $A \in S$. We start by noticing that the weak axiom of union is the converse of the axiom of union. In other words, the set defined by the axiom of union, denoted by $\hat{U}$, is a subset of the set defined in the weak axiom of union, denoted by $U$. But, by applying the axiom schema of comprehension, $U$ can be restricted to $\hat{U}$ as follows: $\hat{U} = \{x \in U | x \in A \land A \in S\}$.
+
+
+Finally, we notice again that the weak axiom of power set stipulates the existence of a superset $P$ of the set $\hat{P}$ whose existence is stipulated in the axiom of power set. Hence, we apply the same restriction using the axiom schema of comprehension to obtain that $\hat{P} = \{x \in P|x \subseteq S\}$.
+\end{proof}
+
+

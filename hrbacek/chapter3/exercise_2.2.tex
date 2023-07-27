@@ -1,0 +1,15 @@
+\subsection*{2.2} Use Exercise 2.1 to prove that for all $m,n\in \mathbb{N}$: if $m < n$ then $m+1 \leq n$. Conclude that $m < n$ implies $m+1 < n+1$ and that therefore the successor $S(n)=n+1$ defines a one-to-one function on $\mathbb{N}$.
+
+\begin{proof}
+Let $m,n \in \mathbb{N}$ such that $m < n$. Then, $m \subset n$. There are two possibilities: either $n = S(m)$, case in which, from the previous exercise, $m+1 = S(m) = n$ and hence $m+1 \subseteq n$, or $n \neq S(m)$. In the latter case, we have $m < n$ and it follows that $m < S(m) < n$. Therefore, for all $m,n \in \mathbb{N}$ such that $m < n$ we have $S(m) \leq n$.
+
+\vspace{1em}
+
+Let $m,n \in \mathbb{N}$ with $m < n$. Then, from the above, $S(m) \leq n$. By definition, $n < S(n)$ and hence by transitivity we have $m+1 = S(m) < S(n) = n+1$.
+
+\vspace{1em}
+
+Pick $m,n \in \mathbb{N}$ such that $m \neq n$. Then, $m < n$ or $n < m$, since $<$ is a total order. From the above, we have that either $S(m) < S(n)$ or $S(n) < S(m)$, respectively. It follows that the successor function is one to one.
+
+\end{proof}
+

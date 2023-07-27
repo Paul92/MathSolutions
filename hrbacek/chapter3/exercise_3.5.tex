@@ -1,0 +1,20 @@
+\subsection*{3.5} Prove the following version of the recursion theorem:
+
+Let $g$ be a function on a subset of $A \times N$ into $A$, $a \in A$. Then there is a unique sequence $f$ of elements of $A$ such that
+
+\begin{itemize}
+    \item $f(0) = a$
+    \item $f(n+1) = g(f(n), n)$ for all $n \in N$ such that $(n+1) \in dom~f$
+    \item $f$ is either an infinite sequence or $f$ is a finite sequence of length $k+1$ and $g(f(k), k)$ is undefined.
+\end{itemize}
+
+\begin{proof}
+If $f$ is an infinite sequence, the above is the same as the recursion theorem.
+
+If $f$ is a finite sequence, then we make the following construction.
+Let $\bar{A} = A \cup \{\bar{a}\}$ with $\bar{a} \notin A$. Define $\bar{g(x,n)} = g(x,n)$ if $g(x, n)$ is defined, and $\bar{g(x,n)} = \bar{a}$ otherwise.
+
+We can now define $\bar{f}: \bar{A} \rightarrow N$, with $\bar{f}(0) = f(0) = a \in \bar{A}$ and $\bar{f(n+1)} = \bar{g}(\bar{f}(n), n)$. From the recursion theorem, $\bar{f}$ is a unique infinite sequence. Moreover, by the property of $g$, if there is some $n$ such that $\bar{f}(n) = \bar{a}$, then $\bar{f(k)} = \bar{a}$ for all $k > n$. The first $k+1$ values of the sequence $\bar{f}$ represent therefore a finite sequence.
+
+\end{proof}
+

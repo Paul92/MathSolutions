@@ -1,0 +1,16 @@
+\begin{exercise}{55a}
+    A club consists of 10 seniors, 12 juniors, 15 sophomores. An organizing committee of size 5 is chosen randomly (with all subsets of size 5 equally likely).
+
+    Find the probability that there are exactly 3 sophomores in the committee.
+\end{exercise}
+
+\begin{proof}
+    This can be solved by direct counting. There is a total of 37 students, and we can choose the committee in $37 \choose 5$ ways.
+
+    In order to count the number of ways the committee can be formed with exactly three sophomores, we first choose them in $15 \choose 3$ ways and then choose the remaining two members in $22 \choose 2$ ways, resulting in a total of ${15 \choose 3}{22 \choose 2}$ ways of forming the committee such that it contains exactly three sophomores.
+
+    Applying the naive definition of probability, we obtain
+
+    $$p = \frac{{15 \choose 3}{22 \choose 2}}{{37 \choose 5}} = \frac{455}{1887} \approx 0.24112$$
+\end{proof}
+

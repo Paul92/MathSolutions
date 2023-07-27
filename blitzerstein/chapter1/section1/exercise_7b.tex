@@ -1,0 +1,31 @@
+\begin{exercise}{7b}
+How many possible outcomes for the individual games are there, such that A ends
+up with 4 points and B ends up with 3 points?
+\end{exercise}
+
+
+\begin{proof}
+
+For this problem, we will start by finding first the ways in which this score can be obtained, and then will use the same technique as before to count the number of individual outcomes.
+
+\begin{itemize}
+    \item Player A could win 4 times and lose 3 times, i.e. WWWWLLL
+    \item Player A could win 3 times, 2 draws and lose 2 times, i.e. WWWDDLL
+    \item Player A could win 2 times, 4 draws, and lose 1 time i.e. WWDDDDL
+\end{itemize}
+
+These are the only possibilities - we can no longer exchange a win from A to a draw since there would be not enough games. Note that by symmetry, B always gets 3 points.
+Will apply now the previous technique to count the number of individual outcomes for each of the previous game counts.
+
+\begin{itemize}
+    \item For WWWWLLL there are $\frac{7!}{3!\cdot 4!} = 5 \cdot 7 = 35$ possible outcomes.
+    \item For WWWDDLL there are 210 possible outcomes, as discussed before.
+    \item For WWDDDDL there are $\frac{7!}{2!\cdot 4!} = 3 \cdot 5 \cdot 7 = 105$ possible outcomes.
+    \item For WDDDDDD there are $\frac{7!}{6!} = 7$ possible outcomes.
+\end{itemize}
+
+Adding everything up, we obtain $35+210+105+7=357$ possible outcomes.
+
+    
+\end{proof}
+

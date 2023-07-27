@@ -1,0 +1,36 @@
+\subsection*{5.3} Let $R$ be an ordering on $A$. Prove that $R^{-1}$ is also an ordering of $A$ and for $B \subseteq A$,
+
+\begin{itemize}
+    \item $a$ is the least element of $B$ in $R^{-1}$ if and only if $a$ is the greatest element of $B$ in $R$.
+    \item similarly for (minimal and maximal) and (supremum and infimum)
+\end{itemize}
+
+\begin{proof}
+    Since it is an ordering, $R$ is reflexive, antisymmetric and transitive.
+    
+    If $R$ is reflexive, then $aRa$ for all $a \in A$. It follows that $aR^{-1}a$ and hence $R^{-1}$ is reflexive.
+    
+    If $R$ is antisymmetric, it follows that if $aRb$ and $bRa$, then $a=b$ for all $a,b \in A$. But $aRb$ implies $bR^{-1}a$ and $bRa$ implies $aR^{-1}b$ and hence it follows that if $bR^{-1}a$ and $aR^{-1}b$, $a=b$. Hence, $R^{-1}$ is antisymmetric.
+    
+    If $R$ is transitive, then for all $a,b,c \in A$ such that $aRb$ and $bRc$ we have $aRc$. Inverting the relations, we obtain that $bR^{-1}a$ and $cR^{-1}b$ implies $cR^{-1}a$. It follows that $R^{-1}$ is transitive.
+    
+    From the above, $R^{-1}$ is an ordering.
+    
+    \vspace{2em}
+    
+    Will now show that $a$ is the least element of $B$ in $R^{-1}$ if and only if $a$ is the greatest element of $B$ in $R$.
+    
+    Assume that $a$ is the greatest element of $B$ in $R$. Then, $xRa$ for all $x \in B$. It follows that $aR^{-1}x$ for all $x \in B$ and hence $a$ is the least element of $R^{-1}$. Conversely, assume that $a$ is the least element of $B$ in $R^{-1}$ and therefore $aR^{-1}x$ for all $x \in B$. It follows that $xRa$ for all $x \in B$ and hence $a$ is the greatest element of $B$ in $R$.
+    
+    \vspace{2em}
+    
+    Assume that $a$ is a minimal element of $B$ in $R$. Then, there is no $x \in B$ such that $xRb$ and $x \neq b$. It follows that there is no $x \in B$ such that $bR^{-1}x$ and $x \neq b$ and hence $b$ is a maximal element.
+    
+    \vspace{2em}
+    
+    Assume that $a$ is the infimum of $B$ in $R$. Then, $aRx$ for all $x \in B$ and if $a'Rx$ for all $x \in B$, $a'Ra$. It follows that $xR^{-1}a$ for all $x \in B$ and if $xR^{-1}a'$ for all $x \in B$, $aR^{-1}a'$. It follows that $a$ is the supremum of $B$ in $R$.
+    
+\end{proof}
+
+\newpage
+

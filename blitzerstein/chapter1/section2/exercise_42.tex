@@ -1,0 +1,14 @@
+\begin{exercise}{42}
+    A norepeatword is a sequence of at least one (and possibly all) of the usual 26 letters
+a,b,c,. . . ,z, with repetitions not allowed. For example, “course” is a norepeatword, but
+“statistics” is not. Order matters, e.g., “course” is not the same as “source”.
+
+A norepeatword is chosen randomly, with all norepeatwords equally likely. Show that
+the probability that it uses all 26 letters is very close to 1/e.
+\end{exercise}
+
+\begin{proof}
+    There are $\sum_{k=1}^{26} \frac{26!}{(26-k)!}$ norepeatwords. Out of these, $26!$ norepeatwords use all letters. Therefore, the probability that a norepeatword uses all 26 letters is $\frac{26!}{\sum_{k=1}^{26} \frac{26!}{(26-k)!}} \approx 0.36787944 \approx 1/e$. In fact, the difference between the probability that a norepeatword uses all 26 letters and $1/e$ is of about $3.4846 \cdot 10^{-28}$.
+\end{proof}
+
+

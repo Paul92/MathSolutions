@@ -1,0 +1,77 @@
+\subsection*{5.6}
+
+\begin{itemize}
+    \item Let $(A, <)$ be a strictly ordered set and $b \notin A$. Define a relation $\prec$ in $B = A \cup \{b\}$ as follows:
+
+$$ x \prec y~iff~(x,y \in A~and~x < y)~or~(x \in A~and~y = b)$$
+
+Show that $\prec$ is a strict ordering of $B$ and $\prec \cap A^2 = <$.
+
+\begin{proof}
+
+Will start by showing that $\prec$ is an ordering. Let $x,y \in B$. If $x,y \in A$, then $x \prec y$ iff $x < y$. Since $<$ is asymmetric, it follows that $x \prec y$ implies $y \nprec x$. If $x \in A$ and $y = b$, then $x \prec y$ by definition. But since there is no $z \in B$ such that $b \prec z$ it follows that $y \nprec x$. Finally, if $x = y = b$, $x \nprec y$ by the definition of $\prec$. Hence, $\prec$ is an asymmetric relation.
+
+Remains to show that $\prec$ is transitive. Pick $x,y,z \in B$ such that $x \prec y$ and $y \prec z$. Since $x \prec y$, $x \neq b$. Similarly, since $y \prec z$, $y \neq b$. So $x,y \in A$. Since $x \prec y$ it follows that $x < y$. If we have $z \neq b$, then $z \in A$ and then $x < y$ and $y < z$. It follows that $x < z$ by the transitivity of $<$ and hence $x \prec z$. If $z = b$, then $x \prec z$ since $x \in A$. Therefore, $\prec$ is transitive.
+
+From the above, $\prec$ is a strict ordering.
+
+\vspace{1em}
+
+The relation $\prec$ can be defined as
+
+$$ \prec = \{(x,y) \in A \times A | x < y\} \cup (A \times \{b\}) = < \cup (A \times \{b\})$$
+
+and therefore
+
+$$ \prec \cap (A \times A) = \{(x,y) \in A \times A | x < y\} = <$$
+    
+\end{proof}
+
+\item Generalize the previous result: let $(A_1, <_1)$ and $(A_2, <_2)$ be strict orderings, $A_1 \cap A_2 = \emptyset$. Define a relation $\prec$ on $B = A_1 \cup A_2$ as
+
+\begin{align*}
+    x \prec y~iff~ &x,y \in A_1~and~x<_1 y \\
+                or~ & x,y \in A_2~and~x<_2y \\
+                or~ & x \in A_1~and~x\in A_2
+\end{align*}
+
+Show that $\prec$ is a strict ordering of $B$ and $\prec \cap A_1^2 = <_1$, $\prec \cap A_2^2 = <_2$.
+
+\begin{proof}
+Pick $x,y \in B$ such that $x \prec y$. There are three possible cases:
+
+\begin{itemize}
+    \item $x \in A_1, y \in A_1$. Then $x <_1 y$ in $A_1$, which is an assymetric relation and hence $y \nless_1 x$. Therefore $y \nprec y$.
+    \item $x \in A_2, y \in A_2$. By the same argument as above, $y \nprec y$
+    \item $x \in A_1, y \in A_2$. But then $y \nprec x$ by definition of $\prec$.
+\end{itemize}
+
+From the above, $\prec$ is an asymmetric relation.
+
+Now pick $x,y,z \in B$ such that $x \prec y$ and $y \prec z$. The following cases are possible:
+
+\begin{itemize}
+    \item $x,y,z \in A_1$ and hence $x \prec z$ by the transitivity of $<_1$
+    \item $x,y,z \in A_2$. Then $x \prec z$ by the transitivity of $<_2$
+    \item $x,y \in A_1, z \in A_2$. Then $x \prec z$ by the definition of $\prec$
+    \item $x \in A_1, y,z \in A_2$. Then $x \prec z$ by the definition of $\prec$
+\end{itemize}
+
+It follows that $\prec$ is transitive and hence it is a strict ordering relation.
+
+\vspace{1em}
+
+An equivalent definition of $\prec$ is
+
+$$ \prec = <_1 \cup (A_1 \times A_2) \cup <_2$$
+
+, with $<_1 \subseteq A_1 \times A_1$, $<_2 \subseteq A_2 \times A_2$ and the sets $<_1$, $<_2$, $A_1 \times A_2$ mutually disjoint.
+
+It follows that $\prec \cap (A_1 \times A_1) = <_1$ and $\prec \cap (A_2 \times A_2) = <_2$.
+
+\end{proof}
+
+\end{itemize}
+
+\newpage
+

@@ -1,0 +1,50 @@
+\subsection*{4.8} Verify the axioms of Peano arithmetic.
+
+\begin{proof}
+\begin{itemize}
+    \item If $S(n) = S(m)$ , then $n = m$.
+    
+    \begin{proof}
+    The statement is equivalent to $n+1=m+1$ implies $n = m$, which follows from the property proven in exercise 4.2.
+    \end{proof}
+    
+    \item $S(n) \neq 0$
+    
+    \begin{proof}
+    The statement is equivalent to $n+1 \neq 0$. Can be easily proven by induction over $n$. The base case is $1 \neq 0$ which holds trivially. The inductive case is $n + 1 + 1 \neq 0$. But $n+1+1 > n+1 \neq 0$ and the conclusion follows.
+    \end{proof}
+    
+    \item $n+0 = n$
+    
+    \begin{proof}
+    Follows from commutativity of addition and the definition of addition.
+    \end{proof}
+    
+    \item $n+S(m) = S(n+m)$
+    
+    \begin{proof}
+    Follows from the definition of addition.
+    \end{proof}
+    
+    \item $n \cdot 0 = 0$
+    
+    \begin{proof}
+    Follows from the commutativity of multiplication and its definition.
+    \end{proof}
+    
+    \item  $n \cdot S(m) = (n \cdot m) + n$
+    
+    \begin{proof}
+    Follows from the definition of multiplication
+    \end{proof}
+    
+    \item If $n \neq 0$, then $n = S(k)$ for some $k$.
+    
+    \begin{proof}
+    This states the existence of a predecessor for all nonzero numbers, proven before.
+    \end{proof}
+    
+\end{itemize}
+\end{proof}
+
+\newpage

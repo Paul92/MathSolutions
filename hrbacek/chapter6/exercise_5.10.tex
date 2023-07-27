@@ -1,0 +1,20 @@
+\subsection*{5.10} An ordinal $\alpha$ is a limit ordinal if and only if $\alpha = \omega \cdot \beta$ for some $\beta$.
+
+\begin{proof}
+    Will start by showing that $\omega \cdot \beta$ is a limit ordinal for all $\beta$ by induction over beta.
+
+    The base case holds, since $\omega \cdot 0 = 0$, which is a limit ordinal.
+
+    Assuming that $\omega \cdot \beta$ is a limit ordinal, by distributivity, we have that $\omega \cdot (\beta + 1) = \omega \cdot \beta + \omega$, which is the sum of two limit ordinals and hence an ordinal and hence the inductive case holds.
+
+    In the limit case, the product $\omega \cdot \beta$ is a product of two limit ordinals and hence a limit ordinal.
+
+    \vspace{1em}
+
+    To prove the converse, we denote by $\alpha$ the smallest limit ordinal which is not a multiple of $\omega$. We can construct the set $S = \{\omega \cdot \delta | \omega \cdot \delta < \alpha\}$. Note that this set contains all limit ordinals less than $\alpha$ and is nonempty, since $\omega$ is the smallest ordinal and it is a multiple of $\omega$.
+
+    Let $s = \sup S$. It is clear by construction that $s \leq \alpha$. Also $s$ is a limit ordinal which can be written as $\omega \cdot \delta$. The following limit ordinal (that is, the smallest limit ordinal greater than $s$) is $\omega \cdot (\delta + 1)$. We have that $\alpha < \omega \cdot (\delta + 1)$ since, otherwise the supremum of $S$ would have been $\omega \cdot (\delta + 1)$. From the above two constraints it follows that $\alpha = \omega \cdot \delta$.
+
+    
+\end{proof}
+

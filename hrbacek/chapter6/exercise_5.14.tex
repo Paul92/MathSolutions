@@ -1,0 +1,20 @@
+\subsection*{5.14}
+
+\begin{itemize}
+    \item If $\alpha \leq \beta$, then $\alpha ^\gamma \leq \beta^{\gamma}$.
+    \begin{proof}
+        We proceed by transfinite induction on $\gamma$. Hence, let $P(\gamma)$ be the logical proposition that $\alpha ^\gamma \leq \beta^{\gamma}$ for some given $\alpha, \beta$ with $\alpha < \beta$.
+
+        By the definition of multiplication (Definition 5.9), we have that $\alpha ^ 0 = 1 = \beta^0$, and hence $P(0)$ holds.
+
+        We now assume that $P(\gamma)$ holds. We have that $\beta^{\gamma+1} = \beta^{\gamma} \cdot \beta$ and $\alpha^{\gamma+1} = \alpha^\gamma \cdot \alpha$. Since $P(\gamma)$ holds, we have that $\beta^{\gamma} \geq \alpha^{\gamma}$ and since $\beta \geq \alpha$ from the hypothesis, we have that $\beta^{\gamma+1} \geq \alpha^{\gamma+1}$, i.e. $P(\gamma+1)$ holds.
+
+        Finally, we look at the limit case. Let $\gamma$ be a limit ordinal. Consider the sets $U = \{\alpha^\theta | \theta < \gamma\}$ and $V = \{\beta^\theta | \theta < \gamma\}$. By definition, $\alpha^\gamma = \sup U$ and $\beta ^\gamma = \sup V$. But note that we can construct a bijection between $U$ and $V$, mapping each element of $U$ to an element of $V$ that is greater than or equal to it. This implies that $\sup U \leq \sup V$ and the conclusion follows.
+    \end{proof}
+
+    \item If $\alpha > 1$ and if $\beta < \gamma$, then $\alpha^{\beta} < \alpha ^{\gamma}$.
+    \begin{proof}
+        Since $\beta < \gamma$ we can write $\gamma = \beta + \theta$ for some $\theta > 0$. From exercise 5.13 we have that $\alpha^\gamma = \alpha^{\beta + \theta} = \alpha^\beta \cdot \alpha^\theta$, and so $\alpha^\beta < \alpha^\beta \cdot \alpha^\theta$, which holds since $\alpha^\theta > 0$.
+    \end{proof}
+\end{itemize}
+

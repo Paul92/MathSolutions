@@ -1,0 +1,14 @@
+\subsection*{5.8a} Let $\alpha$, $\beta$ and $\gamma$ be ordinals, with $\alpha < \beta$. Then $\alpha + \gamma \leq \beta + \gamma$ and $\leq$ cannot be replaced by $<$.
+
+\begin{proof}
+    Will show this by induction over $\gamma$. Let $P(\gamma)$ be the logical proposition $\alpha + \gamma \leq \beta + \gamma$.
+
+    In the base case of the induction, $P(0)$ holds, since $\alpha + 0 = \alpha \leq \beta = \beta + 0$.
+
+    For the inductive case, we assume that $P(\gamma)$ holds for some ordinal $\gamma$. Then, we have that $\alpha + (\gamma + 1) = (\alpha + \gamma) + 1$ and $\beta + (\gamma + 1) = (\beta + \gamma) + 1$. Since $P(\gamma)$ implies $\alpha + \gamma < \beta + \gamma$, it follows that $(\alpha + \gamma) + 1 \leq (\beta + \gamma) + 1$ and hence $P(\gamma + 1)$ holds.
+
+    For the limit ordinal case, assume that $\gamma$ is a limit ordinal and that $P(\theta)$ holds for all $\theta < \gamma$. Then, $\alpha + \gamma = \sup\{\alpha + \theta | \theta < \gamma\}$ and similarly $\beta + \gamma = \sup\{\beta + \theta | \theta < \gamma\}$.  Since $P(\theta)$ holds for all $\theta < \gamma$, we have that $\alpha + \theta <\beta + \theta$ for all $\theta < \gamma$. Hence, $\sup\{\alpha + \theta | \theta < \gamma\} \leq \sup \{\beta + \theta | \theta < \gamma\}$.
+
+    The equality cannot be strict due to the limit ordinal case. For example, while $1 < 2$, $1 + \omega = 2 + \omega$.
+\end{proof}
+

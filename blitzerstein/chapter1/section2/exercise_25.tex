@@ -1,0 +1,22 @@
+\begin{exercise}{25}
+A hash table is a commonly used data structure in computer science, allowing for fast
+information retrieval. For example, suppose we want to store some people’s phone numbers. Assume that no two of the people have the same name. For each name $x$, a hash
+function $h$ is used, letting $h(x)$ be the location that will be used to store $x$’s phone
+number. After such a table has been computed, to look up $x$’s phone number one just
+recomputes $h(x)$ and then looks up what is stored in that location.
+
+
+The hash function $h$ is deterministic, since we don’t want to get different results every
+time we compute $h(x)$. But $h$ is often chosen to be pseudorandom. For this problem,
+assume that true randomness is used. Let there be $k$ people, with each person’s phone
+number stored in a random location (with equal probabilities for each location, independently of where the other people’s numbers are stored), represented by an integer
+between $1$ and $n$. Find the probability that at least one location has more than one
+phone number stored there.
+\end{exercise}
+
+\begin{proof}
+    The probability of a repeated hash, known as hash collision, represents the probability that a random sample of $k$ values from a range of $n$ values produces at least a duplicated item. This is an instance of the birthday problem, where we were sampling birthday dates from a range of 365 possible values.
+
+    Therefore, the probability of not having a hash collision is $p = \frac{\prod_{i=0}^{k-1} (n-i)}{n^k}$, and therefore the probability of a hash collision is $1-p = 1 - \frac{\prod_{i=0}^{k-1} (n-i)}{n^k}$. This property can be exploited to break cryptographic protocols using the so-called \href{https://en.wikipedia.org/wiki/Birthday_attack}{birthday attack}.
+\end{proof}
+

@@ -1,0 +1,27 @@
+\begin{exercise}{55b}
+    Find the probability that the committee has at least one representative from each of the senior, junior, and sophomore classes.
+\end{exercise}
+
+\begin{proof}
+    Let $A$ be the set of committees which do not contain any senior, $B$ be the set of committees which do not contain any junior and $C$ be the set of committees which do not contain any sophomore.
+
+    We have that $|A| = {27 \choose 5}$, $|B| = {25 \choose 5}$ and $|C| = {22 \choose 5}$.
+
+    Also, we have that there are $|A \cap B| = {15 \choose 5}$ committees without seniors and juniors, $|A \cap C| = {12 \choose 5}$ committees without seniors and sophomores and $|B \cap C| = {10 \choose 5}$ committees without juniors and sophomores.
+
+    Then, the number of committees that misses one member from at least one class is
+
+    \begin{align*}
+        |A \cup B \cup C| &= |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|\\
+        &= {27 \choose 5}+ {25 \choose 5}+ {22 \choose 5} - {15 \choose 5} - {12 \choose 5} - {10 \choose 5} +0= 156147
+    \end{align*}
+    $$$$
+
+    This gives a probability of
+
+    $$p = 1-\frac{156147}{{37 \choose 5}} = \frac{93250}{145299} \approx 0.64178$$
+
+    that an arbitrarily chosen committee has one of each class.
+    
+    \end{proof}
+

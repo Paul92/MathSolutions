@@ -1,0 +1,11 @@
+\begin{exercise}{46} Let $A_1, A_2, \dots , A_n$ be events. Let $B_k$ be the event that exactly $k$ of the $A_i$ occur, and
+$C_k$ be the event that at least $k$ of the $A_i$ occur, for $0 \leq k \leq n$. Find a simple expression
+for $P (B_k)$ in terms of $P (C_k )$ and $P (C_{k+1})$.
+\end{exercise}
+
+\begin{proof}
+    Consider the event $C_k$, which occurs when at least $k$ of the $A_i$ occur. This is the union of two disjoint events: either exactly $k$ of the $A_i$ occur, or more than $k$ of the $A_i$ occur. But note that the event when  more than $k$ of the $A_i$ occur is equivalent to $C_{k+1}$ and hence the difference $C_{k} - C_{k+1}$ is the event that exactly $k$ of the $A_i$ occur, which is $B_k$.
+
+    Hence, $P(B_k) = P(C_k) - P(C_{k+1})$.
+\end{proof}
+

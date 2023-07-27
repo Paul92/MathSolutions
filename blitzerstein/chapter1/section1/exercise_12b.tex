@@ -1,0 +1,9 @@
+\begin{exercise}{12b}
+    How many possibilities are there overall for what hands everyone will get, assuming
+that it matters which player gets which hand, but not the order of cards within a hand?
+\end{exercise}
+
+\begin{proof}
+    We first deal the first player his hand. As discussed above, this can be done in $52 \choose 13$ ways. Then, out of the remaining $39$ cards, we deal the second player his hand, in $39 \choose 13$ ways. The hand of the third player can be dealt in $26 \choose 13$ ways. This leads to a total of ${52 \choose 13} \cdot {39 \choose 13} \cdot {26 \choose 13} = 53644737765488792839237440000$ ways of distributing the cards. Note that the order in which the cards are distributed does not matter.
+\end{proof}
+

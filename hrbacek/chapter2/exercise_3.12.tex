@@ -1,0 +1,34 @@
+\subsection*{3.12} Let $f$ be a function. Then,
+
+\begin{itemize}
+    \item $$f[\bigcup_{a \in A} F_a] = \bigcup_[a \in A] f[F_a]$$
+    
+    Let $y \in f[\bigcup_{a \in A} F_a]$. Then, there is some $x \in \bigcup_{a \in A} F_a$ such that $f(x) = y$. It follows that there is some $s \in A$ such that $x \in s$. But then $y \in f[F_s]$ and hence $y \in \bigcup_[a \in A] f[F_a]$. Therefore, $f[\bigcup_{a \in A} F_a] \subseteq \bigcup_[a \in A] f[F_a]$.
+    
+    Conversely, let $y \in \bigcup_[a \in A] f[F_a]$. Then, there is some $s \in A$ such that $y \in f[F_s]$. Therefore, there is some $x \in F_s$ such that $f(x) = y$. But then $x \in \bigcup_{a \in A} F_a$ and therefore $y \in f[\bigcup_{a \in A} F_a]$. Hence $f[\bigcup_{a \in A} F_a] \supseteq \bigcup_[a \in A] f[F_a]$ and the conclusion follows.
+    
+    \item $$f^{-1}[\bigcup_{a \in A} F_a] = \bigcup_[a \in A] f^{-1}[F_a]$$
+    
+    Let $x \in f^{-1}[\bigcup_{a \in A} F_a]$. Then, there is some $y \in \bigcup_{a \in A} F_a$ such that $f(x) = y$. It follows that there is some $s \in A$ such that $y \in F_s$. But then $x \in f^{-1}[F_s]$ and hence $x \in \bigcup_[a \in A] f^{-1}[F_a]$. Therefore $f^{-1}[\bigcup_{a \in A} F_a] \subseteq \bigcup_[a \in A] f^{-1}[F_a]$.
+    
+    Conversely, let $x \in \bigcup_[a \in A] f^{-1}[F_a]$. There is some $s \in A$ such that $x \in f^{-1}[F_s]$. Hence, there is some $y \in F_s$ such that $f(x) = y$. But then $y \in \bigcup_{a \in A} F_a$ and therefore $x \in f^{-1}[\bigcup_{a \in A} F_a]$. Hence $f^{-1}[\bigcup_{a \in A} F_a] \supseteq \bigcup_[a \in A] f^{-1}[F_a]$ and the conclusion follows.
+    
+    \item $$f[\bigcap_{a \in A} F_a] \subseteq \bigcap_{a \in A} f[F_a]$$
+    
+    \begin{proof}
+        Let $y \in f[\bigcap_{a \in A} F_a]$. Then, there is some $x \in \bigcap_{a \in A} F_a$ such that $f(x) = y$. But then $x \in F_a$ for all $a \in A$. This implies that $y \in f[F_a]$ for all $a \in A$ and therefore $y \in \bigcap_{a \in A} f[F_a]$. Hence $f[\bigcap_{a \in A} F_a] \subseteq \bigcap_{a \in A} f[F_a]$.
+        
+        Conversely, let $y \in \bigcap_{a \in A} f[F_a]$. Then $y \in f[F_a]$ for all $a \in A$. For the same argument as before to be applied, it is required that $f$ is one to one - otherwise, there can be the case that $\bigcap_{a \in A} = \emptyset$. Hence, if $f$ is one to one, it follows that  there is some $x \in F_a$ for all $a \in A$ such that $f(x) = y$ and hence $x \in \bigcap_{a \in A} F_a$. Therefore $y \in f[\bigcap_{a \in A} F_a]$ and the conclusion follows. 
+    \end{proof}
+    
+    \item $$f^{-1}[\bigcap_{a \in A} F_a] = \bigcap_{a \in A} f^{-1}[F_a]$$
+    
+    \begin{proof}
+        Let $x \in f^{-1}[\bigcap_{a \in A} F_a]$. There is some $y \in \bigcap_{a \in A} F_a$ such that $f(x) = y$ and therefore for all $a \in A$ we have that $y \in F_a$. But then $x \in f^{-1}[F_a]$ for all $a \in A$ and hence $x \in \bigcap_{a \in A} f^{-1}[F_a]$. Therefore $f^{-1}[\bigcap_{a \in A} F_a] \subseteq \bigcap_{a \in A} f^{-1}[F_a]$.
+        
+        Conversely, let $x \in \bigcap_{a \in A} f^{-1}[F_a]$. It follows that $x \in f^{-1}[F_a]$ for all $a \in A$ and hence  there is some $y \in F_a$ for all $a \in A$ such that $f(x) = y$. But then $y \in \bigcap_{a \in A} F_a$ and therefore $x \in f^{-1}[\bigcap_{a \in A} F_a]$. Hence $f^{-1}[\bigcap_{a \in A} F_a] \supseteq \bigcap_{a \in A} f^{-1}[F_a]$ and the conclusion follows.
+    \end{proof}
+\end{itemize}
+
+\newpage
+

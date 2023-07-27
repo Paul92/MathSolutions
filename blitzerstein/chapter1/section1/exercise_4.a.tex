@@ -1,0 +1,15 @@
+\begin{exercise}{4.a}
+A round-robin tournament is being held with n tennis players; this means that every
+player will play against every other player exactly once.
+
+\vspace{1em}
+How many possible outcomes are there for the tournament (the outcome lists out
+who won and who lost for each game)?
+\end{exercise}
+
+\begin{proof}
+    Each of the $n$ players can play against any of the other $n-1$ players. Therefore, there are $n(n-1)$ ways to obtain ordered pairs of two distinct players. Since the player matching is symmetric, and we counted two matches for each pair of players, we divide this count by two to obtain $\frac{n(n-1)}{2}$ games.
+
+    Each game can have two possible outcomes: player A wins and player B loses or player A loses and player A wins. So there are $2^{\frac{n(n-1)}{2}}$ possible outcomes of the tournament.
+\end{proof}
+

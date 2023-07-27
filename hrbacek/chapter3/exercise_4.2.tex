@@ -1,0 +1,16 @@
+\subsection*{4.2} If $m,n,k \in N$, then $m < n$ if and only if $m + k < n+k$.
+
+\begin{proof}
+Assume that $m,n \in N$ such that $m < n$. Consider the logical proposition $P(k): m + k < n + k$.
+
+$P(0): m+0 < n+0$ is equivalent to $m<n$ from the definition of addition and thus it holds from the hypothesis.
+
+$P(k+1): m+k+1 < n+k+1$ holds by the result of the exercise 2.2.
+
+It follows that if $m < n$, then $m + k < n+k$ for all $k \in N$.
+
+\vspace{1em}
+
+Conversely, assume that $m+k < n+k$ for some $k \in N$. If $k = 0$, the result follows. Otherwise, there is some $l \in N$ such that $k = S(l)$ and the proposition from the hypothesis becomes $m+l+1 < n+l+1$. It follows from the exercise 2.2 that $m + l < n+l$ and the conclusion follows.
+\end{proof}
+

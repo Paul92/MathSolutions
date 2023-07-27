@@ -1,0 +1,734 @@
+\section{Continuity}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} If $f :  A \rightarrow B$ and $C \subset B$, what is $\chi_C \circ f$ (as a characteristic function)?
+
+\begin{proof}
+$(\chi_C \circ f)(x) = \chi_C(f(x))$, therefore, $\chi_C \circ f$ is one for exactly those elements $x$ for which $f(x) \in C$. But this set is $f^{-1}(C)$, so $\chi_{\chi_C \circ f} = \chi_{f^{-1}(C)}$.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+
+\subsection{} Let $f: \mathbb{R} \rightarrow \mathbb{R}$ be continuous.
+\begin{itemize}
+    \item If $f(0) > 0$, show that $f(x) > 0$ for all $x$ in some interval $(-a, a)$.
+    \item If $f(x) \geq 0$ for every rational $x$, show that $f(x) \geq 0$ for all real $x$. Will this result hold with "$\geq0$" replaced by "$>0$"? Explain. 
+\end{itemize}
+
+
+\begin{proof}
+Assume $f(0) > 0$. Then, $f(0) \in (0, \infty)$, an open set. Since $f$ is continuous, this means that $f^{-1}(0,\infty)$ is also an open set with $0 \in f^{-1}(0,\infty)$. This means that we can find $(a,b) \subseteq f^{-1}(0,\infty) $ with $0 \in (a,b)$. 
+
+
+\vspace{1em}
+
+Now assume $f(x) \geq 0$ for every rational $x$, and pick $a \in \mathbb{R}$. There is a sequence of rationals $x_n \rightarrow a$, and since $f(x_n) \geq 0$ for all $n$, we have that $f(a) \geq 0$. 
+
+If $\geq$ would be replaced by $>$, the statement wouldn't hold. For example, it may be the case that $f(x_n) = 1/n$ and $f(a) = 0$ for some $(x_n)$ rational and $a$ real.
+
+\vspace{1em}
+
+Assume $f(x) > 0$ for every rational $x$. Then, for all $x \in \mathbb{Q}$, we have $f(x) \in (0, \infty)$. Since $(0, \infty)$ is an open interval, and $f$ is continuous, $I = f^{-1}(0, \infty)$ is an open interval that contains all rational numbers. Since for any real there is a sequence of rationals that converge to it, this means that $\overline{I} = \mathbb{R}$. This means that for all $\epsilon > 0$ and $x \in \mathbb{R}$ there is $q \in \mathbb{Q}$ such that $x \in B_\epsilon(q) = (q-\epsilon, q+\epsilon)$. But since $x \in B_\epsilon(q) \subset \overline{f^{-1}(0, \infty)}$, we have that $f(x) \geq 0$ for all $x$ real.
+
+\end{proof}
+
+
+\stepcounter{subsection}
+
+
+\subsection{} Let $A = (0, 1] \cup \{2\}$, considered as a subset of $\mathbb{R}$. Show that every function $f : A \rightarrow \mathbb{R}$ is continuous, relative to $A$, at 2. 
+
+\begin{proof}
+For all $\epsilon > 0$, we have $\delta = 1/2$ such that that $|f(x) - f(2)| = 0 < \epsilon$ whenever $|x-2| < 1/2$, since the latter holds exactly when $x=2$.
+
+More generally, this shows that any function is continuous at isolated points of the domain.
+\end{proof}
+
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+
+\subsection{} A continuous function on $\mathbb{R}$ is completely determined by its values on $\mathbb{Q}$. Use this to "count" the continuous functions $f: \mathbb{R} \rightarrow \mathbb{R}$. 
+
+\begin{proof}
+Since the continuous functions on $\mathbb{R}$ are determined completely by their values on $\mathbb{Q}$, the number of continuous functions on $\mathbb{R}$ is equal to the number of functions $g: \mathbb{Q} \rightarrow \mathbb{R}$.
+
+Therefore, $|\mathbb{R}^\mathbb{Q}| = |c^{\aleph_0}| = 2^{{\aleph_0}\cdot{\aleph_0}} = 2^{\aleph_0} = c = |\mathbb{R}|$.
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let $f, g: (M, d) \rightarrow (N, p)$ be continuous, and let $D$ be a dense subset of $M$. If $f(x) = g(x)$ for all $x \in D$, show that $f(x) = g(x)$ for all $x \in M$. If $f$ is onto, show that $f(D)$ is dense in $N$.
+
+\begin{proof}
+If $D \subset M$ is dense, then for any $x \in M$ there is a sequence $(x_n)$ with $x_n \in D$ that converges to $x$. Since $f$ is continuous, $f(x_n) \rightarrow f(x)$. Similarly, we have that $g(x_n) \rightarrow g(x)$. Since $x_n \in D$, $f(x_n) = g(x_n)$ and therefore $f(x) = g(x)$. 
+
+Assume $f$ is onto and pick some $y \in N$. Then, there is $x \in M$ such that $f(x) = y$. But since $D$ is dense in $M$, there is a sequence $x_n \rightarrow x$. Since $f$ is continuous, we also have $f(x_n) \rightarrow f(x) = y$. But $f(x_n) \in f(D)$ and therefore $f(D)$ is dense in $N$.
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} A function $f: \mathbb{R} \rightarrow \mathbb{R}$ is said to satisfy a Lipschitz condition if there is a constant $K < \infty$ such that $|f(x)-f(y)| \leq K|x-y|$ for all $x,y \in \mathbb{R}$. More economically, we may say that $f$ is Lipschitz (or Lipschitz with constant K if a particular constant seems to matter).  Show that $\sin(x)$ is Lipschitz with constant $K = 1$. Prove that a Lipschitz function is (uniformly) continuous.
+
+\begin{proof}
+From the mean value theorem, we have that there is some $c$ such that
+
+$$ \frac{\sin(a)-\sin(b)}{a-b} = \sin'(c) = \cos(c)$$
+
+$$ \frac{|\sin(a)-\sin(b)|}{|a-b|} = |\cos(c)| $$
+
+Since $|\cos(c)| \in [0,1]$, we have that
+
+$$ \frac{|\sin(a)-\sin(b)|}{|a-b|} \leq 1 $$
+
+$$ |\sin(a)-\sin(b)| \leq |a-b| $$
+
+, which shows that $\sin$ is Lipschitz continuous.
+
+\vspace{1em}
+
+Now let $f$ be a function Lipschitz with constant $K$ and fix some $\epsilon > 0$ and let $\delta = \epsilon/K$. Now suppose that $|x-y| < \delta = \epsilon/K$. Then, $|f(x)-f(y)| \leq K|x-y| < K \delta = \epsilon$. But this shows that $f$ is uniformly continuous.
+
+\end{proof}
+
+\subsection{} If $d$ is a metric on $M$, show  that $|d(x, z) -d(y, z)| \leq d(x , y)$ and conclude that the function $f(x) = d(x, z)$ is continuous on $M$ for any fixed $z \in M$. This says that $d(x, y)$ is separately continuous -continuous in each variable separately. 
+
+\begin{proof}
+
+From the triangle inequality, $d(x, z) \leq d(x,y) + d(y,z)$, and therefore $|d(x,z) - d(y,z) \leq |d(x,y) + d(y,z) - d(y,z)| = d(x,y)$.
+
+Let $f(x) = d(x,z)$. Then, we have that $|f(x) - f(y)| \leq d(x,y)$, which shows that $f$ is Lipschitz continuous with $K=1$.
+
+\end{proof}
+
+
+\stepcounter{subsection}
+
+
+\subsection{} Define $S : c_0 \rightarrow c_0$ by $S(x1, x2, ... ) = (0, x1, x2, ... )$. That is, S shifts the entries forward and puts 0 in the empty slot. Show that S is an isometry (into). Define $E : \mathbb{N} \rightarrow l_1$ by $E(n) = (1, ... ,  1, 0, ... )$, where the first $n$ entries are 1 and the rest 0. Show  that $E$ is an isometry (into).
+
+\begin{proof}
+In order to show that $E$ is an isometry, we need to show that it preserves distances, i.e. $|n-m| = \|E(n) - E(m)\|_1$ for $n,m \in \mathbb{N}$. Without loss of generality, assume that $n>m$. Then, $E(n)$ contains $n$ ones, $E(m)$ contains $m$ ones, and $E(n) - E(m)$ contains exactly $n-m$ ones, on positions from $n+1$ to $m$. Therefore, $\|E(n) - E(m)\|_1 = n-m$.
+
+\end{proof}
+
+\subsection{} Define $S : c_o \rightarrow c_o$ by $S(x_1, x_2, \dots ) = (0, x_1, x_2, \dots )$. That is, $S$ shifts the entries forward and puts 0 in the empty slot. Show that $S$ is an isometry (into). 
+
+\begin{proof}
+Let $x,y \in c_0$, with the $l^\infty$ norm. Note that $S(x) - S(y) = (0, x_1-y_1, x_2-y_2, \dots) = S(x-y)$. Also, $\|x\|_\infty = \|S(x)\|_\infty$, since $S$ just introduces a zero element.
+
+Then, $\|x-y\|_\infty = \|S(x-y)\|_\infty = \|S(x) - S(y)\|_\infty$ thus proving the isometry.
+
+\end{proof}
+
+\subsection{} Let $V$ be a normed vector space. If $y \in V$ is fixed, show that the maps $\alpha \rightarrow \alpha y$, from $\mathbb{R}$ into $V$, and $x \rightarrow x + y$, from V into V, are continuous. 
+
+\begin{proof}
+We shall first consider the map $\alpha \rightarrow \alpha y$ for $y \in V$ fixed.
+
+Pick $\epsilon > 0$ and $\delta = \epsilon/\|y\|$ for $y$ such that $\|y\| \neq 0$. If $\|y\|=0$, then $y=0$ and the map is constant 0, and therefore continuous.
+
+Pick $a,b \in \mathbb{R}$ such that, $|a-b| < \delta = \epsilon/\|y\|$.
+
+Then, $\|ay - by\| = \|y\|\cdot|a - b| < \|y\| \cdot \delta = \|y\| \cdot \epsilon/\|y\| = \epsilon$. Therefore, the map is uniformly continuous.
+
+\vspace{1em}
+
+We now consider the map $x \rightarrow x+y$ for some $y \in V$ fixed.
+
+Pick $\epsilon > 0$ and $\delta = \epsilon$
+
+Then, $\|a - b\| < \delta = \epsilon$ implies that $\|(a + y) - (b + y)\| < \epsilon$. Since $\delta$ depends only on $\epsilon$, the map is uniformly continuous. 
+\end{proof}
+
+\subsection{} A function  $f: (M, d) \rightarrow (N, p)$ is called Lipschitz if there is a  constant $K < \infty$ such that $p(f(x), f(y)) < Kd(x, y)$ for all $x, y \in M$. Prove that a Lipschitz mapping is continuous.
+
+\begin{proof}
+Pick some $\epsilon > 0$ and $\delta = \epsilon/K$.
+
+Then, if $d(x,y) < \delta = \epsilon / K$, we have that $Kd(x,y) < \epsilon$. But, by the Lipschitz property we have that $p(f(x), f(y)) < Kd(x, y) < \epsilon$, from which the conclusion follows.
+\end{proof}
+
+
+\subsection{} Provide the answer to a question raised in Chapter Three by showing that integration is continuous. Specifically, show that the map $L(f) = \int_a^b f(t) dt $ is Lipschitz with constant $K = b-a$ for $f \in C[a, b]$.
+
+\begin{proof}
+
+$$|L(f) - L(g)| = | \int_a^b f(t) - g(t) | dt \leq \int_a^b |f(t) - g(t)| dt \leq \|f-g\|_\infty \int_a^b 1 dt = (b-a)\|f-g\|_\infty$$
+
+\end{proof}
+
+\subsection{} Fix $k > 1$ and define $f: l_\infty \rightarrow \mathbb{R}$ by $f(x) = x_k$. Is $f$ continuous? [Hint: $f$ is Lipschitz.] 
+
+\begin{proof}
+$$|f(x) - f(y)| = |x_k - y_k| \leq \|x - y\|_\infty$$
+
+From the above, $f$ is Lipschitz continuous and therefore continuous.
+\end{proof}
+
+\subsection{} Define $g: l_2 \rightarrow \mathbb{R}$ by $g(x) = \sum_{n=1}^\infty x_n/n$. Is g continuous?
+
+\begin{proof}
+
+From the Cauchy-Schwartz inequality, we have
+
+$$g(x) \leq \|x\|_2 \cdot \|(1/n)\|_2 = \sqrt{\sum_{n=1}^\infty \frac{1}{n}^2} \|x\|_2= \sqrt{\frac{\pi^2}{6}} \|x\|_2$$
+
+
+Therefore,
+
+$$|g(x) - g(y)| \leq \sqrt{\frac{\pi^2}{6}} (\|x\|_2 - \|y\|_2) \leq \sqrt{\frac{\pi^2}{6}} \|x - y\|_2$$
+
+But this shows that $g$ is Lipschitz continuous, i.e. continuous.
+
+\end{proof}
+
+\vspace{10em}
+
+
+\subsection{} Fix  $y \in l_\infty$ and define $h: l_1 \rightarrow l_1$ by $h(x) = (x_n y_n )_{n=1}^\infty$. Show that $h$ is continuous.
+
+\begin{proof}
+Let $a,b \in l_1$. Then,
+
+$$\|g(a) - g(b)\| = \sum_{n=1}^\infty |a_ny_n-b_ny_n| = \sum_{n=1}^\infty |y_n| |a_n-b_n| \leq \|y\|_\infty \cdot \sum_{n=1}^\infty |a_n-b_n| = \|y\|_\infty \|a-b\|_1$$
+
+Therefore, $g$ is Lipschitz continuous with $K=\|y\|_\infty$, i.e. continuous.
+
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Let $f: (M, d) \rightarrow (N, p )$. 
+
+\begin{itemize}
+    \item If $M = \bigcup U_n$, where each $U_n$ is an open set in $M$, and if f is continuous on each $U_n$, show that $f$ is continuous on $M$. 
+    \item If $M = \bigcup_{n=1}^N E_n$, where each $E_n$ is a closed set in M, and if $f$ is continuous on each $E_n$,  show that $f$ is continuous on M. 
+    \item Give an example showing that $f$ can fail to be continuous on all of $M$ if, instead, we use a countably infinite union of closed sets $M = U_{n=1}^\infty E_n$ in (b). 
+\end{itemize}
+
+\begin{proof}
+Let $x\in M$. Since $M = \bigcup U_n$, there is some $i$ such that $x \in U_i$. Since $f$ is continuous on $U_i$ and $U_i$ is open, for any $\epsilon>0$ there is some $\delta >0$ such that $f(B_\delta^U_i(x)) \subset B_\epsilon^N(f(x))$.
+But $B_\delta^U_i \subset U_i \subset M$, therefore $f$ is continuous on $M$. This concludes the proof of the first item.
+
+\vspace{1em}
+
+For the second item, pick some $x \in M$ and consider a sequence $x_n \rightarrow x$ with $x_n \in M$.
+
+Pick $\epsilon/2 > 0$.
+
+If $x,y \in E_i$ for some $i$, then there is $\delta_i$ such that when $\|x - y\| < \delta_i$, $\|f(x) - f(y)\| < \epsilon$. Therefore, there is $\delta/2 = \min_i \delta_i$ such that whenever $\|x - y\| < \delta/2 < \delta$, $\|f(x) - f(y)\| < \epsilon/2 < \epsilon$ for any $x,y$ in the same closed interval $E_i$.
+
+If the sequence $(x_n)$ contains points $x_i, x_j$ such that $x_i \in E_i$ and $x_j \in E_j$, with $i \neq j$, $i,j>N$, for all $N$, then $x_n \rightarrow x \in E_i \cap E_j$.
+
+For both $E_i$ and $E_j$, there is for $\epsilon/2 > 0$ some $\delta/2 > 0$ such that
+$\|f(x_i) - f(x)\| < \epsilon/2$ whenever $\|x_i - x\| < \delta/2$ and $\|f(x_j) - f(x)\| < \epsilon/2$ whenever $\|x_j - x\| < \delta/2$.
+
+Then, when $\|x_i - x_j\| \leq \|x_i - x\| + \|x_j - x\| < \delta$ we have that $\|f(x_i) - f(x_j)\| \leq \|f(x_i) - f(x)\| + \|f(x_j) - f(x)\| < \epsilon$.
+
+
+\vspace{1em}
+
+For the third item, let $M = \bigcap{n=1}^\infty E_i = \bigcap{n=1}^\infty [\frac{1}{2n}, \frac{1}{2n+1}]$, and let $f(x) = n$ if $x \in [\frac{1}{2n}, \frac{1}{2n+1}]$. Note that the intervals $E_i$ are closed and disjoint, and $f$ is continuous on each $E_i$.
+
+We can construct the sequence $x_n = \frac{1}{2n}$ such that $x_n \in E_n$ and $x_n \rightarrow 0$. But $f(x_n) = n$, and therefore the sequence $(f(x_n))$ does not converge. Therefore, $f$ is not continuous on $M$.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Show that $d$ is continuous on $M \times M$, where $M \times M$ is supplied with  the product metric (see Exercise 3.46). This says that $d$ is jointly continuous, that is, continuous as a function of two variables.
+
+\begin{proof}
+Let the product metric be $d_p((a,x), (b,y)) = d(a,b) + d(x,y)$, where $d$ is the metric on $M$.
+
+Let $\epsilon > 0$ and $\delta = \epsilon$.
+
+Pick $(a,b), (x,y) \in M \times M$ such that $$d((a,b), (x,y)) = d(a,x) + d(b,y) = \delta = \epsilon$$
+
+Then,
+
+$$|d(a,b) - d(x,y)| \leq |d(a,x) + d(x,b) - d(x,b) - d(b,y)| = |d(a,x) - d(b,y)| \leq |d(a,x) + d(b,y)| = \epsilon$$
+
+And the conclusion follows.
+
+
+\end{proof}
+
+
+\subsection{} Show that a set $U$ is open in $M$ if and only if $U = f^{-1}(V)$ for some continuous function $f: M \rightarrow \mathbb{R}$ and some open set $V$ in $\mathbb{R}$.
+
+\begin{proof}
+Given an open set $V \subset \mathbb{R}$ and a continuous function $f: M \rightarrow \mathbb{R}$, by Theorem 5.1, $f^{-1}(V)$ is an open set.
+
+Conversely, assume $U$ is an open set in $M$, and pick $f(x) = d(x, U^c) = \inf\{d(x,y): y \in U^c\}$, a continuous function.
+
+Obviously, $f(x) \geq 0$ for all $x$, with $f(x) = 0$ if $x \in \overline{U^c} = U^c$. This means that for all $x\in U$, $f(x) > 0$. Therefore, $f^{-1}(0, \infty) = U$.
+
+\end{proof}
+
+\vspace{1em}
+
+
+\subsection{} Suppose that we are given a point $x$ and a sequence $(x_n)$ in a metric space $M$, and suppose that $f(x_n) \rightarrow f(x)$ for every continuous, real-valued function $f$ on $M$. Does it follow that $x_n \rightarrow x$ in $M$? Explain. 
+
+\begin{proof}
+Let $f$ be a continuous function such that $f(x_n) \rightarrow f(x)$.
+
+Then, for all $\epsilon > 0$ there is some $\delta > 0$ such that $B_\delta(x) \subset f^{-1}(B_\epsilon(f(x)))$. 
+
+Since $(f(x_n))$ converges to $f(x)$, we can find for all $\epsilon > 0$ some $N$ such that $f(x_n) \in B_\epsilon(f(x))$ whenever $n>N$. But this means that $x_n \in f^{-1}(B_\epsilon(f(x)))$.
+
+Since the above has to hold for any $f$ continuous, it has to hold in particular for $f(y) = d(x,y)$. But for this function, $f^{-1}(B_\epsilon(f(x))) = B_\delta(x)$ for some $\delta>0$. Therefore, whenever $n>N$ we have $x_n \in B_\delta(x)$, which implies that $x_n \rightarrow x$.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Given disjoint nonempty closed sets $E$, $F$, define $f : M \rightarrow \mathbb{R}$ by $f(x) = d(x, E)/[d(x,E)+d(x,F)]$. Show that $f$ is a continuous function on M with $0 \leq f \leq 1$, $f^{-1}({0}) = E$, and $f^{-1}({1}) = F$. Use this to find disjoint open sets $U$ and $V$ with $E \subset U$ and $F \subset V$. Can $U$ and $V$ be chosen so that $\overline{U}$ and $\overline{V}$ are disjoint? 
+
+\begin{proof}
+Will start by showing that $f(x) \in [0,1]$. Since $f(x) = d(x, E)/[d(x,E)+d(x,F)]$ and all distances are positive or 0, $f(x) \geq 0$. For the same reason, $d(x, E) \leq d(x,E)+d(x,F)$ and therefore $f(x) \leq 1$. $f$ is also continuous since is obtained by arithmetic operations between continuous functions.
+
+Note that, since $E \cap F = \emptyset$, there is no $x \in M$ such that $d(x,E)+d(x,F) = 0$, and therefore $f$ is well defined for all $x \in M$.
+
+Will now look at the set $f^{-1}({0})$. From its definition, $f(x) = 0$ iff $d(x, E) = 0$. Therefore, $f^{-1}({0}) = E$. Similarly, $f(x) = 1$ iff $d(x, E) = d(x,E)+d(x,F)$, i.e. $d(x,F) = 0$. Therefore, $f^{-1}({1}) = F$.
+
+Now consider the sets $U = f^{-1}[0,0.2)$ and $V = f^{-1}(0.8, 1]$. Since $f$ is continuous, and both $[0,0.2)$ and $(0.8, 1]$ are open on the domain $[0,1]$, $U,V$ are also open. Also, since $0 \in [0, 0.2)$, $E = f^{-1}(0) \subset f^{-1}[0,0.2) = U$. Similarly, $F \subset f^{-1}(0.8,1] = V$. Finally, $\overline{U} = f^{-1}[0,0.2]$ which is disjoint from $\overline{V} = f^{-1}[0.8,1]$ since $[0,0.2] \cap [0.8,1] = \emptyset$. 
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let $C$ be a closed set in $\mathbb{R}$ and let $f: C \rightarrow \mathbb{R}$ be continuous. Show that there is a continuous function $g : \mathbb{R} \rightarrow \mathbb{R}$ with $g(x) = f(x)$ for every $x \in C$. We say that $g$ is a continuous extension of $f$ to all of $\mathbb{R}$. In particular, every continuous function on the Cantor set $\Delta$ extends continuously to all of $\mathbb{R}$.
+
+\begin{proof}
+If $C$ is a closed set, then $C^c = \bigcup (a_i, b_i)$, a union of open intervals. We define $\mathbb{R} \rightarrow \mathbb{R}$ with $g(x) = f(x)$ for every $x \in C$. If $x \notin C$, then there is $i$ such that $x \in (a_i, b_i)$. Then, we define $g(x) = f(a_i) + (x - a_i)\frac{f(b_i) - f(a_i)}{b_i - a_i}$ as a linear interpolation of $f$ on the intervals $(a_i, b_i)$.
+$g$ is continuous by construction.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+
+\subsection{} If you are not already convinced, prove that two metrics $d$ and $p$ on a set $M$ are equivalent if and only if the identity map on $M$ is a homeomorphism from $(M, d)$ to $(M, p)$.
+
+\begin{proof}
+Assume the metrics $d$ and $p$ are equivalent on $M$.
+Then, for all $x_n \xrightarrow{d} x$ we have $x_n \xrightarrow{p} x$. But this implies that the identity function $id: (M,d) \rightarrow (M,p)$, $id(x)=x$ is continuous. Similarly, its inverse is continuous and therefore $id$ is a homeomorphism.
+
+Conversely, assume $id$ is a homeomorphism. Therefore, for any sequence $x_n \xrightarrow{d} x$ we have $id(x_n) \xrightarrow{p} id(x)$, that is $x_n \rightarrow{p} x$. This implies that the metrics $d$ and $p$ are equivalent.
+
+
+\end{proof}
+
+\subsection{} Check that the relation "is homeomorphic to" is an equivalence relation on pairs of metric spaces.
+
+\begin{proof}
+Let $(M,d)$ be a metric space and consider the identity function $id: (M,d) \rightarrow (M,d)$, $id(x) = x$. Since any for any sequence $x_n \rightarrow x$ we have $id(x_n) = x_n \rightarrow x = id(x)$, $id$ is a homeomorphism. This shows that the "is homeomorphic to" relation is \textbf{reflexive}.
+
+\vspace{1em}
+
+Let $(M,d)$, $(N,p)$ be two homeomorphic metric spaces. This means that there is some $f:M \rightarrow N$ one-to-one and onto such that $f$ and $f^{-1}$ are continuous. Since $(f^{-1})^{-1} = f$, $f^{-1}$ is a homeomorphism between $(N,p)$ and $(M,d)$. Therefore, the "is homeomorphic to" relation is \textbf{symmetrical}.
+
+\vspace{1em}
+
+Let $(M,d)$, $(N,p)$, $(O,q)$ be metric spaces such that $(M,d)$ and $(N,p)$ are homeomorphic, as well as $(N,p)$ and $(O,q)$. This means that there are homeomorphisms $f:M \rightarrow N$ and $g: N \rightarrow O$ between the metric spaces. 
+
+Now consider the function $f \circ g: M \rightarrow O$. Since it is the composition of two continuous functions, it is continuous. Similarly, its inverse is continuous. Therefore, it represents a homeomorphism between $M$ and $O$. This shows that the "is homeomorphic to" relation is \textbf{transitive}.
+
+\vspace{1em}
+
+By the above, the "is homeomorphic to" relation is an equivalence relation.
+
+\end{proof}
+
+\subsection{} Prove that $\mathbb{N}$ (with its usual metric) is homeomorphic to $M = \{ ( (1/n) : n \geq 1 \}$  (with its usual metric). 
+
+\begin{proof}
+Let $f: \mathbb{N} \rightarrow M$, $f(n) = 1/n$. It is clearly one-to-one and onto. Since $\mathbb{N}$ is a discrete space, $f$ is also continuous. 
+
+Its inverse, $f^{-1}$ is also one-to-one and onto. Also, for every point $1/n \in M$ and $\epsilon >0$, there is $\delta = \frac{1}{n+\epsilon} -  \frac{1}{n}$ such that whenever $x \in B_\delta(1/n)$, $f(x) \in B_\epsilon(n)$. Therefore, $f^{-1}$ is also continuous. But this means that $f$ is a homeomorphism. 
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Define $E : \mathbb{N} \rightarrow l_1$ by $E(n) = (1, \dots, 1, 0, \dots )$, where the first $n$ entries are 1 and the rest are 0. Show that $E$ is an isometry (into).
+
+\begin{proof}
+
+Without loss of generality, pick $n,m \in \mathbb{N}$ with $n \geq m$. Then,
+
+$$ E(n) - E(m) = (\underbrace{\underbrace{0, \dots, 0}_{m}, \underbrace{1, \dots, 1}_{n-m}}_{n}, 0, \dots)  $$
+
+Therefore, we have that
+
+$$ \|E(n) - E(m)\|_1 = \sum_{i=0}^\infty E(n)_i - E(m)_i = \sum_{i=m+1}^n E(n)_i - E(m)_i = n-m = |n-m| $$
+
+Therefore, $E$ is an isometry.
+
+\end{proof}
+
+\subsection{} Prove that $\mathbb{R}$ is homeomorphic to $(0,  1)$ and that $(0, 1)$ is homeomorphic to $(0, \infty)$. Is $\mathbb{R}$ isometric to $(0, 1)$? to $(0, \infty)$? Explain. 
+
+\begin{proof}
+Let $f: \mathbb{R} \rightarrow (0,1)$, $f(x) = arctan(x)/2 + 1/2$. $f$ is onto, one-to-one, continuous,  and its inverse is also continuous. Therefore, $f$ is a homeomorphism between $\mathbb{R}$ and $(0,1)$.
+
+Similarly, $g: (0, \infty) \rightarrow (0,1)$, $g(x)=arctan(x)$ is a homeomorhpism between $(0,\infty)$ and $(0,1)$.
+
+\vspace{1em}
+
+Assume $\mathbb{R}$ isometric to $(0, 1)$. Then, there is some $f: \mathbb{R} \rightarrow (0,1)$ one-to-one and onto such that $|x-y| = |f(x) - f(y)|$ for all $x,y \in \mathbb{R}$. But $\sup\{|f(x) - f(y)| : x,y \in \mathbb{R}\} = 1$, while there are points $0,10 \in \mathbb{R}$ with $|0 - 10| = 10 > 1$. Therefore, $\mathbb{R}$ cannot be isometric to $(0, 1)$.
+
+By the same argument, $(0, \infty)$ is not isometric to $(0,1)$, and, since isometry is symmetric, $(0,1)$ is not isometric to $(0,\infty)$.
+
+\end{proof}
+
+\subsection{} Let $V$ be a normed vector space. Given a  fixed vector $y \in V$, show that the map $f(x) =  x + y$ (translation by $y$) is an isometry on $V$. Given a nonzero scalar $\alpha \in \mathbb{R}$, show that the map $g(x) = \alpha x$ (dilation by $\alpha$) is a homeomorphism on $V$.
+
+\begin{proof}
+Since 
+
+$$ \|f(x) - f(z)\| = \|x+y - z - y\| = \|x-y\| $$
+
+for all $x,z \in V$, and $f$ is onto, $f$ is an isometry.
+
+\vspace{1em}
+
+Consider now the function $g: V \rightarrow V$, $g(x) = \alpha x$. Then,
+
+$$g(x) = g(y) \Leftrightarrow \alpha x = \alpha y  \Leftrightarrow x = y $$
+
+, so $g$ is one-to-one. $g$ is onto, since for all $y \in V$ there is $x = g^{-1}(y) = y/\alpha \in V$ such that $g(x) = y$ and $g,g^{-1}$ are continuous, since they are defined only by arithmetic operations from the identity function. Therefore, $g$ is a homeomorphism on $V$.
+
+Note that $g$ is an isometry if and only if $\alpha=1$.
+
+\end{proof}
+
+
+\vspace{35em}
+
+\stepcounter{subsection}
+
+\subsection{} Let $(M, p)$ be a separable metric space and assume that $p(x, y) < 1$ for every $x, y \in M$. Given a countable dense set $\{x_n : n > 1\}$ in $M$, define a map $f : M \rightarrow H_\infty$, from $M$ into the Hilbert cube (Exercise 3.10), by $f(x) = (p(x, x_n))_{n=1}^\infty$.
+
+\begin{itemize}
+    \item Prove that $f$ is one-to-one and continuous. In fact $f$ satisfies $d(f(x), f(y)) \leq p(x, y)$, where $d$ is the metric on $H^\infty$.
+    \item Fix $\epsilon > 0$ and $x \in H^\infty$. Find $\delta > 0$ such that $p(x,y) < \epsilon$ whenever $d(f(x), f(y)) < \delta$. Conclude that $f$ is a homeomorphism into $H^\infty$. 
+\end{itemize}
+
+
+\begin{proof}
+
+Let $X = \{x_n : n > 1\}$.
+
+Will start by showing that $f$ is one-to-one. For this, 
+assume $f(a) = p(a,x_n) = p(b,x_n) = f(b)$. Since $a \in M = \overline{X}$, there is a sequence $a_n \rightarrow a$ with $(a_n)_{n=1}^\infty \subset X$. This implies that $p(a_n, a) \rightarrow 0$. Since $a_n \in X$ for all $n$, and $p(a,x_n) = p(b, x_n)$ for all $n$, we have that $p(a_n, b) \rightarrow 0$. This means that $a_n \rightarrow b$, which implies that $a = b$.
+
+Therefore, $f$ is one-to-one.
+
+\vspace{1em}
+
+Will now show that $f$ is continuous. Recall that the metric on the Hilbert cube is $d(x,y) = \sum_{i=1}^\infty 2^{-n}|x_n - y_n|$. Pick $\epsilon > 0$ and let $\delta = \epsilon$. Then,
+
+$$ d(f(a),(f(b)) =
+\sum_{i=1}^\infty 2^{-n}|p(a,x_n) - p(b,x_n)|
+\leq \sum_{i=1}^\infty 2^{-n} |p(a,b)| = p(a,b) \sum_{i=1}^\infty 2^{-n} = p(a,b)$$
+
+Therefore, we have $d(f(a), f(b)) \leq p(a,b) < \delta = \epsilon$ and therefore $f$ is continuous.
+
+\vspace{2em}
+\newpage
+Note that $f$ is not onto. Therefore, for the second part, we will analyze a restriction of $f$, namely $g:M \rightarrow f(M)$, which is continuous, one-to-one and onto.
+
+Now fix some $\epsilon > 0$ and $x \in H^\infty$. Choose $n$ such that $p(x, x_n) < \epsilon / 3$. Such $n$ will always exist, since ${x_n}$ is dense. Now pick $\delta = \frac{1}{2^n} \frac{\epsilon}{3}$. Then, $d(g(x), g(y)) = \sum_{n} \frac{1}{2^n}|p(x, x_n) - p(y, y_n)| < \delta$ implies that $\frac{1}{2^n}|p(x, x_n) - p(y, y_n)| < \epsilon / 3$, which means that $p(y, y_n) < \epsilon / 3 + p(x, x_i)$.
+
+We now have:
+
+$$p(x,y) \leq p(x, x_i) + p(y, y_i) < p(x, x_i) + \frac{\epsilon}{3} + p(x, x_i) < \frac{3\epsilon}{3} = \epsilon$$
+
+But this implies that $g^{-1}$ is continuous. Since $g$ is also one-to-one, onto and continuous, it is a homeomorphism.
+
+\end{proof}
+
+\subsection{} Let $f:(M,d) \rightarrow (N, p)$ be one-to-one and onto. Prove that the following are equivalent:
+
+\begin{itemize}
+    \item f is a homeomorphism
+    \item $x_n \xrightarrow{d} x \Leftrightarrow f(x_n) \xrightarrow{p} f(d)$
+    \item $G$ is open in $M \Leftrightarrow f(G)$ is open in $N$
+    \item $G$ is closed in $M \Leftrightarrow f(G)$ is closed in $N$
+    \item $\hat{d}(x,y)=p(f(x), f(y))$ defines a metric on $M$ equivalent to $d$
+\end{itemize}
+
+\begin{proof}
+
+Will start by showing that the first two statements are equivalent.
+
+If $f$ is a homeomorphism, then $f$ and its inverse are continuous. This means that convergent sequences are preserved, i.e. $x_n \xrightarrow{d} x \Leftrightarrow f(x_n) \xrightarrow{p} f(d)$.
+
+Conversely, if $x_n \xrightarrow{d} x \Leftrightarrow f(x_n) \xrightarrow{p} f(d)$, then both $f$ and $f^{-1}$ are continuous. Since $f$ is also one-to-one and onto, it is a homeomorphism.
+
+\vspace{1em}
+
+Will now show that the first and the second statement are equivalent. 
+
+If $f$ is a homeomorphism, then $f$ is continuous. This means that any for any open set $G$ in $N$, $f^{-1}(G)$ is open in $M$. Similarly, if $f$ is a homeomorphism, then $f^{-1}$ is continuous and therefore any open set $G$ in $M$, $(f^{-1})^{-1}(G) = f(G)$ is open in $N$.
+
+Conversely, if for any open set $G$ in $M$, $f(G)$ is open in $N$, then $f^{-1}$ is continuous. Also, if for any open set $f(G)$ in $N$, $f^{-1}(f(G))=G$ is open in $M$, then $f$ is continuous. Since $f$ is also one-to-one and onto, $f$ is a homeomorphism.
+
+\vspace{1em}
+
+A similar proof, where the open sets are replaced by closed sets, shows the equivalence between the first and the third statements.
+
+\vspace{1em}
+
+Will now prove the equivalence between the first and the fourth statement.
+
+Let $(x_n)$ be a convergent sequence in $M$, i.e. $d(x_n, x) \rightarrow 0$. Since $f$ is a homeomorphism, it is continuous. Therefore, $(f(x_n))$ converges to $f(x)$ in $N$, i.e. $p(f(x_n), f(x)) \rightarrow 0$. But this means that the metric $\hat{d}(x,y)=p(f(x), f(y))$ is equivalent to $d$.
+
+Conversely, assume that $\hat{d}(x,y)=p(f(x), f(y))$ is a metric on $M$ equivalent to $d$. This means that for any sequence $(x_n)$ in $M$ for which $d(x_n, x) \rightarrow 0$ we have $p(f(x_n), f(x)) \rightarrow 0$. But this means that $f$ preserves the continuous sequences from $M$ to $N$, i.e. it is continuous. 
+
+Similarly, for a convergent sequence $(f(x_n))$ in $N$ for which $p(f(x_n), f(x)) \rightarrow 0$, we must have $d(x_n, x) \rightarrow 0$, since the metric $\hat{d}$ is equivalent with $d$. But this means that $f^{-1}$ is continuous. From this and the above, $f$ is a homeomorphism.
+
+\end{proof}
+
+
+\subsection{} Suppose that we are given a point $x$  and a sequence $(x_n)$  in a metric space $M$, and suppose that $f(x_n) \rightarrow f(x)$ for every continuous real-valued function $f$ on $M$. Prove that $x_n \rightarrow x$ in M.
+
+\begin{proof}
+
+If $f(x_n) \rightarrow f(x)$ for all continuous real functions, then, in particular, $d(x_n, x) \rightarrow d(x, x) = 0$. But since $d$ is a distance function on $M$, it follows that $x_n$ converges to $x$.
+
+\end{proof}
+
+\newpage
+
+\subsection{} Let $f :(M, d) \rightarrow (N, p)$ be one-to-one and onto. Prove that the following are equivalent:
+\begin{itemize}
+    \item $f$ is a homeomorphism
+    \item $g : N \rightarrow \mathbb{R}$ is continuous if and only if $g \circ f : M \rightarrow \mathbb{R}$ is continuous. [Hint: Use the characterization given in Theorem 5.5 (ii).]
+\end{itemize}
+
+\begin{proof}
+Assume $f$ is homeomorphism. This means that both $f$ and $f^{-1}$ are continuous.
+
+If $g$ is continuous, then $g \circ f$ is the composition of two continuous function and therefore is continuous.
+
+Conversely, assume $g \circ f$ is continuous. Let $x_n \rightarrow x$ be a convergent sequence in $M$. Since $f$ is continuous, $f(x_n) \rightarrow f(x)$.
+Since $g \circ f$ is continuous, $g(f(x_n)) \rightarrow g(f(x))$. Since $f$ is surjective and with inverse continuous, any convergent sequence in $N$ can be written as $f(x_n) \rightarrow f(x)$, for some $(x_n), x$ in $M$. Therefore, for any convergent sequence $(y_n) = (f(x_n))$ in $N$ we have $g(y_n) \rightarrow g(y)$. But this implies that $g$ is continuous.
+
+\vspace{1em}
+
+Now assume that $g$ is continuous iff $g \circ f$ is continuous, and $f$ is bijective.
+
+Pick some sequence $y_n \rightarrow y$ in $N$.
+
+Since $g$ is continuous, $g(y_n) \rightarrow g(y)$. But since $f$ is bijective, we can define $(x_n) = (f^{-1}(y_n))$ and $x = f^{-1}(y)$, both in $M$. We now have
+
+
+$$g(y_n) = g(f(x_n)) \rightarrow g(f(x)) = g(y)$$
+
+
+
+Since $g \circ f$ is continuous, we therefore have that $x_n \rightarrow x$. But $f(x_n) = y_n \rightarrow y = f(x)$. This means that $f$ is continuous. Moreover, since $f^{-1}(y_n) = x_n \rightarrow x = f^{-1}(y)$, $f^{-1}$ is also continuous.
+
+Since both $f$ and $f^{-1}$ are continuous and $f$ is bijective, $f$ is a homeomorphism.
+
+\end{proof}
+    
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let $f : (M, d) \rightarrow (N, p)$ be one-to-one and onto. Show that the following are equivalent:
+\begin{itemize}
+    \item $f$ is open
+    \item $f$ is closed
+    \item $f^{-1}$ is continuous
+\end{itemize}
+
+Consequently, $f$ is a homeomorphism if and only if both $f$ and $f^{-1}$ are open (closed). 
+    
+\begin{proof}
+From Theorem 5.1, we have that if some function $g: A \rightarrow B$ is continuous, then $g^{-1}$ is open and closed.
+
+Therefore, $f$ open is equivalent to $f^{-1}$ continuous. Similarly, $f$ closed is equivalent to $f^{-1}$ continuous.
+
+Since $f$ homeomorphism implies that both $f$ and $f^{-1}$ are continuous, they also have to be open and closed.
+\end{proof}
+
+    
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Show that $\mathbb{N}$ is homeomorphic to the set $\{e^{(n)} : n > 1\}$ when considered as a subset of any one of the spaces $c_0$, $l_1$, $l_2$, or $l_\infty$. [Hint: The map $n \rightarrow e^{(n)}$ is continuous and open. Why?] If we instead take the discrete metric on $\mathbb{N}$, show that the map $n \rightarrow e^{(n)}$ is an isometry into $c_0$. 
+
+\begin{proof}
+Let $E = \{e^{(n)} : n > 1\}$. If $E$ is a subset of any of the spaces $c_0$, $l_1$, $l_2$, or $l_\infty$, then for all $x\in \mathbb{N}$, $\epsilon > 0$ there is $\delta = 1/2$ such that if $|x-y| < \delta$, then $\|f(x) - f(y)\|<\epsilon$. This holds since for a fixed $x\in \mathbb{N}$ there is only one $y$ that satisfies $|x-y| < \delta = 1/2$, namely $y = x$.
+
+Therefore, any map $n \rightarrow e^{(n)}$ is continuous.
+
+\vspace{1em}
+
+Let $e^{(n)}, e^{(m)}$ in $E$. If $n = m$, then $\|e^{(n)} - e^{(m)}\| = 0$. If $n \neq m$, then $\|e^{(n)} - e^{(m)}\|_1 = 2$, $\|e^{(n)} - e^{(m)}\|_2 = \sqrt{2}$ and $\|e^{(n)} - e^{(m)}\|_\infty = 1$. Therefore, $E$ is a discrete space, regardless of the choice of the norm.
+
+Since any bijective map $n \rightarrow e^{(n)}$ goes from a discrete space to another, it is open.
+
+Since the map $n \rightarrow e^{(n)}$ is continuous and open, it is a homeomorphism. This implies that $\mathbb{N}$ and $E$ are homeomorphic.
+
+\vspace{}
+
+Let $x,y \in c_0$. If $x = y$, then $\|x - y\|_\infty = 0$. If $x \neq y$, then $\|x - y\|_\infty = 1$.
+
+Now let $a,b \in \mathbb{N}$ and consider the discrete metric $d$. If $a=b$, then $d(a,b) = 0$. If $a \neq b$, $d(a,b) = 1$.
+
+As shown above, any map bijective $\mathbb{N} \rightarrow c_0$ is a homeomorphism. But a bijective map $(\mathbb{N}, d) \rightarrow (c_0, l_\infty)$ also preserves distance, and therefore is an isometry.
+
+\end{proof}
+
+
+\subsection{} If $f,g \in C[a,b]$, show that $\|fg\|_\infty \leq \|f\|_\infty \|g\|_\infty$. Also show that $\| \max\{f, g\} \|_\infty \leq \max \{ \| f \|_\infty, \| g \|_\infty \}$ , and that $\| f \|_\infty \leq \| g \|_\infty$ whenever $ |f| \leq  |g|$.
+
+\begin{proof}
+Will start by showing that $\|fg\|_\infty \leq \|f\|_\infty \|g\|_\infty$ for all $f,g \in C[a,b]$.
+
+Note that $\|f\|_\infty = \max_{a\leq t \leq b} |f(t)|$. Therefore, 
+$$\|fg\|_\infty = \max_{a\leq t \leq b} |f(t)g(t)| = \max_{a\leq t \leq b} |f(t)| \cdot |g(t)| \leq \max_{a\leq t \leq b} |f(t)| \max_{a\leq t \leq b} |g(t)| = \|f\|_\infty \|g\|_\infty $$
+
+\vspace{1em}
+In order to show $\| \max\{f, g\} \|_\infty \leq \max \{ \| f \|_\infty, \| g \|_\infty \}$, note that
+
+
+$$\| \max\{f, g\} \|_\infty = \max_{a\leq t \leq b} | \max\{f(t), g(t)\} | $$
+
+But we have
+
+$$ \max_{a\leq t \leq b} | \max\{f(t), g(t)\} | \leq \max_{a\leq t \leq b} | f(t) | = \|f\|_\infty$$
+
+and
+
+$$ \max_{a\leq t \leq b} | \max\{f(t), g(t)\} | \leq \max_{a\leq t \leq b} | g(t) | = \|g\|_\infty $$
+
+Therefore, 
+
+$$ \max_{a\leq t \leq b} | \max\{f(t), g(t)\} | \leq \max\{\|f\|_\infty, \|g\|_\infty\}$$
+
+\vspace{1em}
+
+Finally, to show that $\| f \|_\infty \leq \| g \|_\infty$ whenever $ |f| \leq  |g|$, note that if $|f| \leq |g|$, then $|f(t)| \leq |g(t)|$ for all $t \in [a,b]$. But this means that 
+
+$$ \|f\|_\infty = \max_{a\leq t \leq b} |f(t)| \leq \max_{a\leq t \leq b} |g(t)| = \|g\|_\infty$$
+
+\end{proof}
+
+\subsection{} Let $[ a, b ]$ be any closed, bounded interval in $\mathbb{R}$, and let $\sigma: [ 0, 1 ] \rightarrow [ a, b ]$ be defined by $\sigma(t) = a + t(b-a)$. Prove that:
+
+\begin{enumerate}[i)]
+    \item $\sigma$ is a homeomorphism
+    \item $f \in C [ a, b ]$ if (and only if) $f \circ \sigma \in C[0,1]$
+    \item The map $f \rightarrow f \circ \sigma$ is an isometry from $C[a,b]$ onto $C[0,1]$. The map $T(f) = f \circ \sigma$ actually does  much  more; it is both an algebra and a lattice isomorphism. That is,  it  also preserves the algebraic and order structures. 
+    Specifically, given any $f, g \in C [ a, b ] $, check that:
+    \item $T(\alpha f + \beta g) = \alpha T(f) + \beta T(g)$ for all $\alpha, \beta \in \mathbb{R}$
+    \item $T(fg) = T(f) T(g)$
+    \item $T(f) \leq T(g)$ if and only if $f\leq g$
+\end{enumerate}
+
+Thus, for all  practical  purposes, C[a, b] and C[0, 1] are  identical. 
+
+\begin{proof}
+Will start by proving that $\sigma$ is a homeomorphism. Note that $\sigma$ is a linear interpolation between $a$ and $b$ with parameter $t$. Therefore, it is one-to-one and onto. Also, since $\sigma$ is obtained by scaling and adding a constant to the identity, it is continuous. Its inverse, $\sigma^{-1}(t) = (t - a) / b$, is also a shift and a scaling of the identity, and therefore it is also continuous. But this means that $\sigma$ is a homeomorphism.
+
+\vspace{1em}
+
+For the second part, if $f: [a,b] \rightarrow \mathbb{R}$ and $\sigma: [0,1] \rightarrow [a,b]$, then $f \circ \sigma: [0,1] \rightarrow \mathbb{R}$, i.e. $f\circ \sigma \in C[0,1]$.
+
+Conversely, assume $f: X \rightarrow \mathbb{R}$. Since $\sigma: [0,1] \rightarrow [a,b]$, for $f \circ \sigma$ to be well defined, it is necessary that $X = [a,b]$. Therefore, $f \in C[a,b]$.
+
+\vspace{1em}
+
+Will now show that the map $f \rightarrow f \circ \sigma$ is an isometry from $C[a,b]$ onto $C[0,1]$.
+
+Since $\sigma$ is a homeomorphism, for all $t \in [a,b]$ there is a unique $x \in [0,1]$ such that $f(t) = f(\sigma(x))$. In particular, this means that $\|f\|_\infty = \max_{a\leq t \leq b} |f(t)| =   \max_{0\leq x \leq 1} |f(\sigma(t))| = \|f \circ \sigma\|_\infty$. But if the norm remains the same, then the metric induced by the norm remains constant, and therefore the map $f \rightarrow f \circ \sigma$ is an isometry from $C[a,b]$ onto $C[0,1]$.
+
+\vspace{1em}
+
+Let $T(f) = f \circ \sigma$.
+
+$$T(\alpha f + \beta g) = (\alpha f + \beta g) \circ \sigma = \alpha(f \circ \sigma) + \beta(g \circ \sigma) = \alpha T(f) + \beta T(g)$$
+
+
+
+$$T(fg) = (fg) \circ \sigma = (f \circ \sigma)(g \circ \sigma) = T(f)T(g) $$
+
+
+For the last part, assume $f \leq g$. This means that $f(t) \leq g(t)$ for all $t$. Since $\sigma$ is bijective, this implies that $f(\sigma(x)) \leq g(\sigma(x))$ for all $x \in [0,1]$.
+
+Conversely, assume $f(\sigma(x)) \leq g(\sigma(x)) $ for all $x \in [0,1]$. Since $\sigma$ is bijective, this means that $f(t) \leq g(t)$ for all $t \in [a,b]$. Therefore, $T(f) \leq T(g)$ if and only if $f \leq g$.
+
+\end{proof}
+
+\subsection{} Given $n \in \mathbb{N}$ and $f, g \in C(\mathbb{R})$, let $d_n(f, g) = \max_{|t|\leq n} |f(t) -  g(t)|$. Then $d_n$ defines a pseudometric on $C(\mathbb{R})$. (Why?) Show that $d(f, g) = \sum_{n=1}^\infty 2^{-n}d_n(f, g)/ ( 1 + d_n(f, g))$ defines a metric  on $C(\mathbb{R})$. 
+
+
+\begin{proof}
+$d_n$ is a metric, since it is $\| \cdot \|_\infty$ on the restriction of the function to $[-n, n]$, so it borrows all the properties of the  $\| \cdot \|_\infty$ metric. However, two different functions can be equal on the restriction $[-n, n]$. Therefore, $d_n$ is a pseudometric.
+
+\vspace{1em}
+
+Will now show that $d(f, g) = \sum_{n=1}^\infty 2^{-n}d_n(f, g) / ( 1 + d_n(f, g))$ defines a metric on $C(\mathbb{R})$ by proving that it obeys all the metric properties.
+
+\vspace{0.5em}
+
+Since $d_n$ is a pseudometric, we have that $d_n(f,g)\geq 0$ and finite. Therefore, $0 \leq d_n(f, g) / ( 1 + d_n(f, g)) \leq 1$. But this implies that $d(f, g) = \sum_{n=1}^\infty 2^{-n}d_n(f, g) / ( 1 + d_n(f, g)) \leq \sum_{n=1}^\infty 2^{-n} = 1$. Therefore, $d(f,g) \in [0,1]$.
+
+\vspace{1em}
+
+Now assume that $f \neq g$. This means that there is $t$ such that $f(t) \neq g(t)$. But this implies that $d_n(f,g) > 0 $ for all $n>t$. Since $d_n(f,g) \geq 0$ for all $n$, then $d(f,g) > 0$. 
+
+Conversely, if $d(f,g) > 0$, then there is $n$ such that $d_n(f,g) = \max_{|t|\leq n} |f(t) -  g(t)| > 0$. But this can happen only if there is some $t$ with $|t| \leq n$ such that $|f(t) - g(t)| > 0$, that is $f(t) \neq g(t)$. Therefore, $f \neq g$ if and only if $d(f,g) > 0$.
+
+\vspace{1em}
+
+We now show that $d$ is symmetric:
+
+$$d(f,g) = \sum_{n=1}^\infty 2^{-n}d_n(f, g) / ( 1 + d_n(f, g)) = \sum_{n=1}^\infty 2^{-n}d_n(g, f) / ( 1 + d_n(g, f)) = d(g,f)$$
+
+, where we have used the symmetry of the pseudometric $d_n$.
+
+\vspace{1em}
+
+For the triangle inequality, we use the triangle inequality of $d_n$ to show that:
+
+\begin{equation*}
+\begin{split}
+\frac{d_n(f, g)}{1 + d_n(f, g)} &= 1 - \frac{1}{1 + d_n(f, g)} \\
+& \leq 1 - \frac{1}{1 + d_n(f, h) + d_n(g, h)} \\
+& = \frac{d_n(f, h)}{1 + d_n(f, h) + d_n(g, h)} + \frac{d_n(g, h)}{1 + d_n(f, h) + d_n(g, h)} \\
+& \leq \frac{d_n(f, h)}{1 + d_n(f, h)} + \frac{d_n(g, h)}{1 + d_n(g, h)}
+\end{split}
+\end{equation*}
+
+Therefore,
+
+$$d(f,g) = \sum_{n=1}^\infty 2^{-n}d_n(f, g) / ( 1 + d_n(f, g)) \leq 
+ \sum_{n=1}^\infty 2^{-n} \left( \frac{d_n(f, h)}{1 + d_n(f, h)} + \frac{d_n(g, h)}{1 + d_n(g, h)} \right) = d(f,h) + d(g,h)$$
+
+\end{proof}
+
+This concludes the proof that $d(f,g)$ is a metric.
+

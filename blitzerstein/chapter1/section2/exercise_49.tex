@@ -1,0 +1,17 @@
+\begin{exercise}{49} A fair die is rolled $n$ times. What is the probability that at least one of the six values never appears?
+\end{exercise}
+
+\begin{proof}
+    Let $A_k$ with $k \in \{1,2,3,4,5,6\}$ be the event that the value $k$ does not appear in a throw. The event that at least one of the six values does not the appear is $A = A_1 \cup A_2 \cup A_3 \cup A_4 \cup A_5 \cup A_6$. Note that $P(A_k) = (\frac{5}{6})^n$, $P(A_i \cap A_j) = (\frac{4}{6})^n$, $P(A_i \cap A_j \cap A_k) = (\frac{3}{6})^n$, $P(A_i \cap A_j \cap A_k \cap A_l) = (\frac{2}{6})^n$, $P(A_i \cap A_j \cap A_k \cap A_l \cap A_m) = (\frac{1}{6})^n$, for $i \neq j \neq k \neq l \neq m$. Also $P(A_1 \cap A_2 \cap A_3 \cap A_4 \cap A_5 \cap A_6) = 0$. 
+        
+    By the inclusion-exclusion principle, we then have that
+
+    \begin{align*}
+        P(A) &= 6P(A_i) - {6 \choose 2}P(A_i \cap A_j) + {6 \choose 3}P(A_i \cap A_j \cap A_k) \\
+        & - {6 \choose 4}P(A_i \cap A_j \cap A_k \cap A_l) + {6 \choose 5}P(A_i \cap A_j \cap A_k \cap A_l \cap A_m) \\
+        &= 6(\frac{5}{6})^n - {6 \choose 2}(\frac{4}{6})^n + {6 \choose 3}(\frac{3}{6})^n - {6 \choose 4}(\frac{2}{6})^n + {6 \choose 5}(\frac{1}{6})^n
+    \end{align*}
+    
+\end{proof}
+
+

@@ -1,0 +1,26 @@
+\subsection*{2.7} Use Lemma 2.6 and exercises 2.2 and 2.4 to give easy proofs for
+
+\begin{itemize}
+    \item Commutativity and associativity for addition of natural numbers
+    
+    \begin{proof}
+    Let $X, Y$ be two disjoint sets of cardinality $x$ and $y$, respectively. Then,
+    
+    $$x + y = |X| + |Y| = |X \cup Y| = |Y \cup X| = |Y| + |X| = y + x$$
+    
+    $$(x + y) + z = |X \cup Y| + z = |(X \cup Y) \cup Z| = |X \cup (Y \cup Z)| = |X| + |Y \cup Z| = |X| + (|Y| + |Z|) = x + (y + z)$$
+    \end{proof}
+    
+    \item  Commutativity and associativity for multiplication of natural numbers
+    
+    $$x y = |X| \cdot |Y| = |X \times Y| = |Y \times X| = |Y| \cdot |X| = y x$$
+    
+    $$(xy)z = |X \times Y| \cdot z = |(X \times Y) \times Z| = |X \times (Y \times Z)| = |X| \cdot |Y \times Z| = |X| \cdot (|Y| \cdot |Z|) = x(yz)$$
+    
+    \item Distributivity of multiplication over addition
+    
+    $$ x(y + z) = |X| \cdot (|Y| + |Z|) = |X \times (Y \cup Z)| = |(X \times Y) \cup (X \times Z)| = |X \times Y| + |X \times Z| = xy+xz$$
+    
+\end{itemize}
+
+

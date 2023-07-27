@@ -1,0 +1,11 @@
+\subsection*{3.1} Let $f$ be an infinite sequence of elements of $A$, where $A$ is ordered by $\prec$. Assume that $f_n \prec f_{n+1}$ for all $n \in N$. Prove that $n < m$ implies $f_n \leq f_m$ for all $n,m \in N$.
+
+\begin{proof}
+Pick some $n \in A$ and let $P(k)$ be the property that $f_n \prec f_k$. By the property of $f$ and the fact that $n < n+1$, we have that $f_n \prec f_{n+1}$.
+
+Now pick some $m > n$ and assume $P(m)$. This implies that $f_n \prec f_m$. By the property of $f$, we have that $f_m \prec f_{m+1}$ and since $\prec$ is an ordering, it is transitive and hence $f_n \prec f_{m+1}$. It follows that $P(m+1)$ holds.
+
+From the result of the exercise 2.11, it follows that $P(k)$ holds for all $k > n$, that is, $f_n \prec f_k$ for all $n > k$,
+
+\end{proof}
+

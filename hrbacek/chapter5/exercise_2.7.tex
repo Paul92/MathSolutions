@@ -1,0 +1,12 @@
+\subsection*{2.7} Construct a one to one mapping from $R \times R$ onto $R$.
+
+\begin{proof}
+    It is known that there are bijections from $R$ into $(0,1)$, such as the continuous function $\ln(\frac{1}{x} - 1)$. This implies that $|R| = |(0,1)|$ and hence $|R \times R| = |(0,1) \times (0,1)|$.
+
+    Hence, it suffices to show that $|(0,1) \times (0,1)| = |(0,1)|$. Every $x \in (0,1)$ has a unique decimal representation $0.x_1x_2\dots $.
+
+    Let $x,y \in (0,1)$. Then, $x=0.x_1x_2\dots $ and $y=0.y_1y_2\dots$. We construct $z = 0.x_1y_1x_2y_2\dots$. Note that for distinct elements $(x,y) \in (0,1) \times (0,1)$, their corresponding $z$ are different, by construction. Therefore, this construction represents an injection between $(0,1) \times (0,1)$ and $(0,1)$ and hence $|(0,1) \times (0,1)| \leq |(0,1)|$.
+
+\end{proof}
+
+

@@ -1,0 +1,8 @@
+\subsection*{2.3} If $X$ is finite, then $|\mathcal{P}(X)| = 2^{|X|}$.
+
+\begin{proof}
+We are going to proceed by induction over the cardinality of $X$. For a singleton set, its power set contains only the singleton itself and the empty set. Therefore, it has a cartinality of 2.
+
+Assume now that the hypothesis holds for sets of cardinality $n$ and consider a set of cardinality $n+1$. Then, $X = S \cup \{x\}$ for some $S$ of cardinality $n$. Any subset of $X$ might or might not contain $x$. All subsets of $X$ which do not contain $x$ are $\mathcal{P}(S)$. It follows that all subsets of $X$ which contain $x$ can be formed by appending $x$ to the subsets which do not contain it, i.e. to the elements of $\mathcal{P}(S)$. It follows that $X$ has twice as many subsets as $S$, and hence $|\mathcal{P}(X)| = |\mathcal{S}| * 2 = 2^{|S|} * 2 = 2^{|S|+1} = 2^{|X|}$.
+\end{proof}
+

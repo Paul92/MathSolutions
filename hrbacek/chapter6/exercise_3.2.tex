@@ -1,0 +1,19 @@
+\subsection*{3.2} Use theorem 3.6 to prove the existence of
+
+\begin{itemize}
+    \item The set $S = \{\emptyset, \{\emptyset\}, \{\{\emptyset\}\}, \dots \}$
+    \begin{proof}
+        Let $G(x) = \{x\}$. Then, by the recursion theorem, starting with $a_0 = \emptyset$, we obtain the set $S$.
+    \end{proof}
+
+    \item The set $S = \{N, P(N), P(P(N)), \dots\}$
+    \begin{proof}
+        Let $G(x) = P(x)$. Then, by the recursion theorem, starting with $a_0 = N$, we obtain the set $S$.
+    \end{proof}
+
+    \item The set $\omega + \omega = \omega \cup \{\omega, \omega + 1, (\omega + 1) + 1, \dots\}$
+    \begin{proof}
+        Let $G(x) = x + 1$. Then, by the recursion theorem, starting with $a_0 = N$, we obtain the set $S = \{\omega, \omega + 1, (\omega + 1) + 1, \dots\}$ and we have that $\omega + \omega = \omega \cup S$.
+    \end{proof}
+\end{itemize}
+

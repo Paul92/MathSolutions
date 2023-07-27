@@ -1,0 +1,42 @@
+\subsection*{2.13}
+
+Let $P(x,y)$ be a property. Assume
+
+If $P(k,l)$ holds for all $k,l \in N$ such that $k < m$ (or $k=m$ and $l < n$), then $P(m,n)$ holds.
+
+Conclude that $P(m,n)$ holds for all $m,n \in N$.
+
+\begin{proof}
+
+Consider the relation $\prec$ defined on $N \times N$ such that $(a,x) \prec (b,y)$ iff $a < b$ or ($a = b$ and $x < y$).
+
+Let $(a,x), (b,y), (c,z) \in N \times N$. If $(a,x) \prec (b,y)$, then either $a < b$ or ($a = b$ and $x < y$). Regardless, due to the asymmetry of $<$ on naturals, it cannot be that $(b, y) \prec (a,x)$ and hence $\prec$ is asymmetric. 
+
+If $(a, x) \prec (b,y)$ and $(b, y) \prec (c,z)$, we have four possible cases:
+
+\begin{itemize}
+    \item $a < b$ and $b < c$. Then $a < c$ and thus $(a,x) \prec (c,z)$.
+    \item ($a = b$ and $b < c$) or ($a < b$ and $b = c$). In both these cases $a < c$ and thus $(a,x) \prec (c,z)$.
+    \item $a = b$ and $b = c$. Then it must be that $x < y$ and $y < z$ and thus $x < z$. It follows that $(a,x) \prec (c, z)$.
+\end{itemize}
+
+Therefore, $\prec$ is transitive and it follows that $\prec$ is a strict ordering.
+
+Moreover, since $<$ is a total order on $N$, it follows that $\prec$ is a total order on $N \times N$.
+
+\vspace{1em}
+
+Now consider a subset $X \in N \times N$ and pick $(a,b) \in X$. We construct a function $Id_x:N \times N \rightarrow N$, $Id_x(a,b) = a$. Then, $Id_x(X) \subset N$ and thus it has a least element $x$. Therefore, $(x, u) \prec (a,b)$ for all $(x,u), (a,b) \in X$ such that $x \neq a$. We now consider the subset of $X$ of elements whose first coordinate is $x$, i.e. $Y = \{(a, b) \in X| Id_x(a,b)=x\}$ and introduce a function $Id_y(Y):N \times N \rightarrow N$ such that $Y(a,b) = b$. The set $Id_y(Y)$ has a least element $y$. Now, the element $(x,y) \in X$ by construction. When comparing $(x,y)$ with some $(a,b) \in X$, $(x,y) \neq (a,b)$, we have either $x < a$ or $x=a$ and $y < b$. It follows that $(x,y) \prec (a,b)$ for all $(a,b) \in X$ and hence $\prec$ is a well order.
+
+\vspace{1em}
+
+Now define the property $Q(x)$, with $x = (m,n) \in N \times N$ such that $Q(x)$ holds if and only if $P(m, n)$ holds. By construction, the property of the statement how reads:
+
+If $Q(x)$ holds for all $x \prec y$, then $P(y)$ holds.
+
+Let $S = \{x \in N \times N| not~Q(x)\}$. Then, this set has a least element $s$. But then $Q(x)$ holds for all $x \prec s$ and therefore, by strong induction, $Q(s)$ holds. This is a contradiction and therefore $S = \emptyset$. It follows that $P(m, n)$ holds for all $m, n \in  N$.
+
+\end{proof}
+
+
+

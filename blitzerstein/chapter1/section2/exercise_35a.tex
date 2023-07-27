@@ -1,0 +1,18 @@
+\begin{exercise}{35a}
+A deck of cards is shuffled well. The cards are dealt one by one, until the first time an
+Ace appears.
+
+Find the probability that no kings, queens, or jacks appear before the first ace.
+\end{exercise}
+
+\begin{proof}
+    Note first that the first ace acts as a way of slicing the deck in a first and a second part. The problem then becomes equivalent to sampling a subset without replacement out of a set of 52-4=48 cards (because we can't select aces).
+
+    We can sample zero up to 48 (inclusive) cards - this means that we have $\sum_{k=0}^{48} {48 \choose k} = 2^48$ ways of selecting the cards, and we can use any of the four aces to stop the selection, leading to a total of $4\cdot 2^{48} = 2^{50}$ hands.
+
+    On the same line of thought, we can count the hands which don't have the kings, queens, or jacks by reducing the sampling set to $48-12 = 36$ cards. This gives a total of $4 \cdot \sum_{k=0}^{36} {36 \choose k} = 2^{38}$.
+
+    The probability is then $\frac{2^{38}}{2^{50}} = \frac{1}{2^{12}} = 0.000244140625$
+\end{proof}
+
+

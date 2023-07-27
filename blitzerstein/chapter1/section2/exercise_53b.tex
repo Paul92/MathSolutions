@@ -1,0 +1,9 @@
+\begin{exercise}{53b}
+    How many possibilities are there if he is required to have at least one lowercase letter and at least one uppercase letter in his password?
+\end{exercise}
+
+\begin{proof}
+    Due to the symmetry between the lowercase and the uppercase letters, there are $36^8$ passwords with no uppercase letter. We can subtract these from the number of passwords with at least one lowercase letter, obtaining $62^8-2 \cdot 36^8$. But this means that we subtract twice the passwords that don't have neither an uppercase nor a lowercase letter, a total of $10^8$ of them (the number of passwords only with digits). Adding them back gives the final answer of $62^8-2 \cdot 36^8 + 10^8 = 212697985769984 \approx 2.12 \cdot 10^{14}$
+\end{proof}
+
+

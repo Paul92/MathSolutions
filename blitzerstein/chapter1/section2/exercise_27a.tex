@@ -1,0 +1,18 @@
+\begin{exercise}{27a}
+For each part, decide whether the blank should be filled in with $=$, $<$, or $>$, and give
+a clear explanation.
+
+(a) (probability that the total after rolling 4 fair dice is 21) (probability that the
+total after rolling 4 fair dice is 22)
+\end{exercise}
+
+\begin{proof}
+    The possible die values that lead to a sum of 21 are 6+6+6+3, 6+6+5+4, 6+5+5+5. There are 4! permutations of four values, and for each, we divide the multiplicities. Therefore, we have
+    $\frac{4!}{3!} + \frac{4!}{2!} + \frac{4!}{3!} = 4 + 4 \cdot 3 + 4 = 20$ positive outcomes.
+    
+    
+    Similarly, we can count the possible outcomes for the sum 22. The possible sums are 6+6+6+4 and 6+6+5+5, which can be obtained in $\frac{4!}{3!} + \frac{4!}{2! \cdot 2!} = 4 + 2 \cdot 3 = 10$ positive outcomes.
+
+    The problem therefore asks to compare $\frac{20}{n}$ with $\frac{10}{n}$, where $n$ is the total number of distinct dice rolls. Since $\frac{20}{n} > \frac{10}{n}$, the probability of rolling a sum of 21 is greater.
+\end{proof}
+

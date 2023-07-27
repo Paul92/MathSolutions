@@ -1,0 +1,12 @@
+\begin{exercise}{44}
+Let $A$ and $B$ be events. The difference $B - A$ is defined to be the set of all elements of $B$ that are not in $A$. Show that if $A \subseteq B$, then
+
+$$P(B-A) = P(B) - P(A)$$
+
+directly using the axioms of probability.
+\end{exercise}
+
+\begin{proof}
+    Note that $B-A$ and $A$ are, by the definition of the set difference, disjoint sets. This means that we can apply the second axiom of the probability to obtain $P((B-A) \cup A) = P(B-A) + P(A)$. But also, $(B-A) \cup A - B$ and hence we have that $P(B) = P(B-A) + P(A)$. Rearranging, we obtain the relation from the exercise statement, $P(B-A) = P(B) - P(A)$.
+\end{proof}
+

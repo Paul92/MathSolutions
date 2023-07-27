@@ -1,0 +1,6 @@
+\subsection*{1.5} If $|A| \leq |B|$ and if $A \neq \emptyset$, then there is a mapping of $B$ onto $A$.
+
+\begin{proof}
+Since $|A| \leq |B|$, there is an injection $f: A \rightarrow B$. As a relation, this is a subset of $A \times B$. There is a bijection from $r: A \times B \rightarrow B \times A, r((a,b)) = (b,a)$ and so $r(f)$ is a subset of $B \times A$. Since $A \neq \emptyset$, we can pick some $a \in A$ and construct the set $g = r(f) \cup \{(b,a) | b \in ran(f)\}$. Now $g$ is a function onto $A$.
+\end{proof}
+

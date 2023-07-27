@@ -1,0 +1,23 @@
+\subsection*{4.5} Prove that multiplication is commutative, associative and distributive over addition.
+
+\begin{proof}
+Will start by proving that multiplication is commutative, that is $m \cdot n = n \cdot m$ holds for all $m, n \in N$. 
+
+For this, we apply induction over $n$. Let $P(n)$ be the logical proposition that $m \cdot n = n \cdot m$ for all $m \in N$.
+
+Will first discuss $P(0): m \cdot 0 = 0 \cdot m$. From the definition of multiplication we have that $m \cdot 0 = 0$. Remains to show that $0 \cdot m = 0$. Let $Q(m)$ be the logical proposition $0 \cdot m = m$. $Q(0)$ holds from the definition of multiplication. $Q(m+1)$ is the logical proposition $0 \cdot (m+1) = (0 \cdot m) + 0 = 0+ 0 = 0$. If follows that $m \cdot 0 = 0 \cdot m$ for all $m \in n$ and hence $P(0)$ holds.
+
+Will now turn our attention towards $P(n+1)$, which states that $m \cdot (n+1) = (n+1) \cdot m$. We show that this proposition holds by induction over $m$. As shown before, $0$ commutes with $n+1$. We now have to show that $(m+1) \cdot (n+1) = (n+1) \cdot (m+1)$. But
+
+$$ (m+1) \cdot (n+1) = (m+1) \cdot n + (m+1) = m \cdot n + n + m + 1 = n \cdot m + n + m + 1 = n \cdot (m+1) + m+1 = (n+1) \cdot (m+1)$$
+
+, and the result follows.
+
+\vspace{1em}
+
+We now show 
+
+
+\end{proof}
+
+

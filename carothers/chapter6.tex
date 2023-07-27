@@ -1,0 +1,156 @@
+\section{Connectedness}
+
+\subsection{} Supply the missing details in the proof of Lemma 6.3.
+
+\textbf{Lemma 6.3} Let $E$ be a subset of a metric space $M$. If $U$ and $V$ are disjoint open sets in $E$, then there are disjoint open sets $A$ and $B$ in $M$ such that $U = A \cap E$ and $V = B \cap E$. 
+
+\begin{proof}
+Let $E \subset M$ and $U,V \subset E$ open such that $U \cap V = \emptyset$
+
+Since $U$ is open, for all $x \in U$ there is $\epsilon>0$ such that $E \cap B^M_\epsilon(x) \subset U$. Similarly, since $V$ is open, for all $y \in V$ there is some $\delta > 0$ such that $E \cap B^M_\delta(y) \subset V$.
+
+Since $U \cap V = \emptyset$, $E \cap B^M_\epsilon(x) \cap B^M_\delta(y) = \emptyset$.
+
+We claim that $B^M_{\epsilon/2}(x) \cap B^M_{\delta/2}(y) = \emptyset$.
+In order to see this, suppose to the contrary that there are $x\in U$, $y\in V$ such that $B^M_{\epsilon/2}(x) \cap B^M_{\delta/2}(y) \neq \emptyset$ for all $\epsilon,\delta>0$. This means that we can always find $z \in B^M_{\epsilon/2}(x) \cap B^M_{\delta/2}(y)$, with $d(z,x) < \epsilon/2$ and $d(y,z) < \delta/2$ for all $\epsilon,\delta>0$.
+
+We have in particular that $d(z,x) < 1/n$ and $d(z,y)<1/n$ for all $n$. Since $1/n \rightarrow 0$, this cannot happen unless $x=y$. But this contradicts the fact that $x\in U$, $y \in V$, $U\cap V \neq \emptyset$.
+
+Therefore, we can define $A = \bigcup\{B_\epsilon/2(x) : x \in U\}$ and $B = \bigcup\{B_\delta/2(y) : y \in U\}$
+
+\end{proof}
+
+\subsection{} Show that the only nonempty connected subsets of $\Delta$ are singletons. (We would say that $\Delta$ is totally disconnected.)
+
+\begin{proof}
+Assume there is a connected subset $D \subset \Delta$ that contains at least two distinct points, i.e. we can find $x,y \in D$ with $x\neq y$. Since $D \subset \Delta \subset [0,1]$ and $D$ is connected, $D$ must be a real interval. This means that $[x,y] \in D$, which implies $[x,y] \subset D \subset \Delta$. But for all $x,y \in Delta$, there is $z \in [0,1] \setminus \Delta$ such that $x < z < y$. This implies that $[x,y]$ is not a subset of $D$, i.e. $D$ is not connected.
+
+The singletons of $\Delta$ are trivially connected, therefore they are the only connected subsets of $\Delta$.
+\end{proof}
+
+   
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+
+\subsection{} If $E$ and $F$ are connected subsets of $M$ with $E \cap F  \neq \emptyset$, show that $E \cup F$ is connected. 
+
+\begin{proof}
+Assume that $S = E \cup F$ is not connected. This means that there are $A,B \subset M$ open and disjiont such that $A \cap S \neq \emptyset$, $B \cap S \neq \emptyset$ and $S \in A \cup B$.
+
+Since $E \cap F \neq \emptyset$, pick $x \in E \cap F$. It is necessary that $x \in A$ or $x \in B$. Without loss of generality, assume $x \in A$.
+
+Pick some $y \in B$. Then, $y \in E$ or $y \in F$. If $y \in E$, then $x \in A \cap E \neq \emptyset$ and $y \in B \cap E \neq \emptyset$, which means that the disjoint open sets $A$ and $B$ form a disconnection for $E$, which contradicts the hypothesis. 
+
+Alternatively, if $y \in F$, then $x \in A \cap F \neq \emptyset$ and $y \in B \cap F \neq \emptyset$. But this means that $A$ and $B$ form a disconnection for $F$, which also contradicts the hypothesis.
+
+\end{proof}
+
+\subsection{} More generally, if $C$ is a collection of connected subsets of $M$, all having a point in common, prove that $\bigcup C$ is connected. Use this to give another proof that $\mathbb{R}$ is connected.
+
+\begin{proof}
+Assume $\bigcup C$ is not connected. This means that there are sets $A$ and $B$ in $M$ open and disjoint, such that $\bigcup C \subset A \cup B$.
+
+Clearly, the sets $A$ and $B$ must partition $C$. Otherwise, if there is $C_i \in C$ such that $A \cap C_i \neq \emptyset$ and $B \cap C_i \neq \emptyset$, then $A$ and $B$ form a disconnection for $C_i$, which contradicts the hypothesis.
+
+But all such partitions must have at least one point in common, therefore $A$ and $B$ cannot be disjoint. Therefore, $\bigcup C$ is connected.
+
+In order to see that $\mathbb{R}$ is connected, consider the set $\bigcup_{n=1}^\infty [-n,n]$.
+
+\end{proof}
+
+
+\subsection{} If every pair of points in $M$ is contained in some connected set, show that $M$ is itself connected.
+
+\begin{proof}
+Assume there are sets $A$, $B$ open and disjoint such that $M \subset A \cup B$, i.e. $A$, $B$ form a disconnection for $M$.
+
+Pick $x \in A \cap M$ and $y \in B \cap M$. From the hypothesis, there is some set $S \subset M$ connected such that $x \in S$ and $y \in S$. But this means that $A \cap S \neq \emptyset$, $B \cap S \neq \emptyset$. Since $A$, $B$ are also open and disjoint, they form a disconnection for $S$, which contradicts the fact that $S$ is connected.
+Therefore, $M$ is connected.
+
+
+\end{proof}
+
+
+\subsection{} If $E$ and $F$ are nonempty subsets of $M$, and if $E \cup F$ is connected, show that $\overline{E} \cap \overline{F} \neq \emptyset$. 
+
+\begin{proof}
+Assume $\overline{E} \cap \overline{F} = 0$. Let $d(E,F) = \inf\{d(x,y): x \in E, y\in F\}$ be the minimum distance between the sets $E$ and $F$. Since $\overline{E} \cap \overline{F} = 0$, $d > 0$. Now construct the sets $A = \bigcup_{x\in E} B_{d/2}(x)$ and $B = \bigcup_{x\in F} B_{d/2}(x)$.
+
+Note that, by construction, $A \cap B = \emptyset$. Moreover, since $A$ and $B$ are a union of open balls, they are open. But since $E \subset A$ and $F \subset B$, $E \cup F \subset A \cup B$. Therefore, $A$ and $B$ are a disconnection for $E \cup F$. 
+
+\end{proof}
+
+\subsection{} If $A \subset B \subset \overline{A} \subset M$, and if $A$ is connected, show that $B$ is connected. In particular, $\overline{A}$ is connected.
+
+\begin{proof}
+Assume $A$ is connected, and let $B$ be a set such that $A \subset B \subset \overline{A}$.
+
+Let $f: B \rightarrow {0,1}$ be continuous. This means that for all $\epsilon > 0$ there is some $\delta > 0$ such that $|f(x)-f(y)| < \epsilon$ whenever $d(x-y) < \delta$. Pick $\epsilon = 1/2$, and, since $f(x) \in \{0,1\}$, it is necessary that $f(x) = f(y)$ for all $d(x - y) < \delta$. 
+
+Pick $x \in \overline{A} \setminus A$. Then, for all $\delta > 0$ there is $y \in A$ such that $d(x-y)<\delta$. Therefore, $f(x) = f(y)$. So $f(\overline{A}) = f(B) = f(A)$. Since $A$ is connected, without loss of generality, $f(A) = \{0\}$. Therefore, $f(\overline{A}) = f(B) = \{0\}$. But this implies that both $B$ and $\overline{A}$ are connected.
+
+
+\end{proof}
+
+\subsection{} True or false? If $A \subset B \subset C 
+\subset M$, where $A$ and $C$ are connected, then $B$ is connected. 
+
+\begin{proof}
+False. Let $M = \mathbb{R}$, $C = [0,5]$, $B = [0,1] \cup [3,4]$, $A = [0,1]$. $A$ and $C$ are intervals, and therefore connected. $B$ is a union of disjoint intervals, and therefore is disconnected.
+\end{proof}
+
+\subsection{} If $M$ is connected and has at least two points, show that $M$ is uncountable.
+
+\begin{proof}
+Let $f:M \rightarrow R$ be a continuous nonconstant function. Since $M$ is connected, $f(M)$ is an interval $I$. But this means that there are at least as many points in $M$ as there are in $I$, i.e. uncountably many.
+\end{proof}
+
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let $f: [ 0, 1] \rightarrow \mathbb{R}$ be defined by $f(x) = \sin(1/x)$ for $x \neq 0$ and $f(0) = 0$. Show that although $f$ is not continuous, the graph of $f$ is a connected subset of $\mathbb{R}$.
+
+\begin{proof}
+Let $(x_n)_{n=1}^\infty$ be a sequence such that $x_n = \frac{2}{n\pi}$. Then, $f(x_n) = 0$ for all $x_n$ and the $x_n \rightarrow 0$. Since $\sin(1/x)$ is continuous on $(0,1]$, $f(x_n) \rightarrow 0$. But this means that the point $f(0)=0$ is in the closure of the graph of $f$.
+
+But the closure of a connected set is connected. Since $\sin(1/x)$ is continuous, its graph is connected. Therefore, the graph of $f$ is connected.
+
+\end{proof}
+
+\subsection{} Let $V$ be a normed vector space, and let $x \neq y \in V$. Show that the map $f(t) = x + t(y-x)$ is a  homeomorphism from $[0, 1]$ into $V$. The range of $f$ is the line segment joining $x$ and $y$, and it is often written $[x, y]$ (since $f$ is a homeomorphism, this interval notation is justified).
+
+\begin{proof}
+$f$ is obviously continuous, being defined by arithmetic operations with scalars.
+
+In order to see that is one-to-one, pick $u,v \in [0,1]$, $u \neq v$. Then, $f(u) - f(v) = x + u(y-x) - x - v(y-x) = (u-v)(y-x) \neq 0$. 
+
+Now let $(t_n)$ be a sequence in $[0,1]$ and assume that $f(t_n) \rightarrow z = f(t)$. This means that for all $\epsilon > 0$ there is some $N$ such that $\|f(t_n) - f(t)\| = \|x + t_n(y-x) - x - t(y-x)\| = \|(t_n-t)(y-x)\| = \|y-x\|\cdot |t_n-t| < \epsilon$ for all $n > N$. Since here $\|y-x\|$ is a fixed scalar, this means that $t_n \rightarrow t$.
+
+But this means that $f^{-1}$ is continuous. Therefore, $f$ is a homeomorphism between $[0,1]$ and the straight line segment from $x$ to $y$ in $V$, denoted by $[x,y]$.
+
+\end{proof}
+
+\subsection{} Deduce from Exercises 7 and 27 that any normed space $V$ is connected.
+
+\begin{proof}
+Let $u,v \in V$. Since any vector space is closed under addition and scalar multiplication, the line between $u$ and $v$ is a subset of $V$. As proven in the previous exercise, there is a homeomorphism between this line and the real interval $[0,1]$, therefore the line from $u$ to $v$ is connected.
+
+Therefore, any pair of points in $V$ belongs to a connected set. By exercise 7, this means that $V$ is connected.
+\end{proof}
+
+\newpage
+

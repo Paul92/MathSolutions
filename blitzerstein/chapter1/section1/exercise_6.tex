@@ -1,0 +1,31 @@
+\begin{exercise}{6}
+There are 20 people at a chess club on a certain day. They each find opponents and
+start playing. How many possibilities are there for how they are matched up, assuming
+that in each game it does matter who has the white pieces (in a chess game, one player
+has the white pieces and the other player has the black pieces)?
+\end{exercise}
+
+\begin{proof}
+    In order to form the teams, we can start by choosing who plays white. The order does not matter at this point since the games themselves are not ordered - so it is irrelevant if a player joins the first or the third game, for example. There are $20 \choose 10$ possible choices for the players who play white.
+
+    We then need to match the players who play white with the remaining 10 players who will play black. Given a choice of players who play white, we can form $10!$ games by permuting the players who play black.
+
+    Putting the two together, we end up with $20 \choose 10 $ $  10! = 184756 \cdot 3628800 = 670442572800$  games.
+
+    \vspace{2em}
+
+    For a different approach, observe that there will always be 10 pairs formed from the 20 people. Now, take the 20 people and form a first pair. There are $20 \choose 2$ ways to perform this (selection, without order within each pair). We block out those two people from being reselected: there are now 18 people left to form the subsequent pair. Perform such a process of generating pairs, until exhaustion. Symbolically, this all entails: 
+    
+    $${20 \choose 2} \cdot{18 \choose 2} \cdot \dots \cdot {2 \choose 2}$$
+
+    We must now remove the overcounted. Given there are 10 pairs (corresponding to the 10 factors above), the overcounting corresponds to the ordering of each pair amongst one-another. This entails:
+
+    $$\frac{ {20 \choose 2} \cdot{18 \choose 2} \cdot \dots \cdot {2 \choose 2}}{10!}$$
+
+    Finally, we must incorporate the significance of playing white or black, within each pair. This entails a "binary counting" factor of $2^10$. Finally, we arrive at:
+    
+    $$2^{10}\frac{ {20 \choose 2} \cdot{18 \choose 2} \cdot \dots \cdot {2 \choose 2}}{10!} = 670442572800$$
+    
+\end{proof}
+
+

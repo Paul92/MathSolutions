@@ -1,0 +1,31 @@
+\begin{exercise}{52}
+A certain class has 20 students, and meets on Mondays and Wednesdays in a classroom with exactly 20 seats. In a certain week, everyone in the class attends both days. On both days, the students choose their seats completely randomly (with one student per seat). Find the probability that no one sits in the same seat on both days of that week.
+\end{exercise}
+
+\begin{proof}
+    Will approach this problem from a combinatorial perspective, using the naive definition of probability. At is core, the problem asks what is the probability that given an arrangement on Monday, the arrangement on Wednesday will not assign a person to the same seat. We can make this simplification since both in the total case count and in the "favorable" case count, there is full liberty over the arrangement on Monday, so this factor cancels out.
+
+    There are obviously $n!$ possible way to reassign the students on Wednesday. Remains to count how many of these do not reassign the same seat to a student. In combinatorics, a permutation which changes the values of all values is called a derangement. The number of derangements is denoted by $!n$.
+
+    We can count the number of derangements by the inclusion-exclusion principle. We define by $S_i$ the set of permutations for which the element $i$ is a fixed point. Using the symmetry of the $n$ points, the number of permutations which have at least one fixed point is
+
+    $$|\bigcup_{i=1}^n S_i| = {n \choose 1} (n-1)! - {n \choose 2} (n-2)! + {n \choose 3} (n-3)! - \dots = \sum_{k=1}^n (-1)^{k-1} {n \choose k}(n-k)!$$
+
+    We then have that the number of derangements is
+
+    $$!n = n! - \sum_{k=1}^n (-1)^{k-1} {n \choose k}(n-k)!$$
+
+    and hence
+
+    $$p = \frac{!n}{n!} = 1 - \frac{1}{n!}  \sum_{k=1}^n (-1)^{k-1} {n \choose k}(n-k)! = 1 - \frac{1}{n!}  \sum_{k=1}^n (-1)^{k-1} \frac{n!}{k!(n-k)!}(n-k)! = 1 - \sum_{k=1}^n \frac{(-1)^{k-1} }{k!} =  \sum_{k=0}^n \frac{(-1)^k}{k!} $$
+
+    As $n \rightarrow \infty$, the above series converges to $\frac{1}{e}$.
+
+    For this problem, where $n=20$, we have
+
+    $$\sum_{k=0}^{20}\frac{(-1)^k}{k!} \approx 0.367879$$
+
+    In fact, the first 20 terms of the series approximate $\frac{1}{e}$ up to $10^{-20}$!
+    
+\end{proof}
+

@@ -1,0 +1,22 @@
+\subsection*{1.2} Prove
+
+\begin{itemize}
+    \item If $|A| < |B|$ and $|B| \leq |C|$, then $|A| < |C|$. 
+    
+    \begin{proof}
+    If $|A| \leq |B|$ and $|B| \leq |C|$, then there are injections $f:A \rightarrow B$ and $g:B \rightarrow C$. Therefore, $f \circ g$ is an injection form $A$ to $C$ and hence $|A| \leq |C|$. This implies that either $|A| < |C|$ or $|A| = |C|$. While existence of the injection $f \circ g$ is sufficient for the former statement, it is not a sufficient for the latter.
+    
+    Assume to the contrary that $|A| = |C|$. Since $|A| < |B|$, we have that $|A| \leq |B|$. Since $|B| \leq |C|$ and $|A| = |C|$, it follows that $|B| \leq |A|$. 
+    This, by the Cantor-Bernstein theorem, implies that $|A| = |B|$, which contradicts the hypothesis.
+    \end{proof}
+    
+    \item If $|A| \leq |B|$ and $|B| < |C|$, then $|A| < |C|$. 
+    
+    \begin{proof}
+    If $|A| \leq |B|$, then there is an injection $f$ from $A$ into $B$. Similarly, if $|B| < |C|$, there is an injection $g$ from $|B|$ into $|C|$. Hence, $f \circ g$ is an injective function from $A$ into $C$. It follows that $|A| \leq |C|$.
+    
+    Assume to the contrary that $|A| = |C|$. The hypothesis implies that $|B| \leq |C|$. Since $|C| = |A| \leq |B|$, it follows that $|C| \leq |B|$. From the Cantor-Bernstein theorem it follows that $|B| = |C|$, which contradicts the hypothesis.
+    \end{proof}
+    
+\end{itemize}
+

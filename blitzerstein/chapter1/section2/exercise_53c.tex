@@ -1,0 +1,39 @@
+\begin{exercise}{53c}
+    How many possibilities are there if he is required to have at least one lowercase letter, at least one uppercase letter, and at least one number in his password?
+\end{exercise}
+
+\begin{proof}
+    We continue applying the inclusion-exclusion principle, but we now have three constraints to consider. We denote by $A$ the set of passwords which do not have a lowercase letter, by $B$ the set of passwords which do not have an uppercase letter and by $C$ the set of passwords which do not have a digit.
+
+    The set of valid passwords is then the complement of $A \cup B \cup C$, which has a cardinality of
+
+    $$|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C| $$
+
+    we then have
+
+    \begin{itemize}
+        \item $|A|$ - the number of passwords containing only uppercase letters and digits, $36^8$
+        \item $|B|$ - the number of passwords containing only lowercase letters and digits, $36^8$
+        \item $|C|$ - the number of passwords containing only letters, $52^8$
+        \item $|A\cap B|$ - the number of passwords containing only digits, $10^8$
+        \item $|A\cap C|$ - the number of passwords containing only uppercase letters, $26^8$
+        \item $|B\cap C|$ - the number of passwords containing only lowercase letters, $26^8$
+        \item $|A \cap B \cap C|$ - number of passwords not containing letters of digits, 0.
+    \end{itemize}
+
+    and hence
+
+    $$|A \cup B \cup C| = 36^8 + 36^8 + 52^8 - 10^8 - 26^8-26^8+0 = 58684194217216$$
+
+    , which means that there are
+
+    $$62^8 - |A \cup B \cup C| = 159655911367680$$
+
+    valid passwords.
+
+    \vspace{1em}
+
+    Note that there are almost three times more possible passwords, than valid passwords according to these rules. This might raise the question why it is such a widespread practice to impose such rules on the passwords. The reason is that humans, when choosing a password, are not true random generators, and do not pick passwords with equal probability from the set of possible passwords. Adding these rules for valid passwords leads to a larger number of passwords used in practice, and therefore higher security.
+
+\end{proof}
+

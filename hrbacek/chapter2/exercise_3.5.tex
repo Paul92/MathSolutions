@@ -1,0 +1,15 @@
+\subsection*{3.5} Prove: if $f$ and $g$ are one to one, then $g \circ f$ is also one to one and $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$.
+
+\begin{proof}
+    We start by proving that if $f$ and $g$ are injective, then $g \circ f$ is also injective. For this, we pick $x, y \in dom~g$, with $x \neq y$. Then, since $g$ is injective, $g(x) \neq g(y)$ and since $f$ is injective, $f(g(x)) \neq f(g(y))$ and the conclusion follows.
+    
+    \vspace{1em}
+    
+    \begin{align*}
+        (g \circ f)^{-1} &= (\{(x,z) | there~is~y~such~that~(x,y) \in g~and~(y, z) \in f\})^{-1} \\  
+   &= \{(z,x) | there~is~y~such~that~(x,y) \in g~and~(y, z) \in f\} \\
+   &= \{(z,x) | there~is~y~such~that~(y,z) \in g^{-1}~and~(z, y) \in f^{-1}\} \\
+   &= f^{-1} \circ g^{-1}
+    \end{align*} 
+\end{proof}
+

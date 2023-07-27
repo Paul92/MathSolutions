@@ -1,0 +1,15 @@
+\subsection*{5.7a} If $\alpha_1$, $\alpha_2$ and $\beta$ are ordinals and $\beta \neq 0$, then $\alpha_1 < \alpha_2$ if and only if $\beta \cdot \alpha_1 < \beta \cdot \alpha_2$.
+
+\begin{proof}
+    Let $\beta \neq 0$ be an ordinal and let's start by assuming that $\alpha_1 < \alpha_2$. This implies that there is some unique $\xi$ such that $\alpha_2 = \alpha_1 + \xi$. Let us denote by $P(\xi)$ the logical proposition that $\alpha_1 < \alpha_1 + \xi$ holds if and only if $\beta \cdot \alpha_1 < \beta \cdot (\alpha_1 + \xi)$, for $\xi > 0$.
+
+    The base case of $P(1)$ is the logical proposition that $\beta \cdot \alpha_1 < \beta \cdot (\alpha_1 + 1) = \beta \cdot \alpha_1 + \beta$, which holds since $\beta > 0$. 
+
+    For the inductive case, we assume that $P(\xi)$ holds, i.e. $\beta \cdot \alpha_1 < \beta \cdot (\alpha_1 + \xi)$. But then $\beta \cdot \alpha_1 < \beta \cdot (\alpha_1 + \xi) < \beta \cdot (\alpha_1 + \xi+1) = \beta \cdot (\alpha_1 + \xi) + \beta$, since $\beta > 0$ from the hypotehsis.
+
+    For the limit case, assume $\xi$ is a nonzero limit ordinal, and assume that $P(\gamma)$ holds for all $\gamma < \xi$. But then we have that $\beta \cdot \alpha_1 < \beta \cdot (\alpha_1 + \xi) = \beta \cdot \alpha_1 + \beta \cdot \xi$ which holds since $\beta \cdot \xi > 0$.
+    \vspace{1em}
+    This concludes the proof for the direct case. For the converse case, assume that $\beta \cdot \alpha_1 < \beta \cdot \alpha_2$ for some $\beta \neq 0$. Assume to the contrary that $\alpha_1 \geq \alpha_2$. But then $\alpha_1 = \alpha_2 + \gamma$, where $\gamma \geq 0$. Then, the hypothesis becomes $\beta \cdot (\alpha_2 + \gamma) = \beta \cdot \alpha_2 + \beta \cdot \gamma < \beta \cdot \alpha_2$. This is equivalent, by left cancellation, to $\beta \cdot \gamma < 0$, a contradiction. Hence our hypothesis implies that $\alpha_1 < \alpha_2$ and the conclusion follows.
+    
+\end{proof}
+

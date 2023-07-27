@@ -1,0 +1,8 @@
+\subsection*{3.2}
+The union of a finite set and a countable set is countable.
+\begin{proof}
+Let $A$ be a finite set and $B$ be a countable set. Since $B$ is countable, there is a bijection $f:B  \rightarrow \mathbb{N}$. Since $A$ is finite, it is bounded, we can construct a bijective function $g: A \rightarrow \{n \in \mathbb{N}| 1 \leq n \leq |A|\}$ .
+
+Therefore, we can construct the function $h:A \cup B \rightarrow \mathbb{N}$, $h(x) = g(x)$ if $x \in A$, otherwise $h(x) = |A|+f(x)$. This function is bijective and the conclusion follows.
+\end{proof}
+

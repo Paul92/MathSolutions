@@ -1,0 +1,530 @@
+\section{Metric and Norms}
+
+\stepcounter{subsection}
+
+\subsection{} If $d$ is a metric on $M$, show that $|d(x, z)-d(y, z)| \leq d(x,y)$ for any $x,y,z \in M$.
+
+\begin{proof}
+Without loss of generality, assume that $d(x,z) \geq d(y,z)$ - if not, since $x,y,z$ are arbitrarily chosen, swap $x$ and $y$. 
+
+We now need to prove that $d(x, z)-d(y, z) \leq d(x,y)$. But this is equivalent to $d(x, z) \leq d(x,y) + d(y, z)$, which holds from the triangle inequality.
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} If $d$ is any metric on $M$, show that $p(x, y) = \sqrt{d(x , y)}$, $\sigma(x, y) = d(x , y)/(1+ d(x, y))$ and $\tau(x, y) = \min\{d(x , y), 1\}$ are also metrics on $M$.
+
+\begin{proof}
+If $d$ is a metric, it is positive. Therefore, $p$ is also positive and defined everywhere.
+
+Since $\sqrt{x} = 0$ if and only if $x=0$, we have $p(x,y) = \sqrt{d(x,y)} = 0$ if and only if $d(x,y)=0$, which happens only when $x=y$. 
+
+$p(x,y) = \sqrt{d(x,y)} = \sqrt{d(y,x)} = p(y,x)$.
+
+Remains only to prove the triangle inequality, $p(x,y) \leq p(x,z) + p(z,y)$. Squaring both sides, we get $d(x,y) \leq d(x,z) + d(z,y) + 2\sqrt{d(x,z)d(y,z)}$, which holds since $2\sqrt{d(x,z)d(y,z)} > 0$. 
+
+\vspace{1em}
+
+$\sigma(x,y) =  d(x , y)/(1+ d(x, y)) \geq 0$ since $d(x,y) \geq 0$.
+
+$\sigma(x,y) = d(x , y)/(1+ d(x, y)) = 0$ iff $d(x,y) = 0$, which happens only if $x=y$.
+
+$\sigma(x,y) = d(x , y)/(1+ d(x, y)) = d(y , x)/(1+ d(y, x)) = \sigma(y,x)$
+
+Let $t(x) = \frac{x}{1+x}$. Pick $x>y>0$. Then, $t(x) - t(y) = \frac{x}{1+x} - \frac{y}{1+y} = \frac{x-y}{(1+x)(1+y)} > 0$, therefore $t$ is increasing.
+
+$t(x) + t(y) = \frac{x}{1+x} + \frac{y}{1+y} = \frac{x+y+2xy}{1+x+y+xy} = \frac{x+y+xy}{1+x+y+xy} + \frac{xy}{1+x+y+xy} = t(x+y+xy) + \frac{xy}{1+x+y+xy}$. But, since $x+y+xy > x+y$ and $\frac{xy}{1+x+y+xy} > 0$, we have that $t(x) + t(y) \geq t(x+y)$. But this implies that the triangle inequality holds for $\sigma$, so it is a distance function.
+
+\vspace{1em}
+
+Clearly, $\tau(x, y) = \min\{d(x , y), 1\} > 0$ and $\tau(x,y) = 0$ iff $d(x,y) = 0$, which happens only when $x=y$. Also, $\tau(x, y) = \min\{d(x , y), 1\} = \min\{d(y , x), 1\} = \tau(y, x)$.
+
+In order to prove the triangle inequality, we will assume multiple cases, based on the distances between $x,y,z$.
+
+If the distances $d(x,y)$, $d(y,z)$, $d(x,z)$ are all smaller than $1$, then $\tau$ is equivalent to $d$ and the triangle inequality holds. If any of $d(y,z)$ or $d(x,z)$ is greater than $1$, we have $d(x,y) < 1 < d(y,z) + d(x,z)$. If $d(x,y) \geq 1$ and $d(y,z), d(x,z) < 1$ we have that $\tau(x,y) = 1 < d(x,y) \geq d(x,z) + d(y,z) = \tau(x,y) + \tau(y,z)$, and if any of $d(y,z), d(x,z)$ is greater than 1, we have that $\tau(x,y) = 1 < 1 + d$.
+
+\end{proof}
+
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} The Hilbert cube $H^\infty$ is the collection of all real sequences $x = (x_n)$ with $|x_n| \leq 1$ for $n = 1, 2, \dots$.
+\begin{itemize}
+    \item Show that $d(x, y) = \sum_{n=1}^\infty 2^{-n} |x_n - y_n|$ defines a metric on $H^\infty$.
+    \item Given $x, y \in H^\infty$ and $k \in \mathbb{N}$, let $M_k = \max\{|x_1  - y_1|, \dots , |x_k - y_k|\}$ Show that $2^{-k} M_k \leq d(x, y) \leq M_k + 2^{-k}$. 
+\end{itemize}
+
+\begin{proof}
+For the first part, we show that $d$ follows the standard definition of a metric. Since it is a sum of positive terms, it is positive. Moreover, $d(x,y) = 0$ iff all terms $2^{-n} |x_n - y_n|$ are 0, which happens only when $x_n = y_n$ for all $n$. But this happens only when $(x_n) = (y_n)$. Also, $d(x,y) = \sum_{n=1}^\infty 2^{-n} |x_n - y_n| = \sum_{n=1}^\infty 2^{-n} |y_n - x_n| = d(y,x)$.
+
+Remains only to show the triangle inequality. For any three sequences $(x_n), (y_n), (z_n)$, we have $2^{-n}|x_n - y_n| \leq 2^{-n}|x_n - z_n| + 2^{-n}|z_n - y_n|$. But this implies that $d(x,y) \leq d(x,z) + d(z,x)$, so $d$ is a metric on $H^\infty$.
+
+For the second part, assume that the maximum of $\max\{|x_1  - y_1|, \dots , |x_k - y_k|\}$ occurs at index $i$ such that $M_k = |x_i - y_i|$. Therefore, since $2^{-i} M_k = 2^{-1} |x_i - y_i|$ is a term of the summation, we have $2^{-i} M_k \leq \sum_{n=1}^\infty 2^{-n} |x_n - y_n|$. But $k \geq i$, and so $2^{-k} \leq 2^{-i}$. Therefore, $2^{-k} M_k \leq 2^{-i} M_k \leq \sum_{n=1}^\infty 2^{-n} |x_n - y_n|$
+
+Note that since $|x_n| \leq 1$, $|x_n - y_n| \leq 2$. Split the series $\sum_{n=1}^\infty 2^{-n} |x_n - y_n| = \sum_{n=1}^{k-1} 2^{-n} |x_n - y_n| + \sum_{n=k}^\infty 2^{-n} |x_n - y_n|$. For the first part, we have $\sum_{n=1}^{k-1} 2^{-n} |x_n - y_n| \leq \sum_{n=1}^{k-1} 2^{-n} M_k = M_k \sum_{n=1}^{k-1} 2^{-n} \leq M_k$. For the second part, $\sum_{n=k}^\infty 2^{-n} |x_n - y_n| \leq \sum_{n=k}^\infty 2^{-n} * 2 = 2^{-k}$. Therefore, $\sum_{n=1}^\infty 2^{-n} |x_n - y_n| \leq M_k + 2^{-k}$.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Check that $d(f, g) = \max_{a \leq t  \leq b} |f(t) -g(t)|$ defines a metric on $C[ a, b ]$, the collection of all continuous, real-valued functions defined on the closed interval $[a, b ]$
+
+\begin{proof}
+Since the absolute value is positive, the distance is positive. In order for $d(f,g) = 0$, we need to have $|f(t) - g(t)| = 0$ for all $t \in [a,b]$. But this means that $f=g$. $d$ is also symmetric, since $d(f, g) = \max_{a \leq t  \leq b} |f(t) -g(t)| = \max_{a \leq t  \leq b} |g(t) -f(t)| = d(g,f)$.
+
+Consider the triangle equality $d(f,g) \leq d(f,h) + d(h,g) = \max_{a \leq t  \leq b} |f(t) -h(t)| + \max_{a \leq t  \leq b} |h(t) -g(t)|$
+ for $d$. This means that there exist points, $i,j,k \in [a,b]$ where the maxima occur, such that $|f(i) - g(i)| \leq |f(j) -h(j)| +  |h(k) -g(k)|$.
+ 
+ If $i=j=k$, then the triangle equality holds, by the properties of the absolute value.
+ 
+ If there are points $t$ such that $h(t)$ is not in between $f(t)$ and $g(t)$, at least one of $d(f,h)$ or $d(g,h)$ is measured at one such point. But, in this case, one of them is greater than $|f(x) - g(x)|$ for all $x$, so the triangle inequality holds.
+ 
+ Remains only to show that the triangle inequality holds if $f(t) \leq h(t) \leq g(t)$ for all $t$. At all $t$ we have $|g(t) - h(t)| + |f(t) - h(t)| = |f(t) + g(t)|$. In particular, $|g(i) - h(i)| + |f(i) - h(i)| = |f(i) + g(i)|$. If $j \neq i$, this implies that $|f(i) - h(i)| < |f(j) - h(j)|$. Similarly, if $k \neq i$, $|g(i) - h(i)| < |g(k) - h(k)|$. In this case, the triangle inequality also holds.
+ 
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} We say that a subset $A$ of a metric space $M$ is bounded if there is some $x_0 \in M$ and some constant $C < \infty$ such that $d(a, x_0) < C$ for all $a \in A$. Show that a finite union of bounded sets is again bounded.
+
+\begin{proof}
+Consider the set $S = \{A_i | A_i \subseteq M\}$ be a finite set of bounded subsets of $M$. Since all $A_i$ are bounded, they have associated an $x_i$ and a $C_i < \infty$ such that $d(a, x_i) < C_i$ for all $a \in A_i \in S$.
+
+
+Pick some $A_i \in S$. For any $A_j \in S$, we have $d(a, x_i) < C_j + d(x_i, x_j)$ for all $a \in A_j$. Therefore, $d(a, x_i) < C_i + C_j + d(x_i, x_j)$ for all $a \in A_j \cup A_i$. For all sets, we have $d(a, x_i) < C_i + \max\{C_j\} + \max\{d(x_i, x_j)\}$ for all $a \in \bigcup_{A_j \in S} A_j$.
+
+
+
+
+\end{proof}
+
+
+
+\subsection{} We define the diameter of a nonempty subset A of M by $diam(A) = \sup\{d(a, b) : a,b \in A\}$.  Show that A is bounded if and only if diam(A) is finite.
+
+\begin{proof}
+Assume that $D = diam(A)$ is finite. Pick $x \in A$. Then, $d(a, x) \leq D$ for all $a \in A$, i.e. $A$ is bounded.
+
+Conversely, assume $A$ is bounded. Then, there are some $x,C$ such that $d(a,x) \leq C$ for all $a \in A$. By the triangle inequality, $d(a,b) \leq d(a,x) + d(b,x) \leq 2C$ for all $a,b\in A$, and therefore $diam(A) \leq 2C$.
+\end{proof}
+
+\subsection{} Let $V$  be  a vector space,  and let $d$ be a metric on  $V$ satisfying $d(x. y) = d(x -y, 0)$ and $d(\alpha x, \alpha y) = |\alpha| d(x, y)$ for every $x, y \in V$ and every scalar $\alpha$. Show that $\| x \| = d(x, 0)$ defines a norm on V (that has d as its "usual" metric). Give an example of a metric on the vector space $\mathbb{R}$ that fails to be associated with a norm in this way.
+
+\begin{proof}
+The norm $\| x \| = d(x, 0) \geq 0$ for all $x$, with equality only at $x=0$. $\| \alpha x \| = d(\alpha x, 0) = |\alpha| d(x,0) = |\alpha| \|x\|$.
+
+$\|x+y\| = d(x+y, 0) = d(x, -y) \leq d(x, 0) + d(0, -y) =
+d(x, 0) + d(y, 0) = \|x\| + \|y\|$
+
+As shown above, $\| x \| = d(x, 0)$ satisfies all the properties of a norm. 
+
+The discrete metric $d(x,y) = 0$ if $x=y$ and $d(x,y) = 1$ if $x \neq y$ does not have a norm associated. For example, for $x\neq0$, $d(\alpha x, 0) = 1 = d(x, 0)$.
+\end{proof}
+
+\subsection{} Recall that for $x \in \mathbb{R}^n$ we have defined $\|x\|_1 = \sum_{i=1}^n |x_i|$ and $\|x\|_\infty = \max_{1 \leq i \leq n} |x_i|$. Check that each of these is indeed a norm on $\mathbb{R}^n$. 
+
+\begin{proof}
+$\|x\|_1$ is defined as a sum of positive terms, so it is positive, with equality to 0 only when all the terms are 0, i.e. when $x=0$.
+
+$\|\alpha x\|_1 = \sum_{i=1}^n |\alpha x_i| = |\alpha| \sum_{i=1}^n |x_i| = |\alpha| \|x\|_1$.
+
+$\|x + y\|_1 = \sum_{i=1}^n |x_i + y_i| \leq \sum_{i=1}^n |x_i| + |y_i| = \sum_{i=1}^n |x_i| + \sum_{i=1}^n |y_i| =\|x\|_1 + \|y\|_1$
+
+From these properties, $\| \cdot \|_1$ is a norm.
+
+$\|x\|_\infty = \max_{1 \leq i \leq n} |x_i| \geq 0$ with equality only when $x_i = 0$ for all $i$, i.e. when $x=0$.
+
+$\|\alpha x\|_\infty = \max_{1 \leq i \leq n} |\alpha x_i| = \max_{1 \leq i \leq n} |\alpha| |x_i| =  |\alpha| \max_{1 \leq i \leq n} |x_i| = |\alpha| \|x\|_\infty$.
+
+$\|x + y\|_\infty = \max_{1 \leq i \leq n} |x_i + y_i| \leq \max_{1 \leq i \leq n} |x_i| + \max_{1 \leq i \leq n} |y_i| = \|x\|_\infty + \|y\|_\infty $
+
+From these properties, $\| \cdot \|_\infty$ is a norm.
+
+\end{proof}
+
+\subsection{} Show that $\|x\|_\infty \leq \|x\|_2 \leq \|x\|_1$ for all $x\in \mathbb{R}^n$. Also check that $\|x\|_1 \leq n\|x\|_\infty$ and $\|x\|_1 \leq \sqrt{n}\|x\|_2$.
+
+\begin{proof}
+The $l^\infty$ norm is equal to some absolute value of the largest element of the vector $x$, i.e. $\|x\|_\infty = \max_{1 \leq i \leq n} |x_i| = |x_M|$.
+For the $l^2$ norm, $\|x\|_2 = \sqrt{\sum_{1 \leq i \leq n} x_i^2}$, we have $\|x\|_2^2 = \sum_{1 \leq i \leq n} x_i^2 \geq x_M^2$, regardless of $M$ and so $\|x\|_2 \geq \|x\|_\infty$. 
+
+$\|x\|_1^2 = ( \sum_{1 \leq i \leq n} |x_i|)^2 = \sum_{1 \leq i \leq n} x_i^2 + \sum_{1 \leq i,j \leq n, i< j} 2|x_i||x_j| = \|x\|_2^2 + \sum_{1 \leq i,j \leq n, i< j} 2|x_i|x_j|$. Since the final sum is positive, we have $\|x\|_1^2 \geq \|x\|_2^2$ which implies that $\|x\|_1 \geq \|x\|_2$.
+
+$\|x\|_1 = \sum_{1 \leq i \leq n} |x_i| \leq \sum_{1 \leq i \leq n} |x_M| = n\|x\|_\infty$.
+
+Remains to prove that $\|x\|_1 \leq \sqrt{n}\|x\|_2$. Squaring  both sides, we get $( \sum_{1 \leq i \leq n} |x_i|)^2 = \sum_{1 \leq i \leq n} x_i^2 + \sum_{1 \leq i,j \leq n,i\neq j} x_ix_j= \leq n\sum_{1 \leq i \leq n} x_i^2$, which is equivalent to $\sum_{1 \leq i,j \leq n,i\neq j} |x_i||x_j|= \leq (n-1)\sum_{1 \leq i \leq n} x_i^2$. On the left hand side, there are $n(n-1)$ pairs of products of the form $|x_i||x_j|$, two for each pair $i,j$ with $i\neq j$. On the right hand side, there are $n(n-1)$ terms of the form $i^2$. Therefore, for each pair $i,j$, $i\neq j$, we have on the left hand side $|x_i||x_j|$ and $|x_j||x_i|$ and on the right hand size we have $x_i^2$ and $x_j^2$. Remains to prove that $2|x_i||x_j| \leq x_i^2 + x_j^2$. But this is equivalent to $x_i^2 - 2|x_i||x_j| + x_j^2 \geq x_i^2 - 2x_ix_j + x_j^2 = (x_i - x_j)^2 \geq 0$.
+
+\end{proof}
+
+
+\stepcounter{subsection}
+
+\subsection{} Show that $\| A \| = \max_{1 \leq i \leq n} ( \sum_{j=1}^m |a_{i,j}|^2 ) ^ {\frac{1}{2}}$ is a norm on the vector space $\mathbb{R}^{nxm}$ of all n x m real matrices.
+
+\begin{proof}
+$\sum_{j=1}^m |a_{i,j}|^2$ is always positive, and so $\| A \|$ is positive. Also, since $\| A \|$ is defined as the maximum of a set of positive terms of the form $\sum_{j=1}^m |a_{i,j}|^2$, for $\| A \|$ to be 0 it is necessary that all sums are 0. But this happens only when all the elements of $A$ are 0, and so $\| A \| = 0$ iff $A=0$.
+
+$\| \alpha A \| = \max_{1 \leq i \leq n} ( \sum_{j=1}^m | \alpha a_{i,j}|^2 ) ^ {\frac{1}{2}} = \max_{1 \leq i \leq n} ( \sum_{j=1}^m |\alpha|^2 | a_{i,j}|^2 ) ^ {\frac{1}{2}} = \max_{1 \leq i \leq n} ( |\alpha|^2 \sum_{j=1}^m  | a_{i,j}|^2 ) ^ {\frac{1}{2}} = \max_{1 \leq i \leq n} |\alpha| ( \sum_{j=1}^m  | a_{i,j}|^2 ) ^ {\frac{1}{2}} = |\alpha|  \max_{1 \leq i \leq n} ( \sum_{j=1}^m  | a_{i,j}|^2 ) ^ {\frac{1}{2}} = |\alpha| \| A \|$.
+
+Note that the sums are the $l^2$ norms of the column vectors, and so we can apply the triangle inequality:
+
+$\| A + B \| =
+\max_{1 \leq i \leq n} ( \sum_{j=1}^m |a_{i,j} + b_{i,j}|^2 ) ^ {\frac{1}{2}} \leq 
+\max_{1 \leq i \leq n} \{ ( \sum_{j=1}^m |a_{i,j}| ) ^ {\frac{1}{2}} +
+( \sum_{j=1}^m |b_{i,j}| ) ^ {\frac{1}{2}} \} \leq 
+\max_{1 \leq i \leq n}  ( \sum_{j=1}^m |a_{i,j}| ) ^ {\frac{1}{2}} + \max_{1 \leq i \leq n}  ( \sum_{j=1}^m |b_{i,j}| ) ^ {\frac{1}{2}} =\| A \| + \| B \|
+$
+
+From the properties above, $\| A \| = \max_{1 \leq i \leq n} ( \sum_{j=1}^m |a_{i,j}|^2 ) ^ {\frac{1}{2}}$ is a norm on the vector space $\mathbb{R}^{nxm}$ of all n x m real matrices.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Show that $\| x \|_\infty \leq \| x \|_2$ for any $x \in l_2$ and that $\| x \|_2 \leq \| x \|_1$ for any $x \in l_1$. 
+
+
+\begin{proof}
+From exercise 3.18, if $x \in R^n$, then $\| x \|_\infty \leq \| x \|_2$ holds. Remains to prove the inequality for $x \in l_2 \setminus \mathbb{R}^n$. This means that $x$ has an infinite number of nonzero components and $\| x \|_2$ is finite.
+
+$x_n^2\leq \sum{k=1}^\infty x_k^2$ and so $x_n\leq \sqrt{\sum{k=1}^\infty x_k^2} = \|x\|_2$, so $\|x\|_2$ is an upper bound for each $x_n$. Therefore, $sup|x_n|\leq \|x\|_2$.
+
+
+Also, $\|x\|_2 = \sqrt{\sum_{i=1}^\infty x_i^2} \leq \sum_{i=1}^\infty \sqrt{x_i^2} = \sum_{i=1}^\infty |x_i| = \|x\|_1$.
+
+\end{proof}
+
+
+\subsection{} The subset of $l_\infty$ consisting of all sequences that converge to 0 is denoted by $c_0$. (Note that $c_0$ is actually a linear subspace of $l_\infty$; thus $c_0$ is also a normed vector space under $\|\cdot\|_\infty$) Show that we have the following proper set inclusions: $l_1 \subset l_2 \subset c_0  \subset l_\infty$. 
+
+
+\begin{proof}
+In the previous exercise, it has been shown that for all $x\in l_1$, $\|x\|_1 \geq \|x\|_2$. This means that for all $x \in l_1$, $\|x\|_2$ is finite and therefore $x \in l_2$.
+
+Consider $x = (\frac{1}{i})$. Since $\sum_{i=1}^\infty \frac{1}{i}$ diverges, $x \notin l_1$. But $\sum_{i=1}^\infty \frac{1}{i^2}$ converges, and so $x \in l_2$. Therefore, $l_1 \subset l_2$.
+
+Let $x \in l_2$. Then, either $x \in \mathbb{R}^n$, case in which $(x_i)_{i=n}^\infty = 0$ and therefore $(x_i)_{i=1}^\infty$ converges to 0 so $x \in c_0$, or $x \in l_2 \setminus \mathbb{R}^n$, i.e. $x$ has an infinity of nonzero terms and $\sum_{i=1}^\infty x_i^2$ converges. But this requires all $x_i$ to be finite and $\sum_{i=1}^\infty x_i$ to converge, and so $x \in c_0$.
+
+All $x \in c_0$ are sequences with $\sup |x_i|$ finite and that converge to 0. Consider $x$ such that $x_i = \frac{1}{\sqrt{n}}$. It is convergent to 0, but the series $\sum_{i=1}^\infty x_i^2$ diverges. Therefore, $x\in c_0$ but $x \notin l_2$.
+
+Finally, $c_0$ is by definition a subset of $l_\infty$. There are sequences, such as $x_i = 1$ that do not converge to 1 but have $sup |x_i|$ finite, and so they are in $l_\infty$ but not in $c_0$.
+
+\end{proof}
+
+
+\subsection{} The conclusion of Lemma 3.7 also holds in the case $p = 1$ and $q = \infty$. Why?
+
+\begin{proof}
+
+$\sum_{i=1}^\infty |x_i y_i| = \sum_{i=1}^\infty |x_i||y_i| \leq \sum_{i=1}^\infty |x_i| \sup y_i = \sup y_i \sum_{i=1}^\infty |x_i| = \|y\|_\infty \|x\|_1$.
+
+\end{proof}
+
+\subsection{} The same techniques can be used to show that $\|f\|_p = (\int_0^1 |f|^p dt)^\frac{1}{p}$ defines a norm on C[ 0, I ]   for any $1<p<\infty$. State and prove the analogues of Lemma 3.7 and Theorem 3.8 in this case. (Does Lemma 3.7 still hold in this setting for $p  = 1$ and $q = \infty$?)
+
+\begin{proof}
+
+The Holder's inequality equivalent states that for $1 < p < \infty$ and $q \in \mathbb{R}$ such that $\frac{1}{p} + \frac{1}{q} = 1$, for all $f \in C[0,1]$, $g \in l_q$ we have $\int_0^1 f(t)g(t) dt \leq \|f\|\|g\|$.
+
+$$\int_0^1 \frac{f(t)g(t)}{\|f\|_p\|g\|_q} \leq \frac{1}{p}\int_0^1|\frac{f(t)}{\|f\|_p}|^p dt + 
+\frac{1}{q}\int_0^1|\frac{f(t)}{\|g\|_q}|^q dt \leq \frac{1}{p} + \frac{1}{q} = 1$$
+
+Therefore, we have $\int_0^1 \frac{f(t)g(t)}{\|f\|_p\|g\|_q} =  \frac{1}{\|f\|_p\|g\|_q} \int_0^1 f(t)g(t) dt \leq 1$, which is equivalent to $\int_0^1 f(t)g(t) dt \leq \|f\|_p\|g\|_q$.
+
+The equivalent of the Minkowsky's inequality states that for $1 < p < \infty$ and $x,y\in l_p$, $\|x+y\|_p = \|x\|_p+\|y\|_p$.
+
+\begin{equation}
+\begin{split}
+\int_0^1 |f(t) + g(t)|^p dt &= \int_0^1 |f(t) + g(t)||f(t) + g(t)|^{p-1} dt \\&
+\leq \int_0^1 |f(t)||f(t) + g(t)|^{p-1} dt  + |g(t)||f(t) + g(t)|^{p-1} dt \\&
+\leq \|f\|_p \|(f+g)^{p-1}\|_q + \|g\|_p \|(f+g)^{p-1}\|_q \\&
+= (\|f\|_p + \|g\|_p)\|(f+g)^{p-1}\|_q \\&
+= (\|f\|_p + \|g\|_p)\|(f+g)\|^{p-1}_q
+\end{split}
+\end{equation}
+
+
+Therefore, we arrived at $\|f+g\|_p^p \leq \|f+g\|_p^{p-1}(\|f\|_p + \|g\|_p)$, which is equivalent to $\|f+g\|_p \leq \|f\|_p + \|g\|_p$.
+
+\end{proof}
+
+\subsection{} Given $a,b > 0$, show that $\lim_{p\rightarrow \infty} (a^p + b^p)^\frac{1}{p} = \max\{a, b\}$. What happens as $p \rightarrow 0$, as $p \rightarrow 1$ as $p \rightarrow -\infty$?
+
+\begin{proof}
+We start by computing $\lim_{p\rightarrow\infty}\frac{ln(1+r^p)}{p} = \lim_{p\rightarrow\infty}\frac{r^p\ln r}{1+r^p} = \frac{0\cdot \ln r}{1} = 0$.
+
+Without loss of generality, assume $a>b$. Then,  $\ln(\lim_{p\rightarrow \infty} (a^p + b^p)^\frac{1}{p}) = \lim_{p\rightarrow \infty}  \frac{\ln(a^p + b^p)}{p} = \lim_{p\rightarrow \infty} \frac{\ln(a^p(1 + \frac{b}{a}^p))}{p} = \lim_{p\rightarrow \infty} \frac{\ln(a^p(1 + \frac{b}{a}^p))}{p} = \lim_{p\rightarrow \infty} \frac{\ln(a^p)}{p} + \lim_{p\rightarrow \infty} \frac{\ln(1 + \frac{b}{a}^p)}{p} = \ln(a)$. Therefore, $\lim_{p\rightarrow \infty} (a^p + b^p)^\frac{1}{p} = a$.
+
+The other limits are:
+
+$$\lim_{p\rightarrow 0} (a^p + b^p)^\frac{1}{p}) = \lim_{p\rightarrow 0} 2^\frac{1}{p} = \infty$$
+
+$$\lim_{p\rightarrow -1} (a^p + b^p)^\frac{1}{p} = (\frac{1}{a} + \frac{1}{b})^{-1} = \frac{ab}{a+b}$$ 
+
+$$\lim_{p\rightarrow -\infty} (a^p + b^p)^\frac{1}{p} = a$$
+
+
+\end{proof}
+
+\subsection*{} The last exercise shows that $\|(a,b)\|_p = (a^p + b^p)^\frac{1}{p} \rightarrow \max\{a,b\} = \|(a,b)\|_\infty$. Will now show a more general result.
+
+\begin{proof}
+
+Let $S = \sup a_n$. Let $1 \leq q < p$. Then, 
+$$\left( \sum_k |a_k|^p \right)^{1/p} = \left( \sum_k |a_k|^q \cdot |a_k|^{p-q} \right)^{1/p} \leq \left( \sum_k |a_k|^q \cdot S^{p-q} \right)^{1/p} = S^{1 - \frac{q}{p}} \left( \sum_k |a_k|^q \right)^{1/p}$$
+
+We now take the limsup of both sides:
+
+$$\limsup_{p\rightarrow\infty} \|a\|_p \leq \limsup S^{1 - \frac{q}{p}} \left( \sum_k |a_k|^q \right)^{1/p} = \limsup S^{1 - \frac{q}{p}} \cdot \limsup \|a_k\|_q^{q/p} = S^{1-0} \cdot \|a_k\|_q^0 = S$$
+
+Therefore, we have shown that $\limsup_{p\rightarrow\infty} \|a\|_p \leq \sup |a_n|$ for $p>1$. For $p=1$, it has been proven in a previous exercise.
+
+Also, since $|a_i| \leq \sum |a_i|$, we have that $|a_i| \leq (\sum |a_i|^p)^{1/p}$ for all $i,p$. Therefore, $\sup |a_i| \leq \|a\|_p$ for all $p$. In particular, $\sup |a_i| \leq \liminf \|a\|_p$.
+
+Therefore, we have shown that $\limsup \|a\|_p \leq S \leq \liminf \|a\|_p$. But this means that $\limsup \|a\|_p = \liminf \|a\|_p = S$, and so $\|a\|_p$ converges to $\sup a_n$ as $p \rightarrow \infty$.
+
+\end{proof}
+
+\subsection*{} Prove that, if $(a_n)$ converges to a positive value, then $\limsup b_n = \lim a_n \limsup b_n$
+
+\begin{proof}
+Let $L = \lim a_n$, $\epsilon > 0$. Then, there is some $N$ such that $|a_n - L| < \epsilon$ for all $n>N$.
+
+Therefore, we have that
+
+$$ \limsup (L - \epsilon)b_n \leq \limsup a_nb_n \leq \limsup (L + \epsilon)b_n $$
+
+$$ (L - \epsilon)\limsup b_n \leq \limsup a_nb_n \leq (L + \epsilon)\limsup b_n $$
+
+, for all $\epsilon$ such that $L-\epsilon>0$. Then, it has to be that $\limsup a_nb_n = L\limsup b_n$.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Prove that A is bounded iff $diam(A) < \infty$.
+
+\begin{proof}
+Assume that A is bounded. Then, there is some $a \in A$ and some $r \in \mathbb{R}$ such that $A \subset B_r(a)$. This means that $d(x,a) \leq r$ for all $x \in A$, and so $d(x,y) \leq d(x,a) + d(y,a) = 2r$. Therefore, $diam(A) \leq 2r$.
+
+Conversely, assume $diam(A) < \infty$. This means that $diam(A) = \sup\{d(x,y) : x,y\in A\}$ is finite, i.e. the distance between any two points of $A$ is finite. Since all the distances between any two points of $x,y \in A$ are smaller than $diam(A)$, we can pick a point $a \in A$ and have $A$ contained in the ball of radius $diam(A)$ centered at $a$.
+\end{proof}
+
+\subsection{} If $A \subset B$, show that $diam(A) \leq diam(B)$.
+
+\begin{proof}
+Assume $diam(A) > diam(B)$. This means that there are $x,y \in A$ such that $d(x,y) > diam(B)$. But since $A \subset B$, $x,y \in B$ and therefore $d(x,y) \leq diam(B)$. Therefore, $diam(A) \leq diam(B)$.
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Limits are unique.
+
+\begin{proof}
+Let $(x_n)$ be a sequence convergent in $(M,d)$, and assume it converges to both $x,y \in M$, $x \neq y$. By definition, $(x_n)$ converges to $x$ if and only if, for all $\epsilon > 0$, it is eventually in the open ball $B_\epsilon(x)$. Since $x \neq y$, then $d(x,y) > 0$. Pick $\epsilon = d(x,y) / 2$. Then, there is some $N$ such that $x_n \in B_\epsilon(x)$ for all $n>N$. But $d(x,y) \leq d(x,x_n) + d(y,x_n) < \frac{d(x,y)}{2} + d(y, x_n)$, i.e. $\frac{d(x,y)}{2} < d(y,x_n)$ for all $n>N$. But this means that $x_n$ is not in $B_\epsilon(y)$ for $n>N$, and therefore $(x_n)$ does not converge to $y$. 
+\end{proof}
+
+
+\subsection{} If $x_n \rightarrow x$ in $(M,d)$, show that $d(x_n, y) \rightarrow d(x,y)$. More generally, if $x_n \rightarrow x$ and $y_n \rightarrow y$, show that $d(x_n, y_n) \rightarrow d(x,y)$.
+
+\begin{proof}
+If $x_n \rightarrow x$ in $(M,d)$, for all $\epsilon$ there is some $N$ such that $x_n \in B_\epsilon(x)$ for all $n>N$. This is equivalent to having $d(x_n,x) < \epsilon$ when $n>N$. But this implies that $d(x_n, x) \rightarrow 0$. 
+
+We have that $|d(x,z) - d(y,z)| \leq d(x,y)$ for all $x,y,z \in M$. In particular, $|d(x,y) - d(x_n,y)| \leq d(x,x_n)$. We know that $d(x,x_n)$ converges to 0, i.e. for all $\epsilon>0$ there is some $N$ such that $0 \leq d(x,x_n) < \epsilon$ when $n>N$, so we have that $|d(x,y) - d(x_n,y)| < \epsilon$ when $n>N$, which implies $d(x_n,y) \rightarrow d(x,y)$.
+
+
+
+We have that $|d(x_n,y_n) - d(x,y)| \leq |d(x_n, y_n) - d(x_n, y)| + |d(x_n,y)-d(x,y)|$. From the previous result, we have that for $\epsilon > 0$ there is some $N_1 \in \mathbb{N}$ such that $|d(x_n,y)-d(x,y)| < \epsilon$ when $n>N_1$. Also, $|d(x_n,y)-d(x,y)| \leq d(x, x_n) < \epsilon$ when $n>N_2$. Therefore, $|d(x_n,y_n) - d(x,y)| < 2\epsilon$ when $n > \max(N_1, N_2)$.
+
+
+
+\end{proof}
+
+\subsection{} If $x_n \rightarrow x$, then $x_{n_k} \rightarrow x$ for any subsequence $(x_{n_k})$ of $(x_n)$.
+
+\begin{proof}
+If $x_n \rightarrow x$, then for all $\epsilon>0$ there is some $N$ such that $x_n \in B_\epsilon(x)$ for all $n>N$. Since $n_k \geq n$, this implies that $x_{n_k} B_\epsilon(x)$ for all $k > N$, and so $x_{n_k} \rightarrow x$.
+\end{proof}
+
+\subsection{} A convergent sequence is Cauchy, and a Cauchy sequence is bounded.
+
+\begin{proof}
+Let $(x_n)$ be a sequence convergent to $x$ and pick $\epsilon > 0$. There is some $N$ such that $x_n \in B_{\epsilon/2}(x)$ for all $n>N$. Since $diam(B_{\epsilon/2}(x)) = \epsilon$, $d(x_i, x_j) \leq \epsilon$ for all $i,j>N$, i.e. $(x_n)$ is a Cauchy sequence.
+
+Let $(x_n)$ be a Cauchy sequence and $\epsilon > 0$. Then, there is some $N$ such that $d(x_i, x_j) < \epsilon$ for all $i,j > N$. Since the sequence $(x_n)_{n=1}^N$ is finite, it is bounded. Pick $x_k$, with $k>N$. Since $(x_n)$ is Cauchy, we have $d(x_k, x_i) < \epsilon$ for all $j>N$, i.e. $x_j \in B_\epsilon(x_k)$. This means that the sequence $x_n)_{n=N}^\infty$ is also bounded, and therefore the entire sequence $(x_n)$ is bounded.
+\end{proof}
+
+
+\subsection{} A Cauchy sequence with a convergent subsequence converges.
+
+\begin{proof}
+Let $(x_n)$ be a Cauchy sequence, and let $(x_{n_k})$ converge to $x$. Since $(x_n)$ is Cauchy, for $\epsilon>0$ there is some $N_\epsilon$ such that $d(x_i, x_j) < \epsilon$ when $i,j > N_\epsilon$. Since $(x_{n_k})$ converges to $x$, for $\delta > 0$ there is some $N_\delta$ such that $d(x, x_{n_k}) < \delta$ when $k > N_\delta$. Let $N = \max(N_\epsilon, N_\delta)$, and pick some $k > N$. We have that $d(x_i, x_{n_k}) < \epsilon$ and $d(x_{n_k}, x) < \delta$ when $i > N$. Therefore, $d(x_i, x) < \epsilon + \delta$, for all $i>N$. 
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+
+\subsection{} Given any fixed element $x\in l_1$, show that the sequence $x^{(k)} = \{x_1, x_2, \dots, x_k, 0, \dots\} \in l_1$ converges to $x$ in $l_1$ norm. Show that the same holds for $l_2$, but the result fails in general for $l_\infty$.
+
+\begin{proof}
+We first need to show that $\|x^{(k)} - x\|_1 \rightarrow 0$. But $\|x^{(k)} - x\|_1 = \sum_{i=k+1}^\infty |x_i|$, which must converge to 0 as $k \rightarrow \infty$ since $x \in l_1$.
+
+Since the norms are positive, we have that $\|x^{(k)} - x\|_2^2 =  \sum_{i=k+1}^\infty |x_i|^2$, which also has to converge to 0 as $k \rightarrow \infty$ since $x \in l_2$.
+
+Take $x_i = 1 \in l_\infty$. We have that $\|x^{(k)} - x\|_\infty = \sup_{k < i} |x_i| = 1$ for all $k$, so $x^{(k)}$ does not always converge to $x$ in $l_\infty$.
+
+\end{proof}
+
+\subsection{} Given $x, y \in l_2$, show that if $x^{(k)} \rightarrow x$ and $y^{(k)} \rightarrow y$ in $l_2$, then $\langle x^{(k)}, y^{(k)} \rangle \rightarrow \langle x, y \rangle$.
+
+\begin{proof}
+
+Let $\delta>0$. Then, there is some $M$ such that $|\|x^{(k)}\|_2 - \|x\|_2| < \delta$ when $k>M$.
+
+Since $x^{(k)} \rightarrow x$ and $y^{(k)} \rightarrow y$ in $l_2$, we have for $\gamma = \frac{\epsilon}{2(\delta + \|x\|_2 + \|y\|_2)} > 0$ some $N$ such that $\|x^{(k)} - x\|_2 < \gamma$ and $\|y^{(k)} - y\|_2 < \gamma$ for all $k>N$. 
+
+We now need to prove that $|\langle x^{(k)}, y^{(k)} \rangle - \langle x, y \rangle | \rightarrow 0$:
+
+\begin{equation*}
+\begin{split}
+|\langle x^{(k)}, y^{(k)} \rangle - \langle x, y \rangle|
+&= |\langle x^{(k)}, y^{(k)} \rangle - \langle x^{(k)}, y \rangle + \langle x^{(k)}, y \rangle - \langle x, y \rangle|
+\\&
+= |\langle x^{(k)}, y^{(k)}  - y \rangle + \langle x^{(k)} - x, y \rangle| \\&
+\leq |\langle x^{(k)}, y^{(k)}  - y \rangle| + |\langle x^{(k)} - x, y \rangle|
+\\&
+\leq \|x^{(k)}\|_2 \cdot \|y^{(k)} - y\|_2 + \|x^{(k)} - x\|_2 \cdot \|y\|_2
+\\&
+\leq \|x^{(k)}\|_2 \cdot \|y^{(k)} - y\|_2 + \|x^{(k)} - x\|_2 \cdot \|y\|_2
+\\&
+\leq  2\gamma (\|x^{(k)}\|_2 + \|y\|_2)
+\\&
+\leq  2\frac{\epsilon}{2(\delta + \|x\|_2 + \|y\|_2)} (\|x\|_2 + \delta + \|y\|_2) = \epsilon 
+\end{split}
+\end{equation*}
+
+, for all $k>\max\{M, N\}$.
+
+
+
+
+
+
+\end{proof}
+
+\subsection{} Two metrics d and p on a set M are said to be equivalent if they generate the same convergent sequences; that is, $d(x_n , x) \rightarrow 0$ if and only if $p(x_n, x) \rightarrow 0$. If d is any metric on M, show that the metrics $\rho, \sigma, \tau$ defined in Exercise 6, are all equivalent to d.
+
+\begin{proof}
+Let $d$ be some metric on $M$ and $p(x,y) = \sqrt{d(x,y)}$. Let $(x_n)$ be a sequence such that $d(x_n, x) \rightarrow 0$. 
+
+Pick $\epsilon > 0$. Since $d(x_n, x) \rightarrow 0$, there is some $N$ such that $0 \leq d(x_n, x) < \epsilon^2$ when $n>N$. But this means that $0 \leq \rho(x_n, x) = \sqrt{d(x_n, x)} < \epsilon$ when $n>N$, and so $(x_n)$ converges to $x$ in $\rho$.
+
+Conversely, let $(x_n)$ be a sequence such that $p(x_n, x) \rightarrow 0$. Pick $\epsilon > 0$. Since $p(x_n, x) \rightarrow 0$, there is some $N$ such that $0 \leq p(x_n, x) = \sqrt{d(x_n,x)} < \sqrt{\epsilon}$ when $n>N$. But this means that $0 \leq p(x_n, x)^2 = d(x_n,x) < \epsilon$.
+
+Since the choice of $(x_n)$ and $x$ were arbitrary, $d$ and $\rho$ are equivalent metrics.
+
+\vspace{1em}
+
+Similarly, let $(x_n)$ such that $d(x_n, x) \rightarrow 0$.
+Note that the function $f(x) = x/(1+x)$ is increasing, with the range in $[0,1)$ when $x>0$ and with the inverse $f^{-1}(y) = \frac{y}{1-y}$.
+
+Pick $\epsilon \in (0,1)$. Then, since $\frac{\epsilon}{1-\epsilon} > 0$, there is some $N$ such that $0 \leq d(x_n, x) < \frac{\epsilon}{1-\epsilon}$ when $n>N$. But, by applying $f$ to this inequality, this also means that $0 \leq \frac{d(x_n, x)}{1+d(x_n, x)} = \sigma(x_n,x) < \epsilon$ whenever $n>N$.
+If $\epsilon > 1$, then $\sigma(x_n, x) < \epsilon$ for all $n$, since $0 \leq \sigma(x,y) < 1$.
+Therefore, for all $\epsilon > 0$ we can find some $N$ such that $\sigma(x_n, x) < \epsilon$ for all $n>N$.
+
+Conversely, let $(x_n)$ be a sequence such that $\sigma(x_n,x) \rightarrow 0$. Pick $\epsilon > 0$. Since $\frac{\epsilon}{\epsilon+1} > 0$, there is some $N$ such that $0 \leq \sigma(x_n,x) < \frac{\epsilon}{\epsilon+1}$. By applying $f^{-1}$ to this inequality, we have that $0 \leq d(x_n, x) < \epsilon$, so $d(x_n, x) \rightarrow 0$
+
+From the above, $\sigma$ and $d$ are equivalent metrics.
+
+\vspace{1em}
+
+Finally, let $(x_n)$ be a sequence such that $d(x_n, x) \rightarrow 0$. Then, for $\epsilon > 0$, there is some $N$ such that $0 \leq \min(d(x_n, x), 1) \leq d(x_n, x) < \epsilon$ when $n>N$. Therefore, $\tau(x_n, x) = \min(d(x_n, x), 1) \rightarrow 0$.
+
+Conversely, let $(x_n)$ be a sequence such that $\tau(x_n, x) \rightarrow 0$.
+For all $0 < \epsilon < 1$, there is some $N$ such that $0 \leq \tau(x_n, x) = d(x_n, x) < \epsilon$ when $n>N$. 
+In particular, for $\delta = 1/2$ there is $M$ such that $0 \leq \tau(x_n, x) = d(x_n, x) < \delta$ when $n>M$. For any $\epsilon \geq 1$, we have that $0 \leq d(x_n, x) < 1/2 < \epsilon$ when $n>M$. Therefore, for all $\epsilon$, there is some $N$ such that $d(x,y) < \epsilon$ when $n>N$. 
+
+From the above, $\tau$ and $d$ are equivalent metrics.
+
+\end{proof}
+
+\subsection{} Show that the usual metric on N is equivalent to the discrete metric. Show that any metric on a finite set is equivalent to the discrete metric.
+
+\begin{proof}
+Let $d$ be the usual metric on $\mathbb{N}$ and $D$ be the discrete metric.
+
+Assume $(x_n)$ is a sequence convergent to $x$ in $\mathbb{N}$ with the usual metric $d$. This means that, for all $\epsilon > 0$ there is some $N$ such that $|x_n - x| < \epsilon$. Pick $\epsilon < 1$. For the above condition to hold, the sequence $(x_n)_{n=N}^\infty$ must be constant and equal to $x$. Then, for all $\epsilon>0$ we have that $0 = D(x_n, x) < \epsilon$ when $n>N$. This means that $(x_n)$ converges in $(\mathbb{N}, D)$.
+
+Conversely, assume that $(x_n)$ converges in $(\mathbb{N}, D)$. Pick $\epsilon = 1/2$. There has to be some $N$ such that $D(x_n, x) < 1/2$ when $n>N$. Since $D(x_n, x) \in \{0,1\}$, we have that $D(x_n, x) = 0$ for $n>N$, i.e. the sequence $x_n$ is eventually constant and equal to $x$. But this means that for all $\epsilon > 0$, $0 = d(x_n, x) < \epsilon$ when $n>N$. This implies that $(x_n)$ converges in $(\mathbb{N}, d)$.
+
+From the above, the usual metric $d$ and the discrete metric $D$ are equivalent.
+
+
+\vspace{1em}
+
+Let $S$ be a finite set, and $m = \min\{d(x,y): x,y \in S, x \neq y\}$. By definition, $m>0$. Let $(x_n)$ be a sequence convergent to $x$ in $S$ with some metric $d$. Choose $\epsilon = m/2$. We need to find some $N$ such that $d(x_n, x) < \epsilon$ when $n>N$, but this is not possible unless $x_n = x$ for $n>N$, so the sequence is eventually constant. Therefore, on a finite set, the convergent sequences are the eventually constant sequences, regardless of the chosen metric.
+
+But all eventually constant sequences converge under the discrete metric, and there is no other sequence that converges under the discrete metric, so the discrete metric is equivalent to any other metric on a finite set.
+
+\end{proof}
+
+\subsection{} Show that the metrics induced by $\|\cdot \|_1$, $\|\cdot \|_2$, $\|\cdot \|_\infty$ on $\mathbb{R}^n$ are equivalent.
+
+\begin{proof}
+Assume $(x_i)$ converges to $x$ in $(\mathbb{R}^n, \|\cdot \|_1)$, i.e. for $\epsilon > 0$ there is some $N$ such that $0 \leq \|x_i - x\|_1 < \epsilon$ when $i>N$. But, as shown in the exercise 3.18, we have that $0 \leq \|x_i - x\|_\infty \leq \|x_i - x\|_2 \leq \|x_i - x\|_1 < \epsilon$, and therefore $(x_n)$ also converges in $(\mathbb{R}^n, \|\cdot \|_2)$ and $(\mathbb{R}^n, \|\cdot \|_\infty)$
+
+From a similar argument, a sequence that converges in $(\mathbb{R}^n, \|\cdot \|_2)$ also converges in $(\mathbb{R}^n, \|\cdot \|_\infty)$
+
+Conversely, assume $(x_i)$ converges to $x$ in $(\mathbb{R}^n, \|\cdot \|_\infty)$. From exercise 3.18, we have that $\frac{1}{n}\|x\|_1 \leq \|x\|_\infty$.
+
+Pick $\epsilon > 0$. Then, there is some $N$ such that $0 \leq \frac{1}{n}\|x_i - x\|_1 \leq \|x_i - x\|_\infty < \frac{\epsilon}{n}$ when $i > N$. Multiplying the inequality by $n$, we have that $\|x_i - x\|_1 \leq \epsilon$ for $i < N$, which means that $(x_i)$ converges to $x$ in $\|\cdot \|_1$. Therefore, $\|\cdot \|_1$ and $\|\cdot \|_\infty$ are equivalent metrics.
+
+Similarly, assume that  $(x_i)$ converges to $x$ in $(\mathbb{R}^n, \|\cdot \|_2)$. From exercise 3.18, we have that $\frac{1}{\sqrt{n}}\|x\|_1 \leq \|x\|_2$.
+
+Pick $\epsilon > 0$. Then, there is some $N$ such that $0 \leq \frac{1}{\sqrt{n}}\|x_i - x\|_1 \leq \|x_i - x\|_2 < \frac{\epsilon}{\sqrt{n}}$ when $i > N$.  Multiplying the inequality by $\sqrt{n}$, we have that $\|x_i - x\|_1 \leq \epsilon$ for $i < N$, which implies that $(x_i)$ converges to $x$ in $\|\cdot \|_1$. Therefore,  $\|\cdot \|_1$ and $\|\cdot \|_2$ are equivalent metrics.
+
+Since the equivalence relation between metrics is transitive, we have that 
+$\|\cdot \|_1$, $\|\cdot \|_2$, $\|\cdot \|_\infty$ on $\mathbb{R}^n$ are all equivalent.
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Given two metric spaces $(M, d)$ and $(N, \rho)$, we can define a metric on the product $M \times N$ in a  variety of ways. Our only requirement is  that a sequence of pairs $(a_n, x_n)$ in $M \times N$ should converge precisely when both coordinate sequences $(a_n)$ and $(x_n)$ converge (in $(M, d)$ and $(N, \rho)$, respectively). Show that each of the following define metrics on $M \times N$ that enjoy this property and that all three are equivalent:
+
+\begin{itemize}
+    \item $d_1((a, x), (b , y)) = d(a, b)+ \rho(x , y)$
+    \item  $d_2((a, x), (b , y)) = \sqrt{d(a, b)^2+ \rho(x , y)^2}$
+    \item $d_\infty((a, x), (b , y)) = \max\{d(a, b)+ \rho(x , y)\}$
+\end{itemize}
+
+\begin{proof}
+Let $(x_n, y_n)$ be a sequence in $M \times N$ such that $x_n \rightarrow x$ and $y_n \rightarrow y$ in $(M, d)$ and $(N, \rho)$, respectively.
+
+Pick $\epsilon = \delta + \gamma > 0$, with $\delta > 0$ and $\gamma > 0$.
+
+Then, there are $A, B$ such that $d(x_n, x) < \delta$ when $n>A$ and $\rho(y_n, y) < \gamma$ when $n>B$. Then, $d_1((x_n, x), (y_n, y)) = d(x_n, x) + \rho(y_n, y) < \delta + \gamma = \epsilon$ when $n > \max\{A,B\}$.
+
+Conversely, if $(x_n, y_n) \rightarrow (x,y)$ in $M \times N$, we have for all $\epsilon> 0$  some $A$ such that $d_1((x_n, x), (y_n, y)) = d(x_n, x) + \rho(y_n, y) < \epsilon$ when $n>A$. But this means that  $d(x_n, x) < \epsilon$ and $\rho(y_n, y) < \epsilon$ for all $n>A$, implying that $x_n \rightarrow x$ and $y_n \rightarrow y$.
+
+Therefore, convergence in coordinates implies convergence in $d_1$, and vice-versa.
+
+\vspace{1em}
+
+If $(x_n, y_n)$ is a sequence in $M \times N$ that converges in coordinates, then, as shown before, it converges in $d_1$.  But then we have for $\epsilon>0$ some $N$ such that $d_\infty((x_n, x), (y_n, y)) \leq d_2((x_n, x), (y_n, y)) \leq d_1((x_n, x), (y_n, y)) < \epsilon$ for all $n>N$, which means that the the sequence also converges in $d_2$ and $d_\infty$.
+
+Assume that $(x_n, y_n)$ converges in $d_\infty$. Then, for all $\epsilon >0 $ there is some $N$ such that $d_\infty((x_n, x), (y_n, y))  \max\{d(x_n, x)+ \rho(y_n, y))\} < \epsilon$ when $n>N$. But this implies that $d(x_n, x) < \epsilon$ and $\rho(y_n, y) < \epsilon$ when $n>N$, implying convergence in coordinates.
+
+Finally, assume that $(x_n, y_n)$ converges in $d_2$. Then, for all $\epsilon>0$ we have some $N$ such that $d_2((x_n, x), (b , y)) = \sqrt{d(x_n, x)^2+ \rho(y_n, y)^2} < \epsilon^\frac{1}{4}$ when $n>N$. Squaring both sides, we obtain that $d(x_n, x)^2+ \rho(y_n, y)^2 < \epsilon^\frac{1}{2}$, which implies that $d(x_n, x)^2 < \epsilon^\frac{1}{2}$ and $ \rho((y_n, y)^2 < \epsilon^\frac{1}{2}$. Squaring both inequalities, we get that $d(x_n, x) < \epsilon$ and $\rho(y_n, y) < \epsilon$ when $n>N$, which implies convergence in coordinates.
+
+Therefore, convergence in coordinates also implies convergence in $d_2$ and $d_\infty$ and vice-versa.
+
+\end{proof}
+
+

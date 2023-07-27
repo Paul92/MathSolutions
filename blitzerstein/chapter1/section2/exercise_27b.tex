@@ -1,0 +1,13 @@
+\begin{exercise}{27b}
+(b) (probability that a random 2-letter word is a palindrome2) (probability that a
+random 3-letter word is a palindrome)
+\end{exercise}
+
+\begin{proof}
+    There are 26 letters in the alphabet, which can form $26^2$ two letter words and $26^3$ three letter words.
+
+    In order to have a two letter palindrome, both letters must be identical, so there are only $26$ two letter palindromes. This implies that the probability of a two letter word to be a palindrome is $\frac{26}{26^2} = \frac{1}{26}$
+
+    For a three letter word to be palindrome, the first and the last letter must be the same, while the middle letter is independent. This implies that one can turn any two letter word in a three letter palindrome by copying the first letter at the end. Therefore, the number of three letter palindromes is the same as the number of two letter words. This implies that the probability of a two letter word to be a palindrome is $\frac{26^2}{26^3} = \frac{1}{26}$. Remarkably, is the same as the probability of a two letter word to be a palindrome.
+\end{proof}
+

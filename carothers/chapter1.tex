@@ -1,0 +1,428 @@
+\section{Calculus Review}
+
+\subsection{}
+If $A \subseteq \mathbb{R}$ that is bounded below, $A$ has a greatest lower bound.
+
+
+\begin{proof}
+
+If $A \subseteq \mathbb{R}$ that is bounded below, then there is $m$ real such that for all $x \in A$, $m$ is smaller than $x$. Equivalently, $-m > -x$.
+
+Consider the set $-A = \{-x : x \in A\}$. Then, $-m$ is an upper bound. But, by the least upper bound axiom, $-A$ must have a least upper bound $\sup(-A)$ such that for all $x \in -A, x < \sup(-A)$. Equivalently, for all $x \in A$ we have $x > -\sup(-A)$.
+
+$-\sup(-A)$ is therefore a lower bound for A. In order to prove that is the greatest lower bound of A, assume there is $l \in \mathbb{R}$ such that $l > -\sup(-A)$ another lower bound of A. From the lower bound property of $l$, we know that for all $x \in A$ we have $x > l$, or, equivalently $-x < -l$. We also have that $-l < \sup(-A)$. But this is a contradiction, since $-l$ cannot be an upper bound of $-A$ and smaller than $\sup(-A)$. Therefore, $-\sup(-A)$ is the greatest lower bound of $A$, denoted $inf(A)$.
+
+\end{proof}
+
+\subsection{}
+Let A be a bounded subset of R containing at least two points. Prove:
+\begin{itemize}
+\item $-\infty < \inf A < \sup A < +\infty$
+\item If B is a   nonempty subset of A, then $\inf A \leq \inf B \leq \sup B \leq \sup A$
+\item If B is the set of all  upper bounds for A, then B is nonempty, bounded below, and inf B =sup A.
+\end{itemize}
+
+\begin{proof}
+
+We start by proving that for any nonempty set $X \subseteq \mathbb{R}$, $\inf(X) \leq \sup(X)$. Since $X$ is nonempty, there is $x \in X$. Then, any (possibly infinite) upper bound $g$ of $X$ is then greater than or equal to $x$. Similarly, any (possibly infinite) lower bound of $X$ is smaller than or equal to $x$. In particular, we have that $\inf(X) \leq x \leq \sup(X)$.
+
+
+If A is bounded, then there is some $M$ real such that $x < |M|$ for all $x \in A$. Therefore, $A$ has a finite lower and upper bound. Since the supremum is by definition the least upper bound, we have $\sup(A) \leq M$ and therefore it is finite. Similarly, $\inf(A) \geq -M$ and is also finite. Since A has at least two points, we can pick $a,b \in A$ such that $a < b$. By the definitions of supremum and infimum, we get $\inf(A) \leq a < b \leq \sup(A)$. This results in $\inf(A) < \sup(A)$. Putting all together, we get that $-\infty < \inf A < \sup A < +\infty$.
+
+\vspace{8mm}
+
+Consider $B$ a nonempty subset of $A$ and assume that $\sup(B) > \sup(A)$. Since $B$ is a subset of $A$, we have that $x \in B$ implies $x \in A$. This means that any property pertaining to the elements of $A$ also pertains to the elements of $B$. In particular, we have that $\sup(A)$ is an upper bound of $A$, and therefore, is also an upper bound of $B$. Similarly, $\inf(A)$ is a lower bound for $B$. Since $B$ is nonempty, we also have that $\inf(B) \leq \sup(B)$. Putting all together results in $\inf A \leq \inf B \leq \sup B \leq \sup A$.
+
+\vspace{8mm}
+
+Let $B$ be the subset of all upper bounds of $A$. This means that any element $b \in B$ is greater than or equal to all elements of $A$. Assume that $\sup(A) < \inf{B}$, and let $x = \frac{\sup(A) + \inf{B}}{2}$ be a real number. Clearly, $\inf(B) > x > \sup(A)$. $x$ is now an upper bound of $A$. But this means that it should belong to the set of upper bounds of $A$, namely $B$. This cannot be true, since $\inf(B) > x$. Therefore the initial assumption that $\sup(A) < \inf{B}$ is false, leading to the conclusion that $\sup(A) \leq \inf{B}$. 
+
+Now assume that $\sup(A) > \inf{B}$ and consider the same number $x = \frac{\sup(A) + \inf{B}}{2}$. We now have $\inf(B) < x < \sup(A)$. Since $x$ is greater than the infimum of $B$, it is an element of $B$. This means that $x$ is a greater bound of $A$. But this contradicts the fact that $x < \sup(A)$. 
+
+Since $\sup(A)$ is neither greater than nor smaller than $\inf(B)$, $\sup(A) = \inf{B}$.
+
+\end{proof}
+
+\subsection{} Let A be a nonempty subset of R that is bounded above. Prove that s = sup A if and only if (i) s is an upper bound for A, and (ii) for every $e > 0$, there is an $a \in A$ such that $a >   s -e$. 
+
+\begin{proof}
+If $s = \sup{A}$, then $s$ is an upper bound of $A$ by the definition of $\sup$.
+
+Assume there is some $\epsilon > 0$ such that $a \leq s-\epsilon$ for all $a \in A$. Then, $s - \epsilon$ is an upper bound of $A$. But this contradicts that $s$ is the least upper bound.
+
+Conversely, let be $s$ an upper bound of $A$ and for every $\epsilon > 0$, some $a \in A$ such that $a > s - \epsilon$. Assume that there is $g$ an upper bound of $A$ which is smaller than $s$ and pick $\epsilon = \frac{s - g}{2}$. There is some corresponding $a \in A$ such that $a > s - \epsilon$. But $s - \epsilon = s - \frac{s - g}{2} = \frac{s + g}{2} > g$ since $s > g$. Therefore, we have found $a$, an element of $A$, which is greater than $g$. This means that $g$ cannot be an upper bound. More generally, we have shown that there cannot be any upper bound smaller than $s$. Since $s$ is an upper bound of $A$, $s$ is the least upper bound.
+
+
+\end{proof}
+
+\subsection{} Let A be  a nonempty subset of R that is bounded above.  Show that there is a   sequence $(x_n)$ of elements of A that converges to sup A. 
+
+\begin{proof}
+In the previous exercise, we proved that for any bounded subset $A$, $s = \sup{A}$ if and only if for all $\epsilon > 0$ there exists $a \in A$ such that $a > s - \epsilon$.
+Pick $\epsilon_n = \frac{1}{n}$. In particular, we can pick $a_n$ such that $a_n > s - \epsilon_n$. The sequence $a_n$ now converges to $s$.
+\end{proof}
+
+\subsection{} Suppose that $a_n < b$, for all  n, and that $a = \lim_{n-\infty} a_n$ exists. Show that $a \leq b$. Conclude that $a \leq \sup_n a_n = \sup {a_n : n \in N}$. 
+
+\begin{proof}
+Assume $b < a$. The sequence $(a_n)$ converges to a if and only if for all $\epsilon > 0$, there is some $N$ natural such that $|a_n - a| < \epsilon$ for all $n > N$. Pick $\epsilon = |\frac{a-b}{2}| > 0$. Then, there exists $n$ such that $|a_n - a| < \epsilon$. But implies that $a_n > b$, so $b$ cannot be an upper bound of $(a_n)$.
+
+If $a_n < b$ for all $n$, then $b$ is an upper bound for the set $A=\{a_n: n \in \mathbb{N}\}$. Since the above holds for any upper bound, it holds in particular for the least upper bound, so $a \leq \sup{A}$. 
+\end{proof}
+
+\subsection{}  Prove that every convergent sequence of real numbers is bounded. Moreover, if $(a_n)$ is convergent, show that $\inf_n a_n < \lim_{\rightarrow\infty} a_n < \sup_n a_n$.
+
+\begin{proof}
+
+\end{proof}
+Let $a_n$ be a sequence of real numbers convergent to some $a \in \mathbb{R}$. Then, for all $\epsilon > 0$, there exists $N$ such that $|a_n - a| < \epsilon$ for all $n > N$. Pick $\epsilon = 1$. Then, there is some $N$ such that $|a_n - a| < \epsilon$ for all $n > N$. This means that the sequence $(a_n)_{n=N}^{\infty}$ is bounded.
+The sequence $(a_n)_{n=0}^N$ is finite. Therefore, we can pick a maximum and a minimum element. Therefore, it is also bounded. (Actually, this also shows that \textit{any} finite sequence is bounded).
+
+
+\subsection{} If $a < b$, then there is also an irrational $x \in R \ Q$ with $a < x < b$.
+
+\begin{proof}
+Let $x = a + \sqrt{2}\frac{b-a}{2}$. The product and sum of a rational with an irrational are irrational. We know that $\sqrt{2}$ is irrational, and therefore $x$ is irrational. But we have $a < x < b$. So, we found one irrational between any 2 rationals.
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let $a_1 = \sqrt{2}$ and let $a_{n+1} = \sqrt{2a_n}$ for $n > 1$. Show that $(a_n)$ converges and find its limit.
+
+\begin{proof}
+Will begin by showing by induction that the sequence $(a_n)$ is bounded by 2. Clearly, $a_1=\sqrt{2} < 2$. Remains to show that $a_{n+1}<2$. But this is equivalent to $\sqrt{2a_n} < 2$. By squaring both sides, we get $2a_n < 4$, which is true since $a_n<2$ from the induction hypothesis.
+
+We now show that $(a_n)$ is increasing. This means that we have $a_n < a_{n+1}$ for all $n$. But this is equivalent to $a_n < \sqrt{2a_n}$. We again square both sides and get $a_n^2 < 2a_n$, which holds for all $n$ since $a_n < 2$.
+
+Therefore, we have shown that $(a_n)$ is a bounded monotonous sequence, so it is convergent by Theorem 1.4 to $\sup(a_n)$.
+
+We now look to compute $\lim_{n \rightarrow \infty}{a_n}$. Since we have proven its existence, assume it $a$. But $a$ is equal to $\lim_{n \rightarrow \infty}{a_{n+1}} = \lim_{n \rightarrow \infty}{\sqrt{2a_n}} = \sqrt{2\lim_{n \rightarrow \infty}{a_n}} = \sqrt{2a}$. So, the limit of the sequence $(a_n)$ satisfies $a = \sqrt{2a}$. This equation has only 2 real solutions, 0 and 2. Zero cannot be a solution, since the sequence is increasing and $a_1 = \sqrt{2} > 1$. Therefore, $\lim_{n \rightarrow \infty}{a_n}=2$.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let $a_n \geq 0$ for all $n$, and let $s_n = \sum_{i=1}^n a_i$. Show that $(s_n)$ converges if and only if $(s_n)$ is bounded.
+
+\begin{proof}
+Since $s_{n+1} - s_n = a_{n+1} \geq 0$, we have $s_{n+1} \geq s_n$ for all $n$, so $(s_n)$ is monotone.
+
+Let $s$ be the limit of $(s_n)$ as $n$ goes to infinity. Assume there is $k$ such that $s_k > s$, and pick $\epsilon = \frac{s_k - s}{2} > 0$. Since $(s_n)$ is increasing, we have that $s_n > s_k$ for all $n > k$. But this means that $|s_n - s_k| > \epsilon$ for all $n>k$, which contradicts the fact that $(s_n)$ converges to $s$. Since there is no $s_k > s$, $s$ in an upper bound of $(s_n)$. Also, since $(s_n)$ is increasing, $s_0$ is a lower bound. Therefore, $(s_n)$ is bounded.
+
+Conversely, if $(s_n)$ is bounded, and since it is increasing, we have by Theorem 1.4 that it is convergent.
+\end{proof}
+
+\subsection{} Prove that a convergent sequence is Cauchy and any Cauchy sequence is bounded.
+
+\begin{proof}
+Let $(s_n)$ be a sequence convergent to $s$. Then, for all $\epsilon > 0$ there is an $N$ natural such that $|s_n - s| < \epsilon$ for all $n > N$. Let's consider two elements, $s_a, s_b$ with $a,b > N$. Then, $|s_a - s_b| \leq |s_a - s| + |s_b - s| < 2\epsilon$, by the triangle inequality. Since this has to hold for all $\epsilon > 0$, the sequence is Cauchy.
+
+Let $(s_n)$ be a Cauchy sequence. Then, there is some $N$ natural such that $|s_a - s_b| < \epsilon$ for all $a,b > N$ and $\epsilon > 0$. We now turn our attention to this subsequence of $(a_i)_{i=0}^{\infty} = (s_n)_{n=N}^{\infty}$, where any two elements are at a distance of at most $\epsilon$. This means that there is some real number $l$ such that  $|a_i - l| < n \epsilon$ for some $n$ natural. We can always pick a smaller $\epsilon$ (more specifically, an epsilon $n$ times smaller), and have that $|a_i - l| < \epsilon$ which means that the $|s_n - l| < \epsilon$ for all $n$ greater than some $N$ natural. Therefore, the sequence is convergent.
+\end{proof}
+
+\subsection{} Show that a Cauchy sequence with a convergent subsequence is convergent.
+\begin{proof}
+
+Let $(s_n)$ be a Cauchy sequence and $(s_{k_n})$ a subsequence of $(s_n)$ convergent to some $l$ real. This means for all $\epsilon>0$ there is some $N$ natural such that $|s_{k_n} - l| < \epsilon$ for all $n > N$. This is equivalent to having infinitely many elements of $(s_n)$ such that $|s_n - l| < \epsilon$.
+
+Since $(s_n)$ is a Cauchy sequence, we have for all $\delta > 0$ some $M$ natural such that $|s_i - s_j| < \delta$ for all $i, j > M$.
+
+
+
+
+Let $\gamma=\delta+\epsilon$, with $\delta, \epsilon>0$. Then, there are $M,N$ natural such that $|s_i - s_j| < \delta$ for all $i, j > M$ and $|s_{k_n} - l| < \epsilon$ for all $n > N$. Let $T = \max(m,n)$. For $j > T$, we have $|s_j - l| \leq |s_i - l| + |s_j - s_i| < \delta + \epsilon = \gamma$ for infinitely many $i>T$. This means that the sequence $(s_i)$ converges.
+
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\stepcounter{subsection}
+
+\subsection{} If $0 < c < 1$. Show that $c^n \rightarrow 0$ and if $c > 0$, show  that $c^\frac{1}{n} \rightarrow 1$.
+
+\begin{proof}
+For any $0<c<1$, we can find some $x>0$ such that $\frac{1}{1+x}=c$. Then, we need to prove that $(\frac{1}{1+x})^n$ converges to 0. Now we have:
+
+\[(\frac{1}{1+x})^n = \frac{1}{(1+x)^n} \]
+
+We apply Bernoulli's equality to the numerator, i.e. $(1+x)^n > 1+nx$, and therefore we get: $0 < \frac{1}{(1+x)^n} < \frac{1}{1+nx}$ (both greater than 0 since $x>0$).
+
+$\frac{1}{n}$ converges to 0 and so does any sequence of the form $\frac{a}{n}$, by the convergence definition. 
+
+Since $\frac{1}{1+nx} < \frac{1}{nx}$, we get that $0 < \frac{1}{(1+x)^n} < \frac{1}{nx} \rightarrow 0$, and therefore $\frac{1}{(1+x)^n} \rightarrow 0$
+
+%TODO: part2
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Show that $\inf_n a_n \leq \lim \inf a_n \leq \lim \sup_n a_n \leq \sup_n a_n$.
+
+\begin{proof}
+
+Let $a_n$ be a sequence of real numbers. We define $\lim \inf a_n$ as $\sup \inf\{a_1, a_2, \dots\}$ and $\lim \sup a_n$ as $\inf \sup\{a_1, a_2, \dots\}$.
+
+The sequence $t_n = \inf\{a_n, a_{n+1}, \dots\}$ is an increasing sequence, since when moving from $t_n$ to $t_{n+1}$, one element gets removed (namely $a_n$). If the element is the smallest element from the set $\{a_n, a_{n+1}, \dots\}$, then the infimum of the sequence $\{a_n, a_{n+1}, \dots\}$ is smaller than the infimum of $\{a_{n+1}, a_{n+2}, \dots\}$, and therefore the sequence is increasing. If $a_n$ is not the minimum element, then the infima of the two sequences are the same. Therefore, the sequence $t_n$ is increasing.
+
+By its definition, the supremum of a sequence is greater than or equal to all its elements. This means that $\inf_n a_n \leq \lim \inf a_n = \sup t_n$. 
+
+Using the same argument, we can show that $\lim \sup_n a_n \leq \sup_n a_n$.
+
+Remains to show that $\lim \inf a_n \leq \lim \sup_n a_n$. This is equivalent to comparing $\sup \inf\{a_n, \dots\}$ with $\inf \sup\{a_n, \dots\}$.
+
+Assume $\lim \inf a_n > \lim \sup a_n$. Since the sequence $\inf a_n$ is increasing and $\sup_n a_n$ is decreasing, there is $N$ such that $\inf a_n > \sup a_n$ for all $n > N$. But there is no (sub)sequence $a_n$ whose infimum is greater than its supremum. Therefore, $\lim \inf a_n \leq \lim \sup_n a_n$.
+
+\end{proof}
+
+\subsection{} If $(a_n)$ is convergent, show that $\lim \inf a_n = \lim \sup a_n = \lim a_n$.
+
+\begin{proof}
+Assume the sequence $(a_n)$ converges to $L$. Let $\epsilon>0$. Then, there is some $N \in \mathbb{N}$ such that $|a_n - L| < \epsilon$. Consider the sequence $(a_n)_{n=N}^{\infty}$. All its elements are such that $|a_i - L| < \epsilon$. This implies that $|\inf (a_n)_{n=N}^{\infty} - L| < \epsilon$ and $|\sup (a_n)_{n=N}^{\infty} - L| < \epsilon$ (otherwise $\epsilon$ would be a lower bound (or upper bound) that is greater (or smaller) than the infimum (or supermum) of the sequence). Moreover, $|\inf (a_n)_{n=i}^{\infty} - L| < \epsilon$ and $|\sup (a_n)_{n=i}^{\infty} - L| < \epsilon$ for all $i > N$. 
+
+But this means that for all $\epsilon > 0$, we have some $N$ after which the sequence of infima and the sequence of suprema are within $\epsilon$ of $L$, and therefore they converge to $L$.
+
+\end{proof}
+
+\subsection{} Show that $\lim \sup -a_n= -\lim \inf a_n$.
+
+\begin{proof}
+From exercise 1, we know that $\inf(a_n) = -\sup(-a_n)$. Since $\inf(a_n)_{n=N}^{\infty}$ and $-\sup(-a_n)_{n=N}^{\infty}$ are convergent sequences with equal elements, they are equivalent Cauchy sequences and therefore they have the same point of convergence. Therefore, $\lim \inf a_n= -\lim \sup -a_n$. By a multiplication with $-1$, we get that $-\lim \inf a_n= \lim \sup -a_n$, as required.
+\end{proof}
+
+
+\subsection{} If $\lim \sup a_n = -\infty$, show that $(a_n)$ diverges to $-\infty$. If $\lim \sup a_n = \infty$, show that $(a_n)$ has  a subsequence that diverges to $\infty$. What happens if $\lim \inf a_n = ±\infty$?
+
+\begin{proof}
+Assume $a_n$ does not converge to $-\infty$. Then, there is some $K>0$, for which there is no $N$ such that $a_n < K$ for all $n > N$. This means that any subsequence $(a_n)_{n=N}^{\infty}$ has some $a_n > K$. But this means that $\sup (a_n)_{n=N}^{\infty} \geq K$ for all $N$, and therefore $\lim \sup a_n$ cannot be $-\infty$.
+
+Assume that $\lim \sup a_n = \infty$. This means that the sequence of suprema of $(a_n)_{n=N}^{\infty}$ diverges to $\infty$. But in each subsequence $(a_n)_{n=N}^{\infty}$ there needs to be some $N \leq i < \infty$ such that $a_i$ is within $\epsilon$ of the supremum of the sequence, for all $\epsilon > 0$ (otherwise the supremum would be smaller). Pick this sequence of elements of the form $a_i$. It is a subsequence of $(a_n)$, and is within $\epsilon$ of a sequence divergent to $\infty$ (the sequence of suprema). This means that the sequence of $a_i$ also diverges to $\infty$.
+
+If $\lim \inf a_n = \infty$, by a similar argument, we have that $(a_n)$ diverges to $\infty$ and if $\lim \inf a_n = -\infty$, there is a subsequence of $(a_n)$ that diverges to $-\infty$. 
+\end{proof}
+
+\subsection{} Prove the characterization of $\lim \sup$ given above. That is, given a bounded sequence $(a_n)$, show that the number $M = \lim \sup a_n$ satisfies (*) and, conversely, that any number $M$ satisfying (*) must equal $\lim \sup a_n$. State and prove the corresponding result for $m = \lim \inf a_n$.
+
+
+\begin{proof}
+We need to prove that for every $\epsilon > 0$, $a_n < M + \epsilon$ for all but finitely many $n$ and $M-\epsilon < a_n$ for infinitely many $n$.
+
+We start with the first statement. Clearly, $a_n < M + \epsilon$ has to hold for at least \textit{some} elements of $(a_n)$, otherwise all $\sup (a_n)_{n=N}^{\infty}$ would be at least at a distance of $\epsilon$ from $M$, so they cannot converge to $M$. Also, considering $(b_n)_{n=1}^{\infty}$ some sequence such that $\lim \sup b_n = M$, we can replace $b_1$ with $M + \epsilon + 1$. This may affect only the first element in the sequence of suprema, and therefore $\lim \sup$ of the new sequence will remain the same.
+
+Remains to show that, while $a_n < M + \epsilon$ needs to hold for infinitely many $n$ and may not hold for some $n$, it may not hold for only finitely many $n$. This can be shown using the definition of the limit. We need to have the elements of the sequence of suprema of $(a_n)$ past some $N$ within $\epsilon > 0$ of M. But, since there are infinitely many elements of $a_n$ greater than $M + \epsilon$, there will be infinitely many such elements in the subsequence $(a_n)_{n=N}^{\infty}$, which would make the suprema of all such sequences greater than $M$ by more than $\epsilon$. So $a_n < M + \epsilon$ needs to hold for all but finitely many $n$.
+
+Also, we need to show that $M-\epsilon < a_n$ for infinitely many $n$. Assuming that it holds for only finitely many $n$, we can find $N$ such that $M-\epsilon < a_n$ does not hold for any $n>N$. But the suprema of these subsequences are then at most $M-\epsilon$. Looking at the sequence of suprema of $(a_n)$, this means that for $n>N$, we have the elements farther than $\epsilon$ from $M$, so $M$ cannot be the limit of this sequence. Therefore, $M-\epsilon < a_n$ has to hold for infinitely many $n$. Interestingly, this property may not hold for infinitely many $n$, since this won't change the suprema of the subsequences.
+
+Conversely, assume that we have a sequence $(a_n)$ such that $a_n < M + \epsilon$ holds for all but finitely many $n$ and $M-\epsilon < a_n$ holds for infinitely many $n$. Without loss of generality, we can assume that $a_n < M + \epsilon$ holds for all $n$ and $M-\epsilon < a_n$ holds for infinitely many $n$. We now look at the sequence of suprema of this subsequence, namely the sequence $s_n = \sup\{a_k:k \geq n\}$. Since all $a_n < M + \epsilon$, $s_n < M + \epsilon$. Also, since we have $M-\epsilon < a_n$ for infinitely many $n$, this means that any subsequence of $a_n$ has at least one element greater than $M-\epsilon$. Therefore, its suprema is greater than $M-\epsilon$. But this shows that all elements of $s_n$ are within $\epsilon$ of $M$. This means that $s_n$ converges to $M$, i.e. $M = \lim \sup a_n$.
+
+\end{proof}
+
+\subsection{} Prove that every sequence of real numbers $(a_n)$ has a  subsequence $(a_{n_t})$ that converges to $\lim \sup a_n$. There is necessarily also a subsequence that converges to $\lim \inf a_n$. Why?
+
+\begin{proof}
+The case where the sequence of $\sup a_n$ diverges has been considered in Exercise 1.25.
+
+
+Let $A_n = \{a_i: i > n\}$ and $s_n = \sup A_n$. $L = \lim \sup a_n$ is therefore $\lim s_n$. For all $i < j$ we have that $A_j \subset A_i$ which implies $\sup A_j \leq \sup A_i$. Therefore the sequence $(s_n)$ is decreasing and $\inf s_n = \lim s_n$.
+
+Since $(s_n)$ converges and is decreasing, it converges to its infimum. So $\inf s_n = \lim s_n$. This means that for all $\epsilon > 0$, we have some $N$ such that $s_n - L < \epsilon$ for all $n > N$. But, since $s_n$ is the sequence of suprema of $(a_n)$, we can find for every $s_n$ and for all $\delta>0$ some $i>n$ such that $s_n - a_i \leq \delta$ (note that $s_n \geq a_i$ since $s_n$ is the supremum of the subsequences containing $a_i$). By subtracting the two inequalitites, we have that $(s_n - L) - (s_n - a_i) = a_i - L < \epsilon - \delta = \gamma$. Since this has to hold for all $\epsilon, \delta>0$, we can choose them in such a way that the above inequality holds for all $\gamma>0$.
+
+
+
+We can consider the sequence $(-a_n)$, and look at its $\lim \sup$. Since $-\lim \inf a_n = \lim \sup -a_n$, and, from the above, there is a subsequence of $(-a_n)$ convergent to $\lim \sup -a_n$, there is a subseqence of $(-a_n)$ convergent to $-\lim \inf a_n$. But if the sequence $(-a_n)$ converges to some $-L$, this means that $(a_n)$ converges to $L$, reaching the desired conclusion.
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+
+
+
+\subsection{} If $a_n < b_n$ for all $n$, and if $(a_n)$ converges, show  that $\lim a_n \leq \lim \inf b_n$.
+
+\begin{proof}
+
+By the characterization of the $\lim \inf$, we have that for all $\epsilon > 0$, $m = \lim \inf b_n$ iff $b_n > m-\epsilon$ for all but finitely many $n$ and $b_n < m+\epsilon$ for infinitely many $n$.
+
+In particular, we have $b_n < m+\epsilon$ for infinitely many $n$. From the convergence of $(a_n)$, we have for all $\delta > 0$ some $N$ such that $|a_n - L| < \delta$, where $L = lim a_n$.
+
+Assume that $m < L$, and let $\epsilon = \delta = \frac{L - m}{4} > 0$. Then, there are infinitely many $n$ such that $b_n < m + \epsilon < L - \delta < a_i$ for all $i > N$. This implies that there are an infinity of elements such that $b_n < a_n$, but this contradicts the hypothesis. 
+
+\end{proof}
+
+
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Suppose that $a_n > 0$ and that $\sum_{n=1}^\infty a_n < \infty$.
+\begin{itemize}
+    \item Show that $\lim \inf n a_n = 0$
+    \item Give an example showing that $\lim \sup na_n > 0$ is possible.
+\end{itemize}
+
+\begin{proof}
+Since the sequence $(na_n)$ has only positive elements, its $\lim \inf$ cannot be negative.
+
+Assume $m = \lim \inf n a_n > 0$. This means that for all $\epsilon > 0$  $na_n > m - \epsilon$ for all but finitely many $n$. Then, there is $N$ such that the above holds for all $n>N$. Choose $\epsilon = \frac{m}{2}$. Then, $n a_n > \frac{m}{2}$.
+
+Since all $(a_n) > 0$, $\sum_{n=1}^\infty a_n = S + \sum_{n=N}^\infty a_n  > \sum _{n=N}^\infty \frac{m}{2n} = \frac{m}{2}\sum_{n=N}^\infty \frac{1}{n} = \infty$. But this contradicts the hypothesis, so $\lim \inf n a_n = 0$.
+
+On the other hand, consider the sequence $(a_n)$ such that $a_n = 1/2^n$ if $n=2^i$ and $a_n = 0$ otherwise. Clearly, the series $\sum_{n=1}^\infty a_n = \sum_{n=1}^\infty \frac{1}{2^n} = 1$. Also, the sequence $(na_n)$ is equal to 1 if n is a power of 2 and 0 otherwise, so $\lim \sup a_n = 1$.
+
+\end{proof}
+
+\subsection{} The ratio test. Let $(a_n) \geq 0$.
+
+
+If $\lim \sup a_{n+1} / a_n < 1$ show that $\sum_{n=1}^\infty a_n < \infty$.
+
+\begin{proof}
+If $l = \lim \sup a_{n+1} / a_n < 1$, this means that the ratio $a_{n+1} / a_n$ between any 2 consecutive elements is at most $l < 1$ for all $n>N$ for some $N$ natural, and therefore the sequence is decreasing for $n>N$. Moreover, for $n>N$, we have that $a_n \leq \frac{a_N}{l^{n-N}}$. This means that $\sum_{n=1}^\infty a_n \leq \sum_{n=1}^N a_n + \sum_{n=N}^\infty \frac{a_N}{l^{n-N}} = S + a_N \sum_{n=N}^\infty \frac{1}{l^{n-N}} = S + a_N \frac{1}{1 - l}$, with $l < 1$ and $S$ finite. 
+\end{proof}
+
+If $\lim \inf a_{n+1} / a_n > 1$ show that $\sum_{n=1}^\infty a_n$ diverges.
+
+\begin{proof}
+If $l = \lim \inf a_{n+1} / a_n < 1$, this means that the ratio between any 2 consecutive elements is at least $l > 1$, and therefore the sequence is increasing. We have $a_n \geq \frac{a_0}{l^n}$. This means that $\sum_{n=1}^\infty a_n \geq \sum_{n=1}^\infty \frac{a_0}{l^n} = a_0 \sum_{n=1}^\infty \frac{1}{l^n} = \infty$. 
+\end{proof}
+
+Find  examples of  both a  convergent and a  divergent series having $\lim a_{n+1} / a_n = 1$.
+
+\begin{proof}
+The series $\sum_{n=1}^\infty 1$ has $\lim a_{n+1} / a_n = 1$ and is divergent, while the series $\sum_{n=1}^\infty \frac{1}{n^2}$ has $\lim a_{n+1} / a_n = 1$ but converges to $\pi / 6$.
+\end{proof}
+
+\subsection{} The root test. Let $(a_n) \geq 0$.
+
+If $\lim \sup \sqrt[n]{a_n} < 1$ show that $\sum_{n=1}^\infty a_n < \infty$.
+
+\begin{proof}
+
+If $L = \lim \sup \sqrt[n]{a_n} < 1$, we have $\sqrt[n]{a_n} < L + \epsilon$ for all $\epsilon > 0$ and $n > N$. Raising both sides of the inequality to the $n$th power, we have $a_n < (L + \epsilon)^n$. Since this holds for all $\epsilon > 0$, we can choose $\epsilon = (1-L)/2$.
+
+We now split the infinite series in $\sum_{n=1}^\infty a_n$ into a finite series and an infinite series such that $\sum_{n=1}^\infty a_n = \sum_{n=1}^N a_n + \sum_{n=N+1}^\infty a_n < \sum_{n=1}^N a_n + \sum_{n=N+1}^\infty (L + \epsilon)^n = S_1 + S_2$. $S_1$ is finite and therefore bounded, while $S_2$ is a geometric series with the coefficient less than 1, and therefore it is also bounded.
+
+\end{proof}
+
+If $\lim \inf \sqrt[n]{a_n} > 1$  show that $\sum_{n=1}^\infty a_n$ diverges.
+
+\begin{proof}
+
+If $l = \lim \inf \sqrt[n]{a_n} > 1$, we have $\sqrt[n]{a_n} > l - \epsilon$ for all $\epsilon > 0$ and $n > N$. Raising both sides of the inequality to the $n$th power, we have $a_n > (l - \epsilon)^n$ and choose $\epsilon = (l-1)/2$.
+
+Using the same technique as above, we can split the series into a finite series and an infinite series. This time, the infinite series is bounded from below by the geometric series $\sum_{n=N+1}^\infty (l - \epsilon)^n$, which is divergent due to our choice of $\epsilon$
+
+\end{proof}
+
+
+Find  examples of  both a  convergent and a  divergent series having $\lim \sqrt[n]{a_n} = 1$.
+ 
+\begin{proof}
+The series  $\sum_{n=1}^\infty n^n$ has $\lim \sqrt[n]{a_n} = 1$ and diverges.
+
+\end{proof}
+
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let $f$ be a real-valued function defined in some punctured neighborhood of $a \in R$. Then, the following are equivalent: 
+
+\begin{itemize}
+\item There exists a number $L$ such that $\lim_{x\rightarrow a} f(x) = L$ (by the $\epsilon - \delta$ definition).
+\item There exists a number $L$ such that $f(x_n) \rightarrow L$ whenever $x_n \rightarrow a$, where $x_n \neq a$ for all $n$.
+\item $(f(x_n))$ converges (to something) whenever $x_n \rightarrow a$, where $x_n \neq a$ for all $n$.
+\end{itemize}
+
+
+\begin{proof}
+Assume that  $\lim_{x\rightarrow a} f(x) = L$. Considering the sequence $(f(x_n))$, we have that for all $\epsilon > 0$ there is some $\delta>0$ such that whenever $|x_n-a|<\delta$, $|f(x_n)-L|<\epsilon$. But for all $\delta>0$, $|x_n-a|<\delta$ for all $n>N$ and therefore for all $n>N$ we have $|f(x_n)-L|<\epsilon$. But this means that $(f(x_n))$ converges to $L$.
+
+Conversely, assume that $f(x_n) \rightarrow L$ whenever $x_n \rightarrow a$. This means that for all $\epsilon>0, \delta>0$ there is $N$ natural such that $|f(x_n) - L| < \epsilon$ whenever $|x_n - a| < \delta$ for all $n>N$. 
+
+Conversely, assume that $f(x_n) \rightarrow L$ whenever $x_n \rightarrow a$ but $f$ is not continuous according to the $\epsilon-\delta$ definition. This means that we can find $\epsilon > 0$ such that for all $\delta>0$ there is $x_0$ such that $|x_0-a| < \delta$ and $|f(x_0) - L| > \epsilon$. This means that for each $\delta = \frac{1}{n}$, there is a point $x_n$ such that $|x_n-a| < \delta$ and $|f(x_n) - L| > \epsilon$. But $(x_n)$ is a sequence converging to $a$, and therefore $(f(x_n))$ has to converge to $L$, which is contradiction to our original assumption.
+
+
+This completes the proof that the first two statements are equivalent.
+
+
+The second statement indicates that there is a number $L$, such that $f(x_n) \rightarrow L$ whenever $x_n \rightarrow a$, which implies the more general third statement. 
+
+To prove that the third statement implies the second, consider two sequences $(x_n)$ and $(y_n)$ converging to some $a$. They are therefore equivalent Cauchy sequences, meaning that for all $\epsilon > 0$ we can find some $N$ such that $|x_n - y_n| < \epsilon$. We also know from the third statement that both $(f(x_n))$ and $(f(y_n))$ are convergent sequences (i.e. Cauchy), and assume that they converge to $L_x$ and $L_y$, respectively. Remains only to show that they are equivalent.
+
+For this, we construct $(a_n)$ such that $a_n = x_{n/2}$ if $n$ even and $a_n = y_{(n-1)/2}$ otherwise. Since $(x_n)$ and $(y_n)$ are equivalent Cauchy sequences, $(a_n)$ converges to $a$. By the third statement, we have that $(f(a_n))$ must converge to some $L_a$. But, since $(f(x_n))$ and $(f(y_n))$ are both infinite subsequences of $(f(a_n))$, we get that $L_a = L_x = L_y = L$. But this shows that there is a number $L$ such that whenever a sequence $(x_n)$ converges to $a$, $(f(x_n))$ converges to $L$.
+
+
+
+\end{proof}
+
+\subsection{}  Let $f$ be a real-valued function defined in some neighborhood of $a \in R$. Then, the following are equivalent:
+
+\begin{itemize}
+    \item  $f$ is continuous at $a$ (by the $\epsilon - \delta$ definition)
+    \item $f(x_n) \rightarrow f(a)$ whenever $x_n \rightarrow a$
+    \item $(f(x_n))$ converges (to something) whenever $x_n \rightarrow a$
+    \item $f(a-)$ and $f(a+)$ both exist, and both are equal to $f(a)$
+\end{itemize}
+
+\begin{proof}
+The first three statements are a generalization of the previous exercise, removing the $x_n \neq a$ restriction. Therefore, we just prove that they also hold when $x_n=a$ for some $n$.
+
+By the definition of continuity, if $\lim_{x\rightarrow a} f(x) = L$ and $f(a)$ exists, then $f(a) = L$. In this case, for all $\epsilon, \delta > 0$, $|f(a) - L| = 0 < \epsilon$ and $|x_n - a| = 0 < \delta$ when $x_n = a$. Therefore, the second and third statements in the previous exercise remain valid.
+
+The fourth statement is new, and will show equivalence to the first one. If $f$ is continuous at $a$, we have $\lim_{x\rightarrow a} f(x) = L$. But this means that for all $\epsilon > 0$ there is some $\delta>0$ such that whenever $|x-a|<\delta$, $|f(x)-L|<\epsilon$. In particular, when $x>a$ such that $x-a < \delta$, $|f(x)-L|<\epsilon$. But this means that $f(a+)=L$. Similarly, when $x<a$ such that $a-x < \delta$, $|f(x)-L|<\epsilon$, i.e. $f(a-)=L$.
+
+Conversely, if $f(a+) = f(a-) = f(a)$, there are three possibilities. Either $x<a$, case in which for $\epsilon > 0$ there is some $\delta_1 > 0$ such that whenever $a-x < \delta_1$ $|f(x)-L|<\epsilon$, or  $x>a$, case in which for all $\epsilon > 0$ there is some $\delta_2 > 0$ such that whenever $x-a < \delta_2$, $|f(x)-L|<\epsilon$. The final case is when $x=a$, which is trivial.
+
+Putting these three cases together, means that for all $\epsilon>0$ we can find $\delta = \min(\delta_1, \delta_2)$ such that whenever $|x-a|<\delta$, $|f(x)-L|<\epsilon$. But this means that $\lim_{x\rightarrow a} f(x) = L = f(a+) = f(a-) = f(a)$.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+
+
+\subsection{} Let $f : (a, b) \rightarrow R$ be monotone and let $a < x < b$. Show that $f$ is continuous at $x$ if and only if $f(x-) = f(x+)$.
+
+\begin{proof}
+Assume that $f$ is continuous at $x$. This means that $f(x)$ is defined and $\lim_{t\rightarrow x} f(t) = f(x)$. But since $\lim_{t\rightarrow x} f(t)$ exists, it must be equal to the side limits at $x$. Therefore, $f(x-) = f(x+)$.
+
+Conversely, assume that $L = f(x-) = f(x+)$. Without loss of generality, assume that $f$ is increasing. In this case, the only way to have a discontinuity at $x$ if $f(x) \neq L$. But since $f$ is increasing, we must have $f(x-) \leq f(x) \leq f(x+)$. Since $L = f(x-) = f(x+)$, it is necessary for $L=f(x)$. But this implies that $L = \lim_{t\rightarrow x} f(t) = f(x)$, i.e. $f$ is continuous at $x$.
+\end{proof}
+
+\subsection{} Let $D$ denote the  set of rationals in $[ 0, 1 ]$  and suppose that  $f  : D \rightarrow \mathbb{R}$ is increasing. Show that there is an increasing function $g : [ 0, 1 ] \rightarrow \mathbb{R}$ such that $g(x) = f(x)$ whenever $x$ is rational. 
+
+\begin{proof}
+For $x \in [0, 1]$, define $g(x) = \sup\{f(t) : 0 \leq t \leq x, t \in \mathbb{Q}\}$. Obviously, whenever $x$ is rational we have $g(x)$ as the supremum of a set containing $f(x)$. Moreover, since $f$ is increasing, all the elements of this set are less than $f(x)$. Therefore, $f(x)$ is the supremum of this set.
+
+Remains only to show that $g$ is increasing. Obviously, if $x$ is rational, $g$ is increasing. Let $x<y$ real. Then, there are two Cauchy sequences of rationals that converge to $x$ and $y$ with all elements between $0$ and $x$ or $y$, respectively.  Let's name these sequences $(x_n)$ and $(y_n)$. There must be some $N$ natural such that $x_n < y_n$ for all $n > N$. Since $f$ is increasing, the sequences $(f(x_n))$ and $(f(y_n))$ are both increasing, with $f(x_n) < f(y_n)$ for all $n>N$. This means that the set containing the elements of $(f(x_n))$ has the suprema less than the set containing the elements of $(f(y_n))$. But these are $g(x)$ and $g(y)$.
+
+\end{proof}
+
+\subsection{} Let $f  : [a, b ] \rightarrow \mathbb{R}$ be increasing and  define $g  :  [ a, b ] \rightarrow \mathbb{R}$ by $g(x) = f(x+)$ for $a < x < b$ and $g(b) = f(b)$. Prove that $g$ is increasing and right continuous. 
+
+\begin{proof}
+
+We start by showing that $g$ is increasing on $(a,b)$. If $f(x+) = \lim_{t\rightarrow x^+} f(t)$, then any sequence $(x_n)$ that converges to $x$ such that $x_n \geq x$ for all $n$ has the property that $(f(x_n))$ converges to $f(x+)$. Similarly for the sequences $(y_n)$.
+In particular, we have two sequences $(x_n)$ and $(y_n)$ which converge to $x$ and $y$, respectively, such that $(f(x_n))$ converges to $f(x+) = g(x)$ and $(f(y_n))$ converges to $f(y+) = g(y)$.
+
+Assume that $x<y$. Pick $\epsilon = \frac{y-x}{2} > 0$. Then, by the definition of sequence convergence, there is some $N$ natural such that $f(x_n) - f(x+) < \epsilon$ for all $n>N$. But, due to our choice of $\epsilon$, we have $f(x_n) < f(y+)$. So we have $f(x+) < f(x_n) < f(y+)$ for all $n>N$, which shows that $g(x) < g(y)$.
+
+$f$ is increasing, so $f(b)$ the supremum of ${f(x) : a \leq x \leq b}$. In particular, any sequence $(f(x_n))$ that converges to some $g(x) = f(x+)$ must have all its elements less than $g(b) = f(b)$. But this means that $f(x+) \leq f(b)$ for all $x \in [a,b)$.
+
+So $g$ is increasing. Remains only to show that is right continuous. We know that both $f$ and $g$ are increasing, with $g(x) \geq f(x)$. 
+
+\end{proof}

@@ -1,0 +1,20 @@
+\subsection*{3.6} 
+
+\begin{itemize}
+\item If $f$ is a function, $f^{-1}[A \cap B] = f^{-1}[A] \cap f^{-1}[B]$
+\begin{proof}
+    Pick $x \in f^{-1}[A \cap B]$. Then, there is some unique $y \in A \cap B$ such that $f(x) = y$. But we have that $y\in A$ and $y \in B$. Since $f(x) = y$, it follows that $x \in f^{-1}[A]$ and $x \in f^{-1}[B]$. Therefore, $x \in f^{-1}[A] \cap f^{-1}[B]$ and hence $f^{-1}[A \cap B] \subseteq f^{-1}[A] \cap f^{-1}[B]$.
+    
+    Conversely, pick $x \in f^{-1}[A] \cap f^{-1}[B]$. Therefore, $x \in f^{-1}[A]$ and $x \in f^{-1}[B]$. Since $f$ is a function, there is a unique $y \in A$ and $y \in B$ (i.e., $y \in A \cap B$) such that $f(x) = y$. But then $x \in f^{-1}[A \cap B]$ and hence $f^{-1}[A] \cap f^{-1}[B] \subseteq f^{-1}[A \cap B]$.
+\end{proof}
+
+\item If $f$ is a function, $f^{-1}[A - B] = f^{-1}[A] - f^{-1}[B]$
+
+\begin{proof}
+    Pick $x \in f^{-1}[A - B]$. Then, there is some unique $y \in A - B$ such that $f(x) = y$. Hence, $x \in A$ and $x \notin B$. Since $f(x) = y$, $x \in f^{-1}[A]$ and $x \notin f^{-1}[B]$. Therefore, $x \in f^{-1}[A - B]$ and so $f^{-1}[A - B] \subseteq f^{-1}[A] - f^{-1}[B]$.
+    
+    Conversely, let $x \in f^{-1}[A] \cap f^{-1}[B]$, that is, $x \in f^{-1}[A]$ and $x \notin f^{-1}[B]$. This implies that there is some $y \in A$ such that $f(x) = y$ and there is no such $y \in B$. It follows that $y \in A \setminus B$ and hence $x \in f^{-1}[A \setminus B]$.
+\end{proof}
+
+\end{itemize}
+

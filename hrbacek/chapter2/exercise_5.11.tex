@@ -1,0 +1,9 @@
+\subsection*{5.11} Show that if $(P,<)$ and $(Q,\prec)$ are isomorphic strictly ordered sets and $<$ is a linear ordering, then $\prec$ is a linear ordering.
+
+\begin{proof}
+If $(P,<)$ and $(Q,\prec)$ are isomorphic strictly ordered sets, then there is some bijective function $f$ from $P$ to $Q$ such that $p_1 < p_2$  if and only if $f(p_1) \prec f(p_2)$ for $p_1, p_2 \in P$. 
+
+Let $q,r \in Q$. Then, $f^{-1}(q), f^{-1}(r) \in P$ and, since the $<$ relation is total, either $f^{-1}(q) < f^{-1}(r)$ or $f^{-1}(r) < f^{-1}(q)$ holds. But, since $f$ is an isomorphism, we have that either  $q = f(f^{-1}(q)) \prec f(f^{-1}(r)) = r$ or $r = f(f^{-1}(r)) \prec f(f^{-1}(q)) = q$ holds. Since $q$ and $r$ have been arbitrarly chosen in $Q$, it follows that $\prec$ is a total relation.
+
+\end{proof}
+

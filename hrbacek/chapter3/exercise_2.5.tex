@@ -1,0 +1,8 @@
+\subsection*{2.5} For every $n\in \mathbb{N}, n\neq0,1$, there is a unique $k \in \mathbb{N}$ such that $n = (k+1)+1$.
+
+\begin{proof}
+As shown in the previous exercise, the successor function has a bijective inverse defined from $\mathbb{N} - \{0\}$ onto $\mathbb{N}$. We shall name this function the predecessor function $P$.
+
+Since $P$ is bijective and $P(2) = 1$, for every $n \in \mathbb{N} - \{0,1\}$ there is a unique $p \in \mathbb{N} - \{0\}$ such that $P(n) = p$. Similarly, there is a unique $k \in \mathbb{N}$ such that $P(P(n)) = P(p) = k$. We apply twice the successor function to this equation to obtain $n = S(S(k)) = (k+1)+1$.
+\end{proof}
+

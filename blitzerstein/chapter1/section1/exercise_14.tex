@@ -1,0 +1,13 @@
+\begin{exercise}{14}
+    You are ordering two pizzas. A pizza can be small, medium, large, or extra large, with
+any combination of 8 possible toppings (getting no toppings is allowed, as is getting all
+8). How many possibilities are there for your two pizzas?
+\end{exercise}
+
+\begin{proof}
+    Each of the possible topping can be present or not. This means that there are 2 options for each topping, and therefore
+    there are $2^8$ combinations of toppings, including the "no topping" option.
+
+    One pizza can have one of four sizes, so there are $2^2 \cdot 2^8 = 2^{10}$ versions of a pizza. And there are two pizzas, so there are $2 \cdot 2^{10} = 2^{11} = 2048$ possibilities for the order.
+\end{proof}
+

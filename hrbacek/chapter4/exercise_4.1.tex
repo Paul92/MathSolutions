@@ -1,0 +1,31 @@
+\subsection*{4.1}
+
+ Assume that $(A_1, <_1)$ is similar to $(B_1, \prec_1)$ and $(A_2, <_2)$ is similar to $(B_2, \prec_2)$.
+
+\begin{itemize}
+    \item The sum of $(A_1, <_2)$ and $(A_2, \prec_2)$ is similar to the sum of $(B_1, \prec_1)$ and $(B_2, \prec_2)$. 
+    
+    \begin{proof}
+    Let $(A, <)$ be the sum of $(A_1, <_1)$ with $(A_2, <_2)$ and $(B, \prec)$ be the sum of $(B_1, \prec_1)$ with $(B_2, \prec_2)$. Since $(A_1, <_1)$ and $(B_1, \prec_1)$ are similar, there is an isomorphism $f$ between them. Similarly, there is an isomorphism $g$ between $(A_2, <_2)$ and $(B_2, \prec_2)$.
+    
+    We construct the function $h: A \rightarrow B$, defined by $h(x) = f(x)$ if $x \in A_1$, else $h(x) = g(x)$. Let $a, b \in A$ with $a < b$. There are three possible cases:
+    \begin{enumerate}
+        \item $a, b \in A_1$. Then, $h(a) = f(a) \prec_1 f(b) = h(b)$.
+        \item $a, b \in A_2$. Then, $h(a) = g(a) \prec_2 g(b) = h(b)$.
+        \item $a \in A_1$, $b \in A_2$. Then, $h(a) = f(a) \in B_1$ and $h(b) = g(b) \in B_2$ and hence $h(a) \prec h(b)$
+    \end{enumerate}
+    
+    The converse holds as a consequence of $f$ and $g$ being isomorphisms. It follows that $h$ is an isomorphism and hence $(A, <)$ and $(B, \prec)$ are similar.
+    \end{proof}
+    
+    \item The lexicographic product of $(A_1, <_2)$ and $(A_2, \prec_2)$ is similar to the lexicographic product of $(B_1, \prec_1)$ and $(B_2, \prec_2)$.
+    
+    \begin{proof}
+    Let $f,g$ be isomorphisms with the same meaning as in the previous part of this exercise.
+    
+    Let $(a,b), (x,y)$ be two elements of $A_1 \times A_2$, with $(a,b) < (x,y)$ in the sense of the lexicographic product, i.e. either $a < x$ or $a=x$ and $b < y$. We define $h: A_1 \times A_2 \rightarrow B_1 \times B_2$ as $h(u,v) = (f(u), g(v))$. We then have $h(a,b) = (f(a), g(b))$ and $g(x,y) = (f(x), g(y))$. Since $f,g$ are isomorphisms, we have that if $a < x$, then $f(a) < f(x)$ and hence $h(a,b) < h(u,v)$, or if $a = x$ and $b < y$ we have that $f(a) = f(x)$ and $g(b) < g(y)$. 
+    
+    The converse holds as a consequence of $f$ and $g$ being isomorphisms. It follows that $h$ is an isomorphism and hence $(A, <)$ and $(B, \prec)$ are similar.
+    \end{proof}
+\end{itemize}
+

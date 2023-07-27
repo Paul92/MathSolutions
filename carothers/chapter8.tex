@@ -1,0 +1,433 @@
+\section{Compactness}
+
+\subsection{} If $K$ is a nonempty compact subset of $\mathbb{R}$, show that $\sup K$ and $\inf K$ are elements of $K$.
+
+\begin{proof}
+$K$ is a nonempty compact subset of $\mathbb{R}$, then $K$ is closed.
+Let $S = \sup K$ (it exists since $K$ is compact, hence bounded). Then, for all $\epsilon > 0$, $B_\epsilon(S) \cap K \neq \emptyset$. But this means that $S$ is a limit point of $K$. Since $K$ is closed, $S \in K$. Similarly, $\inf K \in K$. 
+\end{proof}
+
+\subsection{} Let $E = \{x \in \mathbb{Q} : 2 < x^2 < 3\}$, considered as a subset of Q (with its usual metric). Show that $E$ is closed and bounded but not compact.
+
+\begin{proof}
+Since $E = \{x \in \mathbb{Q} : 2 < x^2 < 3\}$ = $((-\sqrt{3}, -\sqrt{2}) \cup (\sqrt{2}, \sqrt{3})) \cap \mathbb{Q}$, we have that $-\sqrt{3} < x < \sqrt{3}$ for all $x \in E$. Therefore, $E$ is bounded.
+
+Note that $E^c = \{x \in \mathbb{Q} : x^2 <= 2\} \cup \{x \in \mathbb{Q} : x^2 >= 3\}$.
+
+Consider the set $A = \{x \in \mathbb{Q} : x^2 < 2\}$, some $x \in A$ and some $\epsilon \in (0, |x|)$. Then, $(|x| + \epsilon)^2 = |x|^2 + 2|x|\epsilon + \epsilon^2 < |x|^2 + 3|x|\epsilon$. Then, $|x| + \epsilon \in A$ if $|x|^2 + |x|\epsilon < 2$, i.e. if $\epsilon < (2-|x|^2)/|x|$. Therefore, for $\epsilon < \min\{|x|, (2-|x|^2)/|x|\}$ and $x \in A$ we have that $B_\epsilon(x) \subset A$, which shows that $A$ is open. A similar proof can show that $B$ is open.  Therefore, $E^c = A \cup B$ is open, which implies that $E$ is closed.
+
+
+
+From the construction of the real numbers, there is a sequence of rationals $(z_n)$ with $\sqrt{2} < z_n < \sqrt{3}$ that converges from above to $\sqrt{2}$. But this means that $(z_n)_{n=1}^\infty \subset E$ is Cauchy, but does not converge in $E$. Therefore, $E$ is not complete.
+
+\end{proof}
+
+\subsection{} If $A$ is compact in $M$, prove that $diam(A)$ is finite. Moreover, if $A$ is nonempty, show that there exist points $x$ and $y$ in $A$  such that $diam(A) = d(x, y)$.
+
+\begin{proof}
+If $A$ is compact, then it is totally bounded. This implies that for all $\epsilon > 0$, $A$ can be covered by a finite number of open balls. Let the number of open balls in the $\epsilon$ cover of $A$ be $N$. Then, the diameter of $A$ is at most $2\epsilon N$, and thus is finite.
+
+We have that $diam(A) = \sup\{d(x,y): x,y \in A\}$. This means that we can construct two sequences $(a_n)$ and $(b_n)$ such that $d(a_n, b_n) \rightarrow diam(A)$. But, since $A$ is compact, we can find two convergent subsequences of $(a_n)$ and $(b_n)$, namely $(x_n)$ and, respectively, $(y_n)$. Since they are subsequences of $(a_n)$ and $(b_n)$, we have $d(x_n, y_n) \rightarrow diam(A)$. But they must converge in $A$, therefore $x_n \rightarrow x \in A$ and $y_n \rightarrow y \in A$. Therefore, $diam(A) = d(x,y)$.
+\end{proof}
+
+\subsection{} If $A$ and $B$ are compact sets in $M$, show that $A \cup B$ is compact.
+
+\begin{proof}
+If $A$ and $B$ are compact in $M$, then they are totally bounded, i.e. for all $\epsilon > 0$ they can be covered by $N$, respectively $M$ open balls of size $\epsilon$. Then, $A \cup B$ can be covered by $M+N$ open balls of size $\epsilon$. Since this is a finite number, we have that $A \cup B$ is totally bounded.
+
+Also, since $A$ and $B$ are compact, they are complete. Let $(x_n)$ be a Cauchy sequence in $A \cup B$. Consider now the sub-sequences $(x_n)_{n=1}^\infty \cap A$ and $(x_n)_{n=1}^\infty \cap B$. We can have either one of them finite or both of them infinite.
+
+Without loss of generality, assume that $(x_n)_{n=1}^\infty \cap A$ is finite. Then, there is some $N$ such that $(x_n)_{n=N}^\infty \subset B$. But, since $(x_n)$ is Cauchy,  $(x_n)_{n=N}^\infty$ is also Cauchy and, since $B$ is complete, it is convergent.
+
+Now assume both $(x_n)_{n=1}^\infty \cap A$ and $(x_n)_{n=1}^\infty \cap B$ are infinite. Since they are both subsequences of a Cauchy sequence, they are also Cauchy, and since both $A$ and $B$ are complete, the subsequences $(x_n)_{n=1}^\infty \cap A$ and $(x_n)_{n=1}^\infty \cap B$ converge to some $a \in A$ and $b \in B$, respectively. But since they are subsequences of the same Cauchy sequence, we have $x_n \rightarrow a$ and $x_n \rightarrow b$. Therefore, $a = b$.
+
+We have shown that by picking any Cauchy sequence in $A \cup B$, it converges to some element of $A \cup B$. Therefore $A \cup B$ is complete. Since it is also totally bounded, it is compact.
+
+
+\end{proof}
+
+\subsection{} True or false? $M$ is compact if and only if every closed ball in $M$ is compact.
+
+\begin{proof}
+Assume $M$ is compact and let $A \subset M$ be a closed ball. Then, every sequence $(x_n)$ of $A$ is a sequence in $M$. Since $M$ is complete, $(x_n)$ has a subsequence that converges to a point $x \in M$. Since $A$ is closed, we have that $a \in A$. So any sequence in $A$ has a subsequence that converges in $A$, therefore it is complete.
+
+However, the converse does not hold. In $\mathbb{R}$, the closed balls are closed intervals, which are compact. But $\mathbb{R}$ is not compact, since it is unbounded.
+\end{proof}
+\newpage
+\subsection{} If $A$ is compact in $M$ and $B$ is compact in $N$, show that $A \times B$ is compact in $M \times N$ (see Exercise 3.46).
+
+\begin{proof}
+Let $d$ be the metric on $M$ and $p$ be the metric on $N$. As shown in the exercise 3.46, a sequence in $M \times N$ converges under the product metric $d_p((x,y), (a,b)) = d(x,a) + p(a,b)$ exactly when it converges in coordinates in the respective spaces.
+
+Now pick a sequence $(x_n, y_n) \in A \times B$. Since $A$ is compact, $(x_n)$ has a subsequence $(x_{n_k})$ that converges to $x \in A$.
+Now consider the subsequence $(y_{n_k})$ in $B$. Since $B$ is complete, there is a subsequence of it $(y_{{n_k}_l}) = (y_{n_l})$ that is convergent to $y \in B$. Since $(x_{n_k})$ is already convergent to $x$, a subsequence of it, namely $(x_{{n_k}_l}) = (x_{n_l})$ is also convergent to $x$. Therefore, we can find a subsequence of $(x_n, y_n)$, namely $(x_{n_l}, y_{n_l})$ with $x_{n_l} \rightarrow x$ and $y_{n_l} \rightarrow y$. But this implies, by exercise 3.46, that $(x_{n_l}, y_{n_l}) \rightarrow (x,y)$. Since the original sequence $(x_n, y_n) \in A \times B$ was chosen arbitrarily, this implies that $A \times B$ is compact.
+
+\end{proof}
+
+
+\subsection{}  If $K$ is a compact subset of $\mathbb{R}^2$ show that $K \subset [a, b] \times [c, d]$ for some pair of compact intervals 
+$[a, b]$ and $[c, d]$. 
+
+\begin{proof}
+If $K$ is compact, then it is bounded. Then, there are $(a,b), (m,n) \in \mathbb{R}^2$ such that for all $(x,y) \in K$ we have that $a \leq x \leq m$ and $b \leq y \leq n$. But this implies that $K \subset [a,b]\times[m,n]$.
+\end{proof}
+
+\subsection{} Prove that the set $\{x \in \mathbb{R}^n :  \|x\|_1 = 1\}$ is compact in $\mathbb{R}^n$ under the Euclidean norm. 
+
+\begin{proof}
+The set $K = \{x \in \mathbb{R}^n :  \|x\|_1 = 1\} \subset \mathbb{R}^n$ only if it is closed and bounded. $K$ is bounded since $\|x\|_2 \leq \|x\|_1 = 1$ for all $x \in K$. 
+
+Since the norm $\|\cdot\|_1: \mathbb{R}^n \rightarrow R$ is continuous and $\{1\}$ is closed in $\mathbb{R}$, we have that $\|\cdot\|_1^{-1}(1) = K$ is closed.
+
+Therefore, $K$ is compact.
+\end{proof}
+
+
+\subsection{} Prove that $(M, d)$ is compact if and only if every infinite subset of $M$ has a limit point. 
+
+\begin{proof}
+Assume $(M,d)$ is compact and $A \subset M$ is an infinite subset. This means that there is a sequence $(x_n)$ with $x_N \notin (x_n)_{n=1}^N$ for all $N$. Since $A \subset M$, then $(x_n)$ is a sequence in $M$. Since $M$ is compact, there is a convergent subsequence $(x_{n_k})$ of $(x_n)$ with $x_{n_k} \rightarrow x \in M$ and $x \notin (x_{n_k})_{k=1}^\infty$. But this means that $x$ is a limit point of $A$.
+
+\vspace{1em}
+
+Conversely, assume every infinite subset of $M$ has a limit point and let $(x_n)$ be a sequence in $M$. We either have $(x_n)_{n=1}^\infty$ finite or infinite. In the former case there is an eventually constant subsequence of $(x_n)$. In the latter case, the set $(x_n)_{n=1}^\infty$ has a limit point from the hypothesis, and therefore there is a convergent subsequence of $(x_n)$. Therefore, regardless of the choice of $(x_n)$, it has a convergent subsequence and thus $(M,d)$ is compact.
+
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{}  Prove that compactness is not a relative property. That is, if $K$ is compact in $M$, show that $K$ is compact in any metric space that contains it (isometrically).
+
+\begin{proof}
+Let $K_1$ be a compact subset of $(M,d)$ and let $K_2$ be a compact subset of $(N,p)$. Assume there is a homeomorphism $f:K_1 \rightarrow K_2$ (which can be the identity).
+
+Pick some sequence $(x_n)_{n=1}^\infty \subset N$. Since $f^{-1}$ is bijective, we can map it uniquely to the sequence $(f^{-1}(x_n))_{n=1}^\infty \subset M$. Since $M$ is compact, there is some subsequence $(f^{-1}(x_{n_k}))$ that is convergent to some $t \in M$. But $f$ is continuous, and therefore we have that $f(f^{-1}(x_{n_k})) \rightarrow f(t) \in N$. But this means that $x_{n_k} \rightarrow f(t) \in N$. Therefore, $N$ is compact.
+
+\end{proof}
+
+\subsection{} Show that the set $A = \{x \in l_2: |x_n| \leq 1/n, n = 1, 2, \dots \}$ is compact in $l_2$. [Hint: First show that $A$ is closed.  Next, use the fact that $\sum_{n=1}^\infty 1/n^2 < \infty$ to show that $A$ is "within $\epsilon$" of the set $A \cap \{x \in l_2: |x_n| = 0, n \geq N\}$.] 
+
+\begin{proof}
+Let $(x_n)$ be a sequence in $A$ that converges to $x \in l_2$. Since $A \subset l_2$, $(x_n)$ is a convergent sequence in $l_2$. This means that $(x_n)$ converges in coordinates to $x$, therefore we have that $x_n^k \rightarrow x^k$ as $k \rightarrow \infty$. But $(x_n^k)_{k=1}^\infty$ is a convergent sequence on $[0,1/k]$, from the domain of $A$. Since $[0, 1/k]$ is closed on $\mathbb{R}$, we have that $x^k \in [0,1/k]$, and therefore $x \in A$. But this implies that $A$ is closed.
+
+\vspace{1em}
+
+Now consider the set $B = A \cap \{x \in l_2: |x_n| = 0, n \geq N\}$.
+Since $\sum_{n=1}^\infty 1/n^2 < \infty$, for all $\epsilon > 0$ there is some $N$ such that $\sum_{n=N}^\infty 1/n^2 < \epsilon$. Therefore,
+for any $x \in A$ there is $y = (x_1, x_2, \dots, x_N, 0, 0 \dots) \in B$ such that $\|x - y\|_2 = \sum_{n=N+1}^\infty x_n^2 \leq \sum_{n=N+1}^\infty (1/n)^2 < \epsilon$. Note that $B$ is a bounded subset of $\mathbb{R}^n$, where every bounded subset is totally bounded. Since $A$ is the closure of $B$, it is also totally bounded. Also, $l_2$ is complete. Since $A$ is a closed subset of $l_2$, it is also complete. Therefore, $A$ is compact.
+
+\end{proof}
+
+\subsection{} Given $c_n \geq 0$ for all $n$, prove that the set $\{x \in l_2 : |x_n| \leq c_n, n \geq 1\}$ is compact in $l_2$ if and only if $\sum c_n^2 < \infty$.
+
+\begin{proof}
+Assume that $\sum c_n^2 < \infty$ and let $A = \{x \in l_2 : |x_n| < c_n, n \geq 1\}$. Pick $(x_n)_{n=1}^\infty \subset A$ with $x_n \rightarrow x \in l_2$. Since convergence in $l_2$ is equivalent to convergence in coordinates, we have that $x_n^k \rightarrow x^k$ as $k \rightarrow \infty$. But $(x_n^k)_{k=1}^\infty$ is a sequence on $[0,c_n]$, and since $[0,c_n]$ is compact as an interval on $\mathbb{R}$, we have that $x^k \in [0,c_n]$. This implies that $x \in A$, therefore $A$ is closed.
+
+
+Now consider the set $B = A \cap \{x \in l_2: |x_n| = 0, n \geq N\}$. Since $\sum_{n=1}^\infty 1/c_n^2 < \infty$, for all $\epsilon > 0$ there is some $N$ such that $\sum_{n=N}^\infty 1/c_n^2 < \epsilon$. Therefore, for any $x \in A$ there is $y = (x_1, x_2, \dots, x_N, 0, 0 \dots) \in B$ such that $\|x - y\|_2 = \sum_{n=N+1}^\infty x_n^2 \leq \sum_{n=N+1}^\infty c_n^2 < \epsilon$. As $B$ is a bounded subset of $\mathbb{R}^n$, it is totally bounded. Since $A$ is the closure of $B$, $A$ is also totally bounded. Also, since $A$ is a closed subset of $l_2$, which is complete, $A$ is also complete.
+
+\vspace{1em}
+
+Conversely, assume to the contrary that the set $A=\{x \in l_2 : |x_n| \leq c_n, n \geq 1\}$ is compact in $l_2$ and that $\sum c_n^2$ is divergent. Consider the sequence $(x_k)_{k=1}^\infty \subset A$ with $x_k = (c_1, \dots, c_k, 0, 0, \dots)$. For any $i,j$ we have that $\|x_i - x_j\|_2 = \sum_{n=i+1}^j c_n^2$. By the Cauchy criterion for the convergence of series, since $\sum_{n=1}^\infty c_n^2 = \infty$, there is some $\epsilon > 0$ for which there is no $N$ such that $\sum_{n=i+1}^j c_n^2 < \epsilon$. But this implies that there is some $\epsilon>N$ such that there is no $N$ for which $\|x_i - x_j\|<\epsilon$. Therefore $(x_k)$ has no convergent subsequence and therefore $A$ is not compact. 
+
+\end{proof}
+
+
+\subsection{} Show that the Hilbert cube $H^\infty$ (Exercise 3.10) is compact. [Hint: First show that $H^\infty$ is complete (Exercise 7.24). Now, given $\epsilon > 0$, choose $N$ so that $\sum_{n=N}^\infty 2^{-n} < \epsilon$ and argue that $H^\infty$ is "within $\epsilon$" of the set $\{x \in H^\infty : |x_n| = 0$ for $n > N\}$.] 
+
+\begin{proof}
+
+Recall that the Hilbert cube is defined as the space $(H^\infty, d)$, with $H^\infty = \{(x^n)_{n=1}^\infty: |x^n| \leq 1\}$ and $d(x,y) = \sum_{n=1}^\infty \frac{1}{2^n} |x^n - y^n|$.
+
+Will start by showing that $H^\infty$ is complete. For this, let $(x_n)$ be a Cauchy sequence in $H^\infty$. This means that for all $\epsilon > 0$ we have some $N$ such that $d(x_i, x_j) < \epsilon$ for all $i, j > N$. But we also have that $|x_i^k - x_j^k| \leq \sum_{n=1}^\infty \frac{1}{2^n} |x_i^n - y_j^n| = d(x_i, x_j) < \epsilon$ for all $k$. Therefore, the sequence $(x_n^k)_{n=1}^\infty$ is Cauchy in $[-1,1]$, from the definition of the $H^\infty$. Since $[-1,1]$ is compact, we have that $x_n^k \rightarrow x^k$ as $n\rightarrow \infty$ with $x^k \in [-1,1]$
+
+Therefore, $x \in H^\infty$ is a candidate for the limit of $(x_n)$. Remains to show that indeed, $x_n \rightarrow x$ in $H^\infty$. For this, pick $\epsilon > 0$. Note that we have for all coordinates $k$ some $N_k$ such that $|x_n^k - x^k| < \epsilon$. Pick $N > N_k$ for all $k$, and we have that $d(x_n, x) < \sum_{k=1}^\infty \frac{1}{2^k} |x_n^k - x^k| < \sum_{k=1}^\infty \frac{1}{2^k} \epsilon = \epsilon$ for all $n > N$. So $(x_n)$ indeed converges to $x$ in $H^\infty$ and therefore $H^\infty$ is complete.
+
+\vspace{1em}
+
+Will now show that $H^\infty$ is totally bounded. For this, pick $\epsilon > 0$. Then, since $\sum_{n=1}^\infty 2^{-n} = 1$ there is some $N$ such that $\sum_{n=N}^\infty 2^{-n} < \epsilon$. But then for any element $x \in H^\infty$ we have $\sum_{n=N}^\infty 2^{-n} |x^n| \leq \sum_{n=N}^\infty 2^{-n} < \epsilon$, since $|x^n| \leq 1$ for all $n$. This means that $d(x, x_0) < \epsilon$, where $x_0 = (x^1, x^2, \dots, x^N, 0, 0, \dots) \in H^\infty$.
+
+Therefore, we can construct the set $A = \{x \in H^\infty : |x^n| = 0$ for $n > N\}$ such that for all $x \in H^\infty$ there is $y \in A$ with $d(x,y) < \epsilon$.
+
+\vspace{1em}
+
+Let $y \in A$. Since the interval $[-1,1]$ is totally bounded, for all $\gamma/N > 0$ there is some finite subset $B \subset [-1,1]$ such that for $y^k \in [-1,1]$ we have some $z^k \in B$ such that $|y^k-z^k|<\gamma\N$ for all $k$. Obviously, $(z^k)_{k=1}^N \in A$ and $d(y,z) = \sum_{k=1}^N 2^{-k} |y^k - z^k| \leq \sum_{k=1}^N |y^k - z^k| < \sum_{k=1}^N \gamma/N = \gamma$. Note that $B^N$ is a finite Cartesian product of a finite set, hence it is finite. Therefore, for any $\delta = \epsilon + \gamma > 0$ and any $x\in H^\infty$, there are $y \in A$ and $z \in B^N$ such that $d(x, z) \leq d(x,y) + d(y,z) = \epsilon + \gamma$. Since $B^N$ is finite, then $H^\infty$ is totally bounded.
+
+\vspace{1em}
+
+We have just shown that $H^\infty$ is both complete and totally bounded. Therefore, it is compact.
+
+\end{proof}
+
+\subsection{} If $A$ is a totally bounded subset of a complete metric space $M$, show that $\overline{A}$ is compact in $M$. For this reason, totally bounded sets are sometimes called precompact or conditionally compact. In fact, any set with compact closure might be labeled precompact.
+
+\begin{proof}
+For any $A \subset M$, $x \in \overline{A}$ if there is a sequence $(x_n)_{n=1}^\infty \subset A$ such that $x_n \rightarrow x$. But since $M$ is complete, $x \in M$. Therefore, $\overline{A} \subset M$. Since $\overline{A}$ is a closed subset of a complete metric space, it is also complete.
+
+Since, from the hypothesis, $A$ is totally bounded, $\overline{A}$ is totally bounded. Therefore, $\overline{A}$ is compact.
+\end{proof}
+
+\subsection{} Show that a metric space $M$ is totally bounded if and only if its completion $\hat{M}$ is compact. 
+
+\begin{proof}
+Assume $(M,d)$ is a totally bounded metric space. Then, $(\hat{M}, \hat{d})$ is a completion for $M$ if $(\hat{M}, \hat{d})$ is complete and $(M,d)$ is isometric to a dense subset of $(\hat{M}, \hat{d})$.
+Let this dense subset be $X \subset \hat{M}$. Therefore, we have a function $f:M \rightarrow X$ such that $d(x,y) = \hat{d}(f(x), f(y))$.
+
+Since $M$ is totally bounded, then for all $\epsilon > 0$ there is some $Y \subset M$ finite such that for all $x \in M$ there is $y \in X$ with $d(x,y) < \epsilon$.
+
+Since $f$ is isometric, we have that for all $\epsilon>0$, $x \in X$ there is some $y \in f(Y)$ such that $\hat{d}(x,y) = d(f^{-1}(x), f^{-1}(y)) < \epsilon$. Since $f(Y)$ is finite, $X$ is totally bounded, $X$ is dense in $\hat{M}$, $\hat{M}$ is totally bounded. Since, by construction, is complete, it is compact.
+
+\vspace{1em}
+
+Conversely, assume that $\hat{M}$ is compact. This implies $\hat{M}$ is totally bounded. Since $\hat{M}$ is a completion for $M$, there is an isometry $f:M \rightarrow X$, where $X \subset \hat{M}$ dense. Since $X$ is a subset $\hat{M}$, it is totally bounded.
+
+Pick $\epsilon > 0$. Then, there is $Y \subset X$ finite such that for all $x \in M$ there is $y\in f^{-1}(Y)$ such that $d(x,y) = \hat{d}(f(x), f(y)) < \epsilon$ (since $X$ is totally bounded). Therefore, $M$ is totally bounded.
+
+\end{proof}
+
+\subsection{} If $M$ is compact, show that $M$ is also separable. 
+
+\begin{proof}
+Let $(M,d)$ be a compact metric space. This implies that $M$ is totally bounded, i.e. for every $\epsilon>0$ there is a finite subset $X_\epsilon \subset M$ such that for all $x \in M$ there is $y \in X_\epsilon$ with $d(x,y) < \epsilon$.
+
+In particular, for some $x \in M$ and $\epsilon = 1/n > 0$, there is some $y_n \in X_n$ such that $d(x, y_n) < \epsilon$. By construction, the sequence $(y_n)$ converges to $x$. Moreover, the set $X = \bigcup_{n=1}^\infty X_n$ is a countable union of finite sets, and hence it is countable. Since for all $x$ we constructed $(y_n)_n^\infty \subset X$ with $y_n \rightarrow x$, $X$ is dense in $M$. Therefore, $M$ is separable.
+
+
+\end{proof}
+
+
+\stepcounter{subsection}
+
+\subsection{} Prove that $M$ is separable if and only if $M$ is homeomorphic to a totally bounded metric space (specifically, a subset of the Hilbert cube). [Hint: See Exercise 4.49.]
+
+\begin{proof}
+
+Let $(M,d)$ be a separable metric space, with $X \subset M$ countable and dense. Without loss of generality, assume that $d(x,y) \leq 1$ for all $x,y \in M$. This is possible since the condition imposed on $d$ keeps it equivalent to any other metric, in terms of the convergent sequences generated.
+
+Since $X$ is countable, we can define an order on it and have $X = (x_n)_{n=1}^{|X|}$.
+Let $H^\infty = \{(y_n): |y_n| \leq 1\}$ and let $H = \{(y_n): |y_n| \leq 1 $ for $y < |X|$ else $y_n = 0\}$. Finally, we define $f: M \rightarrow H$ with $f(x) = (d(x,x_1), d(x,x_2), \dots)$. 
+
+As shown in a previous exercise, converges on $H$ implies converges in coordinates. If we have some $(a_n)_{n=1}^\infty \subset M$ with $a_n \rightarrow a$, then $d(a_n, x_i) \rightarrow d(a, x_i)$ and therefore $f(a_n) \rightarrow f(a)$. Thus, $f$ is continuous.
+
+Assuming $d:M \rightarrow [0,1]$ is surjective, $f$ is surjective.
+
+Now pick $y \in H$. Since $f$ is surjective, there is some $a \in M$ such that $f(a) = y$. This implies that $d(a,x_n) = y_n$. Therefore, $a$ is on the boundary of the closed ball $B_{y_n}(x_n)$ for all $n$. Since $a$ is at the intersection of the boundaries of countably many boundaries of closed balls of distinct centers, $a$ is unique. Therefore, $f$ is bijective and thus inversable. 
+
+
+Remains to show that $f^{-1}$ is continuous. For this, pick $(y_n)$ in $H$ with $y_n \rightarrow y$. As mentioned previously, this implies that we have convergence in coordinates, so we have $f^{-1}(y_n)$
+
+For all $\epsilon > 0$ there is $N$ such that $\sum_{k=1}^{|X|} 2^{-k} |y_n^k - y^k| < \epsilon$ for all $k < N$. But, $\sum_{k=1}^{|X|} 2^{-k} |y_n^k - y^k| =  \sum_{k=1}^{|X|} 2^{-k} |f(a_n)^k - f(a)^k| =  \sum_{k=1}^{|X|} 2^{-k} |d(a_n, x_k) - d(a, x_k)| > \sum_{k=1}^{|X|} 2^{-k} d(a_n, a)$. Therefore, $\sum_{k=1}^{|X|} 2^{-k} d(a_n, a) < \epsilon$.
+
+But $d(a_n, a) = \sum_{k=1}^{|X|} 2^{-k} d(a_n, a) + \sum_{k=|X+1|}^\infty 2^{-k} < \epsilon + \sum_{k=|X+1|}^\infty 2^{-k}$. For $\gamma > 0$ there is some $N$ such that $\sum_{k=N}^\infty 2^{-k} < \gamma$.
+
+Therefore, by picking a countable dense set $X$ large enough, we have that $d(a_n, a) < \epsilon + \gamma$. Since both $\epsilon$ and $\gamma$ were arbitrarily chosen, $a_n \rightarrow a$. Therefore, $f$ is a homeomorphism from $M$ to $H$, with $H$ a subset of $H^\infty$. And since $H^\infty$ is compact, $H$ is totally bounded.
+
+\vspace{1em}
+
+Conversely, assume that there is a homeomorphism $f$ between some metric space $(M,d)$ to a totally bounded metric space $(N,p)$. If $N$ is totally bounded, then it is separable, i.e. there is some $X \subset N$ countable and dense. This means that for any point $x \in N$ there is a sequence $(x_n)_{n=1}^\infty \subset X$ such that $x_n \rightarrow x$. But since $f$ is a homeomorphism, $f^{-1}$ is bijective and continuous. Therefore, we have that $f(x_n) \rightarrow f(x)$. Since for any $a \in M$ there is some $x \in N$ with $f(x) = a$, we have that $f^{-1}(X)$ is a dense subset.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+
+\subsection{} Prove Corollary 8.6: If $f : [a, b ] \rightarrow \mathbb{R}$ is continuous, then the range of $f$ is a compact interval $[ c, d ]$ for some $c, d \in \mathbb{R}$.
+
+\begin{proof}
+$[a,b]$ is a connected and compact set. Both connectedness and compactness are properties preserved by continuous maps, hence $f([a,b])$ is connected and compact. The only connected and compact subsets of $\mathbb{R}$ are closed intervals.
+\end{proof}
+
+
+\subsection{} If $M$ is compact and $f: M \rightarrow N$ is continuous, prove that $f$ is a closed map. 
+
+\begin{proof}
+If $M$ is compact, then any closed $X \subset M$ is compact. If $f$ is continuous, then $f(X)$ is compact, and hence closed. Since $f$ maps closed sets to closed sets, it is a closed map.
+\end{proof}
+
+
+\subsection{} Suppose that $M$ is compact and that $f : M \rightarrow N$ is continuous, one-to-one, and onto. Prove that $f$ is a homeomorphism. 
+
+\begin{proof}
+We need to show that $g = f^{-1}: N \rightarrow M$ is continuous. Pick some $X \subset M$ closed and hence compact. Since $f$ is continuous, $f(X)$ is compact and hence closed. But then we have that if $X$ is closed in $M$, $g^{-1}(X)=f(X)$ is closed. Therefore, $g = f^{-1}$ is continuous and $f$ is a homeomorphism.
+
+\end{proof}
+
+\subsection{} Let $f: [ 0, 1 ] \rightarrow [ 0, 1] \times [ 0, 1]$ be continuous and one-to-one.  Show that $f$ cannot be onto. Moreover, show that the range of $f$ is nowhere dense in  $[0, 1] \times [0, 1]$. [Hint: The range of $f$ is closed (why?); if it has nonempty interior, then it contains a closed rectangle. Argue that this rectangle is the image of some subinterval of $[0, 1]$.] 
+
+\begin{proof}
+Assume to the contrary that $f$ is onto. Since $[0,1]$ is compact, by the exercise 8.23, $f$ is a homeomorphism.
+
+Now consider the set $f([0,1/2) \cup (1/2, 1])$. Since it is equal to $[0,1] \times [0,1] \setminus f(1/2)$ and $f$ is bijective (hence $f(1/2)$ is a single point), $f([0,1/2) \cup (1/2, 1])$ is connected. But $[0,1/2) \cup (1/2, 1]$ is not connected. Since connectedness is a property preserved by homeomorphism, $f$ cannot be a homeomorphism. Hence, $f$ is not onto.
+
+\vspace{1em}
+
+Since $f$ is continuous, $f([0,1])$ is compact, hence closed. If $f([0,1])$ has an empty interior, then it is nowhere dense. Assume now that the interior $I$ of $f([0,1])$ is nonempty. By definition, $I$ is open. Then, there is some open ball $B \subset I$. Any open ball in $[0,1] \times [0,1]$ contains a closed rectangle $R$. We can now construct $g: f^{-1}(R) \rightarrow $ as a the restriction of $f$. By construction, $g$ is a homeomorphism.
+
+Since a closed rectangle is compact in $[0,1] \times [0,1]$ and $g$ is a homeomorphism, $g$, $f^{-1}(R) \subset [0,1]$ is compact. The only compact subsets of $[0,1]$ are closed intervals. By the same argument as before, there cannot be a homeomorphism between a real interval and a closed rectangle. Therefore, $I$ cannot be nonempty.
+
+
+\end{proof}
+
+
+\subsection{} Let $V$ be a normed vector space, and let $x \neq y \in V$. Show that the map $f(t) = x + t(y-x)$ is a homeomorphism from $[0, 1]$ into $V$. The range of $f$ is the line segment joining $x$ and $y$; it is often written $[x, y]$.
+
+\begin{proof}
+$f$ is continuous, being defined by a constant multiplication and a constant addition to the identity function, which is continuous.
+
+Pick $a,b \in [0,1]$ with $a \neq b$. Then, $f(a) - f(b) = x + a(y-x) - x - b(y-x) = (a-b)(y-x) \neq 0$ since $a\neq b$ and $x \neq y$. Therefore, $f$ is injective.
+
+Let $g:[0,1] \rightarrow [x,y]$ with $g(x) = f(x)$. Since $f$ is continuous and injective, $g$ is also continuous and injective. By construction, it is also surjective. Since $[0,1]$ is compact, $g$ is a homeomorphism.
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+
+\subsection{} Let $M$ be a compact metric space and suppose that $f: M \rightarrow M$ satisfies $d(f(x), f(y)) < d(x, y)$ whenever $x \neq y$. Show that $f$ has a fixed  point. [Hint: First note that f is continuous; next, consider $g(x) = d(x, f(x))$.]
+
+\begin{proof}
+$f$ is Lipschitz continuous and therefore continuous. Now consider the function $g:M \rightarrow \mathbb{R}$, with $g(x) = d(x, f(x))$.
+
+\begin{align*}
+|g(x) - g(y)| &= |d(x,f(x)) - d(y, f(y))| \\
+                &= |d(x,f(x)) - d(y, f(x)) + d(y, f(x)) - d(y, f(y))| \\
+                &\leq |d(x,f(x)) - d(y, f(x))| + |d(y, f(x)) - d(y, f(y))| \\
+                &\leq d(x,y) + d(f(x), f(y)) < 2d(x,y)
+\end{align*}
+
+Therefore, for all $\epsilon > 0$ there is $\delta = \epsilon/2$ such that $|g(x) - g(y)| < \epsilon$ whenever $d(x,y) < \delta$. This implies that $g$ is continuous.
+
+Since $g$ is continuous over a compact space, it attains its minimum. Since $g$ is defined based on a distance, its minimum has to be greater than or equal to 0.
+
+Assume to the contrary that $\inf g(x) > 0$. Therefore, there is some $m > 0$ such that $g(x) \geq m$ for all $x \in M$. This means that there is some $x$ such that $g(x) = d(x, f(x)) = m$. By using the inequality from the hypothesis, we have that $g(f(x)) = d(f(x), f(f(x))) < d(x, f(x))$, which contradicts the fact that $x$ is the minimum point of $g$. Therefore, the minimum of $g$ is 0. But this implies that there is some $x$ such that $g(x) = d(x, f(x)) = 0$, therefore $x$ is a limit point.
+
+\end{proof}
+
+\subsection{} Prove Theorem 8.8.
+
+\begin{proof}
+
+The first proposition in Theorem 8.8 states that "If $\mathcal{G}$ is any collection of open sets in $M$ with $\bigcup \{G: G\in \mathcal{G}\} \supset M$, then there are finitely many sets $G_1, \dots, G_n \in \mathcal{G}$ with $\bigcup_{i=1}^n G_i \supset M$".
+In the following, we shall use the equivalent proposition that replaces $\supset$ with equality.
+
+\vspace{1em}
+
+Assume that every open cover of $M$ has a finite subcover, i.e. for any collection $\mathcal{G}$ of open sets with $\bigcup_{G \in \mathcal{G}} G = M$ there is a finite subset $G_1, \dots, G_n \in \mathcal{G}$ with $\bigcup G_i = M$.
+
+Now let $\mathcal{F}$ be a collection of closed sets in $M$ that have the infinite intersection property, i.e. we have $\bigcap_{i=1}^n F_i \neq \emptyset$ for any finite  $F_1, \dots, F_n \in \mathcal{F}$. Assume to the contrary that $\emptyset = \bigcap_{i=1}^\infty F_i$. Therefore, $M = (\bigcap_{i=1}^\infty F_i)^c = \bigcup_{i=1}^\infty F_i^c$. This means that the collection of open sets $\{F_i^c: F_i \in \mathcal{F}\}$ is an open cover of $M$. From our hypothesis, it admits a finite subcover, i.e. we have $\bigcup_{i=1}^n F_i^c = M$ for some finite selection $F_1, \dots, F_n \in \mathcal{F}$. We complement again this relation and apply De Morgan's law to obtain that $M^c = \emptyset = (\bigcup_{i=1}^n F_i^c)^c = \bigcap_{i=1}^n F_i$, which contradicts the hypothesis.
+
+\vspace{1em}
+
+To check the coverse, we assume that every (possibly infinite) collection of closed sets with the finite intersection property has nonempty intersection. We pick now $\mathcal{G}$ a (possibly infinte) open cover of $M$. Assume to the contrary that it admits no finite subcover, i.e. $\bigcup_{i=1}^n G_i \neq M$ for all finite selections $G_1, \dots, G_n \subset \mathcal{G}$. By complementing and applying De Morgan's laws, we see that $\bigcap_{i=1}^n G_i^c \neq \emptyset$. This means that the set $\{G_i^c: G_i \in \mathcal{G}\}$ has the finite intersection property, and therefore $\bigcap_{i=1}^\infty G_i^c \neq \emptyset$. By complementing and applying De Morgan's laws one last time, we get that $\bigcup_{i=1}^\infty G_i \neq M$, which contradicts the hypothesis that $\mathcal{G}$ is an open cover.
+
+
+\end{proof}
+
+\subsection{} Given an arbitrary metric space M, show that a decreasing sequence of nonempty compact sets in M has nonempty intersection.
+
+\begin{proof}
+Let $(F_n)$ be a decreasing sequence of nonempty compact sets. We can then consider that $(F_n)_{n=2}^\infty$ is a decreasing sequence of closed sets in the compact and therefore complete space given by $F_1$. By the nested set theorem, $\bigcap F_i \neq \emptyset$.
+\end{proof}
+
+\subsection{} Prove Corollary 8.11 by showing  that the following two statements are equivalent. 
+
+\begin{itemize}
+    \item Every decreasing  sequence of nonempty  closed sets  in $M$ has nonempty intersection.
+    \item Every countable open cover of $M$ admits a finite subcover; that is, if $(G_n)$ is a sequence of open sets in $M$ satisfying $\bigcup_{n=1}^\infty G_n \supset M$ then  $\bigcup_{n=1}^N G_n \supset M$ for some (finite) $N$.
+\end{itemize}
+
+\begin{proof}
+Assume every cover has an infinite subcover. Now pick a decreasing sequence $(F_n)$ of nonempty closed sets in $M$ such that $F_1 \supset F_2 \subset \dots$. Assume to the contrary that $\bigcap_{i=1}^\infty F_i = \emptyset$. Using De Morgan's laws to the complement of this equality, we obtain that $M = (\bigcap_{i=1}^\infty F_i)^c = \bigcup_{i=1}^\infty F_i^c = \bigcup_{i=1}^N F_i^c$ for some finite $N$, from the hypothesis. We complement this relation and find that $\emptyset = \bigcap_{i=1}^N F_i$. Since, by construction, $(F_i)$ is a decreasing sequence, $\bigcap_{i=1}^N F_i = \emptyset$. But this contradicts the hypothesis.
+
+\vspace{1em}
+
+In the converse direction, we assume that every decreasing sequence of nonempty closed sets in $M$ has nonempty intersection. Similar to before, we assume that there is a countable open cover $G$ with $\bigcup_{i=1}^\infty G_i = M$ that does not admit a finite subcover and will seek a contradiction. Since $G$ is countable, we can assign it an order by labelling its elements $G_1, G_2 \dots$. We can now construct a sequence of sets $(D_n)$ with $D_n = \bigcup_{i=1}^n G_i$. By construction, we have that $D_i \subset D_j$ for all $i < j$. Moreover, since $G$ does not accept a finite subcover, $D_n \neq M$ for all $n$. The sequence $(D_n^c)_{n=1}^\infty$ is a decreasing sequence of closed sets. Therefore, we have that $M^c = (\bigcup_{i=1}^\infty D_i)^c = \bigcap_{i=1}^\infty D_i^c = \emptyset$, which contradicts the first statement in the hypothesis.
+
+\vspace{1em}
+
+The first statement in the hypothesis is equivalent to the completeness of $M$, which completes the proof that $M$ is compact if and only if every countable open cover admits a finite subcover.
+
+\end{proof}
+
+
+\stepcounter{subsection}
+
+
+\subsection{} Let $A$ be a subset of a metric space $M$. Prove that $A$ is closed in $M$ if and only if $A \cap K$ is compact for every compact set $K$ in $M$. [Hint: If $(x_n)$ converges to $x$, then $\{x\} \cup \{x_n : n \geq 1\}$ is compact. (Why?)
+
+\begin{proof}
+Fix $A \subset M$ closed and pick some compact $K \subset M$. Since it is compact, $K$ is also closed. As $A \cap K$ is the intersection of two closed sets, it is closed. But $A \cap K$ is a closed subset of $K$, a compact set. Therefore, $A \cap K$ is compact.
+
+\vspace{1em}
+
+Conversely, fix some $A \subset M$ and assume that $A \cap K$ is compact for all $K \subset M$ compact. Pick $(x_n)_{n=1}^\infty \subset A \subset M$ that converges to some $x \in M$, and construct $K = \{x\} \cup \{x_n : n \geq 1\}$. Obviously, $K \subset M$ is compact. From the hypothesis, we have that $A \cap K$ is compact. But this happens only if $x \in A$. Since $(x_n)$ has been arbitrarily chosen, this means that any sequence from $A$ that converges in $M$ has its limit in $A$. Therefore, $A$ is closed.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+
+\subsection{} Let $F$ and $K$ be disjoint, nonempty subsets of a metric space $M$ with $F$ closed and $K$ compact. Show that $d(F, K) = \inf\{d(x , y) : x \in F, y \in K\} > 0$. Show that this may fail if we assume only that $F$ and $K$ are disjoint closed sets.
+
+\begin{proof}
+Assume to the contrary that $d(F, K) = \inf\{d(x , y) : x \in F, y \in K\} = 0$. Then, there are two sequences $(x_n)_{n=1}^\infty \subset K$ and $(y_n)_{n=1}^\infty \subset F$ such that $d(F, K) = d(x_n, y_n) = 0$ as $n \rightarrow \infty$. Let $(x_{n_k})$ be a subsequence such that $d(x_{n_k}, y_n) \rightarrow 0$. Since $K$ is compact, $x_{n_k} \rightarrow x$. But then, $d(x, y_n) \leq d(x_{n_k}, x) + d(x_{n_k}, y_n) \rightarrow 0$ since both terms of the sum converge to 0. But, if $d(x, y_n) \rightarrow 0$, then $y_n \rightarrow x$ in $M$. Since $F$ is closed, $x \in F$. But this contradicts the fact that $F$ and $K$ are disjoint.
+
+
+\vspace{1em}
+
+At least one of $K$ and $F$ are required to be compact in order for the limit of the sequences $(x_n)$ and $(y_n)$ from above to exist in the space. Otherwise, consider the metric space $M = [-1,0)\cup(0,1]$. Here, the sets $K = [-1,0)$ and $F = (0,1]$ are closed. Consider the sequences $x_n = -1/n \in K$ and $y_n = 1/n \in F$. Clearly, $d(x_n, y_n) = 2/n \rightarrow 0$ and therefore $d(F,K) = 0$.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let $M$ be compact and let $f:M \rightarrow M$ satisfy $d(f(x), f(y)) = d(x , y)$. Show that $f$ is onto. [Hint: If $B_\epsilon(x) \cap f(M) = \emptyset$, consider the sequence $(f^n(x))$.]
+
+\begin{proof}
+By construction, $f$ is continuous and injective. Assume that $f$ is not surjective. Therefore, there is some $x \in M$ and some $\epsilon > 0$ such that $B_\epsilon(x) \subset \cap f(M) = \emptyset$. 
+
+Now consider the sequence $(f^n(x))_{n=1}^\infty \subset f(M)$. Since $M$ is compact, we can pick some $i>j>N$ such that $f^i(x), f^j(x)$ are elements of a convergent subsequence.
+
+Since $B_\epsilon(x) \subset \cap f(M) = \emptyset$, we have that $d(x,f^{i-j}(x)) > \epsilon$. But, since $f$ is isometric, $\epsilon < d(x,f^{i-j}(x)) = d(f(x), f^{i-j+1}(x)) = d(f^k(x), f^{i-j+k}(x))$. By repeatedly applying $f$ for $j$ times, we obtain that $\epsilon < d(x,f^{i-j}(x) = d(f^j(x), f^i(x))$. But this contradicts the fact that $d(f^i(x), f^j(x)) < \epsilon$. Therefore, $f$ is surjective.
+
+
+\end{proof}
+
+\subsection{} Is compactness necessary in Exercise 40? That is, is it possible for  a metric space to be isometric to a proper subset of itself? Explain.
+
+\begin{proof}
+It is possible to find non-compact metric spaces that are isometric to one of their subsets. 
+
+For example, consider $f: \mathbb{N} \rightarrow \mathbb{N}$, defined by $f(n) = n+1$. Clearly, $f$ is isometric since $|f(n) - f(m)| = |n+1 - m - 1| = |n - m|$, but $f(\mathbb{N}) = \{1, 2, \dots\} \subset \mathbb{N}$.
+
+However, it is not possible to find a totally bounded set $M$ that is isometric to a subset of itself. If $M$ is complete, we have shown this. If $M$ is not complete, it is possible to construct the completion of $M$ and the function would be isometric to a subset on the compact completion, which is also not possible.
+\end{proof}
+
+\newpage
+
+\subsection{} Let $M$ be compact and let $f : M \rightarrow M$ satisfy $d(f(x), f(y)) \geq d(x , y)$ for all $x, y \in M$. Prove that $f$ is an isometry of $M$ onto itself. [Hint: First, given $x \in M$, consider $x_n = f^n(x)$. By passing to a subsequence, if necessary, we may suppose that $(x_n)$ converges. Argue that $x_n \rightarrow x$. Next, given $x, y \in M$, show that we must have $d(f(x), f(y)) = d(x , y)$. Thus, $f$ is an isometry into $M$. Finally, argue that $f$ has dense range.] 
+
+\begin{proof}
+We can construct the sequence $x_n = f^n(x)$ with $x_0 = x$. Let $(x_{n_k})$ be a convergent subsequence of $(x_n)$ with $x = x_0 = x_{n_0}$.
+
+
+Consider now the sequence $(f^{n_{k+1} - n_k})_{k=1}^\infty$. Pick $\epsilon > 0$. Then, there is some $N$ such that $d(f^{n_{k+1}} - f^{n_k}) < \epsilon$ for all $k>N$. But then $\epsilon > d(f^{n_{k+1}} - f^{n_k}) \geq d(f^{n_{k+1}-1} - f^{n_k-1}) \geq \dots \geq d(f^{n_{k+1}-n_k} - x)$ for all $k > 0$. But this implies that $d(f^{n_{k+1} - n_k},x) \rightarrow 0$. 
+
+\vspace{1em}
+
+Now consider the set $S = \{i_{n+1} - i_n: n \in \mathbb{N}\}$. If $S$ is finite, then there is some $j \in S$ that is attained infinitely many times as the difference between consecutive elements of the subsequence. But this implies that $f^j(x) = x$. Therefore, $d(x,y) \leq d(f(x), f(y)) \leq \dots \leq d(f^j(x), f^j(y)) = d(x,y)$ for all $x,y$, which implies that $d(x,y) = d(f(x), f(y))$.
+
+On the other hand, if $S$ is infinite, there is some sequence $(f^{j_n})$ such that $d(x, f^{j_n}) \rightarrow 0$. Therefore, $d(x,y) \leq d(f(x), f(y)) \leq \dots \leq d(f^{j_n}(x), f^{j_n}(y)) \rightarrow d(x,y)$. Therefore, $d(x,y) = d(f(x), f(y))$.
+
+By exercise 8.40, $f$ is onto.
+\end{proof}
+
+\subsection{} Let $M$ be compact and suppose that $f: M \rightarrow M$ is one-to-one, onto, and satisfies $d(f(x ), f(y)) \leq d(x , y)$ for all $x, y \in M$. Prove that $f$ is an isometry of $M$ onto itself.  [Hint: Exercise 42.]
+
+\begin{proof}
+
+\end{proof}

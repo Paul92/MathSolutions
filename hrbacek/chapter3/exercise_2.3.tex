@@ -1,0 +1,14 @@
+\subsection*{2.3} Prove that there is a one-to-one mapping of $\mathbb{N}$ onto a proper subset of $\mathbb{N}$.
+
+\begin{proof}
+Consider the successor function. As shown in the previous exercise, it is one-to-one.
+
+Let $P(n)$ be the proposition "If $n \neq 0$, there is some $k$ unique such that $n = S(k)$.
+
+$P(1)$ holds since $1 = S(0)$.
+
+Now assume that $P(n)$ holds. $P(n+1)$ also holds since $n+1 = S(n)$ by definition. The uniqueness follows from the injectivity of the successor function.
+
+Hence, the successor function is onto $\mathbb{N} - \{0\}$.
+\end{proof}
+

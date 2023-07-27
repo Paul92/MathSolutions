@@ -1,0 +1,12 @@
+\subsection*{2.2} If $X$ and $Y$ are finite, then $X \times Y$ is finite and $|X \times Y| = |X| \cdot |Y|$.
+
+\begin{proof}
+If $X$ and $Y$ are finite, then there are two functions $f:X \rightarrow N$ and $g:Y \rightarrow N$ injective. We construct $h:X \times Y \rightarrow N$, $h((x,y)) = 3^{f(x)}5^{g(y)}$. Since 3 and 5 are prime, and $f$ and $g$ are injective, it follows that $h$ is injective and hence $X \times Y$ is finite.
+
+Will prove that $|X \times Y| = |X| \cdot |Y|$ by induction on the cardinality of the finite set $Y$.
+
+If $|Y| = 1$, then $Y = \{y\}$. It follows that $X \times Y = \{(x,y)|x \in X\}$. It follows that there is a bijection $k:X \rightarrow X \times Y$, $k(x) = (x,y)$ and hence $|X \times Y| = |X| = |X| \cdot 1 = |X| \cdot |Y|$.
+
+If $|Y| = n+1$, then $Y = S \cup \{y\}$ for some set $S$. Then, $X \times Y = X \times (S \cup \{y\}) = X \times S \cup X \times \{y\}$. Since $y \notin S$, $X \times S \cap X \times \{y\} = \emptyset$ and hence $|X \times S \cup X \times \{y\}| = |X \times S| + |X \times \{y\}| = |X| \cdot |S| + |X|$, where in the last equivalence, the previous result has been used. But, $|X| \cdot |S| + |X| = |X| \cdot (1 + |S|) = |X| \cdot |Y|$.
+\end{proof}
+

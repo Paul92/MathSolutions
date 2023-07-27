@@ -1,0 +1,26 @@
+\begin{exercise}{7c}
+ Now assume that they are playing a best-of-7 match, where the match will end as
+soon as either player has 4 points. For example, if after 6 games the score is 4 to 2 in
+favor of A, then A wins the match and they don’t play a 7th game. How many possible
+outcomes for the individual games are there, such that the match lasts for 7 games and
+A wins by a score of 4 to 3?
+\end{exercise}
+
+
+\begin{proof}
+    In order for the game sequence to continue up to the 7th game, player A must win 3 or 3.5 points in the first 6 games, with the last game being a win for player A or a draw. Using the same logic as before, the cases are:
+
+    \begin{itemize}
+        \item WWWLLL, in $\frac{6!}{3!3!} = 20$ possible outcomes.
+        \item WWDDLL, in $\frac{6!}{2!2!2!} = 3 \cdot 5 \cdot 6 = 90$ possible outcomes.
+        \item WDDDDL, in $\frac{6!}{4!} = 5 \cdot 6 = 30$ possible outcomes.
+        \item DDDDDD, in one possible outcome.
+        \item WWWDLL, in $\frac{6!}{3!2!} = 2 \cdot 5 \cdot 6 = 60$ possible outcomes.
+        \item WWDDDL, in $\frac{6!}{3!2!} = 60$ possible outcomes.
+        \item WDDDDD, in $\frac{6!}{5!} = 6$ possible outcomes.
+    \end{itemize}
+
+    This makes for a total of $20+90+30+1+60+60+6 = 267$ possible outcomes.
+\end{proof}
+
+

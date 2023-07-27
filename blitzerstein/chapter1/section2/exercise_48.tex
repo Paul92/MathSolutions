@@ -1,0 +1,45 @@
+\begin{exercise}{48}
+Arby has a belief system assigning a number $P_{Arby}(A)$ between 0 and 1 to every event $A$ (for some sample space). This represents Arby's degree of belief about how likely $A$ is to occur. For any event $A$, Arby is willing to pay a price of $1000 \cdot P_{Arby}(A)$ dollars to buy a certificate such as the one shown below.
+
+\vspace{1em}
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+    \textbf{Certificate}
+        The owner of this certificate can redeem it for \$1000 if $A$ occurs. No value if $A$ does not occur, except as required by federal, state or local law. No expiration date.
+    }%
+}
+\vspace{1em}
+
+Likewise, Arby is willing to sell such a certificate at the same price. Indeed, Arby is willing to buy or sell any number of certificates at this price, as Arby considers it the "fair" price.
+
+Arby stubbornly refuses to accept the axioms of probability. In particular, suppose that there are two disjoint events $A$ and $B$ with
+
+$$P_{Arby}(A \cup B) \neq P_{Arby}(A) + P_{Arby}(B)$$
+
+Show how to make Arby go bankrupt, by giving a list of transactions Arby is willing to make that will guarantee that Arby will lose money (you can assume it will be known whether $A$ occurred and whether $B$ occurred the day after any certificates are bought/sold).
+\end{exercise}
+
+
+\begin{proof}
+    Let's assume there are three certificates, $A$, $B$ and $C$, which correspond to the events $A$, $B$ and $B$, respectively, with $A$ and $B$ disjoint. Also, assume that $C = A \cup B$.
+
+    If Arby believes that 
+    $$P_{Arby}(A \cup B) \neq P_{Arby}(A) + P_{Arby}(B)$$
+
+    then we might have that
+
+    $$P_{Arby}(C) = P_{Arby}(A \cup B) < P_{Arby}(A) + P_{Arby}(B)$$
+
+    This means that Arby will think that $C$-certificates are worth less than a pair of $A$ and $B$-certificates, so he will happily make this exchange, adding some money from his pocket. This will be money Arby loses, since the value of a $C$ certificat is, in fact, exactly equal to the value of the pair of $A$ and $B$ certificates Arby buys.
+
+    \vspace{1em}
+
+    Consider the alternative case, where 
+    
+     $$P_{Arby}(C) = P_{Arby}(A \cup B) > P_{Arby}(A) + P_{Arby}(B:)$$
+
+    This is the opposite of the previous case. Here, Arby thinks that a pair of $A$ and $B$-certificates are worth less than a $C$-certificate, and hence he is willing to sell the pair, add some more money and buy a $C$-certificate. This is again, money he will loose, since the value of the $C$ certificate he buys is exactly the value of the pair of $A$ and $B$ certificates he buys.
+\end{proof}
+
+

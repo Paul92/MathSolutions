@@ -1,0 +1,12 @@
+\subsection*{3.5}
+
+Let $A$ be countable. The set $[A]^n = \{S \subset A | |S|=n \}$ is countable for all $n\in\mathbb{N}$.
+
+\begin{proof}
+Will proceed by induction. The set $[A]^1$ is the set of all singletons in $A$, which is countable by the bijection $f:A\rightarrow [A]^1$, $f(x) = \{x\}$.
+
+We now try to form $[A]^{n+1}$ from the countable sets $[A]^n$ and $[A]^1$. Since $[A]^n$ is countable, it is enumberable. We can define the set $B^{n+1}_i = \{[A]^n_i \cup x | x \in A - [A]^n_i\}$ to be the number of unique sets of cardinality $n+1$ that can be obtained by adding one element to the set $[A]^n_i$. Note that $B^{n+1}_i$ is a countable set (and hence, itself enumerable), since there is a bijection to the product $\{[A]^n_{i}\} \times (A - [A]^n_i)$, a product between a singleton and a countable set. Hence, any subset of $A$ with $n$ elements can generate countably many subsets of $n+1$ elements. 
+
+We can now define function $h: \mathbb{N} \times \mathbb{N} \rightarrow [A]^{n+1}$, $h(a, b) = B^{n+1}_a(b)$, which is by construction bijective. This ends the induction and the conclusion follows.
+\end{proof}
+

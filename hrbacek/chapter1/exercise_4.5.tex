@@ -1,0 +1,31 @@
+\subsection*{4.5} Let $S \neq \emptyset$ and $A$ be sets.
+
+\begin{itemize}
+    \item Set $T_1 = \{Y \in \mathcal{P}(A) | Y = A \cap X~for~some~X\in S\}$, and prove $A \cap \bigcup S = \bigcup T_1$.
+    
+    \begin{proof}
+    Let $x \in A \cap \bigcup S$. Then, $x \in A$ and $x \in V$ for some $V \in S$. But then $x \in A \cup V \in T_1$ and hence $x \in \bigcup T_1$. It follows that $A \cap \bigcup S \subseteq \bigcup T_1$.
+    
+    Conversely, let $y \in \bigcup T_1$. Then there is some $Y \in T_1$ such that $y \in Y = A \cap X$ for some $X \in S$. But then $x \in A \cap \bigcup S$. It follows that $\bigcup T_1 \subseteq A \cap \bigcup S$.
+    
+    From the above, $\bigcup T_1 = A \cap \bigcup S$.
+    \end{proof}
+    
+    \item Set $T_2 = \{Y \in \mathcal{P}(A) | Y = A - X~for~some~X\in S\}$, and prove $A - \bigcup S = \bigcap T_2$ and $A - \bigcap S = \bigcup T_2$.
+    
+    \begin{proof}
+    Let $x \in A - \bigcup S$. This implies that $x \in A$ and $x \notin X$ for some $X \in S$. Now pick some element $a \in A$ and notice that, if there is some $X \in S$ such that $a \in X$, then $Y = A - X \in T_2$ such that $a \notin Y$. By this observation it follows that $x \in \bigcap T_2$ and hence $A - \bigcup S \subseteq \bigcap T_2$
+    
+    Conversely, let $y \in \bigcap T_2$, that is, $x \in A - X$ all $X \in S$. This implies that $x \in A$ and that there is no $X \in S$ such that $x \in X$, i.e. $x \notin \bigcup S$. It follows that $x \in A - \bigcup S$ and hence $\bigcap T_2 \subseteq A - \bigcup S$.
+    
+    From the above, $\bigcap T_2 = A - \bigcup S$.
+    
+    \vspace{1em}
+    
+    For the second statement to be proven, let $x \in A - \bigcap S$. This implies that $x \in A$ and $x \notin X$ for all $X \in S$. Hence, there is some $X \in S$ such that $x \notin X$, i.e. there is some $X \in S$ such that $x \in A - X \in T_2$. It follows that $x \in \bigcup T_2$ and hence $A - \bigcap S \subseteq \bigcup T_2$.
+    
+    Conversely, let $y \in \bigcup T_2$, i.e. $x \in A$ and there is no $X \in S$ such that $x \in X$. In other words, $x \notin \bigcup S$ and hence $x \in A - \bigcup S$. It follows that $\bigcup T_2 \subseteq A - \bigcap S$.
+    
+    From the above $\bigcup T_2 = A - \bigcap S$.
+    \end{proof}
+\end{itemize}

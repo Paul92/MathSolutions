@@ -1,0 +1,13 @@
+\begin{exercise}{39}
+    Each of n balls is independently placed into one of n boxes, with all boxes equally likely.
+What is the probability that exactly one box is empty?
+\end{exercise}
+
+\begin{proof}
+    There are $n^n$ ways of independently placing $n$ balls into $n$ boxes.
+
+    In order for one box to remain empty, the $n$ balls must fit in $n-1$ boxes, which can be done in $(n-1)^n$ ways. The box that is left out can be chosen in $n$ ways. Therefore, there are in total $n(n-1)^n$ ways of assigning $n$ balls to $n$ boxes such that one box is left empty.
+
+    This implies that the probability of having one empty box is $\frac{n(n-1)^n}{n^n}$. 
+\end{proof}
+\newpage

@@ -1,0 +1,14 @@
+\begin{exercise}{53a}
+Fred needs to choose a password for a certain website. Assume that he will choose an 8-character password, and that the legal characters are the lowercase letters a,b,c,...,z, the uppercase letters A,B,C,...,Z and the numbers 0,1,...,9.
+
+How many possibilities are there if he is required to have at least one lowercase letter?
+\end{exercise}
+
+\begin{proof}
+    There are $26+26+10=62$ available symbols, which means there are $62^8$ distinct 8-character passwords.
+
+    In order to guarantee that the password contains at least one lowercase letter, we can subtract the passwords which do not contain any lowercase letters. These are passwords formed from the $26+10=36$ remaining characters, in a number of $36^8$. Hence, there are $62^8-36^8 = 215518995677440 \approx 2.16 \cdot 10^{14}$ 8-character passwords with at least one lowercase letter.
+\end{proof}
+
+
+

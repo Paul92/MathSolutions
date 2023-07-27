@@ -1,0 +1,25 @@
+\begin{exercise}{19}
+    Define $\begin{Bmatrix} n\\ k\end{Bmatrix}$ as the number of ways to partition $\{1,2,...,n\}$ into $k$ non-empty subsets, or the number of ways to have $n$ students split up into $k$ groups such that each group has at least one student. For example, $\begin{Bmatrix} 4\\ 2\end{Bmatrix}=7$ because we have the following possibilities:
+    \begin{itemize}
+        \item $\{1\},\{2,3,4\}$,
+        \item $\{2\},\{1,3,4\}$,
+        \item $\{4\},\{1,2,3\}$,
+        \item $\{1,2\},\{3,4\}$,
+        \item $\{1,3\},\{2,4\}$,
+        \item $\{1,4\},\{2,3\}$.
+    \end{itemize}
+    Prove the following identities:
+    \begin{enumerate}
+        \item $\begin{Bmatrix} n+1\\ k\end{Bmatrix}=\begin{Bmatrix} n\\ k-1\end{Bmatrix}+k\begin{Bmatrix} n\\ k\end{Bmatrix}$.
+        \item $\sum_{j=k}^n \binom{n}{j}\begin{Bmatrix} j\\ k\end{Bmatrix} = \begin{Bmatrix} n+1\\ k+1\end{Bmatrix}$
+    \end{enumerate}
+\end{exercise}
+\begin{proof}
+    \begin{enumerate}
+        \item Let us make $k$ groups of $n+1$ people including myself. If I am in a group of myself, then we just need to subdivide the other $n$ people into $k-1$ groups. So I get $\begin{Bmatrix} n\\ k-1\end{Bmatrix}$ If I am not in a group by myself, then I first subdivide the other $n$ people into $k$ groups which happens in $\begin{Bmatrix} n\\ k\end{Bmatrix}$ ways, and I choose one of the $k$ groups to join, so I get $k\begin{Bmatrix} n\\ k\end{Bmatrix}$. Adding these disjoint scenarios gives us the identity.
+        \item Let us make $k+1$ groups out of $n+1$ people including myself. Let's pick any $j\in \{k,...,n\}$ and say that $j$ people are not going to be in my group. For this, we choose $j$ out of the $n$ people not in my group to get $\binom{n}{j}$, and then I subdivide the $j$ people not in my group in $k$ groups. So I get $\binom{n}{j}\begin{Bmatrix} j\\ k\end{Bmatrix}$. Since we can do this for any $j$, we get in total
+        $$\sum_{j=k}^n \binom{n}{j}\begin{Bmatrix} j\\ k\end{Bmatrix}$$
+        and thus the identity follows.
+    \end{enumerate}
+\end{proof}
+

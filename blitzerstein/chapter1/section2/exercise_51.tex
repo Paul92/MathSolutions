@@ -1,0 +1,16 @@
+\begin{exercise}{51}
+For a group of 7 people, find the probability that all 4 seasons (winter, spring, summer, fall) occur at least once each among their birthdays, assuming that all seasons are equally likely.
+\end{exercise}
+
+\begin{proof}
+    Let $B$ be the event that all four seasons occur at least once among the birthdays of the 7 people. Will also assume that the probability of a person to be born in any specific season is $\frac{1}{4}$, i.e. that the seasons have an equal number of days and a person has an equal probability of being born in any day of the year.
+
+    Let the event $A$ be the complement of $B$, that is, $A$ is the event that there is at least one season in which none of the seven people was born. This problem has then the exact same setting as in exercise 50, so, using the inclusion-exclusion principle, we have
+
+    \begin{align*}
+        P(B) &= 4(\frac{3}{4})^7 - {4 \choose 2} (\frac{2}{4})^7 + {4 \choose 3} (\frac{1}{4})^7 \approx 0.487
+    \end{align*}
+
+    Then, $P(A) = 1 - P(B) \approx 0.513$
+\end{proof}
+

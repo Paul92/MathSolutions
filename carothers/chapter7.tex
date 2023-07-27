@@ -1,0 +1,453 @@
+\section{Completeness}
+
+\subsection{} If $A \subset B \subset M$, and if $B$ is totally bounded, show that $A$ is totally bounded.
+
+\begin{proof}
+If $B$ is totally bounded, then for all $\epsilon > 0$ there are finitely many points $x_i \in M$ such that $B \subset \bigcup B_\epsilon(x_i)$. Since $A \subset B$, then $A \subset \bigcup B_\epsilon(x_i)$. This means that the set of points $x_i$ is also $\epsilon$-dense in $A$. Therefore, $A$ is totally bounded.
+\end{proof}
+
+\subsection{} Show that a subset $A$ of $\mathbb{R}$ is totally bounded if and only if it is bounded. In particular, if $I$ is a closed, bounded, interval in $\mathbb{R}$ and $\epsilon > 0$, show that $I$ can be covered by finitely many closed subintervals $J_1, \dots, J_n$, each of length at most $\epsilon$.
+
+\begin{proof}
+Let $A$ be a bounded subset of $\mathbb{R}$. We can then construct the interval $I = [\inf(A), \sup(A)] = [a,b]$.
+
+We then construct a sequence $(x_n)_{i=0}^{\frac{b-a}{\epsilon}}$, with $x_i = a + i\epsilon$. By construction, $I = \bigcup_{i=0}^{\frac{b-a}{\epsilon}-1} [x_i, x_i+1]$. But each of the subintervals has its length of $\epsilon$, and therefore they form an $\epsilon$-cover for $I$.
+
+Since $A \subset I$, and $I$ is totally bounded, $A$ is totally bounded.
+
+Conversely, let $A$ be a totally bounded subset of $\mathbb{R}$. Then, $A$ can be written as the union of a finite number of subsets of $\mathbb{R}$, i.e. $A = \bigcup A_i$, where $A_i \subset \mathbb{R}$. But then $A$ is bounded by $\max\{\sup(A_i)\}$ and $\min\{\sup(A_i)\}$.
+\end{proof}
+
+\subsection{} Is total boundedness preserved by homeomorphisms? Explain. 
+
+\begin{proof}
+No. Since $\mathbb{R}$ is homeomorphic to $(0,1)$, we have a homeomorphism between a totally bounded set $(0,1)$ and $\mathbb{R}$, which is unbounded (hence, not totally bounded). Therefore, total boundedness is not preserved by homeomorphisms.
+\end{proof}
+\newpage
+\subsection{} Show that $A$ is totally bounded if and only if $A$ can be covered by finitely many closed sets of diameter at most $\epsilon$ for every $\epsilon > 0$. 
+
+\begin{proof}
+Assume $A$ can be covered by finitely many closed sets $S_i$ of diameter at most $\epsilon$ for every $\epsilon > 0$. This means that $A \subset \bigcup S_i$. We now construct the sets $T_i = A \cap S_i$. By construction, $A \subset \bigcup T_i$. But also, $T_i \subset A$ for all $i$ and $diam(T_i) \leq diam(S_i) < \epsilon$ for all $\epsilon > 0$. Therefore, $A$ is finitely bounded.
+
+Conversely, assume $A$ is totally bounded. Then, for all $\epsilon/2 > 0$, we can find in $M$ a finite set of open balls of size $\epsilon/2$ that covers it. But this means that $A$ is also covered by their closures, which have a diameter of $\epsilon$. Therefore, $A$ is also covered by finitely many closed sets of diameter at most $\epsilon$.
+
+\end{proof}
+
+\subsection{} Prove that $A$ is totally bounded if and only if $\overline{A}$ is totally bounded. 
+
+\begin{proof}
+Assume $\overline{A}$ is totally bounded. Since $A \subset \overline{A}$, $A$ is also totally bounded.
+
+
+For the converse direction assume $A$ is totally bounded, pick some $x \in \overline{A} \setminus A$. There is some sequence $(x_n)$ with $x_n \rightarrow x$ and $x_n \in A$. This means that for all $\epsilon > 0$, there is some $N$ such that $d(x_i - x) < \epsilon$ for all $n>N$. Let $\delta = 2\epsilon$. Since $A$ is totally bounded, there is a finite number of open balls $B_i$ of size $\delta$ that cover $A$. But since $\delta = 2\epsilon$, any ball that contains $x_n$ will also contain $x$ for all $n > N$. Therefore, the set of open balls $B_i$ also covers $\overline{A}$.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} If $A$ is not totally bounded, show that $A$ has an infinite subset $B$ that is homeomorphic to a discrete space (where $B$ is supplied with its relative metric).
+
+\begin{proof}
+If $A$ is not totally bounded, then there is some $\epsilon > 0$ and a sequence $(x_n)$ in $A$ such that $d(x_i, x_j) \geq \epsilon$ for all $i \neq j$.
+
+Then $B = \{x_i: i \geq 1\}$ is an infinite subset of $A$, which is homeomorphic to $\mathbb{N}$.
+
+\end{proof}
+
+
+\subsection{} Give an example of  a  closed  bounded subset of $l_\infty$ that is  not  totally bounded. 
+
+\begin{proof}
+Consider the set $S \subset l_\infty$ of elements of the form $e^{(k)}$, formed from sequences where the k-th element is 1 and the rest of elements is 0. $S$ is bounded, since $\|e^{(i)}\| = 1$ for all $i$ and closed, since it is constructed as the union of singleton sets.
+
+Note that $\|e^{(i)} - e^{(j)}\|_\infty = 1$ for all $i \neq j$. Pick $\epsilon = 1/4$. There is no open ball of size $\epsilon$ that contains more than one element of $S$. Since $S$ is (countably) infinite, it cannot be covered by a finite number of open balls. Therefore, $S$ is totally bounded.
+
+\end{proof}
+
+\subsection{} Prove that a totally bounded metric space $M$ is separable. [Hint: For each $n$, let $D_n$ be a finite $(1/n)$-net for $M$. Show that $D = \bigcup D_n$ is a countable dense set.]
+
+\begin{proof}
+By construction, $D = \bigcup D_n$ is a countable union of a countable number of finite sets, therefore it is countable.
+
+Pick $x \in M$ and some $\epsilon > 0$. There is some $N$ such that $1/n < \epsilon$ for all $n > N$. Since $D_n$ is a $(1/n)$-net for $M$, there is some $d_n \in D_n$ such that $d(d_n, x) < 1/n < \epsilon$ for all $n >N$.
+
+Therefore, $d_n \rightarrow x$. Since $d_n \in D$ and $x$ has been chosen arbitrarily in $M$, $D$ is dense. Since it is also countable, $M$ is separable.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Let $A$ be a subset of an arbitrary metric space $(M, d)$. If $(A, d)$ is complete, show that $A$ is closed in $M$.
+
+\begin{proof}
+If $(A,d)$ is complete, then every Cauchy sequence $(x_n)$ from $A$ converges to some $x \in A$. But since every convergent sequence is Cauchy, then the limit of any convergent sequence from $A$ is in $A$. Therefore, $A$ is closed.
+\end{proof}
+
+\newpage
+
+\subsection{} Show that $\mathbb{R}$ endowed with the metric $\rho(x, y) = |\arctan x - \arctan y|$ is not complete. How about if we try $\tau(x, y) = |x^3 - y^3|$? 
+
+\begin{proof}
+Pick $\epsilon > 0$. Then, since $\arctan(n) \rightarrow \pi/2$, there is some $N$ such that $\pi/2 - \arctan(n) < \epsilon$ for all $n > N$.
+
+Now let $m,n\in \mathbb{N}$, $m > n > N$. Then, since $\arctan$ is increasing and bounded, we have:
+
+$$0 < \arctan(m) - \arctan(n) < \pi/2 - \arctan(n) < \epsilon$$
+
+
+Therefore, the sequence $x_n=n$ is Cauchy under the $\arctan$ metric. But its limit is $\infty$, which is not a real number. Therefore, $\mathbb{R}$ is not a complete space under the $\arctan$ metric.
+
+\vspace{1em}
+
+Now, for the second part, let $(x_n)$ be a Cauchy sequence in $\mathbb{R}$ with the usual metric, and that it converges to some $x \in \mathbb{R}$. Therefore, $|x_n - x| \rightarrow 0$. Since $f(x) = x^3$ is continuous and increasing, then $|x_n^3 - x^3| \rightarrow 0$. But this means that any Cauchy sequence in $\mathbb{R}$ with the usual metric converges to the same limit under the metric $\tau$. Therefore, $(\mathbb{R}, \tau)$ is complete.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Prove or disprove:  If $M$ is complete and $f: (M, d) \rightarrow (N, p)$ is continuous, then $f(M)$ is complete. 
+
+\begin{proof}
+Let both $(M,d)$ and $(N,p)$ be $\mathbb{R}$ with the usual metric and let $f(x) = \arctan(x)$, a continuous function. As shown in the previous exercise, the sequence $f(x_n) = f(n)$ for all $n \in \mathbb{N}$ is Cauchy, but does not converge in $f(M) = (-\pi/2, \pi/2)$.
+
+Note that this property holds for uniformly continuous function.
+
+Let $f(x_n)$ be a Cauchy sequence in $f(M)$. Therefore, for all $\epsilon > 0$ there is some $N$ such that $|f(x_n) - f(x_m)| < \epsilon$ for all $n,m > N$. Since $f$ is continuous, there is some $\delta > 0$ such that $|x_n - x_m| < \delta$ for all $n,m>N$. But this means that $(x_n)$ is Cauchy in $M$. Since $M$ is complete, $x_n \rightarrow x$ for some $x \in M$. And since $f$ is continuous, $f(x_n) \rightarrow f(x)$. Therefore, $f(M)$ is complete.
+
+\end{proof}
+
+\subsection{} Prove that $\mathbb{R^n}$ is complete under any of the norms $\|\cdot\|_1$, $\|\cdot\|_2$, or $\|\cdot\|_\infty$ [This is interesting because completeness is not usually preserved by the mere equivalence of metrics.  Here we use  the fact that all of the metrics involved are generated by norms. Specifically, we need the norms in question to be equivalent as functions: $\|\cdot\|_\infty \leq \|\cdot\|_2 \leq \|\cdot\|_1 \leq n\|\cdot\|_\infty$. As we will see later, any two norms on $\mathbb{R}^n$ are comparable in this way.] 
+
+\begin{proof}
+Let $(x_n)$ be a Cauchy sequence in $\mathbb{R}^n$.
+
+Then, for all $\epsilon > 0$ there is some $N$ such that $\|x_i - x_j\|_1 = \sum_{k=1}^n |x_i^k - x_j^k| < \epsilon$ for all $i, j > N$. But this means that for all $k$ we have $|x_i^k - x_j^k|$ when $i,j > N$. Therefore, the real sequences $(x_n^k)_{k=1}^n$ are Cauchy. Since $\mathbb{R}$ is complete, each of them converges to some $x_n$ (i.e. we have convergence in coordinates on $\mathbb{R}^n$ with 1-norm). But convergence in coordinates implies the convergence of the sequence, so $\mathbb{R}^n$ with the metric is complete.
+
+Since $\|x_n\|_2 \leq \|x_n\|_1$ and $\|x_n\|_\infty \leq \|x_n\|_1$, the same result holds for the 2-norm and $\infty$-norm. 
+\end{proof}
+
+\subsection{} Given metric spaces $M$ and $N$, show that $M \times N$ is complete if and only if both $M$ and $N$ are complete. 
+
+\begin{proof}
+Let $d,p$ be the metrics on $M$ and $N$, respectively, and let the product metric be $d_1((a,x), (b,y)) = d(a,b) + p(x,y)$.
+
+Assume $M$ and $N$ are complete metric spaces. This means that for any Cauchy sequences $(a_n)$ in $M$ and $(x_n)$ in $N$, they converge to some $a \in M$ and $x \in N$, respectively.
+
+Since $(a_n)$ and $(x_n)$ converge, for all $\epsilon > 0$ there is some $N$ such that $d(a_i, a) < \epsilon/2$ and $p(x_i, x) < \epsilon / 2$ for all $i>N$. Therefore, $d_1((a_i, x_i), (a,x)) = d(a_i, a) + p(x_i, x) < \epsilon/2 + \epsilon/2 = \epsilon$. This means that the sequence $(a_i, x_i)$ converges in the product space to $(a,x)$, i.e. the product space is compact.
+
+\vspace{1em}
+
+Conversely, assume that the product space is compact. This means that for any Cauchy sequence $((a_n, x_n))$ converges to some $(a,x)$ in the product space. This means that for all $\epsilon>0$ there is some $N$ such that $d_1((a_i, x_i), (a,x)) = d(a_i, a) + p(x_i, x) < \epsilon$ for all $i > N$. But this means that, $d(a_i, a) < \epsilon$ and $p(x_i, x) < \epsilon$ for all $i > N$. Therefore, both $(a_i)$ and $(x_i)$ are convergent to $a$ and $x$, respectively. But this means that the metric spaces $M$ and $N$ are compact.
+
+\end{proof}
+
+\newpage
+
+\subsection{} Fill in the details of the proofs that $l_1$ and $l_\infty$ are complete.
+
+\begin{proof}
+Will start by proving that $l_1$ is complete, following the same proof given in the book for showing that $l_2$ is complete.
+
+Let $f \in l_1$ be the sequence $(f(k))_{k=1}^\infty$, in which case $\|f\|_1 = \sum_{k=1}^\infty |f(k)|$. Now let $(f_n)$ be a Cauchy sequence in $l_1$. This means that for all $\epsilon > 0$ there is some $N$ such that $\|f_i - f_j\|_1 < \epsilon$ for $i,j>N$. This implies that $|f_i^k - f_j^k| < \epsilon$ for $i,j>N$, hence all $(f_n^k)_{k=1}^n$ are Cauchy sequences on $\mathbb{R}$, which means that they converge to some $f^k \in \mathbb{R}$.
+
+\vspace{1em}
+
+Therefore, a candidate for the convergence of $(f_n)$ is $f$. Will now show that $f \in l_1$. Since $(f_n)$ is Cauchy, it is bounded in $l_1$, i.e. there is some $B$ such that $\|f_n\|_1 \leq B$. Note that
+
+$$ \sum_{k=1}^N |f(k)| = \lim_{n \rightarrow \infty} \sum_{k=1}^N |f_n(k)| \leq B$$
+
+, since $f_n$ converges in coordinates to $f$. Since this holds for all $N$, we have that $\|f\| \leq B$. This also implies that $f \in l_1$.
+
+\vspace{1em}
+
+Remains to show that $f_n \rightarrow f$ in $l_1$. Pick some $\epsilon > 0$. Since $(f_n)$ is Cauchy, we can find some $n_0$ such that $\|f_n - f_m\|_1 < \epsilon$ for all $n,m>n_0$. Then,
+
+$$ \sum_{k=1}^N |f(k) - f_n(k)| = \lim_{m \rightarrow \infty} \sum_{k=1}^N |f_m(k) - f_n(k)| < \epsilon$$
+
+
+for all $n > n_0$ and all $N$. Therefore, $\|f_n - f\|_1 < \epsilon$ for all $n > n_0$. But this means that $f_n \rightarrow f$.
+
+\vspace{1em}
+
+Since $\|\cdot\|_\infty$ shares all the relevant properties, the proof that $l_\infty$ is complete is identical, just by replacing the norms. 
+
+\end{proof}
+
+\subsection{} Prove that $c_0$ is complete by showing that $c_0$ is closed in $l_\infty$.
+
+\begin{proof}
+Let $(x_n)$ be a convergent sequence in $c_0$. This means that $x_i$ is convergent to 0.
+
+Let $\epsilon = \delta + \gamma > 0$, with $\delta > 0$ and $\gamma > 0$.
+
+Since $(x_n)$ is convergent, it converges to some sequence $l$. This means that for all $\gamma > 0$ we can find $N$ such that $|x_n^k - l_k| \leq \|x_n - l\|_\infty < \gamma$ for all $n>N$ and for all $k$. Since $x_n \rightarrow 0$, we can find for all $\delta > 0$ some $M$ such that $|x_n^k - 0| < \delta$ when $k>M_n$. So, we have that $|l_k - 0| \leq |x_n^k - l_k| + |x_n^k - 0| < \delta + \gamma = \epsilon > 0$ for all $k > \max\{M_n, N\}$. But this means that $l$ is itself a sequence that converges to 0, i.e. $l \in c_0$. This means that $c_0$ is closed in $l_\infty$ and therefore complete.
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let $D$ be a dense subset of a metric space $M$, and suppose that every Cauchy sequence from $D$ converges to some point of $M$. Prove that $M$ is complete. 
+
+\begin{proof}
+Pick some $\epsilon = 2\gamma + \delta > 0$ with $\delta, \gamma > 0$ and let $(x_n)$ be a Cauchy sequence in $M$. Since $D$ is a dense subset of $M$, for all $n$ there is some $y_n \in D$ such that $y_n \in B_\gamma(x_n)$.
+
+Also, since $(x_n)$ is Cauchy, there is some $N$ such that $d(x_n, x_m) < \delta$ for all $n>N$.  Therefore,
+
+$$d(y_n, y_m) \leq d(y_n, x_n) + d(y_m, x_n) \leq d(y_n, x_n) + d(y_m, x_m) + d(x_n, x_m) < 2\gamma + d(x_n, x_m) < 2\gamma + \delta = \epsilon$$
+
+Since $\epsilon$ has been arbitrarily chosen, $(y_n)$ is Cauchy. But since $D$ is dense and $y_n \in D$ by construction, $(y_n)$ must converge to some $y \in M$. But since $(y_n)$ has been constructed with the property $d(x_n, y_n) < \gamma$ for an arbitrary $\gamma > 0$, both $(x_n)$ and $(y_n)$ converge to the same limit, namely $y \in M$.
+
+But this shows that every Cauchy sequence in $M$ converges, i.e. $M$ is complete.
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} True or false? If $f: \mathbb{R} \rightarrow \mathbb{R}$ is continuous and if $(x_n)$ is Cauchy, then $(f(x_n))$ is Cauchy. Examples? How about if we insist that $f$ be strictly increasing? Show that the answer is "true" if $f$ is Lipschitz. 
+
+\begin{proof}
+The statement is true for all continuous functions. Since $\mathbb{R}$ is complete, every Cauchy sequence $(x_n)$ is convergent to some $x$. Therefore, $f(x_n)$ converges to $f(x)$, since $f$ is continuous. But this means that $f(x_n)$ is Cauchy.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} If $\sum_{n=1}^\infty x_n$ is a convergent series in  a normed vector space $X$, show that $\|\sum_{n=1}^\infty x_n\| \leq \sum_{n=1}^\infty \|x_n\|$.
+
+\begin{proof}
+If $S = \sum_{n=1}^\infty x_n$ is a convergent series, then the sequence of partial sums $S_k = \sum_{n=1}^k x_n$ is convergent to $S$.
+
+By the triangle inequality of the norm, we have that $\|S_k\| = \|\sum_{n=1}^k x_n\| \leq \sum_{n=1}^k \|x_n\| = T_k$. But $(T_k)$ represents the partial sums of the series $\sum_{n=1}^\infty \|x_n\|$. Since $X$ is a Banach space, the series $S$ is also absolutely convergent, so $(T_k)$ converges to $T$. But since $\|S_k\| \leq T_k$ for all $k$, then $\|S\| = \|\sum_{n=1}^\infty x_n\| \leq \sum_{n=1}^\infty \|x_n\| = T$.
+
+\end{proof}
+
+\subsection{} Use Theorem 7.12 to prove that $l_1$ is complete.
+
+\begin{proof}
+Let $\sum_{n=1}^\infty \|f_n\|_1$ be an absolutely convergent series in $l_1$. Therefore, 
+
+$$\sum_{n=1}^\infty \|f_n\|_1 = \sum_{n=1}^\infty \sum_{k=1}^\infty |f_n(k)| < \infty$$
+
+
+For each $k$ we have that $|f_n(k)| \leq \|f_n\|_1$, therefore $\sum_{n=1}^\infty|f_n(k)| < \infty$.
+
+
+Let $S_k = \sum_{n=1}^\infty f_n(k)$. Then,
+
+\begin{align*}
+    S &= \sum_{k=1}^\infty |S_k| \\
+      &= \lim_{K\rightarrow \infty} \sum_{k=1}^K |S_k| \\
+      &= \lim_{K\rightarrow \infty} \sum_{k=1}^K |\sum_{n=1}^\infty f_n(k)| \\
+      &= \lim_{K,N\rightarrow \infty} \sum_{k=1}^K |\sum_{n=1}^N f_n(k)| \\
+      &\leq \lim_{K,N\rightarrow \infty} \sum_{k=1}^K \sum_{n=1}^N |f_n(k)| \\
+      &= \lim_{K,N\rightarrow \infty} \sum_{n=1}^N \sum_{k=1}^K  |f_n(k)| \\
+      &\leq \lim_{N\rightarrow \infty} \sum_{n=1}^N \sum_{k=1}^\infty  |f_n(k)| \\
+      &= \lim_{N\rightarrow \infty} \sum_{n=1}^N \sum_{k=1}^\infty  |f_n(k)| \\
+      &= \lim_{N\rightarrow \infty} \sum_{n=1}^N \|f_n(k)\|_1 < \infty \\
+\end{align*}
+
+This shows that $(S_k)$ converges and therefore is in $l_1$. 
+
+Remains to show that $S$ is equal to the original series. 
+
+\begin{align*}
+    \|S - \sum_{n=1}^N f_n\| &= \sum_{k=1}^\infty |S_k - \sum_{n=1}^N f_n| \\
+    &= \sum_{k=1}^\infty | \sum_{n=N+1}^\infty f_n(k) | \\
+    &\leq \sum_{k=1}^\infty \sum_{n=N+1}^\infty |f_n(k)| \\
+    &=\sum_{n=N+1}^\infty \sum_{k=1}^\infty |f_n(k)| \\
+    &= \sum_{n=N+1}^\infty \|f_n\|_1   \xrightarrow{N\rightarrow\infty} 0
+\end{align*}
+
+Therefore, any absolutely convergent series in $l_1$ converges, which implies that $l_1$ is complete by Theorem 7.12.
+
+
+\end{proof}
+
+
+\subsection{} Let $s$ denote the vector space of all finitely nonzero real  sequences;  that  is, $x = (x_n) \in s$ if $x_n = 0$ for all but finitely many $n$. Show that $s$ is not complete under the sup norm $\|x\|_\infty = \sup_n |x_n|$.
+
+\begin{proof}
+Let $(t_n)_{n=1}^\infty \in s$ be a sequence such that $t_{n_k}=1/k$ for all $k \leq n$ and $t_{n_k}=0$ otherwise. Therefore, since $t_n$ has $n$ (and therefore finitely many) nonzero elements, $t_n \in s$.
+
+Also, $(t_n)$ is Cauchy, since for all $\epsilon>0$ there is some $N$ $\|t_i - t_j\|_\infty = \sup\{1/m : i < m \leq j\} = 1/j < \epsilon$, for all $i < j < N$.
+
+But $(t_n)$ converges to the sequence $c_n = 1/n$, since for all $\epsilon > 0$ there is some $N$ such that $\|t_i - c\|_\infty = \sup\{1/m: m > i\} = \frac{1}{i+1} < \epsilon$ for all $i > N$. But the sequence $(c_n)$ has an infinity of nonzero elements, so $c \notin s$.
+
+\end{proof}
+
+\subsection{} The function $f(x) = x^2$ has two obvious fixed points: $p_0 = 0$ and $p_1 = 1$. Show that there is a $0 < \delta < 1$ such that $|f(x) - p_0| < |x - p_0|$ whenever $|x-p_0| < \delta$, $x \neq p_0$. Conclude that $f^n(x) \rightarrow p_0$ whenever $|x-p_0| < \delta$, $x \neq p_0$. This means that $p_0$ is an attracting fixed point for $f$; every orbit that starts out near 0 converges to 0. In contrast, find a $\delta > 0$ such that if $|x - p_1| < \delta$, $x \neq p_1$, then $|f(x) - p_1| > |x - p_1|$· This means that $p_1$ is a repelling fixed point for $f$; orbits that start out near 1 are pushed away from 1. In fact, given any $x \neq 1$, we have $f^n(x)$ not convergent to 1.
+
+
+
+\begin{proof}
+Since $p_0=0$, the inequality $|f(x) - p_0| < |x - p_0|$ is equivalent to $x^2 < |x|$ which holds for all $x < 1$. In particular, holds for all $x < \delta$ with $0 < \delta < 1$.
+
+Therefore, $f(x) = x^2$ is a contraction on $(-1,1)$. This means that for any point $x \in (-1,1)$, $f^n(x) \rightarrow 0$. Therefore, 0 is an attracting fixed point.
+
+\vspace{1em}
+
+In contrast, since $p_1 = 1$ the inequality $|f(x) - p_1| > |x - p_1|$ is equivalent to $|x^2 - 1| > |x-1| \Leftrightarrow |x-1|\cdot|x+1| > |x-1|  \Leftrightarrow |x+1| > 0$ which holds for all $x \notin \{-1,1\}$. Therefore, $p_1=1$ is a repelling point: given any $x \neq 1$, we have $f^n(x)$ not convergent to 1. This can also be verified directly: $f^n(x) = x^{2n}$, which diverges if $x \notin \{-1,1\}$ and converges to 0 if $x \in (-1,1)$. 
+
+\end{proof}
+
+
+\subsection{} Suppose that $f: (a, b) \rightarrow (a, b)$ has a fixed point $p \in (a, b)$ and that $f$ is differentiable at $p$. If $|f'(p)| < 1$, prove that $p$ is an attracting fixed point for $f$. If $|f'(p)| > 1$, prove that $p$ is a repelling fixed point for $f$.
+
+\begin{proof}
+Assume $|f'(p)|<1$. Then, $\lim_{x->p} |\frac{f(x) - f(p)}{x-p}| = l < 1$. This means that there is some $\delta > 0$ such that for all $x \in B_\delta(p)$, since $p$ is a fixed point, we have $|f(x) - f(p)| = |f(x) - p| < |x - p|$. But this means that $f(x)$ got closer to $p$. Implicitly, is still in $B_\delta(p)$. Therefore, $f^n(x) \rightarrow p$.
+
+\vspace{1em}
+
+The second case is the same, except that we have $|f(x) - f(p)| = |f(x) - p| > |x - p|$. This means that for any $x \in B_\delta(p)$ we have $f^n(x)$ going away from $p$ as $n$ increases.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Show that each of the hypotheses of the contraction mapping principle is necessary by finding examples of a space $M$ and a map $f: M \rightarrow M$ having no fixed point where:
+\begin{enumerate}[a)]
+    \item $M$ is incomplete (but f is still a strict contraction).
+    \item $f$ satisfies only $d(f(x), f(y)) < d(x, y)$ for all $x \neq y$ (but $M$ is still complete). 
+\end{enumerate}
+
+\begin{proof}
+Let $f:(-\frac{1}{4}, 0) \cup (0, \frac{1}{4}) \rightarrow \mathbb{R}$ with $f(x) = x^2$. Then, $|f(x) - f(y)| = |x^2 - y^2| = |x+y|\cdot|x-y| < \frac{1}{2}|x-y| \Leftrightarrow |x+y| < \frac{1}{2}$, which holds for all $x,y$ in $(-\frac{1}{4}, 0) \cup (0, \frac{1}{4})$. Therefore, $f$ is a contraction, but there is no fixed point.
+
+\vspace{1em}
+
+Let $f:[1,\infty) \rightarrow \mathbb{R}$, $f(x) = x+\frac{1}{x}$. 
+
+Even though $|f(x) - f(y)| = |x + \frac{1}{x} - y - \frac{1}{y}| = |x-y| \cdot (1 - \frac{1}{xy}) < |x-y|$ for all $x,y \geq 1$ and $[1, \infty)$ is closed in $\mathbb{R}$, hence complete, $f$ has no fixed points since there are no solutions to the equation $x + 1/x = x$.
+
+\end{proof}
+
+\subsection{} Give any set $M$, check that $l_\infty(M)$ is a complete normed vector space.
+
+\begin{proof}
+Remember that $l_\infty(M)$ is the set of bounded real valued functions $f: M \rightarrow \mathbb{R}$. 
+
+Let $f,g \in l_\infty(M)$ and let $h=f+g$. Then, $h:M \rightarrow \mathbb{R}$ with $h(x) = f(x) + g(x)$ is bounded (since both $f$ and $g$ are bounded), and therefore $f \in l_\infty(M)$. Similarly, $k:M \rightarrow \mathbb{R}$ with $k(x) =\alpha f(x)$ for some $\alpha \in \mathbb{R}$ is also bounded and therefore in $\mathbb{R}$. Therefore, $l_\infty(M)$ is closed under addition and scalar multiplication, and therefore a vector space.
+
+\vspace{1em}
+
+Now consider the function $\|\cdot\|_\infty: M \rightarrow R$, $\|f\|_\infty = \sup_{x \in M} |f(x)|$. Since $f \in M$ is bounded, $0 \leq \sup_{x \in M} |f(x)| < \infty$, with $\sup_{x \in M} |f(x)| = 0$ if and only if $f(x) = 0$ for all $x \in M$. Also, we have that $\|\alpha f\|_\infty = \sup_{x \in M} |\alpha f(x)| = \alpha \sup_{x \in M} |f(x)| = \alpha \|f\|_\infty$ and $\|f+g\|_\infty = \sup_{x \in M} |f(x)+g(x)| \leq \sup_{x \in M} |f(x)| + |g(x)| = \sup_{x \in M} |f(x)| + \sup_{x \in M} |g(x)| = \|f\|_\infty + \|g\|_\infty$. Therefore $\|\cdot\|_\infty$ is a norm on $l_\infty(M)$.
+
+\vspace{1em}
+
+Remains to show that $l_\infty(M)$ is complete. Remember that a vector space is complete if every absolutely summable series is summable. Therefore, consider the absolutely convergent series $S_a = \sum_{n=1}^\infty \|f_n\| = \sum_{n=1}^\infty \sup_{x \in M} |f_n(x)| < \infty$. Then, we have that $S(t) = \sum_{n=1}^\infty f_n(t) \leq \sum_{n=1}^\infty \sup_{x \in M} f_n(x) \leq \sum_{n=1}^\infty \sup_{x \in M} |f_n(x)| = \sum_{n=1}^\infty \|f_n\|_\infty = S_a < \infty$ for all $t \in M$. Therefore, $S$ is a function from $M$ to $\mathbb{R}$ with $S \leq S_a$, and therefore $S$ is bounded. But this means that $S \in M$. Therefore, $M$ is complete.
+
+\end{proof}
+
+\subsection{} If $M$ and $N$ are equivalent sets, show that $l_\infty(M)$ and $l\infty(N)$ are isometric. [Hint:  If $g : N \rightarrow M$ is any map, then $f \rightarrow f \circ g$ defines a map from $l_\infty(M)$ to $l_\infty(N)$. How does this help?] 
+
+\begin{proof}
+If $M$ and $N$ are equivalent sets, then there is some $g:N \rightarrow M$ that is bijective. Then, for any $f\in l_\infty(M)$, $f \circ g$ is a bounded map from $N$ to $\mathbb{R}$. Therefore,  $f \circ g \in l_\infty(N)$. This means that we can construct $h:l_\infty(M) \rightarrow l_\infty(N)$, $h(f) = f \circ g$.
+
+For all $t \in l\infty(N)$ there is $t \circ g^{-1} \in l\infty(M)$ (because $t \circ g^{-1}: M \rightarrow R$ and bounded) such that $h(t \circ g^{-1}) = t \circ g^{-1} \circ g = t$, so $h$ is a bijection. Note that $g^{-1}$ exists since $g$ is a bijection.
+
+Now pick $a,b \in l_\infty(M)$. Then $\|h(a) - h(b)\|_\infty = \sup_{x\in N}{|a(g(x)) - b(g(x))|}$. But since $g$ is a bijection from $N$ to $M$, we have that $\|h(a) - h(b)\|_\infty = \sup_{x\in N}{|a(g(x)) - b(g(x))|} = \sup_{y\in M}{|a(y) - b(y)|} = \|a - b\|_\infty$. Therefore, the function $h$ is an isometry, i.e. $l_\infty(M)$ and $l_\infty(N)$ are isometric.
+
+
+\end{proof}
+
+
+\subsection{} If $A$ is a dense subset of a metric space $(M, d)$, show that $(A, d)$ and $(M, d)$ have the same completion (isometrically). [Hint: If $\hat{M}$ is the completion for $M$, then $A$ is dense in $\hat{M}$. Why?
+
+\begin{proof}
+Let $f$ be an isometry between $M$ and a dense subset of $\hat{M}$.
+
+Since $f(M)$ is dense in $\hat{M}$, for all $a \in \hat{M}$ and $\delta > 0$, there is some $x \in M$ such that $d(a, f(x)) < \delta$. Similarly, since $A$ is dense in $M$, for all $x \in M$ there is some $y \in A$ such that $d(x, y) < \delta$. But, since $f$ is isometric, $d(x,y) = d(f(x), f(y)) < \delta$. But then $d(a, f(y)) \leq d(a,f(x)) + d(f(x), f(y)) = 2\delta$.
+
+Therefore, for all $\epsilon > 0$ and $a \in \hat{M}$ we can find, by setting $\delta = \epsilon/2$ in the above, some $y \in A$ such that $d(a, y) < \epsilon$. But this implies that $f(A)$ is dense in $\hat{M}$, therefore the completion of $A$ is $\hat{M}$.
+
+
+\end{proof}
+
+\subsection{} A function $f: (M, d) \rightarrow (N, p)$ is said to be uniformly continuous if $f$ is continuous and if, given $\epsilon > 0$, there is always a single $\delta > 0$ such that $p(f(x), f(y)) <  \epsilon$ for any $x, y \epsilon M$ with $d(x, y) < \delta$. That is, $\delta$ is allowed to depend on $f$ and $\epsilon$ but not on $x$ or $y$. Prove that any Lipschitz map is uniformly continuous. 
+
+\begin{proof}
+If $f$ is Lipschitz, then $p(f(x), f(y)) \leq Kd(x,y)$ for some $K>0$. Pick some $\epsilon > 0$. Then, there is $\delta = \epsilon/K$ such that whenever $d(x,y) < \delta = \epsilon/K$, we have $p(f(x), f(y)) \leq Kd(x,y) < K \frac{\epsilon}{K} = \epsilon$. Since $\delta$ only depends on $f$ and $\epsilon$, $f$ is uniformly continuous.
+\end{proof}
+
+
+\subsection{} Prove that a uniformly continuous map sends Cauchy sequences into Cauchy sequences.
+
+\begin{proof}
+
+Let $(x_n)$ be a Cauchy sequence and pick some $\epsilon>0$.
+
+Since $f$ is uniformly continuous, there is some $\delta>0$ such that whenever $d(x,y) < \delta$, we have that $p(f(x), f(y)) < \epsilon$. Since $(x_n)$ is Cauchy, there is some $N$ such that $d(x_i, x_j) < \delta$ for all $i,j > N$. But this implies that $p(f(x_i), f(x_j)) < \epsilon$ for all $i,j > N$, which means that $(f(x_n))$ is Cauchy.
+
+\end{proof}
+
+\newpage
+
+\stepcounter{subsection}
+
+\subsection{} Given a point $a \in M$ and a subset $A \subset M$, show that each of the functions $x \rightarrow d(x, a)$ and $x \rightarrow d(x, A)$ are uniformly continuous. 
+
+\begin{proof}
+Consider the function $f: M \rightarrow \mathbb{R}$ with $f(x) = d(x,a)$ for some $a \in M$ fixed.
+
+Pick some $\epsilon > 0$ and let $\delta = \epsilon$. Then, whenever $d(x,y) < \delta$. Then, $|f(x) - f(y)| = |d(x, a) - d(y,a)| \leq d(x,y) < \delta = \epsilon$. Therefore, $f$ is uniformly continuous.
+
+\vspace{1em}
+
+Now consider the function $g: M \rightarrow \mathbb{R}$ with $g(x) = d(x,A)$ for some $A \subset M$.
+
+From the triangle inequality, we have
+\vspace{-3em}
+\begin{multicols}{2}
+  \begin{equation*}
+    d(x,z) \leq d(x,y) + d(y,z)
+  \end{equation*}\break
+  \begin{equation*}
+    d(y,z) \leq d(x,y) + d(x,z)
+  \end{equation*}
+\end{multicols}
+
+Taking in both of these inequalities the infimum over $z$, we obtain
+\vspace{-3em}
+\begin{multicols}{2}
+  \begin{equation*}
+    d(x,A) \leq d(x,y) + d(y,A)
+  \end{equation*}\break
+  \begin{equation*}
+    d(y,A) \leq d(x,y) + d(x,A)
+  \end{equation*}
+\end{multicols}
+
+
+For any $\epsilon > 0$, assume that $d(x,y) < \delta = \epsilon$, then:
+
+$$ d(x,A) - \delta \leq d(y,A) \leq d(x,A) + \delta$$
+
+And, by rearranging the terms, we get:
+
+$$ -\delta \leq d(x,A) - d(y,A) \leq \delta$$
+
+Therefore, $|g(x) - g(y)| = |d(x,A) - d(y,A)| \leq \delta = \epsilon$
+
+Since the choice of $\delta$ depends only on $\epsilon$, $g$ is uniformly continuous.
+\end{proof}
+
+\subsection{} Two metric spaces $(M, d)$ and $(N, p)$ are said to be uniformly homeomorphic if there is a one-to-one and onto map $f: M \rightarrow N$ such that both $f$ and $f^{-1}$ are uniformly continuous. In this case we say that $f$ is a uniform homeomorphism. Prove that completeness is preserved by uniform homeomorphisms. 
+
+\begin{proof}
+
+Pick a Cauchy sequence $(y_n)$ in $N$. Since $f^{-1}$ is uniformly continuous, there is some Cauchy sequence $(x_n)$ in $M$ such that $f(x_n) = y_n$. But since $M$ is complete, all Cauchy sequences converge. Assume that $x_n \rightarrow x$. Since $f$ is continuous, we have that $y_n = f(x_n) \rightarrow f(x) = y \in N$. Since $(y_n)$ was arbitrarily chosen, this means that $N$ is complete.
+
+Note that homeomorphisms do not necessarily preserve completeness. For example, $\mathbb{R}$ and $(0,1)$ are homeomorphic, but $(0,1)$ is not complete.
+\end{proof}
+

@@ -1,0 +1,19 @@
+\begin{exercise}{30}
+Four cards are face down on a table. You are told that two are red and two are black, and
+you need to guess which two are red and which two are black. You do this by pointing
+to the two cards you’re guessing are red (and then implicitly you’re guessing that the
+other two are black). Assume that all configurations are equally likely, and that you do
+not have psychic powers. Find the probability that exactly j of your guesses are correct,
+for j = 0, 1, 2, 3, 4.
+\end{exercise}
+
+\begin{proof}
+    There are ${4 \choose 2} = 6$ possible ways of making my guess. Only one of these guesses matches the colors of all cards correctly, with a probability of $\frac{1}{6}$. There is also a single guess which gets all cards wrong, with a probability of $\frac{1}{6}$.
+
+    Labelling correctly one card implies that at least another one will be chosen correctly. This means that there is no way to obtain only one or three correct guesses.
+
+    As for the case with two correct guesses, one has to choose one red and one black card. This can be done in four ways, leading to a probability of $\frac{4}{6}$.
+    
+\end{proof}
+
+

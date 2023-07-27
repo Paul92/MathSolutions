@@ -1,0 +1,24 @@
+\subsection*{5.9} Let $F_n(X,Y)$ be the set of all functions mapping a subset of $X$ into $Y$ (i.e. $Fn(X,Y) = \bigcup_{Z \subseteq X} Y^Z$). Define a relation $\leq$ in $Fn(X,Y)$ by
+
+$$ f \leq g~iff~f \subseteq g $$
+
+\begin{itemize}
+    \item Prove that $\leq$ is an ordering of $F_n(X,Y)$
+    \begin{proof}
+    
+    The $\leq$ relation is reflexive and antisymmetric, from the properties of $\subseteq$ and therefore is an ordering.
+    
+    \end{proof}
+    
+    \item Let $F \subseteq Fn(X,Y)$ Show that $sup F$ exists if and only if $F$ is a compatible system of functions; then $sup F = \bigcup F$.
+    
+    \begin{proof}
+    
+    Assume that $sup~F$ exists. That is, there is some function $g \in F_n(X,Y)$ such that $f \leq g$ for all $f \in F$. This implies that $f \subseteq g$ for all $f \in F$. Assume to the contrary that $F$ is not a compatible system of functions. This implies that there are two functions $a,b \in F$ such that $dom ~a \cap dom~b \neq \emptyset$ and that there is some $x \in dom~a \cap dom~b$ such that $a(x) \neq b(x)$. But then $(x, a(x)), (x, b(x)) \in g$, which contradicts the fact that $g$ is a function. Hence $F$ is a compatible system of functions.
+    
+    Conversely, assume that $F$ is a compatible system of functions. Then, we can construct the function $g = \bigcup f$. By construction, we have that $f \subseteq g$ for all $f \in F$ and hence $f \leq g$ for all $f \in F$. But this implies that $g$ is the supremum for $F$.
+    
+    \end{proof}
+    
+\end{itemize}
+

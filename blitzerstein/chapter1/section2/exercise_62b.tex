@@ -1,0 +1,14 @@
+\begin{exercise}{62b}
+    Explain intuitively why it makes sense that $p($at least one birthday match$)$ is minimized when $p_j = \frac{1}{365}$ for all $j$ from 1 to 365, by considering simple and extreme cases.
+\end{exercise}
+
+\begin{proof}
+    In order to minimize the probability of a birthday match, we need to maximize $e_k(p)$. If $p_j = \frac{1}{365}$ for all $j$ from 1 to 365, then $e_k(p) = {365 \choose k} \frac{1}{365^k}$.
+
+    At the other extreme, if all people are guaranteed to be born in a single day, then $e_k(p)$ is 0.
+
+    Besides these numerical examples, the intuition behind the reason why the probability of a birthday match is minimized when the birth probability is uniform is simply that having a specific day be more probable increases the chance that more people are born on that day, and implicitly the probability of a birthday match.
+\end{proof}
+
+\newpage
+

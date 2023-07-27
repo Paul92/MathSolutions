@@ -1,0 +1,18 @@
+\subsection*{2.11}
+
+Let $P(x)$ be a property. Assume that $k \in N$ and
+
+\begin{itemize}
+    \item $P(k)$ holds
+    \item For all $n \geq k$, if $P(n)$ then $P(n+1)$
+\end{itemize}
+
+Then $P(n)$ holds for all $n \geq k$.
+
+\begin{proof}
+Let $A = \{x \in N|x \geq k~and~P(x)\}$. Let $B = \{x \in N| x \geq k~and~not~P(x)\}$. By construction, $A \cap B = \emptyset$ and $k$ is the least element of $A$.
+
+Assume $B \neq \emptyset$. Since $B \subset N$, it has a least element $y$. Since $y > k$, $y \neq 0$ and hence there is some $x \in N$ such that $S(x) = y$. By construction, $x \in A$ and hence $P(x)$. But, by the property of $P$, $P(x+1)$ holds. This implies that $P(y)$ holds, which contradicts the fact that $y \in B$. It follows that $B = \emptyset$ and hence $P(x)$ holds for all $x \geq k$.
+
+\end{proof}
+

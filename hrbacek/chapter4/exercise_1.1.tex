@@ -1,0 +1,29 @@
+\subsection*{1.1} Prove the following statements.
+
+\begin{itemize}
+    \item If $|A| \leq |B|$ and $|A| = |C|$, then $|C| \leq |B|$.
+    
+    \begin{proof}
+    If $|A| \leq |B|$ then there is some $f:A \rightarrow B$ injective. If $|A| = |C|$, then there is some $g: C \rightarrow A$ bijective. It follows that $f \circ g$ is an injective mapping from $C$ into $B$ and the conclusion follows.
+    \end{proof}
+    
+    \item If $|A| \leq |B|$ and $|B| = |C|$, then $|A| \leq |C|$.
+    
+    \begin{proof}
+    If $|A| \leq |B|$ then there is some $f:A \rightarrow B$ injective. If $|B| = |C|$, then there is some $g: B \rightarrow C$ bijective. It follows that $g \circ f$ is an injective mapping from $A$ into $C$ and the conclusion follows.
+    \end{proof}
+    
+    \item $|A| \leq |A|$
+    
+    \begin{proof}
+    The identity function is an injection defined from $A$ into $A$.
+    \end{proof}
+    
+    \item If $|A| \leq |B|$ and $|B| \leq |C|$, then $|A| \leq |C|$
+    
+    \begin{proof}
+    If $|A| \leq |B|$ and $|B| \leq |C|$, then there are injections $f:A \rightarrow B$ and $g:B \rightarrow C$. But then $f \circ g: A \rightarrow C$ is an injection and the conclusion follows.
+    \end{proof}
+    
+\end{itemize}
+

@@ -1,0 +1,13 @@
+\subsection*{5.6} Find the least $\alpha > \omega$ such that $\xi + \alpha = \alpha$ for all $\xi < \alpha$.
+
+\begin{proof}
+    The ordinal $\alpha$ can be uniquely written as $\alpha = \beta + a$, where $a$ is a natural number and $\beta$ is a limit ordinal. Similarly, $\xi$ can be written as $\phi + x$.
+
+    Assume that $\beta = \omega$. Then, we need to have $\xi + \omega + a = \omega + a$ for all $\xi < \omega + a$. In the previous equation, $a$ can be canceled to the right, and so we are left with $\xi + \omega = \omega$, for all $\xi < \omega+a$. This cannot hold, since $\omega < \omega + a$ but $\omega + \omega \neq \omega$. Hence, $\alpha$ cannot be of the form $\omega + a$ for some natural $a$.
+
+
+    Assume now that $\alpha$ is a limit ordinal of the form $\omega \cdot n$. There will always be the case that $\xi = \omega$ since $\omega < \omega \cdot n$. But then $\omega + \omega \cdot n = \omega \cdot (1 + n) = \omega \cdot (n+1) \neq \omega \cdot n$.
+
+    The next possible option for $\alpha$ is $\omega^2$. In this case, $\omega \cdot n + \omega^2 = \omega \cdot (n + \omega) = \omega \cdot \omega = \omega^2$.
+\end{proof}
+

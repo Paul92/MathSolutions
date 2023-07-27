@@ -1,0 +1,9 @@
+\subsection*{3.1} Let $P(x,y)$ be a property such that for every $x$ there is at most one $y$ for which $P(x,y)$ holds. Then for every set $A$ there is a set $B$ such that, for all $x \in A$, if $P(x,y)$ holds for some $y$, then $P(x,y)$ holds for some $y\in B$.
+
+\begin{proof}
+    We start by defining for all $x$ the property $Q(x,y)$ such that, if there is some $y$ for which $P(x,y)$ holds, then $Q(x,y)$ holds. Otherwise, $Q(x,\theta)$ holds.
+
+    Note that, by construction, for all $x$ there is a unique $y$ such that $Q(x,y)$ holds. Therefore, we can apply the axiom schema of replacement to the set $A$ and property $Q$, to obtain a set $B$ such that for all $x \in A$ there is some unique $y \in B$ for which $Q(x,y)$ holds. Then, for all $x \in A$, if $P(x,y)$ holds for some $y$, $P(x,y)$ holds for some $y\in B$.
+\end{proof}
+
+

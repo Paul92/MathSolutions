@@ -1,0 +1,13 @@
+\subsection*{4.2}
+Give examples of linear orderings $(A_1, <_1)$ and $(A_2, <_2)$ such that their sum does not have the same order type as the sum of $(A_2, <_2)$ and $(A_1, <_1)$, i.e. "addition of the order types is not commutative". Do the same thing for the lexicographical product.
+
+\begin{proof}
+Consider the sets $\mathbb{N}$ and $\{a\}$. The order on the sum of $\mathbb{N}$ and $\{a\}$ would be of the form $0<1<\dots<a$, while the order on the sum of $\{a\}$ and $\mathbb{N}$ would be of the form $a < 0< 1< \dots$.
+
+Let $f : \mathbb{N} \cup \{a\} \rightarrow \mathbb{N} \cup \{a\}$. Assume to the contrary that $f$ is an isomorphism, i.e. for any $x,y \in \mathbb{N} \cup \{a\}$ we have $f(x) < f(y)$. In particular, for the first order it holds that $n < a$ for all $n \in \mathbb{N}$. Thus, when constructing the isomorphism, it is necessary to have $f(a)$ be a natural number (clearly $f(a) \neq a$) with the property that $f(n) < f(a)$. Since $f$ is one-to-one, and its domain contains $\mathbb{N}$, its range also contains the entirety of $\mathbb{N}$. It follows that $f(a)$ must be a natural number greater than all natural numbers, a contradiction. Hence, the addition of linear orders is not commutative.
+
+\end{proof}
+
+Consider the lexicographical products $\{a,b\} \times \mathbb{N}$ and  $\mathbb{N} \times \{a,b\}$. The key observation here is that in the former, we have $(a, 1) < (b, 1) < (a, 2) < (b, 2) < \dots$, while in the latter we have $(1, a) < (2, a) < (3, a) < \dots < (1, b) < (2, b) < (3,b) < \dots$. This implies that in the former ordering, each element has finitely many predecessors (elements smaller than itself) and infinitely many successors, while in the latter ordering, every element of the form $(x, b)$ for $x \in \mathbb{N}$ has infinitely many predecessors. Hence, they cannot be isomorphic.
+
+

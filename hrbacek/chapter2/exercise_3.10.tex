@@ -1,0 +1,22 @@
+\subsection*{3.10} Let $S$ be a nonempty system of nonempty sets. Show that unions and intersections satisfy the general form of the associative law.
+
+\begin{itemize}
+    \item $$\bigcup_{a \in \bigcup S} F_a = \bigcup_{C \in S} (\bigcup_{a\in C} F_a)$$
+    
+    \begin{proof}
+        Let $x \in \bigcup_{a \in \bigcup S} F_a$. Then, there is some $F_x$ such that $x \in F_y$, with $y \in \bigcup S$. Therefore, there is some $A \in S$ such that $y \in A$. But then, $x \in \bigcup_{a \in A} F_a$ and it follows that $y \in \bigcup_{C \in S} (\bigcup_{a\in C} F_a)$. Hence, $\bigcup_{a \in \bigcup S} F_a \subseteq \bigcup_{C \in S} (\bigcup_{a\in C} F_a)$.
+        
+        Conversely, let $x \in \bigcup_{C \in S} (\bigcup_{a\in C} F_a)$. It follows that there is some $A \in S$ such that $x \in \bigcup_{a\in A} F_a$ and hence $x \in F_y$ for some $y \in A$. But since $A \in S$, $y \in \bigcup S$ and hence $x \in bigcup_{a \in \bigcup S} F_a$. Therefore $\bigcup_{C \in S} (\bigcup_{a\in C} F_a) \subseteq \bigcup_{a \in \bigcup S} F_a $
+    \end{proof}
+    
+    \item $$\bigcap_{a \in \bigcup S} F_a = \bigcap_{C \in S} (\bigcap_{a \in C} F_a)$$
+    
+    \begin{proof}
+        Let $x \in \bigcap_{a \in \bigcup S} F_a$. Therefore, $x \in F_a$ for all $a \in \bigcup S$. It follows that $x \in F_a$ for all $a \in C$ for all $C \in S$. Hence $x \in \bigcap_{a \in C} F_a$ for all $C \in S$ and therefore $x \in \bigcap_{C \in S} \bigcap_{a \in C} F_a$. It follows that $\bigcap_{a \in \bigcup S} F_a \subseteq \bigcap_{C \in S} (\bigcap_{a \in C} F_a)$
+        
+        Conversely, let $x \in \bigcup_{C \in S} (\bigcup_{a\in C} F_a)$. Therefore, $x \in F_a$ for all $a \in C$ for all $C \in S$. So $x \in F_a$ for all $a \in \bigcup S$ and hence $x \in \bigcap_{a \in \bigcup S} F_a$. Therefore, $\bigcup_{C \in S} (\bigcup_{a\in C} F_a) \subseteq \bigcup_{a \in \bigcup S} F_a$.
+    \end{proof}
+\end{itemize}
+
+\newpage
+

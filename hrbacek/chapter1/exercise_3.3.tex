@@ -1,0 +1,17 @@
+\subsection*{3.3}
+
+\begin{itemize}
+    \item Prove that the set of all sets does not exist.
+    
+    \begin{proof}
+    Assume to the contrary that there is a set $V$, which is the set of all sets. Using the axiom schema of comprehension, we can construct the set $W = \{x \in V | x \notin x\}$. In other words, $W$ is the subset of $V$ built from all sets that do not contain themselves. We now ponder if $W$ is a member of itself or not. By construction, $W \in V$. Assume that $W \in W$, i.e. $W$ contains itself. This contradicts the construction of $W$, which requires it to contain only sets that do not contain themselves. On the contrary, assume that $W \notin W$. But again, since $W \in V$ and by the axiom schema of comprehension that is used to define $W$, $W$ should contain itself. From these contradictions, it follows that the assumption on the existence of $V$, the set of all sets, is false.
+    \end{proof}
+    
+    \item Prove that for any set $A$ there is some $x \notin A$.
+    
+    \begin{proof}
+    In the above it was shown that there is no set of all sets. It follows that, for any set $A$, there will be some set $X$ such that $X \notin A$. 
+    \end{proof}
+    
+\end{itemize}
+

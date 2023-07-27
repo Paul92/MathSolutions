@@ -1,0 +1,11 @@
+\subsection*{6.2} Show that $|N^N| = 2^{\aleph_0}$.
+
+\begin{proof}
+Since $2^N$ is the set of functions from $\{0,1\} \rightarrow N$ and $\{0,1\} \subseteq N$, and since $\{0,1\} \subset N$, we have that $2^N \subset N^N$ and hence $|2^N| \leq |N^N|$
+
+The functions from $N^N$ are relations on $N \times N$ and hence $N^N \subseteq P(N \times N)$. This implies that $|N^N| \leq |P(N \times N)|$. There is a bijection from $N\times N$ to $N$, and hence $|N \times N| = |N|$. Using the result of the following exercise, this implies that $2^{\aleph_0} = |P(N)| = |P(N \times N)|$ and so we have $2^{\aleph_0} = |2^N| \leq |N^N| \leq |P(N \times N)| = 2^{\aleph_0}$ and hence $|N^N| = 2^{\aleph_0}$
+
+
+
+\end{proof}
+

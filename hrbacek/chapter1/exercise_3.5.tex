@@ -1,0 +1,16 @@
+\subsection*{3.5}
+
+\begin{itemize}
+    \item Given A, B, C, there is a set $P$ such that $x \in P$ if and only if $x = A$, $x = B$ or $x = C$.
+    
+    \begin{proof}
+    We start by using the axiom of pair to construct the singleton sets $\{A\}, \{B\}, \{C\}$. Applying the axiom of union, we can obtain the unique set $X = \{A\} \cup \{B\} = \{A, B\}$. We apply again the axiom of union to obtain the set $P = X \cup \{C\} = \{A, B\} \cup \{C\} = \{A, B, C\}$. This set is unique, and contains by construction only the elements $A, B$ and $C$. That is, if $x \in P$, then exactly one of the statements $x = A$, $x = B$, $x = C$ is true.
+    
+    \end{proof}
+    
+    \item Generalize to four sets
+    \begin{proof}
+    Continuing the same line of thought, we can construct the set $Q = P \cup \{D\} = \{A, B, C, D\}$. Similarly, the set is unique and by construction contains only the elements $A, B, C$ and $D$.
+    \end{proof}
+\end{itemize}
+

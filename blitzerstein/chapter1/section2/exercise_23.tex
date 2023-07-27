@@ -1,0 +1,14 @@
+\begin{exercise}{23}
+Three people get into an empty elevator at the first floor of a building that has 10 floors. Each presses the button for their desired floor (unless one of the others has already pressed that button). Assume that they are equally likely to want to go to
+floors 2 through 10 (independently of each other). What is the probability that the buttons for 3 consecutive floors are pressed?
+\end{exercise}
+
+\begin{proof}
+    Will start by counting the total number of button presses. Assuming they all press distinct buttons, there are $9 \cdot 8 \cdot 7 = 504$ possibilities. To these, we add the number of possibilities where the second person presses the same button as the first, $9 \cdot 8$ possibilities, the number of cases where the third person presses the same button as the second, but different than the first, $9 \cdot 8$ possibilities, and another $9 \cdot 8$ ways in which the third person presses the same button as the first but different from the second. There are also the $9$ possibilities that all three people press the same button. This leads to a total of $9 \cdot 8 \cdot 7 + 3 \cdot 9 \cdot 8 + 9 = 729$.
+
+    Will now count in how many ways we can obtain a consecutive set of numbers. There are seven possible sets of consecutive numbers, starting from 2,3,4 up to 8, 9, 10. Each of them can be pressed in six distinct orders by the three people, leading to a number of $7 \cdot 6 = 42$ possible ways of obtaining consecutive floor numbers.
+
+    This implies that there is a probability of $\frac{42}{729} = \frac{14}{243} \approx 0.0576$.
+\end{proof}
+
+

@@ -1,0 +1,8 @@
+\subsection*{3.4} Let $A$ and $B$ be sets. Show that there is a unique set $C$ such that $x \in C$ if and only if either $x \in A$ and $x \notin B$ or $x \notin A$ and $x \in B$.
+
+\begin{proof}
+We construct the set $S = \{x \in A \cup B | x \in A~and~x \notin B~or~x \notin A~and~x \in B\}$. From the axiom of extensionality and the axiom of union, the set $A \cup B$ is unique. Additionaly, from the axiom of extensionality and the axiom schema of comprehension used in its construction, the set $S$ is unique. Remains to show that it is the same with $C$.
+
+Pick some $x \in S$. By construction, we have that $x \in A~and~x \notin B$ or $x \notin A~and~x \in B$. But this implies that $x \in C$. Conversely, if $x \in C$, then $x \in A~and~x \notin B$ or $x \notin A~and~x \in B$, which implies that $x \in A \cup B$ and that $x \in S$. Therefore, from the axiom of extensionality, $S = C$.
+\end{proof}
+

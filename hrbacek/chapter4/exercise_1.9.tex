@@ -1,0 +1,8 @@
+\subsection*{1.9} If $|A| \leq |B|$ and if $A$ is nonempty then there is a mapping $f$ of $B$ onto $A$.
+
+\begin{proof}
+Assume that $A$ is nonempty and $|A| \leq |B|$. Then, there is an injective function $f:A \rightarrow B$. Let $g:A \rightarrow f(A)$ be a function from $A$ to the domain of $f$ defined by $g(x) = f(x)$. By construction, this function is injective. It is also surjective, since every to element of $f(A)$ is assigned an element of $A$. Therefore, it is bijective. Then, $g^{-1}$ is a bijective (and therefore, surjective) function from $f(A)$ onto $A$.
+
+Let $h:B \rightarrow A$ be the extension of $g$ onto $B$, defined as $h(x) = g(x)$ for all $x \in f(A)$ and $h(x) = a$ for all $x \in B - f(A)$ and $a \in A$ fixed. Since $g$ is surjective, it follows that $h$ is also surjective.
+\end{proof}
+

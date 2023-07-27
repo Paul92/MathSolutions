@@ -1,0 +1,12 @@
+\subsection*{4.3} If $m,n \in N$, then $m \leq n$ if and only if there is $k \in N$ such that $n = m+k$. This $k$ is unique, so we can denote it by $n - m$, the \textit{difference} of $n$ and $m$.
+
+\begin{proof}
+Assume that $m \leq n$. If $m = n$, then there is $0 \in N$ such that $m = n + 0$.
+
+Let $P(m)$ be the logical proposition which states that if $m < n$, then $n = k+m$ for some $k \in N$. Now consider $P(m+1)$, which states that if $m+1 < n$ there is some $t$ such that $n = m+1+t$. Assuming that $P(m)$ holds, then $n = m + k$. Therefore, $m + 1 + t = m + k$ and, from the previous exercise, $k = t+1$ or $t$ is the predecessor of $k$. It follows that $P(m+1)$ holds and, by induction, $P$ holds for all $m \in N$.
+
+Conversely, assume that $n = m + k$. But $m + k > m$ and hence $n > m$. 
+\end{proof}
+
+\newpage
+

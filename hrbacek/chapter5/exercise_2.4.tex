@@ -1,0 +1,12 @@
+\subsection*{2.4} The set of all closed subsets of reals has cardinality $2^{\aleph_0}$.
+
+\begin{proof}
+Since every closed set is defined as the complement of an unique open set, this implies that the cardinality of the set of closed sets is equal to the cardinality of the set of open sets.
+
+The open intervals form a basis for the open sets on $R$. Let $(x,y) \subset R$ be an open interval with real endpoints. We can find a descending rational sequence $x_n \rightarrow x$ and an ascending rational sequence $y_n \rightarrow x$. It follows that $(x_n, y_n) \rightarrow (x,y)$. This implies that $(x,y) = \bigcup (x_n, y_n)$. It follows that the set of open intervals of rational endpoints is the basis for the open sets on $R$.
+
+Open intervals of rational endpoints are uniquely defined by a pair of rational numbers $(a,b)$ with $a<b$. Hence, we can define an injective map between the open interval $(a,b)$ and the element $(a,b)$ of $Q \times Q$. Therefore, there are at most $|\aleph_0|$ open intervals.
+
+Let $S$ be the set of open intervals with rational endpoints. Any open set on $R$ can be uniquely defined as an arbitrary union of intervals of rational endpoints, i.e. as $\bigcup P$, with $P \subseteq S$. It follows that the cardinality of open subsets on $R$ is equal to the cardinality of the subsets of $S$, and $|S| = 2^{\aleph_0}$.
+\end{proof}
+

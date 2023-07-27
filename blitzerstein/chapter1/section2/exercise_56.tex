@@ -1,0 +1,33 @@
+\begin{exercise}{56}
+    For each part, decide whether the blank should be filled in with $=$, $<$ or $>$, and give a clear explanation. In (a) and (b) the order does not matter.
+\end{exercise}
+
+\begin{proof}
+    \begin{enumerate}
+        \item (number of ways to choose 5 people out of 10) $>$ (number of ways to choose 6 people out of 10)
+
+        Intuitively, we can use the property that ${n \choose k} = {n-k \choose k}$ and the maximum number is when $k = \frac{n}{2}$ if $n$ is even or $k \in \{\lfloor\frac{n}{2} \rfloor, \lceil \frac{n}{2} \rceil\}$ if $n$ is odd.
+
+        We can also check numerically that ${10 \choose 5} = 252 > 210 = {10 \choose 6}$
+
+        \item (number of ways to break 10 people into 2 teams of 5) $>$ (number of ways to break 10 people into a team of 6 and a team of 4)
+
+        Note that we have to choose one team, the other can be formed by the remaining people. This means that forming two teams of 5 is equivalent to choosing 5 people out of 10. Note that, due to the symmetry of the two groups of 5 people, we double count the number of teams here, once by picking a team, and once by leaving out the team and picking the other. So we have to introduce a factor of $\frac{1}{2}$ to compensate for this.
+        
+        Forming a team of 6 and a team of 4 is equivalent to either choosing 6 people out of 10 or choosing 4 people out of 10 (both these approaches will lead to the same number, due to the property of combinations discussed above). In this case there is no overcounting issue, since the teams are asymmetric.
+
+        Computing the counts with the strategy described above, we obtain that $\frac{1}{2} \cdot {10 \choose 5} = 126 < 210 = {10 \choose 6}$
+
+        \item (probability that all 3 people in a group of 3 were born on January 1) = (probability that in a group of 3 people, 1 was born on each of January 1, 2, 3)
+
+        In both cases, one child is assigned a birth date, and the order does not matter.
+
+        \item Martin and Gale play an exciting game of "toss the coin", where they toss a fair coin until the pattern HH occurs (two consecutive heads), or the pattern TH occurs (tails followed immediately by heads). Martin wins the game if and only if HH occurs before TH occurs.
+
+        (probability that Martin wins) = 1/4
+
+        Reformulating a bit the game rules, the game is played until either the pattern HH occurs and Martin wins, or a T occurs, and Gale wins. In the second case is only enough to have a single T since the following sequence will either contain only Ts and the game continues, or a H, and the game stops with Gale's victory. This implies that the probability of Gale of winning is $\frac{3}{4}$, while the probability of Martin of winning is only $\frac{1}{4}$.
+    \end{enumerate}
+\end{proof}
+
+

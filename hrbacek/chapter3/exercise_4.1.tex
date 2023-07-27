@@ -1,0 +1,26 @@
+\subsection*{4.1} Prove the associative law of addition:
+
+$$ (k+m) + n = k+(m+n)$$
+
+\begin{proof}
+Will prove by induction on $n$.
+
+The base case is
+
+$$ (k+m)+0 = k+m = k+(m+0)$$
+
+, from the defining property of addition that $m+0=m$ for all $m$.
+
+The inductive case is
+
+\begin{align*}
+    (k+m)+(n+1) &= ((k+m) + n) + 1 \\
+                &= (k+(m+n)) + 1 \\
+                &= k + ((m+n) + 1) \\
+                &= k + (m+(n+1))
+\end{align*}
+
+, and hence the associativity proposition holds.
+
+\end{proof}
+

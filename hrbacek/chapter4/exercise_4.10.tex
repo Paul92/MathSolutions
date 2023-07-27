@@ -1,0 +1,11 @@
+\subsection*{4.10}
+Let $(A, <)$ be a linearly ordered set without endpoints, $A \neq \emptyset$. A closed interval $[a,b]$ is defined for $a,b \in A$ by $[a,b] = \{x \in A| a \leq x \leq b\}$. Assume that each closed interval $[a,b]$, $a,b \in A$ has a finite number of elements. Then $(A,<)$ is similar to the set $Z$ of all integers in the usual ordering.
+
+\begin{proof}
+
+We pick an element $a_0 \in A$ and we let $b_0 = a_0$. This is equivalent to the closed interval $I_0 = [a_0, b_0]$, and is similar to the set $[0,0]$ via the isomorphism $f:A \rightarrow Z$, $f(a_0) = 0$. Now the set $A$ is split into three sets: $L_0 = \{x \in A| x < a_0\}$, $I_0$ and $H_0 = \{x \in A | x > b_0\}$. The set $L_0$ is bounded from above and, since it inherits the linear order from $A$, it has a greatest element $a_1$ (the greatest element must exist, otherwise the interval $[a_1, a_0]$ would have infinitely many elements). Similarly, $H_0$ has a lowest element $b_1$. We now extend our interval $I_0$ to $I_1 = [a_1, b_1]$. Note that this interval has exactly three elements, by construction, and is hence isomorphic to $[-1, 1] \subset Z$. The exact same argument can be used for extending the interval $I_n$ to $I_{n+1}$. By induction, it follows that $A$ is isomorphic to $Z$.
+
+\end{proof}
+
+
+

@@ -1,0 +1,16 @@
+\begin{exercise}{54}
+    Alice attends a small college in which each class meets only once a week. She is deciding between 30 non-overlapping classes. There are 6 classes to choose from for each day of the week, Monday to Friday. Trusting in the benevolence of randomness, Alice decided to register for 7 randomly selected classes out of the 30, with all choices equally likely. What is the probability that she will have classes every day, Monday through Friday?
+\end{exercise}
+
+\begin{proof}
+    There are ${30 \choose 7}$ ways for Alice to choose her courses. In order for her to have courses in each day, either she will have four days with one course and one day with three courses, or three days with one course and two days with two courses.
+
+    In the first case, we are first selecting one of the five days where Alice will have three courses. Then, choose the courses for that day in $6 \choose 3$ ways. Then, we can choose in $6^4$ ways to choose the remaining four courses, leading to a total of $5 \cdot {6 \choose 3} \cdot 6^4$ choices.
+
+    In the second case, we first choose two days where Alice will have two courses, in ${5 \choose 2}$ ways. Then, we have ${6 \choose 2}^2$ ways to choose the courses in those two days and $6^3$ ways to choose the courses in the rest of the days. This leaves a total of ${5 \choose 2} \cdot {6 \choose 2}^2 \cdot 6^3$ choices.
+
+    Therefore, the probability that Alice will have courses every day is
+
+    $$p = \frac{5 \cdot {6 \choose 3} \cdot 6^4 + {5 \choose 2} \cdot {6 \choose 2}^2 \cdot 6^3}{{30 \choose 7}} = \frac{114}{377} \approx 0.3024 $$
+\end{proof}
+

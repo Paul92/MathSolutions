@@ -1,0 +1,11 @@
+\subsection*{2.6} Prove that for any three relations $R, S, T$, we have $(R \circ S) \circ T = R \circ (S \circ T)$.
+
+\begin{proof}
+
+Let $(x,y) \in (R \circ S) \circ T$. Then, there is some $z$ such that $(x,z) \in T$ and $(z,y) \in R \circ S$. Therefore, there is some $w$ such that $(z, w) \in S$ and $(w, y) \in R$. Since we have $(x,z) \in T$ and $(z, w) \in S$, then $(x,w) \in S \circ T$. And since $(w, y) \in R$, $(x,y) \in R \circ (S \circ T)$. It follows that $(R \circ S) \circ T \subseteq R \circ (S \circ T)$.
+
+Conversely, let $(x,y) \in R \circ (S \circ T)$. Then, there is some $z$ such that $(x,z) \in (S \circ T)$ and $(z, y) \in R$ and there is some $w$ such that $(x,w) \in T$ and $(w, z) \in S$. Since $(z, y) \in R$ and $(w, z) \in S$, we have that $(w,y) \in R \circ S$. And since $(x,w) \in T$, it follows that $(x,y) \in (R \circ S) \circ T$ and therefore $(R \circ S) \circ T \supseteq R \circ (S \circ T)$.
+
+From the two statements above, we obtain that $(R \circ S) \circ T = R \circ (S \circ T)$.
+\end{proof}
+

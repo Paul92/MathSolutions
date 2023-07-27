@@ -1,0 +1,18 @@
+\begin{exercise}{57}
+    Take a deep breadth before attempting this problem. In the book \textit{Innumeracy}, John Allen Paulos writes:
+
+    Now for better news of a kind of immortal persistence. First, take a deep breadth. Assume Shakespeare's account is accurate and Julius Caesar gasped ["Et tu, Brute!"] before breathing his last. What are the chances you just inhaled a molecule which Caesar exhaled in his dying breath?
+
+    Assume that one breath of air contains $10^{22}$ molecules, and that there are $10^{44}$ molecules in the atmosphere. (These are slightly simpler numbers than the estimates that Paulos gives; for the purposes of this problem, assume that these are exact. Of course, in reality there are many complications such as different types of molecules in the atmosphere, chemical reactions, variation in lung capacities, etc).
+
+    Suppose that the molecules in the atmosphere now are the same as those in the atmosphere when Caesar was alive, and that in the 2000 years of so since Caesar, those molecules have been scattered completely randomly through the atmosphere. Also assume that Caesar's last breath was sampled without replacement, but that your breathing is sampled with replacement (without replacement makes more sense but with replacement is easier to work with, and is a good approximation since the number of molecules in the atmosphere is so much larger than the number of molecules in one breath).
+\end{exercise}
+
+\begin{proof}
+    Assuming a single molecule from the atmosphere is chosen randomly, here is a probability of $\frac{10^{44}-10^{22}}{10^{44}} = 1 + \frac{-10^{22}}{10^{44}}$ of not being part of the last breath of Caesar. Assuming that when breathing we make a random sample of $10^{22}$ molecules from the atmosphere such that every molecule is sampled independently, there is a probability of 
+    
+    $$1-\left(1 - \frac{10^{22}}{10^{44}}\right)^{10^{22}} = 1-\left(1 - \frac{1}{10^{22}}\right)^{10^{22}} \approx 1-\frac{1}{e} \approx 0.63$$
+    
+    such that the breath does not share any molecule with the Caesar's last breath.
+\end{proof}
+

@@ -1,0 +1,30 @@
+\begin{exercise}{31c}
+Suppose that there are 16 balls in total, and that the probability that the two balls
+are the same color is the same as the probability that they are different colors. What
+are r and g (list all possibilities)?
+\end{exercise}
+
+\begin{proof}
+    For the first ball, the probability of choosing a red ball is $\frac{r}{16}$ while the probability of choosing a green ball is $\frac{g}{16}$.
+
+    The probability of choosing two red balls is $\frac{r}{16} \cdot \frac{r-1}{15}$. The probability of choosing two green balls is $\frac{g}{16} \cdot \frac{g-1}{15}$. Therefore, the probability of choosing two balls of the same color is $\frac{r}{16} \cdot \frac{r-1}{15} + \frac{g}{16} \cdot \frac{g-1}{15} = \frac{r(r-1) + g(g-1)}{15 \cdot 16}$.
+
+    The probability of choosing a red and a green ball is $\frac{r}{16} \cdot \frac{g}{15}$, while the probability of choosing a green and a red ball is $\frac{g}{16} \cdot \frac{r}{15}$. Therefore, the probability of choosing two balls of distinct colors is $\frac{r}{16} \cdot \frac{g}{15} + \frac{g}{16} \cdot \frac{r}{15} = \frac{2rg}{15 \cdot 16}$.
+
+    We want the two above probabilities to be equal. This implies that $r(r-1) + g(g-1) = 2rg$ and hence $r^2 - r + g^2 - g = 2rg$. But $g = 16-r$ and hence 
+    
+    
+    \begin{align*}
+        r^2 - r + (16-r)^2 - 16 + r &= 2r(16-r) \\
+        r^2 - r + 16^2 - 32r + r^2 - 16 + r &= 32r - 2r^2 \\
+        4r^2-64r+16^2 &= 16 \\
+        (2r-16)^2 &= 16 \\
+        2r-16 &= \pm 4 \\
+        r &\in \{6, 10\}
+    \end{align*}
+
+    It follows that $(r,g) \in \{(6,10), (10, 6)\}$.
+\end{proof}
+
+\newpage
+

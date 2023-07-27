@@ -1,0 +1,212 @@
+\section{}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Given finitely many countable sets $A_1, A_2, \dots, A_n$ show that $A_1 \cup A_2 \cup \dots \cup A_n$ and $A_1 \times A_2 \times \dots \times A_n$ are countable sets.
+
+\begin{proof}
+
+We start by creating the sets $B_i \subseteq A_i$ such that $B_i = A_i \setminus (A_{i-1} \cup \dots \cup A_1)$. Therefore, we have $B_1 \cup B_2 \dots \cup B_n = A_1 \cup A_2 \cup \dots \cup A_n$, with the sets $B_i$ being mutually disjoint. Since $B_i \subseteq A_i$, they are countable. Then, there are bijective functions $f_{B_i}: B_i \rightarrow \mathbb{N}$. We now show that the union $B = \bigcup_{i=1}^n B_i$ is countable by enumerating the elements of $B$ based on the bijections $f_{B_i}$: $\{f_{B_1}^{-1}(1), f_{B_1}^{-1}(2), \dots, f_{B_1}^{-1}(n), f_{B_2}^{-1}(1), f_{B_2}^{-1}(2), \dots \}$.
+
+In this case, it is easier to construct $g: \mathbb{N} \rightarrow B$. For any $k\in\mathbb{N}$ we have $k = in+j$ with $i ,j\in\mathbb{N}$, $j<i$. Then, we define $g(k) = f_{B_{i}}^{-1}(j)$. This is a bijection from $B$ to $\mathbb{N}$, showing that $B$ is countable.
+
+
+Let $N = \max(A_1, \dots, A_n)$ and $n = \ceil {\log_{10}(N)}$. An element $x \in A_1 \times \dots \times A_n$ is a n-tuple of the form $(x_1, \dots, x_n)$, with $x_i \in X_i$. For each $x$ we can assign a natural number $\sum_{i=1}^N f_i(x_i) * n ^ {i-1}$. This is simply counting the elements of $A_1 \times A_2 \times \dots \times A_n$ in base $n$ making sure there is no carry over. But this mapping is bijective $\mathbb{N}$, and so the set is countable.
+
+\end{proof}
+
+\subsection{} Show that any infinite set has a countably infinite subset.
+
+\begin{proof}
+
+Let $S$ be an infinite set. Since $S \neq \emptyset$, there is some $x_1 \in S$. We construct the set $A_1 =\{x_1\}$. Since $S \setminus A_1$ is infinite, there is some $x_2 \in S \setminus A_1$. We form now $A_2 = \{x_1, x_2\}$.
+
+We assume now that we can form some set $A_n = \{x_1, \dots, x_n\}$ for all $n\in\mathbb{N}$. Then, $S \setminus A_n$ is infinite, since $S$ is infinite and $A_n$ is countable. Therefore, we can pick $x_{n+1} \in S \setminus A_n$ and use it to build $A_{n+1} = A_n \cup \{x_{n+1}\}$. Therefore, we have built a countably infinite subset of $S$.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let A be countable. If $f : A \rightarrow B$ is onto, show that $B$ is countable; if $g : C \rightarrow A$ is one-to-one, show that C is countable. [Hint: Be careful!]
+
+\begin{proof}
+
+If $f : A \rightarrow B$ is onto, then to any element of B we have assigned at least one element of $A$. We can define a function $h: B \rightarrow A$ such that $h(b) = x$, s.t. $f(x) = b$ (note that $h$ is not unique). If we restrict the domain of $f$ from $A$ to the image of $h$, then we obtain a bijection between $B$ and a subset of $A$. This subset is countable, and therefore $B$ is also countable.
+
+If $g$ is one-to-one, then there exists a set $g(C) \subseteq A$, which is the image of $C$ w.r.t. $g$. The function $h: C \rightarrow g(C)$ is therefore a bijective function from $C$ to a countable set.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Show that $(0, 1)$ is equivalent to $[ 0, 1 ]$ and to $\mathbb{R}$.
+
+\begin{proof}
+
+Define a function $f:(0,1) \rightarrow [0,1]$, that maps the elements of the form $\frac{1}{n}$ with $n>3$ to $\frac{1}{n-2}$, $\frac{1}{2} \rightarrow 1$, $\frac{1}{3} \rightarrow 0$, and maps the rest of the elements to themselves. This function is bijective therefore showing that the intervals $[0,1]$ and $(0,1)$ have the same cardinality.
+
+We will now show that the interval $[0,1]$ has the same cardinality as $\mathbb{R}$. The function $f:\mathbb{R} \rightarrow [-1,1]$ defined as $f(x) = \frac{1}{x}$ if $x \notin [-1,1]$ and $f(x) = x$ if $x$ is a bijective map between the entire real line and the interval $[-1, 1]$. But there is a bijective map $g:[-1, 1] \rightarrow [0,1]$, $g(x) = \frac{x+1}{2}$ , which shows that $[-1, 1]$ and $[0,1]$ are equivalent. We have shown before that $[0,1]$ and $(0,1)$ are equivalent. Therefore, $\mathbb{R}$ and the interval $(0,1)$ are equivalent.
+
+\end{proof}
+
+\subsection{} Show that $(0, 1)$ is equivalent to the unit square $(0, 1) \times (0, 1)$.
+
+\begin{proof}
+
+Any element $a \in (0,1)$ has a decimal expansion of the form $0.a_1a_2a_3/dots$ for which there is no $N$ such that $a_i=9$ when $i>N$. We can define a bijection $f:(0,1) \times (0,1) \rightarrow (0,1)$ by $f(a,b) = 0.a_1b_1a_2b_2a_3b_3\dots$.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Prove that $(0, 1)$ can be put into one-to-one correspondence with the set of all functions $f : \mathbb{N} \rightarrow \{0,1\}$.
+
+\begin{proof}
+
+Any $x \in (0,1)$ has a unique binary expansion that contains an infinity of zeros, of the form $0.x_1x_2\dots$, where $x_i \in \{0,1\}$. Based on this expansion, we can define a function $f: \mathbb{N} \rightarrow \{0,1\}$ such that $f(i) = x_i$. This function is therefore a bijection between $(0,1)$ and the set of all functions that map $\mathbb{N}$ to $(0,1)$.
+
+\end{proof}
+
+
+\subsection{} The algebraic numbers are those real or complex numbers that are the roots of polynomials having integer coefficients.  Prove that  the  set of algebraic numbers  is countable.
+
+\begin{proof}
+We can define a bijection from $\mathbb{Z}^n$ to the set of polynomials with integer numbers of degrees $1$ to $n$. But $\mathbb{Z}^n$ is a countable Cartesian product of a countable set, which, as proven in exercise 2.3, is a countable set.
+
+We have found a bijection from the set $\mathbb{P}$ of polynomials with integral coefficients to the countable set $\mathbb{Z}^n$. So $\mathbb{P}$ is countable. Moreover, $\mathbb{P}$ is the union of $\bigcup_{i=1}^n \mathbb{P}_i$, the sets of polynomials of degree $i$. Each element of $\mathbb{P}_i$ has $i$ roots. By a matrix argument, the set of roots of $\mathbb{P}_i$ is countable. But then the union of the sets of roots from all $\mathbb{P}_i$ is a countable union of countable sets, and therefore it is countable.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Show that the set of all functions $f : A \rightarrow \{0,  1\}$ is equivalent to $P(A)$, the power set of $A$ (i.e., the set of all subsets of $A$).
+
+\begin{proof}
+There are exactly $2^{|A|}$ functions from $A$ to $\{0,1\}$. Each such function maps each element of $A$ to $0$ or $1$. From such a function, we can construct a subset of $A$ as $S_f=\{x \in A : f(x) = 1\}$. This mapping is a bijection, and therefore shows the equivalence requested.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Show that $\Delta$ contains no (nonempty) open intervals. In particular,    show that if $x, y \in \Delta$ with $x < y$, then there is some $z \in [ 0, 1 ] \ \Delta$ with $x < z < y$.
+
+\begin{proof}
+In the construction of $\Delta$, we recursively split all the available intervals into three intervals of equal length, starting from $[0,1]$, and discard the middle one.
+
+If $x,y \in \Delta$, then, at each level $L$ of this construction, there will be intervals $I_x, I_y$ with $x\in I_x$ and $y \in I_y$ (otherwise they will be discarded in the construction process). If, at level $L$, $I_x \neq I_y$, then there is an element, such as $z=\frac{\max(I_x) + \min(I_y)}{2}$ that is in the interval discarded at that level (and therefore not in $\Delta$, such that $x < y < z$.
+
+Now assume that, at level $L$, both $x$ and $y$ belong to the same interval. Since $x,y\in\Delta$, they will never be in the discarded interval. Based on the notation introduced in the book, we have that the base 3 expansion of both $x$ and $y$ contains only ones and/or twos. Let $(x_n)$ and $(y_n)$ be the sequences of digits from the base three representation of $x$ and $y$, respectively. Since $x < y$, there must be some $N$ such that $x_i = y_i$ if $i < N$, $x_N = 0$, $y_i = 2$. We now form a sequence, $(z_n)$, with $z_i = x_i = y_i$ if $i < N$, $z_i = 1$, $z_i = a_i$ if $i > N$. By construction $x < z < y$, and $z \notin \Delta$.
+
+\end{proof}
+
+
+\subsection{} The endpoints of $\Delta$ are those points in $\Delta$ having a   finite-length base 3 decimal expansion (not necessarily in the proper form), that is, all of the points in $\Delta$ of the form $a/3^n$ for some integers $n$ and $0 < a < 3^n$. Show that the endpoints of $\Delta$ other than 0 and 1 can be written as $O.a_1a_2\dots a_{n+1}$ (base 3), where each $a_k$ is 0 or 2, except $a_{n+1}$, which is either 1 or 2. That is, the discarded "middle third" intervals are of the form $(O.a_1a_2\dots 1, O.a_1a_2\dots2)$, where both entries are points of $\Delta$ written in base 3.
+
+\begin{proof}
+At level $n$, the interval endpoints are of the form $a/3^n$. The kept intervals at this level are always of the form $[3k/3^n, 3k+1/3^n]$, $[3k+2/3^n, 3k+3/3^n]$. Therefore, the discarded interval is of the form $(3k+1/3^n, 3k+2/3^n)$, which ends in 1 or 2 in the ternary expansion.
+\end{proof}
+
+\subsection{} Show that $\Delta$ is perfect; that is, every point in $\Delta$ is the  limit of a sequence of distinct points from $\Delta$. In fact, show that every point in $\Delta$ is the limit of a sequence of distinct endpoints.
+
+
+\begin{proof}
+A sequence $(d_n)$, with $d_i \in \Delta$, converges to $d \in Delta$ if, for all $\epsilon > 0$ we have $|d_i - d| < \epsilon$. Therefore, for such a sequence to exist, we need to be able to find for all $\epsilon > 0$ at least one point $d_t \in \Delta$ such that $|d - d_t| < \epsilon$. Note that all $d \in \Delta$ are formed by recursively dividing an interval of length $1/3^n$. Without loss of generality, assume $\epsilon = 1/3^n$. Then, there is such an interval that contains $d$, which is guaranteed to contain at least another point (coming from the other kept interval after division). This proves that there is at least one other point within $\epsilon = 1/3^n$ from any $d\in\Delta$. Using these points, one can form a sequence convergent to $d$.
+\end{proof}
+
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Prove that the extended Cantor function $f:[ 0, 1 ] \rightarrow [ 0, 1 ]$ (as  defined above)  is increasing.
+
+\begin{proof}
+Consider two points $x,y\in[0,1]$ with $x<y$. If $x,y$ are coming from the same discarded interval in the construction of the Cantor set, then $f(x)=f(y)$. Otherwise, there is some $d\in\Delta$ such that $x < d < y$. But this means that $f(x) < d < f(y)$, which shows that $f$ is increasing.
+\end{proof}
+
+
+
+
+\subsection{} Check that the construction of the generalized Cantor set with parameter $\alpha$, as described above,  leads  to a  set of measure  $1 -\alpha$; that is, check that the discarded intervals now have total length $\alpha$.
+
+\begin{proof}
+At stage $n$ of the construction of the generalized Cantor set, we discard $2^{n-1}$ intervals of length $\alpha / 3^n$. In total, we have discarded
+
+$$\sum_{n=1}^\infty \alpha\frac{2^{n-1}}{3^n} = \frac{\alpha}{3} \sum_{n=1}^\infty \frac{2}{3}^{n-1} = \frac{\alpha}{3}  \frac{1}{1 - \frac{2}{3}} = \frac{\alpha}{3} 3 = \alpha$$
+\end{proof}
+\stepcounter{subsection}
+
+\subsection{} Deduce from Theorem 2.17 that a monotone function $f :  \mathbb{R} \rightarrow \mathbb{R}$ has points of continuity in every open interval. 
+
+\begin{proof}
+$\mathbb{R}$ is an uncountable set. By Theorem 2.17, $f$ has a countable number of jump discontinuities, i.e. points $x \in \mathbb{R}$ with $f(x-) \neq f(x+)$. But there are still uncountably many points where $f(x-) = f(x+)$ (otherwise, they will be jump discontinuities). Moreover, any nonempty interval of $\mathbb{R}$ is uncountable, but can contain at most countable many (jump) discontinuitites. Therefore, each interval must contain infinitely many points of continuity.
+\end{proof}
+
+
+\subsection{} Let $f :[a, b] \rightarrow R$ be monotone. Given $n$ distinct points $a < x_1  < x_2 < ··· < x_n < b$, show that $\sum_{i=1}^n |f(x_i+)-f(x_i-)| < |f(b)-f(a)|$. Use this to give another proof that $f$ has at most countably many (jump) discontinuities. 
+
+\begin{proof}
+Without loss of generality, assume $f$ is increasing. We have that $f(a) < f(x_1-) \leq f(x_1) \leq f(x_1+) < f(x_2-) \leq f(x_2) \leq f(x_2+) < \dots < f(b)$. This means that $f(b) - f(a) \geq f(x_1+) - f(x_1-) + f(x_2+) - f(x_2-) + \dots = \sum_{i=1}^n f(x_i+)-f(x_i-)$.
+
+Assume there are uncountably many discontinuities between $a$ and $b$. We cannot assume a sequence, nor a well defined sum on the set of discontinuities (think that the set of discontinuities might be similar to $\mathbb{Q}$). Moreover, the lemma introduced in this exercise applies only to finite sets. So, we approach the problem differently: we split the set of discontinuities into multiple sets, and show that these are finite, i.e. the original set is countable. In order to do this, define $A_n = \{x\in[a,b] | f(x+) - f(x-) \geq \frac{1}{n}\}$ and pick $p$ points $x_1 < \dots < x_p \in A_n$. By the definition of $A_n$, we have that $\frac{p}{n} \leq \sum_{i=1}^n|f(x_i+) - f(x_i-)| < f(b) - f(a)$. So we can pick at most $n(f(b) - f(a))$ points from $A_n$. But this means that $A_n$ is finite. So the set of discontinuities, $\bigcup_n A_n$ is countable. If some $x \notin \bigcup_n A_n$, it means that $f(x+) - f(x-) < \frac{1}{n}$ for all $n$. This means that $f(x+) = f(x-)$, so $f$ is continuous at $x$.
+
+\end{proof}
+
+\subsection{} Let $D = \{x_1 ,x_2, \dots \}$, and let $\epsilon_n > 0$ with $\sum \epsilon_i < \infty$. Define $f(x) = \sum_{x_n<x} \epsilon_n$ (as above). Check the following: (i) f is discontinuous at the points of D; (ii) f is right-continuous everywhere;  and (iii) f is continuous at each point $x \in \mathbb{R} \setminus D$. How might this construction be modified so as to yield a strictly increasing function with these same properties? 
+
+\begin{proof}
+Let $(a_n)$ be a sequence that converges to $x_i$ from below, such that $\lim f(a_n) = f(x_i-)$, and assume that $a_n > x_{i-1}$. By construction, we have $a_n < x_i$ for all $n$. But this means that $f(a_n) = \sum_{x_t<a_n} \epsilon_t < f(x_i) = \sum_{x_t<a_n} \epsilon_t + \epsilon_i$. So all points $x_i$ are points of discontinuity.
+
+\vspace{1em}
+
+
+
+
+Fix some $x \in D$ and some $\epsilon>0$. We have $f(x) = \sum_{x_n<x} \epsilon_n$, and are interested in seeing what happens when $f(a) - f(x) < \epsilon$, i.e. when $f(x) \leq f(a) < f(x) + \epsilon$. Let's assume $f(x) < f(a)$. Then, we have $f(a) = f(x) + \sum{x<x_n<a} \epsilon_n$, with the second sum nonempty. Let $X = \{x_n | x < x_n < a\}$, and $f(a) = f(x) + \sum_{x_n \in X} \epsilon_n$. Let $E = \{|x_n - x| | x_n \in X\}$ and $\delta=\sup(E)$. Then,  $f(x+\delta) = f(x) + \sum_{x<x_n<x+\delta}epsilon_n$, and, by the choice of $\delta$, the second sum is less than $\sum_{x<x_n<a} \epsilon_n < \epsilon$.
+
+This proof assumes that $f(a)$ with $f(a) - f(x) < \epsilon$ exists for all $f(b) \geq \epsilon > 0$. If $D$ is finite, between each 2 points there is an interval where $f$ is continuous, and therefore right continuous at the leftmost point. If $D$ is countably infinte, the interval $(x, x+\delta)$ may contain infinitely many points of discontinuity. In particular, $f$ might not be continuous on any interval. We will show that, even in this case, $f(a)$ exists. Remember that $f(a) = f(x) + \sum_{x<x_i<a}\epsilon_i = f(a) + S$. Since the series $\sum \epsilon_i < \infty$ is finite, for all $\epsilon > 0$ there is some $N$ such that $\sum_{i=N}^\infty \epsilon_i < \epsilon$, which shows the existence of $f(a)$.
+
+
+\vspace{1em}
+
+Assume that $x \notin D$ and $\epsilon > 0$ fixed. Previously, we have shown that $f$ is right continuous everywhere. Remains to show that $f$ is left continuous at $x$. 
+
+
+
+\end{proof}
+
+\subsection{} Let $f : [a, b] \rightarrow \mathbb{R}$ be increasing, and let $(x_n)$ be an enumeration of the discontinuities of $f$. For each $n$, let $a_n = f(x_n)-f(x_n-)$ and $b_n = f(x_n+)-f(x_n)$ be the left and right "jumps" in the graph of $f$, where $a_n = 0$ if $x_n = a$ and $b_n = 0$ if $x_n = b$. Show that $\sum_{n=1}^\infty a_n \leq f(b)-f(a)$ and $\sum_{n=1}^\infty b_n \leq f(b)-f(a)$. 
+
+\begin{proof}
+Let $(d_n)$ be a sequence of the discontinuities of $f$, with $d_n = a_n + b_n = f(x_n+) - f(x_n-)$.
+
+If there are finitely many such discontinuities, we can find in the image of $f$ $n$ pairwise disjoint intervals $(f(x_n-),f(x_n+))$, each of length $d_n$. But the sum of their lengths must be less than or equal to the length of the image, $f(b) - f(a)$.
+
+Assume there are infinitely many such discontinuities. Since $f$ is increasing, $f(x_n) = f(x_n-) + d_n$. So we can construct $g(x) = f(x) - \sum_{x_n < x} d_n < f(x)$. But $g(b) = f(b) - \sum_{x_n < b} d_n < f(b)$. But note that, since $f$ is increasing, $f(a) \leq g(x)$. Therefore, we have that $f(a) \leq f(b) - \sum_{x_n < b} d_n$, which is equivalent to $f(b) - f(a) \geq \sum_{x_n < b} d_n = \sum_{n=1}^\infty d_n$.
+
+We have shown that $\sum_{n=1}^\infty d_n \leq f(b) - f(a)$. But $a_n \leq d_n$ and $b_n \leq d_n$, and so $\sum_{n=1}^\infty a_n \leq f(b)-f(a)$ and $\sum_{n=1}^\infty b_n \leq f(b)-f(a)$. 
+
+
+\end{proof}
+
+\subsection{} In the notation of Exercise 35, define $h(x) = \sum_{x_n \leq x} a_n + \sum_{x_n<x} b_n$. Show that $h$ is increasing and that $g = f - h$  is both continuous and increasing. Thus, each increasing function f can be written as the sum of a continuous increasing function g and a "pure jump" f.
+
+\begin{proof}
+Let $h(x) = a(x) + b(x)$, with $a(x) = \sum_{x_n \leq x} a_n$ and $b(x) = \sum_{x_n<x} b_n$. Fix some $x$ and $\delta > 0$. Then, $a(x+\delta) = \sum_{x_n \leq x+\delta} a_n = \sum_{x_n \leq x} + \sum_{x < x_n \leq x+\delta} a_n = a(x) + \sum_{x < x_n \leq x+\delta} a_n$. But, since $a_n \geq 0$, $\sum_{x < x_n \leq x+\delta} a_n \geq 0$. This shows that $a(x) \leq a(x+\delta)$, i.e. $a(x)$ is increasing. By a similar proof, $b(x)$ is increasing. Since $h$ is a sum of two increasing functions, $h$ is increasing.
+
+Let $x\in \mathbb{R} \setminus D$. Then, $f(x-) = f(x) = f(x+)$, and $h(x-) = h(x) = h(x+)$. Therefore, $g$ is continuous in $\mathbb{R} \setminus D$. If $x_n\in D$, then $f(x_n-) \leq f(x_n) \leq f(x_n+)$, with at least one of the inequalities strict. Without loss of generality, assume both are strict.
+
+From the definition of $h(x_n) = \sum_{x_i \leq x_n} a_i + \sum_{x_i < x_n} a_i$, we have that $h(x_n) = \sum_{x_i < x_n} a_i + \sum_{x_i < x_n} b_i + a_n = h(x_n-) + a_n$. Similarly, $h(x_n+) = \sum_{x_i \leq x_n} a_i + \sum_{x_i \leq x_n} b_i = h(x_n) + b_n$. 
+
+By construction, $f(x_n) = f(x_n-) + a_n$. Also, $g(x_n) = f(x_n) - h(x_n) = f(x_n-) + a_n - h(x_n-) - a_n = f(x_n-) + h(x_n-) = g(x_n-)$. Similarly, we have $f(x_n+) = f(x_n) + b_n$ and $g(x_n+) = f(x_n) + b_n - h(x_n+) = f(x_n) + b_n - h(x_n) - b_n = f(x_n) + h(x_n) = g(x_n)$. This implies that $g$ is continuous in $D$, and therefore in $[a,b]$
+
+\end{proof}
+

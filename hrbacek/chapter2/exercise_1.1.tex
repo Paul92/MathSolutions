@@ -1,0 +1,12 @@
+\subsection*{1.1} Prove that $(a,b) \in \mathcal{P}(\mathcal{P}(\{a,b\}))$ and $a,b \in \bigcup(a,b)$. More generally, if $a \in A$ and $b \in A$, then $(a,b) \in \mathcal{P}(\mathcal{P}(A))$.
+
+\begin{proof}
+We show the first part by enumeration
+
+$$ \mathcal{P}(\{a,b\}) = \{\{\}, \{a\}, \{b\}, \{a,b\}\}$$
+$$ \mathcal{P}(\mathcal{P}(\{a,b\})) = \{\{\}, \{\{a\}\}, \{\{b\}\}, \{\{a,b\}\}, \{\{a\}, \{b\}\}, \{a, \{a,b\}\}, \{b, \{a, b\}\}, \{\{a\}, \{b\}, \{a,b\}\}, \{\{\}, \{a\}, \{b\}, \{a,b\}\}\}$$
+
+For the general case, if $a \in A$ and $b \in A$, then $\{a\}, \{a,b\} \subset A$ and hence $\{a\}, \{a,b\} \in \mathcal{P}$. This implies that $\{\{a\}, \{a,b\}\} \subset \mathcal{P}(A)$ and hence $\{\{a\}, \{a,b\}\} \in \mathcal{P}(\mathcal{P}(A))$
+
+\end{proof}
+

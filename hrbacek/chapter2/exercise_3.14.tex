@@ -1,0 +1,12 @@
+\subsection*{3.14} Prove the following form of the distributive law
+
+$$\bigcap_{a \in A}(\bigcup_{b\in B} F_{a,b}) = \bigcup_{f\in B^A}(\bigcap_{a \in A} F_{a,f(a)})$$
+
+assuming that $F_{a,b_1} \cap F_{a,b_2} = \emptyset$ for all $a \in A$ and $b_1, b_2 \in B$, $b_1 \neq b_2$.
+
+\begin{proof}
+    Let $x \in \bigcup_{f\in B^A}(\bigcap_{a \in A} F_{a,f(a)})$. Then, there is some $f \in B^A$ such that $x \in \bigcap_{a \in A} F_{a,f(a)}$ and thus for all $a \in A$ we have $x \in F_{a, f(a)}$. Since $f$ is a function from $A$ to $B$, $f(a) \in B$ and hence $x \in \bigcup_{b \in B} F_{a, b}$ for all $a \in A$. It follows that $x \in \bigcap_{a \in A}  \bigcup_{b \in B} F_{a, b}$ and therefore $\bigcap_{a \in A}(\bigcup_{b\in B} F_{a,b}) \supseteq \bigcup_{f\in B^A}(\bigcap_{a \in A} F_{a,f(a)})$.
+    
+    Conversely, let $x \in \bigcap_{a \in A}(\bigcup_{b\in B} F_{a,b})$. Therefore, for all $a \in A$, $x \in \bigcup_{b \in B} F_{a,b}$. This implies that for all $a \in A$ there is some $b \in B$ such that $x \in F_{a,b}$. Moreover, it is unique, since $F_{a,b_1} \cap F_{a,b_2} = \emptyset$ for all $a \in A$ and $b_1, b_2 \in B$, $b_1 \neq b_2$. This implies that we can construct a function $f = \{(a,b) \in A \times B | x \in F_{a,b}\}$. Since $x \in F_{a, f(a)}$ for all $a \in A$ we have that $x \in \bigcap_{a \in A} F_{a, f(a)}$. $f$ is a function from $A$ to $B$ and hence $f \in B^A$. Therefore, $x \in \bigcup_{f\in B^A}(\bigcap_{a \in A} F_{a,f(a)})$. Hence $\bigcap_{a \in A}(\bigcup_{b\in B} F_{a,b}) \subseteq \bigcup_{f\in B^A}(\bigcap_{a \in A} F_{a,f(a)})$ and the conclusion follows.
+\end{proof}
+

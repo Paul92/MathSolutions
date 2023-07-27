@@ -1,0 +1,22 @@
+\begin{exercise}{60c}
+    One random bootstrap sample is chosen. Show that not all unordered bootstrap samples (in the sense of part b) are equally likely. Find an unordered bootstrap sample $b_1$ that is as likely as possible, and unordered bootstrap sample $b_2$ that is as unlikely as possible. Let $p_1$ be the probability of getting $b_1$ and $p_2$ be the probability of getting $b_2$. What is $\frac{p_1}{p_2}$? What is the ratio of the probability of getting an unordered bootstrap sample whose probability is $p_1$ to the probability of getting an unordered sample whose probability is $p_2$?
+\end{exercise}
+
+\begin{proof}
+    Let $k_i$ be the number of times the item $a_i$ has been sampled. The probability of a sample is then given by the multinomial coefficient
+
+    $$p = \frac{{n \choose {k_1, \dots, k_n}}}{{2n-1 \choose n}} = \frac{n!(n-1)!}{(2n-1)!}\cdot\frac{n!}{k_1!\cdot \dots \cdot k_n!}$$
+
+    Note that in the above expression, only the factor $\frac{1}{k_1!\cdot \dots \cdot k_n!}$ changes, the rest being fixed on the size of the sampled array. Hence, for the likeliest sample $b_1$, we want to minimize the product $k_1!\cdot \dots \cdot k_n!$, which happens when all $k$'s are 1, i.e. when all items have been sampled once. Similarly, for the unlikeliest sample, we want to maximize the product $k_1!\cdot \dots \cdot k_n!$, which happens when $k_i=n$ for some $i$, and the others are 0. This gives
+
+    $$p_1 = \frac{n!(n-1)!}{(2n-1)!}\cdot\frac{n!}{1} = \frac{n!n!(n-1)!}{(2n-1)!}$$
+
+    $$p_2 = \frac{n!(n-1)!}{(2n-1)!}\cdot\frac{n!}{n!} = \frac{n!(n-1)!}{(2n-1)!}$$
+
+    We then have that
+
+    $$\frac{p_1}{p_2} = \frac{n!n!(n-1)!}{n!(n-1)!} = n!$$
+\end{proof}
+
+\newpage
+

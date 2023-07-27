@@ -1,0 +1,11 @@
+\begin{exercise}{35b}
+Find the probability that exactly one king, exactly one queen, and exactly one jack
+appear (in any order) before the first ace.
+\end{exercise}
+
+\begin{proof}
+    We first choose the king, queen and jack, which can be done in $4^3 = 2^6$ ways. Then we proceed as before, selecting cards out of the 36 "number" cards. So the total number of hands with a king, a queen and one jack is $2^6 \cdot 2^{38} = 2^{44}$.
+
+    This leads to a probability of $\frac{2^{44}}{2^{50}} = \frac{1}{2^6} = 0.015625$
+\end{proof}
+

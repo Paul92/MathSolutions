@@ -1,0 +1,12 @@
+\begin{exercise}{32b}
+Two pair (e.g., two 3’s, two 7’s, and an ace).
+\end{exercise}
+
+\begin{proof}
+    A two pair hand contains two cards of a rank, two cards of a second rank, and one card of a third rank.
+
+    There are 13 ranks available, so there are $13 \cdot 12 \cdot 11$ ways of choosing the ranks in the hand. Then, there are $4 \choose 2$ ways of choosing the two cards of the four and of the second rank, and there are four ways of choosing the last card of the hand. We need to divide by two to account for the symmetry between the first and the second rank.
+
+    This leads to a count of $13 \cdot 12 \cdot 11 \cdot {4 \choose 2} \cdot {4 \choose 2} \cdot 4 \cdot \frac{1}{2}= 123552$ possible two pair hands and hence there is a probability of $\frac{123552}{2598960} \approx 0.047539$ for a two pair hand.
+\end{proof}
+

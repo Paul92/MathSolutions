@@ -1,0 +1,88 @@
+\subsection*{1.1} Prove properties (a)-(n) of cardinal arithmetic stated in the text of this section
+
+\begin{enumerate}
+    \item $\kappa + \lambda = \lambda + \kappa$
+    
+    \begin{proof}
+    Without loss of generalization let $A,B$ be two disjoint sets such that $|A| = \kappa$ and $|B| = \lambda$. Then, $\kappa + \lambda = |A \cup B|  = |B \cup A| = \lambda + \kappa$.
+    \end{proof}
+    
+    \item $\kappa + (\lambda + \mu) = (\kappa + \lambda) + \mu$
+    \begin{proof}
+    Without loss of generalization, let $A,B,C$ be disjoint sets such that $|A| = \kappa$, $|B| = \lambda$, $|C|=\mu$. Then,
+    $$(\kappa + \lambda) + \mu = (|A| + |B|) + |C| = |A \cup B| + C = |(A \cup B) + C| = |A \cup (B \cup C)| = |A| + |B \cup C| = |A| + (|B| + |C|) = \kappa + (\lambda + \mu)$$
+    \end{proof}
+    \item $\kappa \leq \kappa + \lambda$
+    
+    \begin{proof}
+    Without loss of generalization, let $A,B$ be disjoint sets such that $|A| = \kappa$ and $|B| = \lambda$. Since $A \subseteq A \cup B$, it follows that $\kappa = |A| \leq |A \cup B| = |A| + |B| = \kappa + \lambda$
+    \end{proof}
+    
+    \item If $\kappa_1 \leq \kappa_2$ and $\lambda_1 \leq \lambda_2$, then $\kappa_1 + \lambda_1 \leq \kappa_2 + \lambda_2$.
+    
+    \begin{proof}
+    Without loss of generalization, let $A_1, A_2, B_1, B_2$ be  disjoint sets such that $|A_1| = \kappa_1$, $|A_2| = \kappa_2$, $|B_1| = \lambda_1$, $|B_2| = \lambda_2$. Since $\kappa_1 \leq \kappa_2$, there is an injection $f: A_1 \rightarrow B_1$. Similarly, since $\lambda_1 \leq \lambda_2$ there is an injection $g: B_1 \rightarrow B_2$. We can therefore construct an injection $h: A_1 \cup B_1 \rightarrow A_2 \cup B_2$ with $h(x) = f(x)$ if $x \in A_1$ and $h(x) = g(x)$ if $x \in B_1$. It follows that $\kappa_1 + \lambda_1 = |A_1 \cup B_1| \leq |A_2 \cup B_2| = \kappa_2 + \lambda_2$.
+    \end{proof}
+    
+    \item $\kappa \cdot \lambda = \lambda \cdot \kappa$
+    \begin{proof}
+    Without loss of generalization, let $A,B$ be disjoint sets such that $|A| = \kappa$ and $|B| = \lambda$. Then, $\kappa \cdot \lambda = |A \times B|$. But there is a bijection $f: A \times B \rightarrow B \times A$, with $f((a,b)) = (b,a)$, and hence $\kappa \cdot \lambda = |A \times B| = |B \times A| = \lambda \cdot \kappa$
+    \end{proof}
+    
+    \item $\kappa \cdot (\lambda \cdot \mu) = (\kappa \cdot \lambda) \cdot \mu$
+    
+    \begin{proof}
+    Let $A,B,C$ be disjoint sets with $|A| = \kappa$, $|B| = \lambda$ and $|C| = \mu$. There is a bijection $f: (A \times B) \times C \rightarrow A \times (B \times C)$, with $f(((a, b), c)) = f((a, (b,c)))$. Hence, $\kappa \cdot (\lambda \cdot \mu) =  |(A \times B) \times C = |A \times (B \times C)| = (\kappa \cdot \lambda) \cdot \mu$
+    \end{proof}
+    
+    \item $\kappa \cdot (\lambda + \mu) = \kappa \cdot \lambda + \kappa \cdot \mu$.
+    
+    \begin{proof}
+    Let $A,B,C$ be disjoint sets with $|A| = \kappa$, $|B| = \lambda$ and $|C| = \mu$. The cartesian product is distributive over union, and hence
+    
+    $$ \kappa \cdot (\lambda + \mu) = |A \times (B\cup C)| = |A \times B \cup A \times C| = \kappa \cdot \lambda + \kappa \cdot \mu $$
+    \end{proof}
+    
+    \item $\kappa \leq \kappa \cdot \lambda$ if $\lambda > 0$
+     \begin{proof}
+    Let $A,B$ be disjoint sets such that $|A| = \kappa $ and $|B| = \lambda$. Since $\lambda > 0$, $B \neq \emptyset$. Pick some $b \in B$. Then, there is an injection $f: A \rightarrow A \times B$, $f(x) = (x, b)$. Hence, $\kappa = |A| \leq |A \times B| = \kappa \cdot \lambda$.
+    \end{proof}
+    
+    \item If $\kappa_1 \leq \kappa_2$ and $\lambda_1 \leq \lambda_2$, then $\kappa_1 \cdot \lambda_1 \leq \kappa_2 \cdot \lambda_2$.
+    
+    \begin{proof}
+    Without loss of generalization, let $A_1, A_2, B_1, B_2$ be   sets such that $|A_1| = \kappa_1$, $|A_2| = \kappa_2$, $|B_1| = \lambda_1$, $|B_2| = \lambda_2$. Since $\kappa_1 \leq \kappa_2$, there is an injection $f: A_1 \rightarrow B_1$. Similarly, since $\lambda_1 \leq \lambda_2$ there is an injection $g: B_1 \rightarrow B_2$. We can therefore construct an injection $h : A_1 \times B_1 \rightarrow A_2 \times B_2$ defined by $h((a,b)) = (f(a), g(b))$. This implies that $\kappa_1 \cdot \lambda_1 = |A_1 \times B_1| \leq |A_2 \times B_2| = \kappa_2 \cdot \lambda_2$.
+    \end{proof}
+    
+    \item $\kappa + \kappa \leq \kappa \cdot \kappa$ whenever $\kappa \geq 2$.
+    
+    \begin{proof}
+    Without loss of generalization, let $A,B$ be two (potentially overlapping) sets such that $|A| = |B| = \kappa$. Since $\kappa \geq 2$, we can pick two distinct elements $a\in A$ and $b \in B$. We can then construct an injection $h: A \cup B \rightarrow A \times B$ with $h(x) = (x, b)$ if $x \in A$ and $h(x) = (a, x)$ if $x \in B$. It follows that $\kappa + \kappa = |A \cup B| \leq |A \times B| = \kappa \cdot \kappa$. 
+    \end{proof}
+    
+    \item $\kappa \leq \kappa^\lambda$ if $\lambda > 0$.
+     \begin{proof}
+    Without loss of generalization, let $A,B$ be two sets with $|A| = \kappa$ and $|B| = \lambda$. If $\kappa = 0$, then $A = \emptyset$ and hence we have that $\kappa^\lambda = |A^B| = 1 \geq 0 = |A| = \kappa$.
+    
+    If $\kappa \neq 0$, then pick some $f \in A^B$, some $a \in A$ and $b \in B$. Let $f_a: B \rightarrow A$ be defined as $f_a(x) = f(x)$ for all $x \neq b$  and $f(x) = a$ if $x = b$. Clearly, $f_a \neq f_x$ for $x \in A$, $x \neq a$. Hence, $h: A \rightarrow A^B$ defined by $h(a) = f_a$ is an injection. Therefore, $\kappa = |A| \leq |A^B| = \kappa^\lambda$.
+
+    \end{proof}
+    
+    \item $\lambda \leq \kappa^\lambda$ if $\kappa > 1$.
+    \begin{proof}
+    Without loss of generalization, let $A,B$ be two sets with $|A| = \kappa$ and $|B| = \lambda$. We pick two elements $a,b \in A$ and construct a function $f_n: B \rightarrow A$, $f_n(x)=a$ if $x \neq n$ and $f_n(x) = b$ if $x = n$. Then, the function $h: B \rightarrow A^B$ is an injection and hence $\lambda = |B| \leq |A^B| = \kappa^\lambda$.
+    \end{proof}
+    
+    \item If $\kappa_1 \leq \kappa_2$ and $\lambda_1 \leq \lambda_2$, then $\kappa_1^{\lambda_1} \leq \kappa_2^{\lambda_2}$.
+    
+    \begin{proof}
+    Without loss of generalization, let $A_1, A_2, B_1, B_2$ be sets such that $|A_1| = \kappa_1$, $|A_2| = \kappa_2$, $|B_1| = \lambda_1$, $|B_2| = \lambda_2$. If $\kappa_1 \leq \kappa_2$, there is an injection $f:A_1 \rightarrow A_2$ and since $\lambda_1 \leq \lambda_2$ there is an injection $g: B_1 \rightarrow B_2$. This means that we can construct an injection $h: A_1^{B_1} \rightarrow A_2^{B^2}$, $h(s) = \{(f(a), g(b))| (a,b) \in s\} \cup \{(x, b)| x \in B_2 - f(dom(s))\}$ for some $b \in B_2$ and for all $s \in A^B$.
+    Note that this requires $\kappa_2 > 0$.
+    
+    If $\kappa_2 = 0$, then  we have $\kappa_1 = \kappa_2 = 0$ and hence we need to show that $\lambda_1 \leq \lambda_2$ implies $0^{\lambda_1} \leq 0^{\lambda_2}$. These are the number of functions towards the empty set. If $\lambda_1 \neq 0$ and $\lambda_2 \neq 0$, then $0 = 0^{\lambda_1} \leq 0^{\lambda_2} = 0$. If $\lambda_1 \neq 0$ and $\lambda_2 = 0$, then $0 = 0^{\lambda_1} \leq 0^0 = 1$. If $\lambda_1 = 0 $ and $\lambda_2 = 0$, then  $1 = 0^0 \leq 0^1 = 1$. Finally, if $\lambda_1 = 0$ and $\lambda_2 \neq 0$, the property doesn't hold anymore, since $1 = 0^0 \leq 0^{\lambda_2} = 0$. 
+    \end{proof}
+    
+    \end{enumerate}
+    
+    
+

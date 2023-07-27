@@ -1,0 +1,14 @@
+\subsection*{5.8b} Let $\alpha$, $\beta$ and $\gamma$ be ordinals, with $\alpha < \beta$. Then $\alpha \cdot \gamma \leq \beta \cdot \gamma$ and $\leq$ cannot be replaced by $<$.
+
+\begin{proof}
+    We proceed similarly to the previous exercise, by induction over $\gamma$. Therefore, let $P(\gamma)$ be the logical proposition $\alpha \cdot \gamma \leq \beta \cdot \gamma$ and assume that $\alpha < \beta$.
+    
+    The base case, $P(0)$ holds since $\alpha \cdot 0 = 0 \leq 0 = \beta \cdot 0$.
+
+    Now assume $P(\gamma)$. We have that $\alpha \cdot (\gamma + 1) = (\alpha \cdot \gamma) + 1$ and $\beta \cdot (\gamma + 1) = (\beta \cdot \gamma) + 1$. But then, from our assumption of $P(\gamma)$ we have that $\alpha \cdot \gamma \leq \beta \cdot \gamma$. It follows that $(\alpha \cdot \gamma) + 1 \leq (\beta \cdot \gamma) + 1$ and hence $P(\gamma + 1)$ holds.
+
+    For the limit ordinal step, let $\gamma$ be a nonzero limit ordinal and assume that $P(\theta)$ holds for all $\theta < \gamma$. Then $\alpha \cdot \gamma = \sup\{\alpha \cdot \theta | \theta < \gamma\}$ and $\beta \cdot \gamma = \sup \{\beta \cdot \theta | \theta < \gamma\}$. Since $P(\theta)$ holds for all $\theta < \gamma$, it follows that $\sup\{\alpha \cdot \theta | \theta < \gamma\} \leq \sup \{\beta \cdot \theta | \theta < \gamma\}$. It follows that $\alpha \cdot \gamma \leq \beta \cdot \gamma$ and hence $P(\gamma)$ holds.
+
+    The inequality cannot be strict due to the limit case. For example, $3 \cdot \omega = \omega = 4 \cdot \omega$ even though $3 < 4$.
+\end{proof}
+

@@ -1,0 +1,21 @@
+\subsection*{3.4}
+\begin{enumerate}
+    \item Every $x \in V_{\omega}$ is finite.
+
+    \begin{proof}
+        By definition, $V_{\omega} = \bigcup_{n \in \omega} V_n$ and hence it suffices to show that all sets in $V_n$ are finite, for all $n \in \omega$. This result follows by induction, since $V_0$ contains only finite sets (vacuously), and the powerset of a finite set will contain only finite sets.
+    \end{proof}
+
+    \item $V_{\omega}$ is transitive.
+
+    \begin{proof}
+        Let $X \in V_{\omega}$. Since $V_{\omega} = \bigcup_{n \in \omega} V_n$, there is $n$ such that $X \in V_n$. Either $X = \emptyset$ and $\emptyset \subset V_{\omega}$, or $V_n = P(V_{n-1})$ and hence $X \subset V_{n-1}$. But this implies that $X \subset V_{\omega}$ and the conclusion follows.
+    \end{proof}
+
+    \item $V_\omega$ is an inductive set.
+
+    \begin{proof}
+        We have that $\emptyset = V_0 \in V_{\omega}$ by definition. Pick some $X \in V_{\omega}$. Then, there is some $n$ such that $X \in V_n$. But since $V_n$ is transitive, $X \subset V_n$. It follows that $P(X) \subset P(V_n) = V_{n+1} \subset V_\omega$ and hence $V_\omega$ is closed with respect to the successor operation. It is therefore an inductive set.
+    \end{proof}
+\end{enumerate}
+

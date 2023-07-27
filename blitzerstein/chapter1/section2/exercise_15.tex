@@ -1,0 +1,13 @@
+\begin{exercise}{15}
+    Give a story proof that $\sum_{k=0}^n {n \choose k} = 2^n$.
+\end{exercise}
+
+\begin{proof}
+    Let's consider a set of $n$ distinct balls, and the question of how many ways could these balls be placed in a box, including the option of having the ball empty.
+
+    One way to think about this problem is that one can count the number of ways one could leave without any balls, with one ball, with two balls, and so on up to $n$ balls. This is ${n \choose 0} + {n \choose 1} + {n \choose 2} + \dots + {n \choose n} = \sum_{k=0}^n {n \choose k}$.
+
+    Another approach to this problem is to think that in order to pack the $n$ balls, one needs to decide individually, for each ball, if it is going to be added to the box or not. This means that for each of the $n$ balls there are two possible choices, leading to a total of $2^n$ possibilities.
+\end{proof}
+
+

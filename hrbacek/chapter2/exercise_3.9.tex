@@ -1,0 +1,17 @@
+\subsection*{3.9}
+
+\begin{itemize} 
+\item Show that the set $B^{A}$ exists.
+
+\begin{proof}
+    The set $B^A$ is the set of all functions from $A$ into $B$, that is, the set of all relations of the form $R = \{(a,b)| a\in A~and~b \in B\}$ such that if $(a,b) \in R$ and $(a, c) \in R$, $a = c$. Clearly, this is a subset of all the binary relations whose first element is in $A$ and second element is in $B$, which is the powerset of $A \times B$. Hence, the set $B^A$ exists.
+\end{proof}
+
+\item Let $\langle S_i | i \in I \rangle$ be an indexed system of sets. Show that $\prod_{i \in I} S_i$ exists.
+
+\begin{proof}
+    The set $P = \prod_{i \in I} S_i$ is a set of functions from $I$, such that $f(i) \in S_i$. This implies that all the functions in $P$ have as range the set $\bigcup_{i \in I} S_i$. Therefore, based on a similar argument as above, this set is a subset of $\mathcal{P}(I \times \bigcup_{i \in I} S_i)$
+\end{proof}
+
+\end{itemize}
+

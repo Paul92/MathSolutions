@@ -1,0 +1,6 @@
+\subsection*{1.4} Prove that $\kappa^\kappa \leq 2 ^{\kappa \cdot \kappa}$.
+
+\begin{proof}
+Let $A$ be a set of cardinality $\kappa$. Every function $f \in A^A$ is a relation, i.e. a subset of $A \times A$. We can construct an injective mapping from $A^A$ to $2^{A \times A}$ by the function $h(x) = 1$ if $x \in f$ and $h(x) = 0$ if $x \notin f$ for some $x \in A \times A$. Hence $|A^A| \leq |2^{\kappa \cdot \kappa}|$ and the conclusion follows.
+\end{proof}
+

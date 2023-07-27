@@ -1,0 +1,17 @@
+\subsection*{2.1} If $S = \{X_1, \dots, X_n\}$ a set of disjoint sets, then $|\bigcup S| = \sum |X_i|$
+
+\begin{proof}
+We are going to prove this by induction over $n$.
+
+For $n = 2$, the result is proven in the textbook. Assume now that the result holds for any $n$, and consider $n+1$.
+
+$$S = \{X_1, \dots, X_n, X_{n+1}\} =  \{X_1, \dots, X_n\} \cup \{X_{n+1}\} = \bigcup_{i=1}^n X_i \cup  \{X_{n+1}\}$$
+
+But then
+
+$$|S| = | \bigcup_{i=1}^n X_i \cup  \{X_{n+1}\}| = | \bigcup_{i=1}^n X_i| + |  \{X_{n+1}\}| = \sum_{i=1}^n |X_i| + |X_{n+1}| = \sum_{i=1}^{n+1} |X_i|$$
+
+and the conclusion follows.
+
+\end{proof}
+

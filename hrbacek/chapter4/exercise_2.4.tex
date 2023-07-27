@@ -1,0 +1,8 @@
+\subsection*{2.4} If $X,Y$ are finite, then $X^Y$ has $|X|^{|Y|}$ elements.
+
+\begin{proof}
+Assume $|X|=n$. Will start with an induction on $|Y|$. If $Y=\{y\}$, then $|Y|=1$, and there are $n$ ways of assigning a value from $X$ to $y$, hence $n = n^1$ functions.
+
+Assume the hypothesis holds for $|Y|=n$, and investigate the set $A=Y \cup \{y\}$. There are $n^{|Y|}$ functions from $Y$ to $X$. Each of these can be extended to $n$ more different functions by extending them to $A$, whose new element $y$ can be assigned in $n$ ways to an element of $X$. It follows that $|X^A| = n^{|Y|} \cdot n = n^{\{|Y|+1\}} = n^{|A|}$ and the conclusion follows.
+\end{proof}
+

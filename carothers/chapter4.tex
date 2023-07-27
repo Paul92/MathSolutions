@@ -1,0 +1,644 @@
+\section {Open Sets and Closed Sets}
+
+\subsection{} Show that an "open rectangle" $(a, b) \times (c, d)$ is an open set in $\mathbb{R}^2$. More generally, if A and B are open in $\mathbb{R}$, show that $A \times B$ is open in $\mathbb{R}^2$. If A and B are closed in $\mathbb{R}$ show that $A \times B$ is closed in $\mathbb{R}^2$.
+
+\begin{proof}
+Let $A,B$ be open sets in $\mathbb{R}$. This implies that there are $\delta>0$, $\gamma>0$ such that $B_\delta(x) \subset A$ for all $x \in A$ and $B_\gamma(y) \subset B$ for all $y \in B$.
+
+By definition, any such pair $(x,y)$ is an element of $A \times B \subset \mathbb{R}^2$, and any element of $A \times B$ can be written as a pair $(x,y)$ with the properties above. Now let $\epsilon = \min\{\delta, \gamma\}$ and consider the open ball $B_\epsilon(x,y)$. 
+
+If $(u,v) \in B_\epsilon(x,y)$, then $d((u,v), (x,y)) = |u-x| + |v-y| < \epsilon$. In particular, $|u-x| < \epsilon \leq \delta$ and $|v-y| < \epsilon \leq \gamma$. But this means that $u,v$ are in $B_\delta(x)$ and $B_\gamma(y)$, respectively, and, since $A,B$ are open, $u \in A$ and $v \in B$. Therefore, any element of the open ball $B_\epsilon(x,y)$ belongs to the set $A \times B$, i.e. $B_\epsilon(x,y) \subset A \times B$. But this means that $A \times B$ is open.
+
+\vspace{1em}
+
+If $A,B$ are closed in $\mathbb{R}$, then for for any convergent sequence in $(a_n)$ or $(b_n)$ with $a_i \in A$, $b_i \in B$, we have that $a_n \rightarrow a \in A$ and $b_n \rightarrow b \in B$. By the exercise 3.46, a sequence in the product space converges precisely when it converges in coordinates. This means that, in the product space, we need to have $(a_i, b_i) \rightarrow (a,b)$. But, since $a \in A$ and  $b \in B$, $(a,b) \in A \times B$. Therefore, any sequence in $A \times B$ converges to an element of $A \times B$, i.e. $A \times B$ is closed.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Some authors say that two metrics $d$ and $\rho$ on a set $M$ are equivalent if they generate the same open sets. Prove this. (Recall that we have defined equivalence to mean that d and p generate the same convergent sequences. See Exercise 3.42.)
+
+\begin{proof}
+If the metrics $d$ and $\rho$ generate the same open sets, they implicitly generate the same closed sets. Pick such a closed set $A$. Then, any sequence $(a_n)$ which converges in $A$ must converge to an element of $A$ with respect to both metrics. Therefore, the metrics are equivalent.
+\end{proof}
+
+
+\stepcounter{subsection}
+
+\subsection{} Let $f : \mathbb{R} \rightarrow \mathbb{R}$ be continuous. Show that $\{x  : f(x) > 0\}$ is an open subset of $\mathbb{R}$ and that $\{x : f(x) = 0\}$  is a closed subset of $\mathbb{R}$.
+
+\begin{proof}
+Let $A = \{x  : f(x) > 0\}$. 
+
+If $f(x) > 0$ for all $x$, then $A = \mathbb{R}$ and therefore is open.
+
+Pick $t \in A$. Assume there is at least one point $z$ such that $f(z) = 0$ and let $\epsilon_t = \inf\{|z-t| : f(z) = 0\}$ be the distance from $t$ to the closest point where $f$ becomes zero.  Then, for all $x$ such that $|x-t| < \epsilon$ we have that $f(x) > 0$ (otherwise, $\epsilon$ would be smaller). Also, note that due to continuity, $\epsilon > 0$. But the set of all $x$ with $|x-t| < \epsilon$ forms $B_\epsilon(t)$, and having $f(x) > 0$ for all such $x$ implies that $x \in A$. In other words, we have that $B_\epsilon(t) \in A$. Since $t$ was chosen arbitrarily, we have that $A$ is open.
+
+By making the same argument for $g(x) = -f(x)$, we can show that the set $B = \{x  : f(x) < 0\}$ is open. Then, $A \cup B$ is also open. But this means that $(A \cup B)^c$, i.e. the set $\{x  : f(x) = 0\}$ is closed.
+
+
+\end{proof}
+
+
+\subsection{} Give an example of an infinite closed set in $\mathbb{R}$ containing only irrationals. Is there an open set consisting entirely of irrationals? 
+
+\begin{proof}
+The set $\{\frac{x}{\sqrt{2}} : x \in \mathbb{N}, x > 1\}$ is an infinite set containing only irrationals that is closed.
+
+Since between any two irrationals, there is one rational, any open ball around one irrational contains at least one rational. This implies that there is no open set consisting entirely of irrationals.
+\end{proof}
+
+
+\subsection{} Show that every open set in $\mathbb{R}$ is the union of (countably many) open intervals with rational endpoints. Use this to show that the collection $U$ of all  open subsets of $\mathbb{R}$ has the same cardinality as $\mathbb{R}$ itself. 
+
+\begin{proof}
+
+Let $A \subset \mathbb{R}$ be an open subset of $\mathbb{R}$. From the Theorem 4.6, we have that any open set can be written as a countable union of open sets. Assume such an union is of the form $A = \bigcup S_i$, with $S_i = (a_i, b_i)$ (we can index the sets $S_i$ since there are countably many).
+
+Pick some set $S_i = (a_i, b_i)$. Since $a_i, b_i \in \mathbb{R}$, we can find the sequences of rationals $(u_n)$, $(v_n)$ such that $u_n \rightarrow a_i$, $v_n \rightarrow v$. But $\bigcup_{j=1}^n (u_j, v_j) = (a_i, b_i)$.
+
+Therefore, we have written the set $A$ as a countable union of intervals, and each such interval as a countable union of rational intervals. By constructing the union of all the rational intervals, we obtain $A$. Moreover, there are at most countably many such rational intervals, since we can find a bijection from $\mathbb{N} \times \mathbb{N}$ to the set of rational intervals by mapping $(m, n) \in \mathbb{N} \times \mathbb{N}$ to the rational interval $(a_m, b_m)$ corresponding to $S_n$.
+
+Remains to show that the collection $U$ of all open subsets of $\mathbb{R}$ has the same cardinality as $\mathbb{R}$ itself. We can form an injection from $\mathbb{R}$ such that $x$ is mapped to the open interval $(x, \infty)$. This means that the collection of all open subsets of $\mathbb{R}$ is at least the same size as $\mathbb{R}$.
+
+Let $I$ be the set of all open intervals of rational endpoints on $\mathbb{R}$. There is a bijection from $\mathbb{Q} \times \mathbb{Q} \rightarrow I$, with the pair $(a,b) \in \mathbb{Q} \times \mathbb{Q}$ defining the open interval $(a,b) \subset \mathbb{R}$. From $I$, we can form countable unions through a mapping that sends $((a_1, b_1), \dots, (a_n, b_n))$ to $\bigcup_{i=1}^n (a_i, b_i)$. This mapping defines a surjection to $U$, the set of all open sets of $\mathbb{R}$ and has the cardinality $(\mathbb{Q} \times \mathbb{Q})^\mathbb{N}$ - the same as $\mathbb{R}$.
+
+\end{proof}
+
+
+
+\subsection{} Show that every open interval (and hence every open set) in $\mathbb{R}$ is a countable union of closed intervals and that every closed interval in $\mathbb{R}$ is a countable intersection of open intervals.
+
+
+\begin{proof}
+Let $(a,b) \subset \mathbb{R}$ be an open interval. Then, $[a,b]$ is a closed interval. We can find two sequences, $(a_n), (b_n)$ such that $a_n \rightarrow a$, $b_n \rightarrow b$, with $a_i, b_i \in (a,b)$ and $a_i < b_i$. Then, $(a,b) = \bigcup [a_i, b_i]$, a countable union of closed intervals.
+
+Similarly, for the closed interval $[a,b]$ we can find $(a_n), (b_n)$ with $a_i < a$ and $b_i > b$. Then, $(a,b) = \bigcap [a_i, b_i]$.
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Given $y=(y_n) \in H^\infty$, $N \in \mathbb{N}$ and $\epsilon > 0$, show that $\{x = (x_n) \in H^\infty : |x_k - y_k| < \epsilon, k=1,2,\dots,N\}$ is open in $H^\infty$.
+
+\begin{proof}
+$H^\infty$ is the set of all real sequences $x=(x_n)$ with $|x_n| \leq 1$ for $n=1,2,\dots$. Let $A = \{x = (x_n) \in H^\infty : |x_k - y_k| < \epsilon, k=1,2,\dots,N\}$.
+
+Fix $a \in A$. We need to find some $\delta > 0$ such that for $x \in H^\infty$, whenever $\|a - x\|_\infty < \delta$, $x \in A$. Let $M = \max\{|a_i - y_i|: i = 1, 2, \dots N\}$ and pick $\delta = \epsilon - M$. We have $\delta > 0$ since $a \in A$ and therefore $|a_i - y_i| < \epsilon$ for $i \leq N$. 
+
+Let $x \in H^\infty$ such that $\|x-a\|_\infty < \delta$. This implies that $|x_i - a_i| < \delta$ for all $i \leq N$, i.e. $|x_i - a_i| < \epsilon - M < \epsilon - |a_i - y_i|$. Therefore,  $|x_i - a_i| + |a_i - y_i| < \epsilon$ for all $i \leq N$. But this means that $|x_i - y_i| < \epsilon$ for all $i \leq N$, which implies that $x \in A$, i.e. A is open with respect to $\|\cdot \|_\infty$ norm.
+
+\end{proof}
+
+\subsection{} Let $e^{(k)} = (0, ... ,  0, 1, 0, ... )$, where  the kth entry is 1 and the rest are Os. Show that $A = \{ e^{(k)} : k > 1 \}$  is closed as a subset of $l_1$.
+
+\begin{proof}
+Note that $\|e^{(i)}-e^{(j)}\|_1 = 2$ for all $i \neq j$. Therefore, all convergent sequences in the set $A = \{ e^{(k)} : k > 1 \}$ must be eventually constant, converging to some $e^{(k)} \in A$. Therefore, $A$ is closed.
+\end{proof}
+
+\subsection{} Let $F$ be the set of all $x \in l_\infty$ such that $x_n = 0$ for all  but finitely many $n$. Is F closed? open? neither? Explain.
+
+\begin{proof}
+Let $x \in F$ and some $\epsilon > 0$. We can construct the sequence $(y)$ with $y_i = x_i + \epsilon/2$. Clearly, $y \notin F$. But $\|x - y\|_\infty = \epsilon/2 < \epsilon$, so $y \in B_\epsilon(x)$. This means that $F$ is not open.
+
+Consider the sequence $(x_n)$ of sequences of the form $x_n = \{1, 1/2, \dots, 1/n, 0, 0, \dots\}$. Since it has $n$ nonzero elements, i.e. a finite number of nonzero elements, $x_n \in A$ for all $n$. Also, let $y$ be the harmonic sequence, with $y_i = 1/i$. The distance $d(x_n, y)$ is then $\|x_n, y\|_\infty = \frac{1}{n+1} \rightarrow 0$. Since the distance converges to 0, it means that the sequence $(x_n)$ converges to $y$. But $(x_n)$ is a sequence in $F$ that does not converge to an element of $F$, i.e. $F$ is not closed.
+\end{proof}
+
+\subsection{} Show that $c_0$ is a closed subset of $l_\infty$.
+
+\begin{proof}
+Let $(x_n)$ be a convergent sequence in $c_0$. This means that $x_i$ is convergent to 0.
+
+Let $\epsilon = \delta + \gamma > 0$, with $\delta > 0$ and $\gamma > 0$.
+
+Since $(x_n)$ is convergent, it converges to some sequence $l$. This means that for all $\gamma > 0$ we can find $N$ such that $|x_n^k - l_k| \leq \|x_n - l\|_\infty < \gamma$ for all $n>N$ and for all $k$. Since $x_n \rightarrow 0$, we can find for all $\delta > 0$ some $M$ such that $|x_n^k - 0| < \delta$ when $k>M_n$. So, we have that $|l_k - 0| \leq |x_n^k - l_k| + |x_n^k - 0| < \delta + \gamma = \epsilon > 0$ for all $k > \max\{M_n, N\}$. But this means that $l$ is itself a sequence that converges to 0, i.e. $l \in c_0$. This means that $c_0$ is closed.
+
+\end{proof}
+
+\subsection{} Show that the set $A = \{x \in l_2 : |x_n| < 1/n, n  = 1, 2, \dots \}$ is  a closed set in $l_2$  but that $B = \{x \in l2 : |x_n| < 1/n, n = 1, 2, \dots \}$ is not an open set
+
+\begin{proof}
+Let $(x_n)$ be a sequence in $A$ that converges to some $x \in l_2$. This means that the distance $d(x, x_n) = \|x - x_n\|_2 = \sum_{k=1}^\infty (x^k - x_n^k)^2$ converges to 0. Therefore, for all $\epsilon > 0$ there is some $N$ such that $\sum_{k=1}^\infty (x^k - x_n^k)^2 < \epsilon$ when $n > N$. In particular, $(x^k - x_n^k) < \epsilon$ for $n > N$ and for all $k$. But this means that each element $x_n^k$ converges to the corresponding element $x^k$. Since $x_n^k \in [0, 1/k]$, they all converge in $[0, 1/k]$, therefore $x \in A$.
+
+Pick $\epsilon > 0$ and some sequence $x \in A$. Also, pick some $k$ such that $1/k < \epsilon$. Now, construct the sequence $y$ with $y_i = x_i$ for $i \neq k$ and $y_i = x_i + \epsilon$. By construction, $y \notin A$. Then, $\|x - y\|_2 = \sqrt{\sum_{i=1}^\infty (x_i - y_i) ^2} < \sqrt{\epsilon^2} + \sqrt{\sum_{i\neq k} (x_i - y_i) ^2} = \epsilon$. Therefore, we found for each $x \in A$ a sequence $y \notin A$ such that $y \in B_\epsilon(x)$ for all $\epsilon > 0$. But this means that $A$ is not open.
+
+\end{proof}
+
+\subsection{} The set $A= \{y \in M: d(x,y) \leq r\}$ is sometimes called the closed ball about $x$ of radius $r$. Show that $A$ is a closed set, but give an example showing that A need not equal the closure of the open ball $B_r(x)$. 
+\begin{proof}
+Let $x \in M$ be fixed and define $A= \{y \in M: d(x,y) \leq r\}$. 
+Let $t \in A^c$. Then, we have that $d(x,t) > r$. For some $0 < \epsilon_t < \min\{r, d(x,t) - r\}$, consider  $v \in B_\epsilon(t)$. We then have the inequality $d(x,t) - \epsilon_t < d(x,t) - d(v,t)  \leq d(x,v)$. If $d(x,t) < 2r$, then the inequality is equivalent to $d(x,t) - d(x,t) + r = r < d(x,t) - \epsilon_t \leq d(x,v)$. If $d(x,t) \geq 2r$ the inequality is equivalent to $d(x,t) - r \leq 2r - r = r < d(x,t) - \epsilon_t \leq d(x,v)$. Therefore, $r < d(x,v)$, i.e. $v\in A^c$.
+Therefore, we have found that for all the points in $v \in B_{\epsilon_t}(t)$ we have $v \in A^c$, i.e. $B_\epsilon_t(t) \subset A^c$. But this means that $A^c$ is open, i.e. $A$ is closed.
+
+Consider the distance function $d(x,y) = 0$ if $x = y$ and $d(x,y) = 1$ if $x \neq y$. Then, the open ball $B_1(x) = \{x\}$ and the closed ball around $x$ of radius 1 is the entire space. But clearly there are smaller closed sets that contain $B_1(x)$ - for example, $B_1(x)$ is itself closed.
+
+\end{proof}
+
+\subsection{} If $(V, \| \cdot \|)$ is any normed space, prove that the closed ball $\{x \in V : \|x \| \leq 1\}$ is always the closure of the open ball $\{x \in V : \|x\| < 1\}$.
+
+\begin{proof}
+From the previous exercise, the closed ball is a closed set. Remains to show that it is the smallest closed set that contains the open ball.
+
+Note that the difference between the open ball and the closed ball is the circle $\{x \in V : \|x\| = 1\}$. Let $B$ be a set that contains the open ball and is smaller than the closed ball. Then, there is $x$ such that $\|x\|=1$ and $x \notin B$. Since we are in a normed vector space, for all $x$ with $\|x\| = 1$ there is a sequence $x_n \rightarrow x$ with $\|x_n\| < 1$ (for example, the sequence $x_n = (1-1/n)x$). But this means that a convergent sequence from $B$ does not converge to a point in $B$, i.e. $B$ is not closed. Therefore, the closed ball is the smallest closed set that contains the open ball.
+\end{proof}
+
+\subsection{} Show that $A$ is open  if and only if $A^\circ =  A$ and that $A$ is closed if and only if $\overline{A}= A$.
+
+\begin{proof}
+Assume $A^\circ = A$. By definition, $A^\circ$ is an open set (more specifically, the largest open set included in $A$). But this means that $A$ is open.
+
+Conversely, assume $A$ is open. Then, the largest open set included in $A$ is $A$ itself, i.e. $A^\circ = A$.
+
+Assume that $\overline{A} = A$. By definition, $\overline{A}$ is a closed set, i.e. $A$ is closed.
+
+Conversely, assume that $A$ is closed. The smallest closed set that contains $A$ is therefore $A$ itself, i.e. $\overline{A} = A$.
+\end{proof}
+
+\subsection{} Given a  nonempty  bounded  subset $E$ of $\mathbb{R}$, show that $\sup E$ and $\inf E$ are elements of $E$. Thus $\sup E$ and $\inf E$ are elements of $E$ whenever $E$ is closed. 
+
+\begin{proof}
+Since $E$ is bounded, there are two sequences $(x_n)$ and $(y_n)$ such that $x_i \in E$ and $y_i \in E$ with $x_n \rightarrow \sup E$ and $y_n \rightarrow \inf E$.
+
+Therefore, we have constructed two convergent sequences in $E$. Since $E$ is closed, they must converge to an element of $E$. Therefore, $\sup E$ and $\inf E$ are elements of $E$.
+\end{proof}
+
+\subsection{} Show that $diam(A) = diam(\overline{A})$.
+
+\begin{proof}
+$diam(A) = \{\sup d(x,y) : x,y \in A\}$. 
+
+
+
+Assume that $diam(\overline{A}) > diam(A)$. Then, there needs to be $x,y \in \overline{A} \setminus A$ such that $d(x,y) > d(a,b)$ for all $a,b \in A$.
+
+Pick $x,y \in \overline{A}$ and $\epsilon > 0$. Then, $B_\epsilon(x) \cap A \neq \emptyset$ and $B_\epsilon(y) \cap A \neq \emptyset$.
+
+Now pick $\hat{x} \in B_\epsilon(x) \cap A$ and $\hat{y} \in B_\epsilon(y) \cap A$. By construction, $d(x, \hat{x}) < \epsilon$ and $d(y, \hat{y}) < \epsilon$.
+
+We then have $d(x,y) \leq d(x, \hat{x}) + d(\hat{x}, \hat{y}) + d(y, \hat{y}) < 2\epsilon + d(\hat{x} + \hat{y}) < 2\epsilon + diam(A)$.
+
+So, for any $x, y \in \overline{A} \setminus A$ we have that $d(x,y) < 2\epsilon + diam(A)$. Taking the supremum of the distance, we get that $\sup\{d(x,y): x,y \in \overline{A}\} \leq 2\epsilon + diam(A)$. 
+
+This shows that $diam(\overline{A}) \leq diam(A)$. Since $A \subset \overline{A}$, and so $diam(A) \leq diam(\overline{A})$, we have that $diam(\overline{A}) = diam(A)$.
+
+
+\end{proof}
+
+\subsection{} If $A \subset B$, show that $\overline{A} \subset \overline{B}$. Does $\overline{A} \subset \overline{B}$ imply $A \subset B$?
+
+\begin{proof}
+
+Let $(x_n)$ be a convergent sequence in $A$ that converges to $x$. Then, $x_n$ is also a convergent sequence of $B$ and therefore $x \in \overline{A}$ implies $x \in \overline{B}$. So $\overline{A} \subset \overline{B}$
+
+
+$\overline{A} \subset \overline{B}$ does not necessarily imply $A \not\subset B$. For example, let $D = \{x \in \mathbb{R}^2 : \|x\|_2 < 1\}$ be the open disk of radius 1 in $\mathbb{R}^2$. Let $A = D \cup {(1,0)}$ and $B = D \cup \{x + 2 : x \in D\}$. Then, $\overline{A}$ is the closed disk of radius 1 centered at origin and $\overline{B}$ is the union of two closed disks, with $\overline{A} \subset \overline{B}$. But $A \not\subset B$, since $(1,0) \notin B$.
+
+\end{proof}
+
+\subsection{} If $A$ and $B$ are any sets in $M$, show that $\overline{A \cup B} = \overline{A} \cup \overline{B}$ and $\overline{A \cap B} \subset \overline{A} \cap \overline{B}$. Give an example showing that this last inclusion can be proper.
+
+\begin{proof}
+Pick $x$ in $\overline{A \cup B}$. Then, there exists $(x_n)$ in $A \cup B$ such that $x_n \rightarrow x$.
+
+If $x_n \in A$ for all $n$, then $x \in \overline{A}$. Similarly, if $x_n \in B$ for all $n$, then $x \in \overline{B}$.
+
+If $x_n$ contains elements of both $A$ and $B$, then it is either the case that we can find some $N$ such that $(x_n)_{n=N}^\infty$ contains only elements of $A$ or $B$, case in which $x$ is in $\overline{A}$ or $\overline{B}$, respectively, or there is no such $N$, case in which $(x_n)$ can be split in two subsequences, one with elements from $A$, one with elements from $B$, that both converge to $x$, case in which $x\in \overline{A}$ and $x \in \overline{B}$.
+
+Therefore, regardless of the choice of $x_n \in A \cup B$, we have that $x \in \overline{A}$ or $x \in \overline{B}$, i.e. $x \in \overline{A} \cup \overline{B}$. Therefore, $\overline{A \cup B} \subset \overline{A} \cup \overline{B}$.
+
+On the other hand, if $x \in \overline{A} \cup \overline{B}$, then $x \in \overline{A}$ or $x \in \overline{B}$. This means that there is a sequence $(x_n)$ in $A$, or respectively in $B$, that converges to $x$. But $(x_n)$ is also a sequence in $A \cup B$, so $x \in \overlay{A \cup B}$. This means that $\overline{A} \cup \overline{B} \subset \overline{A \cup B}$.
+
+Similarly, we pick $x \in \overline{A \cap B}$. This means that there is a sequence $(x_n)$ with $x_n \in A$ and $x_n \in B$ such that $x_n \rightarrow x$. But this means that $x \in \overline{A}$ and $x \in \overline{B}$, i.e. $\overline{A \cap B} \subset \overline{A} \cap \overline{B}$.
+
+Let $A = (0,1)$ and $B = (1,2)$. Then, $\overline{A} = [0,1]$ and $\overline{B} = [1,2]$, therefore $\overline{A} \cap \overline{B} = \{1\}$. But $A \cap B = \emptyset$ and therefore $\overline{A \cap B} = \emptyset$. So, $\overline{A \cap B} \subset \overline{A} \cap \overline{B}$.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} If $x \neq  y$ in $M$, show that there are disjoint open sets $U$, $V$ with $x \in U$ and $y \in V$. Moreover, show that $U$ and $V$ can be chosen so that even $\overline{U}$ and $\overline{V}$ are disjoint.
+
+\begin{proof}
+If $x \neq y$, then $0 < d(x, y)$. Let $0 < \epsilon < d(x,y) / 8$. Then, the sets $U = B_\epsilon(x)$ and $V = B_\epsilon(y)$ are disjoint. Note that $diam(\overline{U}) = diam(U) \leq 2 \epsilon < d(x,y) / 4$. Therefore, $\overline{U} \subset B_{d(x,y)/2}(x)$ and, similarly, $\overline{U} \subset B_{d(x,y)/2}(y)$. But $B_{d(x,y)/2}(x) \cap B_{d(x,y)/2}(y) = \emptyset$
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} We  define the distance from a point $x \in M$ to  a nonempty set $A$ in $M$ by $d(x, A) = \inf\{d(x , a) : a \in A\}$. Prove that $d(x , A) = 0$ if and only if $x \in \overline{A}$. 
+
+\begin{proof}
+If $x \in \overline{A}$, then there is a sequence $(x_n)$ with $x_n \in A$ for all $n$ and $x_n \rightarrow x$. This means that $0 \leq \inf\{d(x, a): a \in A\} \leq \inf\{d(x, x_n)\} = 0$.
+
+Conversely, if $d(x , A) = \inf\{d(x , a) : a \in A\} = 0$, then there is a sequence $(x_n)$ with $x_n \in A$ such that $\inf\{d(x , x_n)\} = 0$. But this means that $x_n \rightarrow x$, i.e. $x \in \overline{A}$.
+\end{proof}
+
+
+
+
+
+\subsection{} Show that $|d(x, A)- d(y, A)| < d(x, y)$ and conclude that the map $x \rightarrow d(x , A)$ is continuous.
+
+\begin{proof}
+
+Let $a,b \in A$. Then, we have the inequality:
+
+$$ d(x, a) \leq d(x, y) + d(y, b) $$
+
+Use the fact that $d(x, A) = \inf\{d(x, a) : a \in A\} \leq d(x, a)$ to get
+
+$$ d(x, A) \leq d(x, y) + d(y, b) $$
+
+But this has to hold for all $b \in A$. In particular, we have that 
+
+$$ d(x, A) \leq d(x, y) + \inf\{d(y,b) : b\in A\} = d(x,y) + d(y,A) $$
+
+Rearranging the equation, we get
+$$ d(x, A) - d(y,A) \leq d(x, y) + \inf\{d(y,b) : b\in A\} = d(x,y) $$
+
+And since $x,y$ were arbitrarily chosen, we have that
+
+$$ |d(x, A) - d(y,A)| \leq d(x,y) $$
+
+
+Let $f(x) = d(x,A)$. By the property above, we have that $|f(x) - f(y)| < d(x,y)$. Therefore, $f$ is Lipschitz continuous.
+\end{proof}
+
+
+
+\subsection{} Given a set $A \in M$ and $\epsilon > 0$, show that $\{x \in M : d(x , A) < \epsilon\}$ is an open set and that $\{x \in M: d(x ,   A) \leq \epsilon\}$ is a   closed set (and each contains A). 
+
+
+\begin{proof}
+Pick some $\epsilon > 0$. For each point $x \in A$, the open ball $B_\epsilon(x) = \{y \in M : d(x , y) < \epsilon\} \subset M$. The union of all such open balls $\bigcup_{x \in A} B_\epsilon(x)$ represents the set $\{x \in M : d(x , A) < \epsilon\}$. But since the open balls are open sets, and unions of open sets are open, the set $\{x \in M : d(x , A) < \epsilon\}$ is open.
+
+Also, for each point $x \notin A$ such that $d(x, A) > \epsilon$, there is $\delta = d(x,A) - \epsilon$ such that the open ball $B_\delta(x) \cap A = \emptyset$. The union of all such open balls forms $\{x \in M: d(x ,   A) \leq \epsilon\}^c$, which is open. Therefore, $\{x \in M: d(x ,   A) \leq \epsilon\}$ is closed.
+
+Obviously, since $d(x,x) = 0$, $x \in \{x \in M : d(x , A) < \epsilon\}$ and $x \in \{x \in M: d(x ,   A) \leq \epsilon\}$ for all $\epsilon > 0$.
+\end{proof}
+
+\subsection{} Show that every closed set in $M$ is the intersection of countably many open sets and that every open set in $M$ is the union of countably many closed sets. [Hint: What is $\bigcap_{n=1}^\infty \{x \in M: d(x,A) < 1/n\}$?]
+
+\begin{proof}
+Let $S_\epsilon = \{x \in M: d(x,A) < \epsilon\}$. Will first show that $S_\epsilon$ is open for all $\epsilon > 0$. 
+
+Let $\delta_x = \epsilon - d(x,A)$. Then, for all points $y$ such that $d(x,y) < \delta_x$, we havee that $d(x,y) < \epsilon - d(x,A)$. From the previous exercise, we have that $|d(x, A) - d(y, A)| \leq d(x,y) < \epsilon - d(x,A)$.
+
+Assume that $d(x,a) < d(y,A)$. Then, the inequality becomes $d(y,A) - d(x,A) < \epsilon - d(x,A)$, i.e. $d(y,A) < \epsilon$.
+
+On the other hand, we have $d(y,A) \leq d(x,A) < \epsilon$.
+
+Therefore, for any $x$ there is $\delta_x = \epsilon - d(x,A)$ such that $d(y,A) < \epsilon$ when $d(x,y) < \delta_x$. This means that $B_{\delta_x}(x) \subset S_\epsilon$, for all i.e. the $S_\epsilon$ is open.
+
+\vspace{1em}
+
+Note that if $\epsilon > \delta$, we have that $S_\delta \subset S_\epsilon$. If $x \in \bigcap_{n=1}^\infty \{x \in M: d(x,A) < 1/n\} = \bigcap_{n=1}^\infty S_{1/n}$, then $x \in S_{1/n}$ for all $n$. This means that $0 \leq d(x, A) < 1/n$ for all $n$. At the limit, we have $d(x,A) = 0$. But this happens only if $x \in \overline{A}$. Therefore, $\overline{A} = \bigcap_{n=1}^\infty S_{1/n}$
+
+Since $\overline{A} = A$ if $A$ is closed, we have that $A = \bigcap_{n=1}^\infty S_{1/n}$ for any closed set $A$.
+
+\vspace{1em}
+
+Assume $A$ is a closed set. By the previous result, we have that $A = \bigcap_{n=1}^\infty S_{1/n}$. We take the complement of this equation, to obtain $A^c = (\bigcap_{n=1}^\infty S_{1/n})^c = \bigcup_{n=1}^\infty S_{1/n}^c$. Since $A$ is closed, $A^c$ is open. Similarly, since $S_{1/n}$ is open, $S_{1/n}^c$ is closed. Therefore, an open set can be written as a countable union of closed sets.
+
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Let $A$ be a subset of $M$. A point $x \in M$ is called a limit point of $A$ if every neighborhood of $x$ contains a  point  of $A$ that is different from $x$ itself,  that is, if $(B_\epsilon(x) \ {x}) \cap A \neq \emptyset$ for every $\epsilon > 0$. If $x$ is a limit point of $A$, show that every neighborhood of $x$ contains infinitely many points of $A$.
+
+\begin{proof}
+Assume $x$ is a limit point of some set $A$. Also, assume there is some $\epsilon > 0$ such that $D = (B_\epsilon(x) \ \{x\}) \cap A$ is finite. Then, the set $\{d(x, y): y \in D\}$ is also finite, and therefore we can take its minimum. Let $m = \min\{d(x, y): y \in D\}$. Since there are no points $t\in A$ with $d(x,t) < m$, $B_m(x) = \{x\}$. But this contradicts the hypothesis that $x$ is a limit point point. Therefore, any open ball around a limit point must contain an infinity of points.
+\end{proof}
+
+
+\subsection{} Show that $x$ is a limit point of $A$ if and only if there  is a  sequence $(x_n)$ in $A$ such that $x_n \rightarrow x$ and $x_n \neq x$ for all $n$.
+
+\begin{proof}
+Assume there is $(x_n)$, a sequence in $A$ such that $x_n \rightarrow x$ and $x_n \neq x$. Pick $\epsilon > 0$. Then, there is some $N$ such that $d(x_n, x) < \epsilon$ for all $n>N$. This implies that $B_\epsilon(x)$ has an infinity of elements of A, and therefore $x$ is a limit point.
+
+Conversely, assume $x$ is a limit point of $A$ and consider the real sequence $x_n = 1/(2n)$, $x_n \rightarrow 0$. Then, we can construct the sequence $(a_n)$ with $a_n \in B_{x_n}(x)$.
+
+Since $(x_n)$ is convergent, for all $\epsilon > 0$ there is some $N$ such that $|x_n| < \epsilon$ for $n>N$. Since $B_{x_i}(x) \subset B{x_j}(x)$ for all $i < j$, then $a_n \in B_{x_n}(x)$ for $n>N$, i.e. $d(x, a_i) < x_n < \epsilon$ for $i > n > N$. Therefore, $(a_n) \rightarrow x$.
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} Suppose  that $x_n \rightarrow x \in M$, and let $A = \{x\} \cup \{x_n :  n > 1\}$. Prove that A is closed.
+
+\begin{proof}
+
+Let $(a_n)$ be a convergent sequence in $A$ with $a_n \rightarrow a$.
+
+Assume $a \notin A$ and let $\delta = d(a,x) / 2$. Then, the balls $B_\delta(a)$ and $B_\delta(x)$ are disjoint. Since $x_n \rightarrow x$, there is $N$ such that $x_n \in B_\delta(x)$ for all $n>N$. This means that there are finitely many elements of $A$ outside $B_\delta(x)$. In particular, there are finitely many elements of $A$ in $B_\delta(a)$. But this means that $a$ cannot be a limit point of $A$ unless the sequence is eventually constant to $a$. But since $a \notin A$ any sequence $(a_n)_n \in A$, cannot converge to $A$. Therefore, $a \in A$.
+
+\end{proof}
+
+\stepcounter{subsection}
+
+\subsection{} A set  $P$  is called perfect if it is empty or if it is a closed set and every point of $P$ is a limit point of $P$. Show that $\Delta$ is perfect. Show that $\mathbb{R}$ is perfect when considered as a subset of $\mathbb{R}^2$.
+
+\begin{proof}
+At step $n$ of the formation of the Cantor set, we remove $2^{n-1}$ open intervals. The union of such intervals forms the complement of $\Delta$. But an arbitrary union of open intervals forms an open interval. The complement of this union, $\Delta$, is therefore closed.
+
+Also, in exercise 2.24 it has been shown that every $x\in \Delta$ is the limit of a sequence $(x_n)_n \in \Delta$. This means that every $x \in \Delta$ is a limit point.
+
+\vspace{1em}
+
+For each point $x \in \mathbb{R}$ there is a sequence $x_n \rightarrow x$. Therefore, $\mathbb{R}$ is closed and perfect in any set that contains it. In particular, it is closed and perfect in $\mathbb{R}^2$.
+
+\end{proof}
+
+\subsection{} Show that a  nonempty  perfect subset $P$  of $\mathbb{R}$ is uncountable.  This gives yet another proof that the Cantor set is uncountable.  [Hint: First convince yourself that $P$ is infinite, and assume that $P$ is countable, say $P = \{x_1, x_2, \dots \}$.  Construct a decreasing sequence of nested closed intervals $[a_n, b_n]$ such  that $(a_n, b_n) \cap P  \neq \emptyset$ but $x_n \notin [a_n, b_n]$. Use the nested interval theorem to get a contradiction.]
+
+\begin{proof}
+Let $P \neq \emptyset$ be a subset of $\mathbb{R}$. Assume $P$ is finite and pick $p \in P$. If $P$ is finite, we have that $d = min\{d(p, x): x \in P, x \neq p\} > 0$. If $P$ is a perfect set, then all its points are limit points. In particular, $p$ has to be a limit point. But the open ball $B_d(p)$ does not contain any other element of $P$. Therefore, $p$ is not a limit point. Due to this contradiction, $P$ has to be infinite.
+
+Now assume $P$ is a countable set of the form $P=\{x_1, x_2, \dots \}$. Now construct an interval $I_0 = [\inf(P), \sup(P)]$. For each $x_n$, we construct an interval $I_n$ as follows. If $x_n \notin I_{n-1}$, then $I_n = I_{n-1}$. Otherwise, pick some $\epsilon > 0$ such that $(x_n - \epsilon, x_n + \epsilon) \subset I_{n-1}$. Since $P$ is dense, the set $P \cap (x_n - \epsilon, x_n + \epsilon)$ contains an infinity of elements of $P$. In particular, we have $(x_n - \epsilon, x_n)$ or $(x_n, x_n+\epsilon)$ has an infinity of elements of $P$. Without loss of generality, assume that $(x_n - \epsilon, x_n)$ has an infinity of elements of $P$. Then, we can find $\delta < \epsilon$ and some point $d \in P$, such that $I_n = [d-\epsilon, d+\epsilon] \subset (x_n - \epsilon, x_n)$. By construction, $x_n \notin [d-\epsilon, d+\epsilon]$ and since $d\in P$, $d$ is also a limit point and therefore $I_n$ has an infinity of elements of $P$.
+
+
+The sequence $(I_n)$ is a sequence of nested intervals on $\mathbb{R}$. But, by the nested interval theorem, their intersection $\bigcap I_n = I$ is nonempty. But, by construction, $x_n \notin I$ for all $n$. So, we have removed countable elements from $P$ and there still are elements of $P$ in $I$. This means that $P$ is uncountable.
+
+\end{proof}
+\stepcounter{subsection}
+
+\subsection{} Related to the notion of limit points and isolated points are boundary points. A point $x \in M$ is said to be  a boundary point of $A$ if each neighborhood of $x$ hits both $A$ and $A^c$. In symbols, $x$ is a boundary point of $A$ if and only if $B_\epsilon (x) \cap A \neq \emptyset$ and $B_\epsilon(x) \cap A^c \neq \emptyset$ for every $\epsilon  > 0$. Verify each of the following formulas, where $bdry(A)$ denotes the set of boundary points of $A$: 
+
+\begin{itemize}
+    \item $bdry(A) = bdry(A^c)$
+    \item $cl(A) = bdry(A) \cup int(A)$
+    \item $M = int(A) \cup bdry(A) \cup int(A^c)$
+\end{itemize}
+
+Notice that the first and last equations tell us that each set $A$ partitions $M$ into three regions: the points "well inside" $A$, the points well outside $A$, and the points on the common boundary of $A$ and $A^c$.
+
+\begin{proof}
+From the definition, $x \in bdry(A)$ if for all $\epsilon > 0$, $B_\epsilon(x) \cap A \neq \emptyset$ and $B_\epsilon(x) \cap A^c \neq \emptyset$. Since $(A^c)^c = A$, we have from the same relations that $x \in bdry(A^c)$.
+
+\vspace{1em}
+
+If $x \in \overline{A}$, then for all $\epsilon>0$, $B_\epsilon(x) \cap A \neq \emptyset$. This means that we either have $B_\epsilon(x) \subset A$ or we have $B_\epsilon(x) \cap A \neq \emptyset$ and $B_\epsilon(x) \cap A^c \neq \emptyset$. But this means that either $x \in A^\circ$ or $x \in bdry(A)$. Therefore, $\overline{A} = A^\circ \cup bdry(A)$.
+
+
+\vspace{1em}
+
+$\overline{A}$ is closed. Therefore, $(\overline{A})^c$ is open and we have $M = \overline{A} \cup (\overline{A})^c = A^\circ \cup bdry(A) \cup (\overline{A})^c$.
+
+But $(\overline{A})^c = (A^\circ \cup bdry(A))^c = (A^\circ)^c \cap bdry(A)^c$.
+
+$(A^\circ)^c$ represents all $x$ for which there is no $\epsilon > 0$ such that $B_\epsilon(x) \subset A$, i.e. for which $B_\epsilon(x) \cap A \neq \emptyset$.
+
+$bdry(A)^c$ represents all points $x$ for which there is some $\epsilon > 0$ such that either $B_\epsilon(x) \subset A$ or $B_\epsilon(A) \cap A = \emptyset$, i.e. the points in the interior of $A$ or totally outside $A$.
+
+Their intersection is therefore the set of points for which there is some $\epsilon > 0$ such that $A \cap B_\epsilon(x) = \emptyset$. But this means that $x \in (A^c)^\circ$, i.e. $(\overline{A})^c = (A^c)^\circ$.
+
+Therefore, $M = A^\circ \cup bdry(A) \cup (\overline{A})^c = A^\circ \cup bdry(A) \cup (A^c)^\circ$.
+
+\end{proof}
+\stepcounter{subsection}
+
+\subsection{} Show that $bdry(A)$ is always a closed set;  in fact, $bdry(A) = \overline{A} \setminus  A^\circ$.
+
+\begin{proof}
+From the previous exercise, $\overline{A} = bdry(A) \cup A^\circ$. Note that $bdry(A)$ and $A^\circ$ are disjoint, and therefore $bdry(A) = \overline(A) \setminus A^\circ$.
+
+Also, from the previous exercise we have $M = A^\circ \cup bdry(A) \cup (A^c)^\circ$. Since all these sets are disjoint, we have that $bdry(A) = (A^\circ \cup (A^c)^\circ)^c$. But both $A^\circ$ and $(A^c)^\circ$ are open and their union is also open. Therefore $bdry(A)$ is closed.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} A set $A$ is said to be dense in $M$ (or, as some authors say, everywhere dense) if $\overline{A} = M$. For example, both $Q$ and $\mathbb{R} \setminus \mathbb{Q}$ are dense in $\mathbb{R}$. Show that $A$ is dense in $M$ if and only if any of the following hold: 
+\begin{itemize}
+    \item Every point in M is the limit of a sequence from A. 
+    \item $B_\epsilon(x) \cap A \neq \emptyset$ for every $x \in M$ and every $\epsilon > 0$.
+    \item $U \cap A \neq \emptyset$ for every nonempty open set U.
+    \item $A^c$ has empty interior. 
+\end{itemize}
+
+\begin{proof}
+Every point in $\overline{A}$ is the limit of a sequence in $A$. If $A$ is dense, then $M = \overline{A}$. This means that every point in $M$ is the limit of a sequence in $A$.
+
+
+\vspace{1em}
+
+Now pick a point $x \in M$. By the previous point, there is some sequence $(x_n)_n \in A$ with $x_n \rightarrow x$. This means that for all $\epsilon > 0$ there is some $N$ such that $x_n \in B_\epsilon(x)$ when $n>N$. Therefore, any open ball around every point of $M$ contains at least one element of $A$. In other words, this proves that if $A$ is dense, then $B_\epsilon(x) \cap A \neq \emptyset$ for every $x \in M$ and every $\epsilon > 0$.
+
+\vspace{1em}
+Let $U \subset M$ be open and pick $x \in U$. Then, there is $\epsilon > 0$ such that $B_\epsilon(x) \subset U$.  But by the previous point, $B_\epsilon(x)  \cap A \neq \emptyset$.   Therefore, if A is dense, $U \cap A \neq \emptyset$.
+
+
+\vspace{1em}
+
+As previously shown, if $A$ is dense, then for all $x \in M$ and $\epsilon > 0$, all open balls $B_\epsilon(x) \cap A \neq \emptyset$. Therefore, there is no open ball in $A^c$. This means that $A^\circ = \bigcup\{U: U open,  U \subset A\} = \emptyset$. This proves that if $A$ is dense, the interior of $A^c$ is empty.
+
+\vspace{2em}
+
+So far, we have shown that $A$ dense implies all the four statements. Will now show the converse.
+
+\vspace{1em}
+
+Assume that every point in $M$ is the limit of a sequence in $A$. Then, $M = \overline{A}$. But this means that $A$ is dense.
+
+\vspace{1em}
+
+Now pick $x \in M$ and assume that $B_\epsilon \cap A \neq \emptyset$ for all $\epsilon >0$. This means that there $B_{1/n}(x) \cap A \neq \emptyset$. Let $(x_n)_n \in A$ be a sequence such that $x_n \in B_{1/n}(x) \cap A$. Then, $x_n \rightarrow x$. But, by the previous point, this means that $M = \overline{A}$, i.e $A$ is dense.
+
+Therefore, if we have a set $A$ such that for any point $x \in M$ and $\epsilon > 0$ we have $B_\epsilon \cap A \neq \emptyset$, then $A$ is dense.
+
+\vspace{1em}
+
+Assume that for every open set $U \subset M$, $U \cap A \neq \emptyset$. Since all open balls are open sets, this means that for all $x \in M$ and $\epsilon > 0$, $B_\epsilon(x) \cap A \neq \emptyset$. By previous point, $A$ is dense.
+
+\vspace{1em}
+
+Assume that $A^c$ has an empty interior. This means that there is no open set $U$ in $M$ such that $U \cap A = \emptyset$ (otherwise, $U\subset A^\circ$). By the previous point, $A$ is dense.
+
+
+\end{proof}
+
+
+
+\stepcounter{subsection}
+
+\subsection{} A metric space is called separable if it contains a countable dense subset. Find examples of countable dense sets in $\mathbb{R}$, in $\mathbb{R}^2$, and in $\mathbb{R}^n$. 
+
+\begin{proof}
+$\mathbb{Q} \subset \mathbb{R}$ is a countably dense subset of $\mathbb{R}$, and therefore $\mathbb{R}$ is separable.
+
+Similarly, $\mathbb{Q}^2$ and $\mathbb{Q}^n$ are countable sets that are dense subsets of $\mathbb{R}^2$ and $\mathbb{R}^n$, respectively.
+
+\end{proof}
+
+\subsection{} Prove that $l_2$ and $H^\infty$ are separable. [Hint: Consider finitely nonzero sequences of the form $(r_1, \dots , r_n, 0, 0, \dots)$, where each $r_c$ is rational.] 
+
+\begin{proof}
+Will first look at $l_2$. Clearly, $A = \{(r_1, \dots, r_n, 0, 0, \dots): r_i \in \mathbb{Q}\} \subset l_2$.
+
+Pick $x \in l_2$ and some $\epsilon > 0$. Let $\delta + \gamma = \epsilon$, with $\delta > 0$ and $\gamma > 0$.
+
+Since $x\in l_2$, the series $\sum_{n=1}^\infty x_n^2$ is finite. Therefore, there is some $N$ such that $\sum_{n=N}^\infty x_n^2 < \epsilon$.
+
+This means that we can construct $y = (x_1, \dots, x_N, 0, \dots) \in l_2$ such that $\|x-y\| < \delta$.
+
+For each $y_i$ real, there is a rational number, $z_i$, with $|y_i - z_i| < \sqrt{\gamma/N}$. Therefore, we can construct $z = (z_1, \dots, z_N, 0, \dots) \in A$, with $\|x - z\| \leq \|x-y\| + \|y-z\| < \delta + \sum_{i=1}^\infty (y_i - z_i)^2 = \delta + \sum_{i=1}^N (y_i - z_i)^2 < \delta + \sum_{i=1}^N \gamma/N = \delta + \gamma = \epsilon$.
+
+Therefore, for every $x \in l_2$ and every $\epsilon > 0$, $B_\epsilon(x) \cap A \neq \emptyset$, which means that $A$ is dense in $l_2$.
+
+$A$ is also countable, since is a countable union of countable cartesian products of $\mathbb{Q}$. Therefore, $l_2$ is separable.
+
+
+\vspace{1em}
+
+Now let $A$ be the set of rational sequences with finitely nonzero elements of the form $(r_1, \dots, r_n, 0, \dots)$ with $|r_1| \leq 1$. By construction, $A \subset H^\infty$.
+
+Consider the metric $d(x,y) = \sum_{x=1}^\infty 2^{-i} |x_n - y_n|$ on $H^\infty$. Pick some $x \in H^\infty$ and construct $y_n = (x_1, \dots, x_n, 0, \dots) \in H^\infty$. Then, $d(x,y_n) = \sum_{i=n+1}^\infty 2^{-i}|x_i| \leq \sum_{i=n+1}^\infty 2^{-i}$.
+
+Pick $\epsilon > 0$ such that $\epsilon = \delta + \gamma$, where $\delta, \gamma >0$. 
+
+Since the series $\sum_{i=1}^\infty 2^{-i}$ converges, for $\delta > 0$ there is some $n$ such that $d(x, y_n) \leq \sum_{i=n+1}^\infty 2^{-i} < \delta$. 
+
+For any $y_n$ we can construct $z_n$ such that $z_i \in \mathbb{Q} \cap [-1,1]$ and $|z_i - y_i| < \frac{2^m}{2^m-1}\gamma$. Therefore, $|x - z_n| \leq |x - y_n| + |y_n - z_n| < \delta + \sum_{i=1}^\infty  2^{-i}|y_{n_i} - z_{n_i}| = \delta + \sum_{i=1}^n  2^{-i}|y_{n_i} - z_{n_i}| < \delta + \frac{2^m}{2^m-1}\gamma \sum_{i=1}^n 2^{-i}= \delta + \gamma = \epsilon$
+
+This means that for any $\epsilon >0$, $B_\epsilon(x) \cap A \neq \emptyset$, showing that $A$ is also dense in $H^\infty$. It has been previously shown that $A$ is countable, and therefore $H^\infty$ is separable.
+
+\end{proof}
+
+\subsection{} Show that $l_\infty$ is not separable.
+
+\begin{proof}
+
+Consider the set $2^N$, the set of sequences made out of only zeros and ones.
+
+This is an uncountable set, and the distance (induced by the $l-\infty$ norm) between any two distinct elements is at least one.
+
+Around each element $x \in 2^N$, we can construct an open ball $B_{1/2}(x)$. The set $\{B_{1/2}(x) : x \in 2^N\}$ is disjoint.
+
+Now assume that $A$ is a dense countable set in $l_\infty$. Since $A$ is dense, then $\overline{A} = l_\infty$. This means that every element of $l_\infty$ is a limit point of $A$, and therefore $A \cap B_{1/2}(x) \neq \emptyset$ for all $x \in 2^N$. But this means that $A$ has at least as many elements as $2^N$. Since $2^N$ is uncountable, $A$ is also uncountable. But this contradicts the initial assumption that $A$ is countable.
+
+Therefore, there is no countable dense subset of $l_\infty$, i.e. $l_\infty$ is not separable.
+
+\end{proof}
+
+\subsection{} If $M$ is separable, show that any collection of disjoint open sets  in  $M$  is at most countable. 
+
+\begin{proof}
+Let $M$ be separable and assume $S$ is an uncountable collection of open sets. For each $s \in S$, there are $x \in M$, $r > 0$ such that $B_r(x) \subset s \subset M$.
+
+Let $B = \{B_r(x) : B_r(x) \subset s, s \in M\}$ be the set of open balls included in those open sets. Since, by construction, there is one open ball per open set, there are uncountably many open balls and they are disjoint.
+
+Since $M$ is separable, there is a countable subset $A \subset M$ that is dense. This means that any $x \in M$ is a limit point of $A$. In particular, any open ball should contain at least one point of $A$. But we have $B$, an uncountable set of disjoint open balls. Therefore, $A$ is uncountable. From this contradiction, any collection of open sets of $M$ must be countable.
+\end{proof}
+
+\subsection{} Can you find a countable dense subset of $C[0,1]$?
+
+\begin{proof}
+Let $P$ be the set of polynomials on $[0,1]$. Since polynomials are continuous functions, $P \subset C[0,1]$.
+
+By the Weierstrass approximation theorem, any function of $C[0,1]$ can be approximated by a polynomial, i.e. for every $f \in C[0,1]$, $\epsilon>0$, there is $p \in P$ such that $d(p, f) < \epsilon$.
+
+A polynomial $p$ is defined by a finite number of real coefficients $p_i$. Since for each $p_i$ we can find a rational sequence $(q^i_n)$ with $q^i_n \rightarrow p_i$, we can construct a sequence of polynomials of rational coefficients $(q_n)$ that converges to $q$. Therefore, the set of rational polynomials is dense in $C[0,1]$
+
+Each polynomial of rational coefficients is defined by a finite number of rational numbers. Therefore, there are countably many such polynomials and $C[0,1]$ is separable.
+\end{proof}
+
+
+\subsection{} A set $A$ is said to be nowhere dense in $M$ if $int (cl(A)) = \emptyset$. Show that $\{x\}$  is nowhere dense if and only if $x$ is not an isolated point of $M$. 
+
+\begin{proof}
+Assume $x$ is an isolated point of $M$. Since $\{x\}$ is closed, the closure of $\{x\}$ is $\{x\}$ itself. But, since $x$ is an isolated point of $M$, there is $\epsilon>0$ such that $B_\epsilon(x) = \{x\}$. Therefore, $\{x\}$ is also open. But this means that $int(cl(\{x\})) = \{x\}$.
+
+Therefore, for $int(cl(\{x\})) = \emptyset$, $x$ must not be isolated. 
+
+\vspace{1em}
+
+Conversely, assume $int(cl(\{x\})) = \emptyset$.
+This means that the closure of $\{x\}$ does not contain any open set. Since $\{x\}$ is closed, its closure is $\{x\}$. Therefore, $\{x\}$ must not be open. But this happens only if $x$ is an isolated point of $M$.
+
+\end{proof}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} Complete the proof of Proposition 4.13.
+
+\begin{proof}
+Let $A \subset M$.
+
+Will first show that a set $F \subset A$ is closed in $(A, d)$ if and only if $F = A \cap C$, where  $C$ is closed in $(M, d)$.
+
+Assume that $F$ is a closed subset of $A$. Then, $F^c \subset A$ is open. By the first point of this proposition, there is $U \subset M$ open such that $F^c = U \cap A$. Therefore, we have $A = (U \cup U^c) \cap A = (U \cap A) \cup (U^c \cap A) = F^c \cup F$. So, we have found that $F = U^c \cap A$. But, since $U$ is open, $U^c$ is closed.
+
+Conversely, assume that there is some $C \subset M$ closed. Then, $C^c$ is open. Since $A = M \cap A = (C^c \cup C) \cap A = (C^c \cap A) \cup (C \cap A)$, the complement of $C^c \cap A$ in $A$ is $C \cap A$. But since $C^c$ is open, $C^c \cap A$. Therefore, $C \cap A$ is closed.
+
+\vspace{1em}
+
+Will now show that $cl_A(E) = A \cap cl_M(E)$ for any subset $E$ of $A$.
+
+Let $x \in cl_A(E)$. Then, for all $\epsilon > 0$ we have $B_\epsilon(x) \cap E \neq \emptyset$. From this, since $E \subset A$, we have $x \in A$. Moreover, considering $E$ as a subset of $M$, we have that $x \in cl_M(E)$. Therefore, $x \in A \cap cl_M(E)$, so $cl_A(E) \subset A \cap cl_M(E)$.
+
+Now let $x \in A \cap cl_M(E)$. Then, $B_\epsilon(x) \cap E \neq \emptyset$ in $M$. If we also have $x \in A$, and since $E \subset A$, $B_\epsilon(x) \cap E$ in $M$ is the same as $B_\epsilon(x) \cap E$ in $A$. But this means that $x \in cl_A(E)$
+
+Therefore, $cl_A(E) = A \cap cl_M(E)$.
+
+\end{proof}
+
+\subsection{} Suppose that $A$ is open in $(M, d)$ and that $G \subset A$. Show that $G$ is open in $A$ if and only if $G$ is open in $M$. Is the  result still true if "open" is replaced everywhere by "closed"?
+
+\begin{proof}
+Assume $G$ is open in $M$. Then, for every $x$, there is some $\epsilon>0$ such that $B_\epsilon(x) \subset G$ in $M$. But, since $G \subset A \subset M$, we also have that $B_\epsilon(x) \subset G$ in $A$. Therefore, $G$ is open in $A$.
+
+Conversely, assume $G$ is open in $A$. Then, for each $x \in G$, there is some $\epsilon > 0$ such that $B_\epsilon^A \subset G$. But $B_\epsilon^A \subset B_\epsilon^M$. Therefore, $B_\epsilon^M \subset G$. But this means that $G$ is open in $M$ too.
+
+Therefore, $G$ is open in $A$ iff $G$ is open in $M$.
+
+\vspace{1em}
+
+Now assume $G$ is closed in $A$. Then, $G^c$ is open in $A$. By the previous result, $G^c \cap A$ is open in $M$. But $(G^c \cap A)^c$ is closed in $M$. Therefore, $G \cup A^c$ is closed. But $A^c$ is closed and disjoint from $G$. It must be that $G$ is closed in $M$, otherwise $G \cup A^c$ would not be closed.
+
+Conversely, assume $G$ is closed in $M$. Then, $G^c$ is open in $M$ and $G^c \cap A$ is a finite intersection of open sets and therefore open. But $G^c \cap A$ is the complement of $G$ in $A$. Therefore $G$ is closed in $A$.
+
+This shows that $G$ is closed in $A$ iff $G$ is closed in $M$.
+\end{proof}
+
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\subsection{} If $A$ is a separable subset of $M$ (that is, if $A$ has a countable dense subset of its own), show that $\overline{A}$ is also separable.
+
+\begin{proof}
+Let $X \subset A$ be dense and countable, i.e. $\overline{X}^A = A$. 
+
+Consider $x \in \overline{A}^M$. Since $\overline{A}^M$ is closed, $B_\epsilon(x) \cap A \neq \emptyset$. Pick $y \in B_\epsilon(x) \cap A$ and $r < min\{d(x,y), \epsilon\}$ such that $B_r(y) \subset B_\epsilon(x)$. By construction, $y \in A$ and therefore $B_r(y) \cap X \neq \emptyset$. But since $B_r(y) \subset B_\epsilon(x)$, we have that $B_\epsilon(x) \cap X \neq \emptyset$. But this means that $X$ is dense in $\overline{A}^M$. Since $X$ is also countable, $\overline{A}^M$ is separable. 
+
+\end{proof}
+
+\subsection{} A collection $(U_\alpha)$ of open sets is called an open base for $M$ if every open set in $M$ can be written as a union of $U_\alpha$. For example, the collection of all open intervals in $\mathbb{R}$ with rational endpoints is an open base for $\mathbb{R}$ (and this is even a countable collection). Prove that $M$ has a countable open base if and only if $M$ is separable.
+
+\begin{proof}
+Assume $\{x_n\}$ is a countable dense set in $M$ and construct $S$ the set of open balls of rational radius around points in $\{x_n\}$.
+
+Let $O \subset M$ open and pick $x \in O$. Then, there is $\epsilon_x > 0$ such that $B_{\epsilon_x}(x) \subset O$. This means that for all $x$ there is $\delta_x$ rational with $\epsilon_x > \delta_x > 0$ such that $B_{\delta_x}(x) \subset B_\epsilon(x) \subset O$. Therefore, $O = \bigcup_{x \in O} B_{\delta_x}(x)$, with $B_{\delta_x}(x) \in S$. So $S$ is a base for $M$. Also, since there are countably many points in $\{x_n\}$ and the balls are of rational radius, there are at most $\{x_n\} \times \mathbb{Q}$ balls, i.e. countably many.
+
+Conversely, assume that $M$ has a countable open base $S$. This means that any open subset of $M$ can be written as a union of sets from $S$.
+For each open set $s \in S$ we pick a point $x_s \in s$ and construct $X = \{x_s : s \in S\}$.
+
+Consider $U \subset M$ an open set. Then, $U$ can be written as $\bigcup s_i$ for $s_i \in S$. Therefore, $U \cap X \neq \emptyset$. But this means that $X$ is dense.
+
+Therefore, $M$ has a countable open base if and only if $M$ is separable.
+
+
+\end{proof}
+

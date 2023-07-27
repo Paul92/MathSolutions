@@ -1,0 +1,12 @@
+\subsection*{3.2}
+
+Replace the axiom of existence by the following weaker postulate: \textit{Some sets exist}. Use the weak axiom of existence and the comprehension schema to prove the axiom of existence.
+
+\begin{proof}
+From the weak axiom of existence, there is some set $A$.
+
+Define the property $P(x) = x \notin A$. Using the axiom schema of comprehension, we can construct the set $Q = \{x \in A | P(x)\} = \{x \in A | x \notin A\}$. In other words, $Q$ is the set of all elements of $A$ which are not members of $A$.
+
+In searching for a contradiction, assume that $Q$ is nonempty, i.e. there is some $t \in Q$. By construction, it means that $t \in A$ and $t \notin A$. But this is a contradiction and hence $Q$ has no elements. Therefore, $Q$ is the empty set and thus the axiom of existence follows from the weak axiom of existence.
+\end{proof}
+

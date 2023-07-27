@@ -1,0 +1,34 @@
+\subsection*{5.1} Prove the associative law $(\alpha \cdot \beta) \cdot \gamma = \alpha \cdot (\beta \cdot \gamma)$.
+
+\begin{proof}
+    Will prove by transfinite induction on $\gamma$. Let $P(\gamma)$ be the logical proposition that $(\alpha \cdot \beta) \cdot \gamma = \alpha \cdot (\beta \cdot \gamma)$.
+    
+    For the base case, when $\gamma = 0$, we have that
+
+    $$(\alpha \cdot \beta) \cdot 0 = 0 = \alpha \cdot 0 = \alpha \cdot (\beta \cdot 0) $$
+
+    and hence $P(0)$ holds. We now try to show that $P(\gamma)$ implies $P(\gamma+1)$. We have
+
+    $$(\alpha \cdot \beta) \cdot (\gamma + 1) = (\alpha \cdot \beta) \cdot \gamma + (\alpha \cdot \beta) $$
+
+    from the recursive definition of the multiplication. From the assumption that $P(\gamma)$ holds, we can apply the associativity to obtain
+
+    $$(\alpha \cdot \beta) \cdot \gamma + (\alpha \cdot \beta) =
+    \alpha \cdot (\beta \cdot \gamma)  + (\alpha \cdot \beta)
+    $$
+
+    With the distributivity property proven in the following exercise, we obtain
+
+    $$\alpha \cdot (\beta \cdot \gamma)  + (\alpha \cdot \beta) = \alpha \cdot (\beta \cdot \gamma + \beta) = \alpha \cdot (\beta \cdot (\gamma + 1))$$
+
+    Remains to consider the case where $\gamma$ is a nonzero limit ordinal. In this case,
+
+    $$(\alpha \cdot \beta) \cdot \gamma =
+    \sup\{(\alpha \cdot \beta) \cdot n | n < \gamma\} = 
+    \sup\{\alpha \cdot (\beta \cdot n) | n < \gamma\} = 
+    \alpha \cdot \sup\{\beta \cdot n | n < \gamma\} = 
+    \alpha \cdot (\beta \cdot \gamma)$$
+
+    and therefore $P(\gamma)$ holds for all ordinals $\gamma$.
+\end{proof}
+

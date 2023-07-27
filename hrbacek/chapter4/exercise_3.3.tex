@@ -1,0 +1,6 @@
+\subsection*{3.3} If $A \neq \emptyset$ is finite and $B$ is countable, then $A \times B$ is countable.
+
+\begin{proof}
+We use the same $f,g$ functions whose existence has been shown in the previous exercise, and construct $h: A \times B \rightarrow \mathbb{N} \times \mathbb{N}$ with $h(a,b) = (f(a), g(b))$. This function is injective and hence $|A \times B| \leq |\mathbb{N} \times \mathbb{N}|$, so $A \times B$ is at most countable. Since there is an injection $i: \mathbb{N} \rightarrow A \times B$, $i_a(n) = (a, f^{-1}(n))$ for some $a \in A$, we have that $|\mathbb{N}| \leq |A \times B|$. It follows that $|A \times B| = |\mathbb{N}|$ and the result follows.
+\end{proof}
+

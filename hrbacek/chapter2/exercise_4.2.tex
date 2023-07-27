@@ -1,0 +1,30 @@
+\subsection*{4.2} Let $f$ be a function on $A$ onto $B$. Define a relation $E$ in $A$  by $aEb$ if and only if $f(a) = f(b)$.
+
+\begin{itemize}
+    \item Show that $E$ is an equivalence relation on $A$.
+    
+    \begin{proof}
+        Since $f$ is a function, we have that $f(a) = f(a)$ for all $a \in A$. Thus, by the definition of $E$ we have that $aEa$ and therefore $E$ is reflexive.
+        
+        Since $f(a) = f(b)$ implies $f(b) = f(a)$ it follows that $aEb$ implies $bEa$ and thus $E$ is symmetric.
+        
+        Assume that $f(a) = f(b)$ and $f(b) = f(c)$. This implies that $f(a) = f(c)$ and thus $aEb$ and $bEc$ imply $aEc$. Therefore $E$ is transitive.
+        
+        From the above, it follows that $E$ is an equivalence relation.
+    \end{proof}
+    
+    \item Define a function $\phi$ on $A/E$ onto $B$ by $\phi([a]_E) = f(a)$. Verify that $\phi([a]_E) = \phi([a']_E)$ if $[a]_E = [a']_E$.
+    
+    \begin{proof}
+        Assume that $[a]_E = [a']_E$. Since their equivalence classes are identical, we have $(a, a') \in E$. From the definition of $f$, $f(a) = f(a')$. Hence, $\phi([a]_E) = f(a) = f(a') = \phi([a']_E)$.
+    \end{proof}
+    
+    \item Let $j$ be the function on $A$ onto $A/E$ given by $j(a) = [a]_E$. Show that $\phi \circ j = f$.
+    
+    \begin{proof}
+        Since $j$ is a function on $A$ onto $A/E$ and $\phi$ is a function on $A/E$ onto $B$, their composition is a function on $A$ onto $B$ such that $(\phi \circ j)(a) = \phi(j(a)) = \phi([a]_E) = f(a)$.
+    \end{proof}
+\end{itemize}
+
+\newpage
+

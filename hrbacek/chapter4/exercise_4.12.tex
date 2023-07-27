@@ -1,0 +1,12 @@
+\subsection*{4.12} Show that all countable dense linearly ordered sets with both endpoints are similar.
+
+\begin{proof}
+Let $(X, <_1)$, $(Y, <_2)$ be countable dense sets with a linear order and let $(A, <_1)$, $(B, <_2)$ be countable dense subsets with endpoints such that $A \subset X$ and $B \subset Y$. Let $a,b$ be the endpoints of $A$, with $a < b$ and $c,d$ be the endpoints of $B$, with $c < d$.
+
+Consider the sets $X - \{a,b\}$ and $Y - \{c,d\}$. These are countable dense sets without endpoints. By Theorem 4.9 they are similar, and hence there is an isomorphism $h: X-\{a,b\} \rightarrow Y-\{c,d\}$. We now extend $h$ to $X$. Consider the value of $h(a)$. Surely we can't have $h(a) \in Y-\{c,d\}$, since $h$ is injective. Therefore, it is necessary that $h(a) \in \{c,d\}$. Similarly, $h(b) \in \{c,d\}$. But $h$ is an isomorphism and hence $a <_1 b$ must imply $c <_2 d$. It follows that we must have $h(a) = c$ and $h(b) = d$. The restriction of $h$ on $A$ is therefore $B$. But this is an isomorphism from $A$ to $B$ and hence they are similar.
+
+
+\end{proof}
+
+\newpage
+

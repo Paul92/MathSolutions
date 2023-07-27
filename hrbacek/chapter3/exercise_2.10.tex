@@ -1,0 +1,23 @@
+\subsection*{2.10} In exercise 5.6 of chapter 2, let $A=N$ and $B=N$. Prove that $\prec$ as defined there is a well-ordering of $B = N \cup \{N\}$. Notice that $x \prec y$ if and only if $x \in y$ holds for all $x,y\in B$.
+
+\begin{proof}
+According to the definition of exercise 5.2 of chapter 2, the operation $\prec$ on $B = N \cup \{n\}$ is defined as
+
+\begin{align*}
+    x \prec y~iff~(x,y\in N~and~x < y)~or~(x \in N~and~y=N)
+\end{align*}
+
+Let $X$ be a subset of $B$. There are three possible cases.
+
+\begin{itemize}
+    \item $X \subseteq N$ - $X$ has a least element since $N$ is well ordered
+    \item $N \in X$ and $X \cap N \neq \emptyset$ - since $N$ is well ordered, $N \cap X$ has a least element $x$. But $x \in N$ and this implies that $x \prec N \in X$. It follows that $x$ is a least element for $X$.
+    \item $X = \{N\}$ - This is a singleton set and the least element is trivial.
+\end{itemize}
+
+Hence, $X$ is well ordered.
+
+
+\end{proof}
+
+

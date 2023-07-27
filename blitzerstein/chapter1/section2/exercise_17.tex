@@ -1,0 +1,23 @@
+\begin{exercise}{17}
+    Give a story proof that
+
+    $$\sum_{k=1}^n k {n \choose k}^2 = n { 2n-1 \choose n-1}$$
+
+    for all positive integers $n$.
+\end{exercise}
+
+\begin{proof}
+    We first make the remark that ${n \choose k} = {n \choose n-k}$. This follows from the duality of picking $k$ (and leaving $n-k$) is equivalent to choosing $n-k$ and leaving $k$. This implies that we can rewrite the term on the left hand side as $\sum_{k=1}^n k {n \choose k} {n \choose n-k}$.
+
+
+    Now consider the task of choosing $n$ candidates out two groups of $n$ candidates (so a total of $2n$ candidates). One of the selected candidates is elected as president and must come from the first group (the second group cannot propose presidents). Let $k$ be the number of candidates chosen from the first group. This means that we can for our group in ${n \choose k}{n \choose n-k}$ ways, each of the factors representing the number of ways we can choose the members from each group. And there are $k$ ways of electing a president, so we can have $k{n \choose k}{n \choose n-k}$ ways of choosing the candidates with an elected president.
+
+    But $k$, the number of candidates coming from the first group, can vary from 1 to $n$, and so we have in total $\sum_{k=1}^n=k{n \choose k}{n \choose n-k}=\sum_{k=1}^n k {n \choose k}^2$ ways of choosing our group.
+
+    \vspace{1em}
+
+    Without splitting in two groups, we have to elect one president out of $n$ available candidates (in $n$ possible ways), and then select the remaining $n-1$ candidates out of $2n-1$, leading to a count of $n {2n-1 \choose n-1}$ ways.
+
+
+\end{proof}
+

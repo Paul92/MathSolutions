@@ -1,0 +1,16 @@
+\subsection*{2.7} For all $m, n \in \mathbb{N}$
+
+$$m < n~iff~m \subset n$$
+
+\begin{proof}
+
+Will start by proving using induction $P(n): n = \bigcup_{i=0}^{n-1} \{i\}$ with $P(0) = \emptyset$. Since $\bigcup_{i=0}^{0} i = \{\emptyset\}$, $P(1)$ holds.
+Since $\bigcup_{i=0}^{n} \{i\} = \bigcup_{i=0}^{n-1} \{i\} \cup \{n\} = n \cup \{n\} = n+1$.
+
+By definition, $m < n$ if and only if $m \in n$. 
+
+Let $m, n \in \mathbb{N}$ such that $m < n$. It follows that $m \in n$. Using the above property, we have that $n = \bigcup_{i=0}^{n-1} i = \bigcup_{i=0}^{m-1} \{i\} \cup \{m\} \cup \bigcup_{i=m+1}^{n-1} \{i\} = m \cup \{m\} \cup \bigcup_{i=m+1}^{n-1} \{i\}$ and hence $m \subset n$.
+
+Conversely, let $m \subset n$. Then, from exercise 1.1 we have that $S(m) = m \cup \{m\} \subseteq n$. It follows that $\{m\} \in n$ as intended.
+\end{proof}
+

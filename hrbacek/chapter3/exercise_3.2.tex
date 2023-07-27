@@ -1,0 +1,32 @@
+\subsection*{3.2} Let $(A, \prec)$ be a linearly ordered set and $p,q \in A$. We say that $q$ is a successor of $p$ if $p \prec q$ and there is no $r \in A$ such that $p \prec r \prec q$. Note that each $p$ can have at most one succesor. Assume that $(A, \prec)$ is nonempty and has the following properties.
+
+\begin{itemize}
+    \item every $p \in A$ has one successor
+    \item every nonempty subset of $A$ has at least one $\prec$-least element
+    \item if $p \in A$ is not the $\prec$-least element of $A$, then $p$ is a successor of some $q \in A$
+\end{itemize}
+
+Prove that $(A, \prec)$ is isomorphic to $(N, <)$. Show that the conclusion need not hold if any of the previous conditions is omitted.
+
+\begin{proof}
+From the second property above, there is a least element $a \in A$. Let $g: A \times N \rightarrow A$ be a function such that $g(x, n)$ be the successor of $x$. By the recursion theorem, there is a unique function $f:N \rightarrow A$ with the properties:
+
+\begin{itemize}
+    \item $f(0) = a$
+    \item $f(n+1) = g(f(n), n) =$ the successor of $f(n)$.
+\end{itemize}
+
+By induction, we have that $n > m$ implies $f(n) \prec f(m)$ and hence $f$ is one to one.
+
+Assume to the contrary that the range of $f$ is not $A$, i.e. $A - ran~f \neq \emptyset$. If follows that there is some least element $p$ of $A - ran~f$. By the definition of $f$, $p$ cannot be the least element of $A$ since $f(0) = a$. But then $p$ is the successor of some $q \in A$ with $q \in ran~f$. It follows that there is some $n$ such that $f(n) = q$ and hence $f(n+1) = p$. This contradicts the assumption that $A - ran~f = \emptyset$ and hence $ran~f = A$.
+
+From the above, it follows that $f$ is a bijection between $A$ and $N$ and hence $(A, \prec)$ and $(N, <)$ are isomorpic.
+
+\vspace{1em}
+
+The three properties of the linear order on $A$ have been used in the proof above. Without the first property, $g$ would be ill defined. The second and third property played a key role in showing that $f$ is surjective.
+
+\end{proof}
+
+\newpage
+

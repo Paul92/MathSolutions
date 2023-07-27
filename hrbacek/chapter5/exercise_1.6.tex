@@ -1,0 +1,7 @@
+\subsection*{1.6} If there is a mapping of $B$ onto $A$, then $2^{|A|} \leq 2^{|B|}$
+
+\begin{proof}
+We have that $2^{|X|}$ is equal to $|P(X)|$ for any set $X$ and so we need to show that $|P(A)| \leq |P(B)|$. Let $f: B \rightarrow A$ be the onto mapping whose existence is described in the hypothesis. We can construct $g: P(A) \rightarrow P(B)$, $g(X) = f^{-1}(X)$. Since $f$ is onto, every element of $A$ has a preimage in $B$ and thus every subset of $A$ has a preimage in $B$. Thus, $g$ is well defined. Moreover, by the definition of a function, the preimages are disjoint and hence $g$ is injective. Therefore $|P(A)| \leq |P(B)|$ and the conclusion follows.
+\end{proof}
+
+

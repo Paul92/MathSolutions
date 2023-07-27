@@ -1,0 +1,12 @@
+\subsection*{2.3} If a linearly ordered set $P$ has a countable dense subset, then $|P| \leq 2^{\aleph_0}$.
+
+\begin{proof}
+Let $P$ be a linearly ordered subset and $D$ be a countable dense set such that $D \subseteq P$.
+
+If $P$ (and $D$) have endpoints, they can be removed without loss of generality and hence we can assume in the following that both $P$ and $D$ are without endpoints.
+
+Since $D$ is a countable set without endpoints, it is isomorphic to $Q$. It follows that its completion, $D'$, is isomorphic to $R$. Remains to show that $P \subseteq D'$. Assume to the contrary that this does not hold, i.e. $P - D' \neq \emptyset$. The question now becomes whether it is possible for a subset to remain dense in a set larger than its completion. In order to see this, we try to find some set $S$ such that $D \subseteq S$ dense. Pick some $x \in S - D$. For the dense property to hold, it must be the case that for any $d \in D$ there is some $p \in D$ such that $d < p < x$ (or $x > p > d$). It follows that either $x \in D$ or $x$ is the supremum of some subset of $D$. Hence, $x$ is part of the completion of $D$, and the conclusion follows.
+
+\end{proof}
+
+

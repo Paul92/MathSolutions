@@ -1,0 +1,16 @@
+\begin{exercise}{47b}
+Consider the experiment of picking a random point in the rectangle
+
+$$R = \{(x,y): 0 < x < 1, 0<y<1\}$$
+
+where the probability of the point being in any particular region contained within $R$ is the area of that region. Let $A_1$ and $B_1$ be rectangles contained within $R$, with areas not equal to 0 or 1. Let $A$ be the event that the random point is in $A_1$ and $B$ be the event that the random point is in $B_1$. Give a geometric description of when it is true that $A$ and $B$ are independent. Also, give an example where they are independent and another where they are not independent.
+\end{exercise}
+
+\begin{proof}
+    The probabilities of the events $A$ and $B$ are directly proportional to the areas of the corresponding rectangles, with $P(A) = \frac{\mathcal{A}(A_1)}{\mathcal{A}(R)}$ and $P(B) = \frac{\mathcal{A}(B_1)}{\mathcal{A}(R)}$, where $\mathcal{A}$ represents the area of a rectangle.
+
+    The probability of the joint event is then proportional to the area of the intersection of the rectangles, i.e. $P(A \cap B) = \frac{\mathcal{A}(A_1 \cap B_1)}{\mathcal{R}}$. Under this construction, the independence condition $P(A \cap B) = P(A)P(B)$ is equivalent to $ \frac{\mathcal{A}(A_1 \cap B_1)}{\mathcal{R}} = \frac{\mathcal{A}(A_1)}{\mathcal{A}(R)} \cdot \frac{\mathcal{A}(B_1)}{\mathcal{A}(R)}$. This is equivalent to $\mathcal{A}(A_1 \cap B_1) = \mathcal{A}(A_1) + \mathcal{A}(B_1)$, which has the geometrical meaning that the area of the intersection of the rectangles $A_1$ and $B_1$ is equal to the product of their areas.
+
+    Note that since the rectangles $A_1$ and $B_1$ do not have zero area, the area of their intersection also cannot be zero and so for the events $A$ and $B$ to be independent they must not be disjoint. Also, since the area of intersection must be equal to the product of their areas, they cannot contain each other.
+\end{proof}
+

@@ -1,0 +1,9 @@
+\subsection*{1.3} There exist $2^{\aleph_0}$ well-orderings of the set of all natural numbers.
+
+\begin{proof}
+    Every enumeration of the natural numbers is a well ordering, since it gives the notion of a least element for any subset. Clearly, such enumerations are functions $N \rightarrow N$, and hence there are at most $2^{\aleph_0}$.
+
+    We can now construct an injection from the powerset of $N - \{0\}$ (with cardinality $2^{\aleph_0}$) into the set of well orders as follows. Let $X$ be a subset $S$ of $N - \{0\}$, and construct the sum order of $S \cup \{0\} \cup S^c$. This is a unique well order for each subset $S$, and hence this construction is a bijection from $P(N-\{0\})$ into the set of well orders on $N$. It follows that there are at least $2^{\aleph_0}$ well orders of $N$. By the Cantor–Bernstein theorem, it follows that the cardinality of the set of well orders on $N$ is $2^{\aleph_0}$.
+    
+\end{proof}
+

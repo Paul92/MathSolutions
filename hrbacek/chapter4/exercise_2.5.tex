@@ -1,0 +1,12 @@
+\subsection*{2.5} If $|X| = n \geq k = |Y|$, the number of injective functions $f:Y \rightarrow X$ is $n \cdot (n-1) \cdot (n-k+1)$.
+
+\begin{proof}
+Will proceed by induction on $k$.
+
+If $k = 1$, then there are $n$ possible functions, each of them simply mapping to a single element of $Y$ the single element of $X$.
+
+If $Y = Y \cup \{y\}$, then we need to see in how many ways we can assign an element of $X$ to $y$. Since the functions are injective, and $k$ elements of $X$ are already assigned to elements of $X$, there remain $n-k$ options for assigning $y$. This implies that there are $n \cdot (n-1) \cdot (n-k+1) \cdot (n-k) = n \cdot (n-1) \cdot \dots \cdot (n-(k+1)+1)$ and the conclusion follows.
+
+
+\end{proof}
+

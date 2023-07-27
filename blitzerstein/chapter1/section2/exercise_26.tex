@@ -1,0 +1,10 @@
+\begin{exercise}{26}
+A college has 10 (non-overlapping) time slots for its courses, and blithely assigns courses to time slots randomly and independently. A student randomly chooses 3 of the courses to enroll in. What is the probability that there is a conflict in the student’s schedule?
+\end{exercise}
+
+\begin{proof}
+    This is another example of the birthday problem: for each course, one of the 10 time slots is chosen randomly and independently. Due to the independence of the sampling, we are not concerned with the total number of courses and can focus only on the three courses the student has to choose.
+
+    Therefore, we are looking at the probability of selecting multiple times the same time slot, when sampling with repetition three time slots out of 10. The probability of the complement, i.e. the probability of not having overlapping time slots, is $\frac{10 \cdot 9 \cdot 8}{10^3} = 0.72$. It follows that the probability of having overlapping time slots is $1 - 0.72 = 0.28$.
+\end{proof}
+

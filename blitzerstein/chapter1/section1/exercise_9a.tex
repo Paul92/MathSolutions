@@ -1,0 +1,10 @@
+\begin{exercise}{9a}
+    How many paths are there from the point (0, 0) to the point (110, 111) in the
+plane such that each step either consists of going one unit up or one unit to the right?
+
+\end{exercise}
+
+\begin{proof}
+    In order to get from (0,0) to (110, 111), one needs to make 110 steps upwards and 111 steps rightwards, without any constraint on the order they are taken. This means that one can form a string of 110 Us and 111 Rs, for upward and rightward motion, respectively. The number of paths is then the number of permutations of this string, i.e. (110+111)! = 221!. From this, we need to remove the permutations of the 110 upwards steps and 111 rightwards steps, leading to  $\frac{221!}{110! \cdot 111!}$ possible paths.
+\end{proof}
+

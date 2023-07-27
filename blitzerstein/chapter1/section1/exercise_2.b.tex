@@ -1,0 +1,10 @@
+\begin{exercise}{2.b}
+    Re-solve (a), except now assume also that the phone number is not allowed to start with 911 (since this is reserved for emergency use, and it would not be desirable for the system to wait to see whether more digits were going to be dialed after someone has dialed 911).
+\end{exercise}
+
+\begin{proof}
+    Fixing the first three digits of a 7-digit phone number to 911 leaves 4 digits with 10 choices each. This means that there are $10^4$ phone numbers starting with 911.
+
+    Subtracting from the total number of seven digit phone numbers, we obtain $8 \cdot 10^6 - 10^4 = 7990000$ phone numbers.
+\end{proof}
+

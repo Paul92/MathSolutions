@@ -1,0 +1,15 @@
+\subsection*{2.12}
+
+Let $P(x)$ be a property. Assume that $k \in N$ and
+
+\begin{itemize}
+    \item $P(0)$
+    \item For all $n < k$, $P(n)$ implies $P(n+1)$
+\end{itemize}
+
+Then $P(n)$ holds for all $n \leq k$.
+
+\begin{proof}
+Let $X = \{n\in N| 0 \leq n \leq k\}$. Let $A = \{n \in X|P(x)\}$ and $B = X - A$. Since $P(0)$, $0 \in A$ and hence $0 \notin B$. Assume that $B \neq \emptyset$. Since $B \subset N$, $B$ has a least element $y$. Since $0 \notin B$, $y \neq 0$ and hence there is some $x$ such that $S(x) = y$. By construction, $x \in A$ and therefore $P(x)$. But since $y \leq k$, $x < k$ and hence $P(x)$ implies $P(x+1) = P(y)$. It follows that $y \in A$, which is a contradiction. Thus, $B = \emptyset$.
+\end{proof}
+

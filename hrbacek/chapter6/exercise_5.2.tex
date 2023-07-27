@@ -1,0 +1,28 @@
+\subsection*{5.2} Prove the distributive law $\alpha \cdot (\beta + \gamma) = \alpha \cdot \beta + \alpha \cdot \gamma$.
+
+\begin{proof}
+    We will prove this property by transfinite induction on $\gamma$. Therefore, let $P(\gamma)$ be the logical proposition that $\alpha \cdot (\beta + \gamma) = \alpha \cdot \beta + \alpha \cdot \gamma$.
+
+    The base case when $\gamma = 0$ is equivalent to
+
+    $$\alpha \cdot (\beta + 0) = \alpha \cdot \beta = (\alpha + 0) \cdot (\beta + 0)$$
+
+    since $\alpha + 0 = \alpha$ and $\beta + 0 = \beta$. Hence $P(0)$ holds.
+
+    Now assume that $P(\gamma)$ holds. Will try to show that this implies that $P(\gamma + 1)$ also holds.
+
+    $$\alpha \cdot (\beta + \gamma + 1) = \alpha \cdot (\beta+\gamma) + \alpha \cdot 1 = \alpha \cdot \beta + \alpha \cdot \gamma + \alpha = \alpha \cdot \beta + \alpha \cdot (\gamma+1) $$
+
+    , where the associativity of addition, $P(1)$ and $P(\gamma)$ have been used. It follows that $P(\gamma +1)$ does indeed hold when $P(\gamma)$ holds.
+
+    Remains to discuss the case when $\gamma$ is a nonzero limit ordinal. Then,
+
+    $$\alpha \cdot (\beta + \gamma) = \alpha \cdot \sup\{\beta + \theta | \theta < \gamma\} =
+    \sup\{\alpha \cdot (\beta + \theta) | \theta < \gamma\} =
+    \sup\{\alpha \cdot \beta + \alpha \cdot \theta | \theta < \gamma \} =
+    \alpha \cdot \beta + \sup\{\alpha \cdot \theta | \theta < \gamma \} = 
+    \alpha \cdot \beta + \alpha \cdot \gamma$$
+
+    
+\end{proof}
+

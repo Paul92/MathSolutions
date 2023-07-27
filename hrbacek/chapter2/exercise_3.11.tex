@@ -1,0 +1,43 @@
+\subsection*{3.11} Other properties of unions and intersections generalize similarly. For example, DeMorgan's laws.
+
+\begin{itemize}
+    \item $$B - \bigcup_{a \in A} F_a = \bigcap_{a \in A} ( B - F_a) $$
+    
+    \begin{proof}
+        
+
+    Let $x \in B - \bigcup_{a \in A}$. Then, $x \in B$ and $x \notin \bigcup_{a \in A} F_a$. That is, $x \notin F_a$ for all $a \in A$. But then, $x \in B - F_a$ for all $a \in A$ and hence $x \in \bigcap_{a \in A} F_a$. Therefore, $B - \bigcup_{a \in A} F_a \subseteq \bigcap_{a \in A} ( B - F_a) $.
+    
+    Conversely, let $x \in \bigcap_{a \in A} ( B - F_a)$. Therefore, $x \in B - F_a$ for all $a \in A$ and hence $x \in B$ and $x \notin F_a$ for all $a \in A$. It follows that $x \notin \bigcup_{a \in A} F_a$ and therefore $x \in B - \bigcup_{a \in A} F_a$. Hence $\bigcap_{a \in A} ( B - F_a) \subseteq B - \bigcup_{a \in A} F_a$ and the conclusion follows.
+    \end{proof}
+    
+    \item $$ B- \bigcap_{a \in A} F_a = \bigcup_{a \in A} (B - F_a)$$
+    
+    \begin{proof}
+        Let $x \in B- \bigcap_{a \in A}$. Then, $x \in B$ and $x \notin \bigcap_{a \in A} F_a$. It follows that there is $b \in A$ such that $x \notin F_b$. Hence, $x \in B - F_b$. It follows that $x \in \bigcup_{a \in A} (B - F_a)$ and hence $ B- \bigcap_{a \in A} F_a \subseteq \bigcup_{a \in A} (B - F_a)$.
+        
+        Conversely, let $x \in \bigcup_{a \in A} (B - F_a)$. Hence, there is some $a \in A$ such that $x \in B - F_a$. Therefore, $x \in B$ and $x \notin F_a$ for some $a \in A$. But this implies that $x \notin \bigcap_{a \in A} F_a$ and, since $x \in B$, we have that $x \in B - \bigcap_{a \in A} F_a$.
+    \end{proof}
+        
+\end{itemize}
+
+Or the distributive laws
+
+\begin{itemize}
+    \item $$(\bigcup_{a \in A} F_a) \cap (\bigcup_{b \in B} F_b) = \bigcup_{(a,b) \in A \times B} (F_a \cap F_b)$$
+    
+    \begin{proof}
+        Let $x \in (\bigcup_{a \in A} F_a) \cap (\bigcup_{b \in B} F_b)$. Then, $x \in \bigcup_{a \in A} F_a$ and $x \in \bigcup_{b \in B} F_b$. It follows that there are $a \in A$ and $b \in B$ such that $x \in F_a$ and $x \in F_b$. But $(a,b) \in A \times B$ and $x \in F_a \cap F_b$ and hence $x \in \bigcup_{(a,b) \in A \times B} (F_a \cap F_b)$. Therefore $(\bigcup_{a \in A} F_a) \cap (\bigcup_{b \in B} F_b) \subseteq \bigcup_{(a,b) \in A \times B} (F_a \cap F_b)$.
+        
+        Conversely, let $x \in \bigcup_{(a,b) \in A \times B} (F_a \cap F_b)$. It follows that there is some $(a,b) \in A \times B$ such that $x \in F_a \cap F_b$. But then, since $a \in A$ and $b \in B$, and $x \in F_a$ and $x \in F_b$, we have that $x\in \bigcup_{a \in A} F_a$ and $x \in \bigcup_{b \in B} F_b$ and therefore $x \in (\bigcup_{a \in A} F_a) \cap (\bigcup_{b \in B} F_b)$. Hence $(\bigcup_{a \in A} F_a) \cap (\bigcup_{b \in B} F_b) \supseteq \bigcup_{(a,b) \in A \times B} (F_a \cap F_b)$ and the conclusion follows.
+    \end{proof}
+    
+    \item $$(\bigcap_{a \in A} F_a) \cup (\bigcap_{b \in B} F_b) = \bigcap_{(a,b) \in A \times B} (F_a \cup F_b)$$
+    
+    \begin{proof}
+        Let $x \in (\bigcap_{a \in A} F_a) \cup (\bigcap_{b \in B} F_b)$. Then, $x \in F_a$ for all $a \in A$ or $x \in F_b$ for all $b \in B$. But then $x \in F_a \cup F_b$ for all $a \in A$, $b \in B$. Hence, $x \in \bigcap_{(a,b) \in A \times B} (F_a \cup F_b)$ and therefore $(\bigcap_{a \in A} F_a) \cup (\bigcap_{b \in B} F_b) \subseteq \bigcap_{(a,b) \in A \times B} (F_a \cup F_b)$.
+        
+        Conversely, let $x \in \bigcap_{(a,b) \in A \times B} (F_a \cup F_b)$. This implies that for any $a \in A$ and $b \in B$, we have $x \in F_a \cup F_b$. Therefore, there is no pair $(a,b) \in A \times B$ such that $x \notin F_a$ and $x \notin F_b$. It follows that $x \in F_a$ for all $a \in A$ or $x \in F_b$ for all $b \in B$ and hence $x \in (\bigcap_{a \in A} F_a) \cup (\bigcap_{b \in B} F_b)$. Hence $(\bigcap_{a \in A} F_a) \cup (\bigcap_{b \in B} F_b) \supseteq \bigcap_{(a,b) \in A \times B} (F_a \cup F_b)$ and the conclusion follows.
+    \end{proof}
+\end{itemize}
+

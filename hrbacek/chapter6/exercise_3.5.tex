@@ -1,0 +1,27 @@
+\subsection*{3.5}
+\begin{enumerate}
+    \item If $x \in V_\omega$ and $y \in V_\omega$, then $\{x,y\} \in V_\omega$
+
+    \begin{proof}
+        If $x \in V_\omega$ and $y \in V_\omega$, then there are $n, m$ such that $x \in V_n$ and $y \in V_m$. By construction, we have that $V_i \subset V_j$ for all $i < j$. Hence, assume without loss of generality that $n \leq m$. By the transitivity of $V_n$ and $V_m$, as well as the property just discussed, it follows $x, y \in V_m$ and hence $\{x,y\} \subset V_m$. But then $\{x, y\} \in V_{m+1}$.
+    \end{proof}
+
+    \item If $X \in V_\omega$, then $\bigcup X \in V_\omega$ and $P(X) \in V_{\omega}$.
+    \begin{proof}
+        Let $X \in V_\omega$. By transitivity, $X \subset V_\omega$. Pick some $A \in X \subset V_\omega$. It follows that $A \subset V_\omega$. Since $A$ has been arbitrarily chosen and $X$ is finite, by induction it follows that $\bigcup X \subset V_\omega$.
+
+        Since $V_i \subseteq V_j$ for all $i < j$, it follows that for every subset $X$ of $V_\omega$ there is some $n$ such that $X \subset V_n$. But then $P(X) \subset P(V_n) = V_{n+1} \subset V_\omega$
+    \end{proof}
+
+    \item If $A \in V_\omega$ and $f$ is a function on $A$ such that $f(x) \in V_\omega$ for each $x \in A$, then $f[X] \subset V_\omega$.
+
+    \begin{proof}
+        If $A \in V_\omega$ and $f$ is a function on $A$ such that $f(x) \in V_\omega$ for each $x \in A$, then $f(x) \subset V_\omega$. Hence, $f[X] = \bigcup_{x\in X} f(x) \subset V_\omega$.
+    \end{proof}
+
+    \item If $X$ is a finite subset of $V_\omega$, then $X \in V_\omega$.
+
+    Let $X$ be a finite subset of $V_\omega$. For every element $x \in X$, there is some $V_n$ such that $x \in V_n$. It follows by induction that there is some $V_k$ such that $x \in V_k$ for all $x \in X$. But then $X \subset V_k$ and hence $X \in V_{k+1}$. It follows that $X \in V_\omega.$
+\end{enumerate}
+
+

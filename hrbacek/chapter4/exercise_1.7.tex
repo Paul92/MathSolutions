@@ -1,0 +1,15 @@
+\subsection*{1.7} If $S \subseteq T$ then $|A^S| \leq |A^T|$. In particular, $|A^n| \leq |A^m|$ if $n \leq m$. 
+
+\begin{proof}
+Assume that $A, S, T \neq \emptyset$. If $S \subseteq T$, then any function $f: S \rightarrow A$ can have its domain extended to $T$ by picking some $a \in A$ and constructing $g(x) = f(x)$ for $x \in S$ and $g(x) = a$ for $x \in T - S$. This construction is injective, and hence $|A^S| \leq |A^T|$.
+
+If $T$ is empty, then $S$ is empty. The sets $A^S$ and $A^T$ are therefore equal to either the empty set, if $A=\emptyset$, or to the singleton set containing the empty function. In either case, they have equal cardinalities. Similarly, if $A=\emptyset$ and $S \neq \emptyset$, then the sets $A^S$ and $A^T$ are therefore equal to the empty function singleton and therefore have the same cardinality.
+
+The only remaining case is $A,S=\emptyset$, $T\neq\emptyset$. Then, $A^S$ is the singleton containing the empty function, while $A^T$ is the empty set. Therefore, in this case, the hypothesis does not hold.
+
+\vspace{1em}
+For the second part of the theorem, assume that $A \neq \emptyset$. Then, if $n < m$ every element of $A^n$ can be mapped to a unique element of $A^m$ through a function $f:A^n \rightarrow A^m$, defined as $f(x)_j = x_j$ for all $j \leq n$ and $f(x)_j = a$ for $n < j \leq m$ and $a \in A$ fixed. This function is injective and hence $|A^n| \leq |A^m|$.
+
+If $A = \emptyset$, then $A^S = A^T = \emptyset$ and thus $|A^S| = |A^T|$.
+\end{proof}
+

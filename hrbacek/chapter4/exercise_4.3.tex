@@ -1,0 +1,21 @@
+\subsection*{4.3}
+Prove that the sum and the product of two well orderings are well orderings.
+\begin{proof}
+A well-order is a linear order where every subset has a least element. Let $(A, <_a)$ and $(B, <_b)$ be two well orders. Let $(X, <)$ be their sum and consider $S \subseteq X$. Then, we have three cases: 
+
+\begin{itemize}
+    \item $S \subseteq A$ - $S$ has a least element since $(A, <_a)$ is an well order and the $<_a$ is preserved on this subset.
+    \item $S \subseteq B$ - $S$ has a least element since $(B, <_b)$ is an well order and the $<_b$ is preserved on this subset.
+    \item $S \cap A \neq \emptyset$ and $S \cap B \neq \emptyset$. Let $s \in S \cap A$. By the definition of the sum of linear orders, we have that $s < t$ for all $t \in S \cap B$. But $S \cap A$ has a least element $l$. Since $s \in A$, we have that $l < s$ and, by transitivity, $l < t$ for all $t \in S \cap B$. It follows that $l$ is a least element of $S$.
+\end{itemize}
+
+From the above cases it follows that every subset of the sum of two well orderings is a well ordering.
+
+\vspace{1em}
+
+Now let $(Y, <)$ be the product of $(A, <_a)$ and $(B, <_b)$, and consider $S \subseteq Y$. Let $\pi_1: Y \rightarrow A$, $\pi_1(x,y) = x$ and $\pi_2: Y \rightarrow B$, $\pi_2(x,y) = y$ be the two coordintate functions on the product set. Then, $\pi_1(S) \subseteq A$ has a least element $a$. We can construct the set $V = \{(x,y) \in S | x = a\}$ be the set of all tuples in $S$ whose first element is $A$ and get its second coordinate projection $\pi_2(V) \subseteq B$. This set has a least element $b$. By construction, we have that $(a,b)$ is the least element of $S$ - intuitively, $a$ is the least element in the first coordinate, and $b$ is the least element in the second coordinate out of the elements which start with $a$.
+
+\end{proof}
+
+\newpage
+

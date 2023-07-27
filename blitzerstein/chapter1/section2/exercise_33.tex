@@ -1,0 +1,11 @@
+\begin{exercise}{33}
+    A random 13-card hand is dealt from a standard deck of cards. What is the probability
+that the hand contains at least 3 cards of every suit?
+\end{exercise}
+ 
+\begin{proof}
+    There are three suits for which we pick 3 cards. This can be done in $13 \choose 3$ ways for each suit, for a total of ${13 \choose 3}^3$. The last suit has four cards, which can be chosen in $13 \choose 4$ ways, and there are four ways of choosing the four card suit. This leads to a total of $4 \cdot {13 \choose 3}^3{13 \choose 4}= 93668198624$ ways of dealing the hand.
+
+    There are ${52\choose 13} = 5669763925$ hands of 13 cards in total, and hence the probability that the dealt card contains at least three cards from every suit is $\frac{93668198624}{5669763925} \approx 0.14750$.
+\end{proof}
+

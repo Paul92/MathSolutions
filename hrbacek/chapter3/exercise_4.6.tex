@@ -1,0 +1,15 @@
+\subsection*{4.6} If $m, n, k \in N$ and $k > 0$, then $m < n$ if and only if $m \cdot k < n \cdot k$.
+
+\begin{proof}
+Assume that $m < n$. Will show by induction over $k$ that $m \cdot k < n \cdot k$.
+
+For $k=1$, the proposition holds since $m \cdot 1 = (m \cdot 0) + m = m < n = (n \cdot 0) + n$.
+
+Assuming that $m \cdot k < n \cdot k$, we have
+
+$$m \cdot (k+1) = m \cdot k + m < n \cdot k + n = n \cdot (k+1)$$
+
+, where we have used the property that $n < m$ iff $n + k < m + k$ for all $k \in N$ proved previously.
+
+\end{proof}
+

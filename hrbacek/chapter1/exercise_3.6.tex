@@ -1,0 +1,12 @@
+\subsection*{3.6}
+
+Show that $P(X) \subseteq X$ is false for any $X$. In particular, $P(X) \neq X$ for any $X$.
+
+\begin{proof}
+We construct the set $Y=\{x \in X | x \notin x\}$, that is, the subset of $X$ made of elements that do not contain themselves. By construction, since $Y$ is formed by a combination of the elements of $X$, it is part of $P(X)$, i.e. $Y \in P(X)$. Assume now, for the sake of reaching a contradiction, that $Y \in X$. Immediately it follows the question whether $Y \in Y$. Similar to a previous exercise, this will produce a paradox: if $Y$ contains itself, then it wouldn't contain itself by construction. On the contrary, if $Y$ does not contain itself, then, by construction, it should contain itself. In order to avoid this paradox, it cannot be the case that $Y \in X$.
+
+Therefore, we have constructed the set $Y$ which is an element of the power set of $X$ but is not a part of $X$ and hence $P(X)$ cannot be a subset of $X$.
+\end{proof}
+
+\newpage
+

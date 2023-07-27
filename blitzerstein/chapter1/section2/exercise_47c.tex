@@ -1,0 +1,23 @@
+\begin{exercise}{47c}
+Show that if $A$ and $B$ are independent, then
+
+$$P(A \cup B) = P(A) + P(B) - P(A)P(B) = 1 - P(A^c)P(B^c)$$
+\end{exercise}
+
+\begin{proof}
+    If $A$ and $B$ are independent, then $P(A \cap B) = P(A)P(B)$. Substituting this in the formula for the probability of event union, we obtain that
+
+    $$P(A \cup B) = P(A) + P(B) - P(A \cap B) =  P(A) + P(B) - P(A)P(B)$$
+
+    Using the property that $P(A^c) = 1-P(A)$, we have that
+
+    $$P(A^c)P(B^c) = (1-P(A))(1-P(B)) = 1 - P(A) - P(B) + P(A)P(B)$$
+
+    and hence, substituting into the above, we obtain that 
+
+    $$P(A \cup B) = 1 - P(A^c)P(B^c)$$
+    
+\end{proof}
+
+\newpage
+

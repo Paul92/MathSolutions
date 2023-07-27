@@ -1,0 +1,8 @@
+\subsection*{1.1} $x \subseteq S(x)$ and there is no $z$ such that $x \subset z \subset S(x)$.
+
+\begin{proof}
+By definition, $S(x) = x \cup \{x\}$. Hence, $x \subseteq x \cup \{x\}$.
+
+Assume to the contrary that there is some set $z$ such that $x \subset z \subset S(x)$. This implies that $\emptyset = x - x \subset z - x \subset S(x) - x$, which is equivalent to $\emptyset \subset z-x \subset \{x\}$. For both subset relations to be proper, it follows that there must be some $a \in z-x$ and there must be some $b \notin z-x$ such that $a,b \in \{x\}$. But since $\{x\}$ has a single element, it follows that $a=b$, which implies that $z-x = \{x\}$ and hence $z = S(x)$ and the conclusion follows.
+\end{proof}
+

@@ -1,0 +1,20 @@
+\begin{exercise}{47a}
+    Events $A$ and $B$ are independent if $P(A \cap B) = P(A)P(B)$.
+
+    Give an example of independent events $A$ and $B$ in a finite sample space $S$ (with neither equal to $\emptyset$ or $S$), and illustrate it with a pebble world diagram.
+\end{exercise}
+
+%TODO: THE DIAGRAM
+
+\begin{proof}
+    Consider the experiment of tossing two coins. Denoting heads by H and tails by T, we have $S = \{HH, HT, TH, TT\}$, where the first letter marks the result of the first coin toss. Assuming the coin is fair, each outcome has a probability of $\frac{1}{4}$.
+
+    We denote by $A$ the event that first coin toss was head and by $B$ the event that the second coin toss was head. These events are independent. We can verify that the probability that both coin tosses were head is the product of the probabilities of $A$ and $B$.
+
+    First coin toss lands head in the outcomes $HH$ and $HT$, and hence $P(A) = \frac{2}{4} = \frac{1}{2}$. Similarly, the second coin toss lands head in the outcomes $HH$ and $TH$, leading to $P(B) = \frac{1}{2}$. Both events happen simultaneously in the outcome $HH$, where both coins are head. This has a probability of $\frac{1}{4}$. We therefore have
+    
+    $$P(A \cap B) = \frac{1}{4} = \frac{1}{2} \cdot \frac{1}{2} = P(A) \cdot P(B)$$.
+
+    confirming that the events $A$ and $B$ are independent.   
+\end{proof}
+

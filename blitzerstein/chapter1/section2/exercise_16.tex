@@ -1,0 +1,23 @@
+\begin{exercise}{16}
+    Show that for all positive integers $n$ and $k$ with $n \geq k$,
+
+    $${n \choose k} + {n \choose k-1} = {n+1 \choose k}$$
+
+    doing this in two ways: algebraically, and with a story, giving an interpretation for why both sides count the same thing.
+\end{exercise}
+
+\begin{proof}
+    Will start by the algebraic approach, by directly applying the definition of the combinations and manipulating the resulting expressions. Therefore,
+
+    \begin{align*}
+        {n \choose k} + {n \choose k-1} &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k-1)!(n-k+1)!} \\
+        &= \frac{n!(n-k+1) + n!k}{k! (n-k+1)!} \\
+        &= \frac{n! \cdot (n+1)}{k! (n-k+1)!} \\
+        &= \frac{(n+1)!}{k! (n-k+1)!} = {n+1 \choose k}
+    \end{align*}
+
+    For the story proof, consider a group of $n+1$ elements. The right hand side represents the number of ways one could choose $k$ elements out of the $n+1$ available.
+    
+    Now mark one element as "special". Then, every choice made before either contains or does not contain the special element. Since we now decide the fate of the special element, the pool of elements was reduced to $n$. If our choice has to include the special element, we have to count in how many ways we can choose $k-1$ elements out of $n$, which is $n \choose k-1$. If our choice must not include the special element, then we have to choose $k$ elements out of $n$, which can be done in $n \choose k$ ways. 
+\end{proof}
+

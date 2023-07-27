@@ -1,0 +1,10 @@
+\subsection*{4.5}
+Let $\langle (A_i, <_i) | i \in I \rangle$ be an indexed system of mutually disjoint linearly ordered sets, $I \subseteq N$. The relation $\prec$ on $\bigcup_{i \in I} A_i$ defined by $a \prec b$ if and only if either $a,b \in A_i$ and $a <_i b$ for some $i \in I$ or $a \in A_i$ and $b \in B_j$ with $i < j$ (the usual ordering of natural numbers) is a linear ordering. If all $<_i$ are well orderings, so is $\prec$.
+
+\begin{proof}
+
+Let $S \subseteq \bigcup_{i \in I} A_i$. Since the sets $A_i$ are mutually disjoint, we can parition $S$ by computing the intersections $S_i = S \cap A_i$ and hence $S = \bigcup_{i \in I} S \cap A_i = \bigcup_{i \in I} S_i$. Since $S_i \subseteq A_i$ and $A_i$ is well ordered, there is a least element $s_i$. Remains to see if the set $V = \{s_i | s_i~is~the~least~element~of~S_i, i \in I\}$ has a lowest element with respect to $\prec$, since it preserves the set order $<_i$ - if there is such an element, then by transitivity, it would be the lowest element of $S$. Note that there is at most $s_i \in V$ for each $A_i$. This implies that we can construct an isomorphism $h: V \rightarrow N$, $h(s_i) = i$ with respect to the order $\prec$ on $V$ and the natural order on $N$. The set $h(V) \subseteq N$ has a least element $v$. It follows that $s_v$ is a least element for $V$ and hence $s_v$ is the least element of $S$. Since $S$ is an arbitrarily chosen subset of $\bigcup_{i \in I} A_i$, it follows that the order $\prec$ is a well order.
+
+\end{proof}
+
+

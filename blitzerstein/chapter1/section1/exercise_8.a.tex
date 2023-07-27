@@ -1,0 +1,10 @@
+\begin{exercise}{8.a}
+How many ways are there to split a dozen people into 3 teams, where one team has 2 people, and the other two teams have 5 people each?
+\end{exercise}
+
+\begin{proof}
+    We start by choosing 2 people out of the 12, which can be done in $12 \choose 2$. The next 5 people are chosen out of the remaining 10 people, in $10 \choose 5$ ways. The remaining five people form a team. But note that the teams of 5 are symmetric, so this will have to be divided by two to avoid double counting them.
+
+    Adding the two steps, we obtain ${12 \choose 2} \cdot {10 \choose 5} \cdot \frac{1}{2} = 8316$ ways.
+\end{proof}
+

@@ -1,0 +1,17 @@
+\begin{exercise}{13}
+    A certain casino uses 10 standard decks of cards mixed together into one big deck, which
+we will call a superdeck. Thus, the superdeck has 52 · 10 = 520 cards, with 10 copies
+of each card. How many different 10-card hands can be dealt from the superdeck? The
+order of the cards does not matter, nor does it matter which of the original 10 decks
+the cards came from. Express your answer as a binomial coefficient.
+Hint: Bose-Einstein.
+\end{exercise}
+
+\begin{proof}
+    Note that since the hand has 10 cards, the same as the card multiplicity, the problem is equivalent to asking
+    how many samples of 10 can be extracted from a deck of 52 cards, with repetition.
+
+    Since each card has equal probability, we can simply apply the Bose-Einstein result to obtain ${52+10-1 \choose 10} = {61 \choose 10}$ possible hands.
+\end{proof}
+
+

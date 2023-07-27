@@ -1,0 +1,6 @@
+\subsection*{5.4} Show that a dense linearly ordered set $(P, <)$ is complete if and only if every nonempty $S \subseteq P$ bounded from below has an infimum.
+
+\begin{proof}
+Assume that $(P, <)$ is a dense linearly ordered set where every subset bounded from below has an infimum. Let $S \subset P$ be bounded from above. We then construct the set $V = \{v \in P | v \geq s ~ for ~all ~s \in S\}$ as the set of upper bounds of $S$. $V$ is a set bounded from below and hence it has a infimum $w$. By construction, $w \geq s$ for all $s \in S$. Assume to the contrary that $w$ is not the supremum of $S$, i.e. there is some $k$ such that $k < w$ but $k \geq s$ for all $s \in S$. But $k < w$ implies that $k \in S$ and, since $P$ is dense, there is some $l$ such that $k < l < w$. It follows that $l \in S$ and hence $k$ is not an upper bound of $S$. Hence, $w$ is the supremum of $S$ and hence every upper bounded set of $P$ has a supremum. Therefore, $P$ is complete.
+\end{proof}
+

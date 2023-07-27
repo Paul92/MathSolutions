@@ -1,0 +1,16 @@
+\begin{exercise}{32a}
+A random 5-card poker hand is dealt from a standard deck of cards. Find the probability of each of the following possibilities (in terms of binomial coefficients).
+
+A flush (all 5 cards being of the same suit; do not count a royal flush, which is a
+flush with an ace, king, queen, jack, and 10).
+\end{exercise}
+
+\begin{proof}
+    Will assume that a standard deck of cards contains the cards from 2 to 10, along with jack, king, queen and ace. This amounts for nine number cards, and four letter cards, for a total of 13 cards per suit.
+
+    In order to form a flush, we need five cards of the same suit, regardless of their order. This means that there are $13 \choose 5$ ways of having a flush of a given suit, and we can subtract one for the royal flush. Since there are four suits, there are $4 \cdot ({13 \choose 5} -1)  = 5144$ ways of obtaining a non-royal flush.
+
+    There are in total ${52 \choose 5} = 2598960$ hands of five cards, so there is a probability of $\frac{5144}{2598960} \approx 0.001979 $ of having a flush.
+    \end{proof}
+
+

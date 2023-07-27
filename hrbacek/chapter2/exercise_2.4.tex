@@ -1,0 +1,57 @@
+\subsection*{2.4} Let $R \subseteq X \times Y$. Prove
+
+\begin{itemize}
+    \item $R[X] = ran~R$ and $R^{-1}[Y] = dom~R$.
+    
+    \begin{proof}
+    Let $y \in R[X]$. Then, there is some $x \in X$ such that $(x,y) \in R$. But this implies that $y \in ran~R$ and hence $R[X] \subseteq ran~R$. Conversely, let $y \in ran~R$. Then, there is some $x$ such that $(x,y) \in R$. But since $R \subset X \times Y$, it follows that $x \in X$ and hence $y \in R[X]$. Therefore, with the previous result, $R[X] = ran~R$.
+    
+    \vspace{1em}
+    For the second proposition, let $x \in R^{-1}[Y]$. Then, there is some $y \in Y$ such that $(x,y) \in R$. It follows that $x \in dom~R$ and hence $R^{-1}[Y] \subseteq dom~R$. Conversely, let $x \in dom~R$. Then, there is some $y$ such that $(x,y) \in R$ and since $R \subseteq X \times Y$, it is necessary that $y \in Y$. This implies that $x \in R^{-1}[Y]$ and, with the previous result, we have that $R^{-1}[Y] = dom~R$
+    \end{proof}
+    
+    \item If $a \notin dom~R$, $R[\{a\}] = \emptyset$; if $b \notin ran~R$, $R^{-1}[\{b\}]=\emptyset$.
+    
+    \begin{proof}
+    If $a \notin dom~R$, there is no $b$ such that $(a,b) \in R$. It follows that $R[\{a\}] = \emptyset$
+    
+    If $b \notin ran~R$, there is no $a$ such that $(a, b) \in R$. It follows that $R^{-1}[\{b\}] = \emptyset$
+    \end{proof}
+    
+    \item $dom~R = ran~R^{-1}$; $ran~R = dom~R^{-1}$
+    
+    \begin{proof}
+    Pick $x \in dom~R$. Then, there is some $y$ such that $(x,y) \in R$. This implies that $(y, x) \in R^{-1}$ and hence $x \in ran~R^{-1}$. Therefore, $dom~R \subseteq ran~R^{-1}$. Conversely, pick $x \in ran~R^{-1}$. Then, there is some $y$ such that $(y,x) \in R^{-1}$. This implies that $(x, y) \in R$ and hence $x \in dom~R$. It follows that $ran~R^{-1} \subseteq dom~R$ and, combined with the previous result, we have that $ran~R^{-1} = dom~R$.
+    
+    \vspace{1em}
+    
+    For the second statement, pick $y \in ran~R$. Then, there is some $x$ such that $(x,y) \in R$. It follows that $(y,x) \in R^{-1}$ and hence $y \in dom~R^{-1}$. Therefore, $ran~R \subseteq dom~R^{-1}$. Conversely, pick $y \in dom~R^{-1}$. Then, there is some $x$ such that $(y,x) \in R^{-1}$. It follows that $(x,y) \in R$, and hence $y \in ran~R$. Therefore $dom~R^{-1} \subseteq ran~R$. From the two statements, we have that $dom R^{-1} = ran~R$.
+    \end{proof}
+    
+    \item $(R^{-1})^{-1} = R$
+        
+    \begin{proof}
+    Pick $(x,y) \in R$. Then, $(y, x) \in R^{-1}$ and then $(x,y) \in (R^{-1})^{-1}$.
+    
+    Conversely, pick $(x,y) \in (R^{-1})^{-1}$. Then, $(y,x) \in R^{-1}$ and then $(x,y) \in R$.
+    
+    It follows that $(R^{-1})^{-1} = R$.
+    \end{proof}
+    
+    \item $R^{-1} \circ R \supseteq Id_{dom~R}$; $R \circ R^{-1} \supseteq Id_{ran~R}$
+    
+    \begin{proof}
+    
+    Pick $x \in dom~R$. There is some $y$ such that $(x,y) \in R$. Then, $(y, x) \in R^{-1}$. It follows that $(x,x) \in R^{-1} \circ R$. Since the set $\{(x,x) | x \in dom~R\} =  Id_{dom~R}$, we have $R^{-1} \circ R \supseteq Id_{dom~R}$.
+    
+    \vspace{1em}
+    
+    For the second statement, pick $y \in ran~R$. It follows that there is some $x$ such that $(x,y) \in R$ and then $(y, x) \in R^{-1}$. Hence, $(x,x) \in R \circ R^{-1}$ and therefore $R \circ R^{-1} \supseteq Id_{ran~R}$.
+    
+    \end{proof}
+    
+
+    
+\end{itemize}
+
+

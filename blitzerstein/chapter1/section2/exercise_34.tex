@@ -1,0 +1,22 @@
+\begin{exercise}{34}
+    A group of 30 dice are thrown. What is the probability that 5 of each of the values 1, 2, 3, 4, 5, 6 appear?
+\end{exercise}
+
+
+\begin{proof}
+    This problem is equivalent to sampling 6 groups of 5 from a pool of 30 dice and labelling them with values from 1 to 6.
+
+    There are $30 \choose 5$ ways of chooosing the 5 dice which shall be labelled with 1. There are $25 \choose 5$ ways of choosing the following 5 dice which shall be labelled by 2, and so on. Multiplying all the values, we obtain a total count of ${30 \choose 5} \cdot {25 \choose 5} \cdot {20 \choose 5} \cdot {15 \choose 5} \cdot {10 \choose 5} \cdot {5 \choose 5} = 88832646059788350720$ ways.
+
+    \vspace{2em}
+
+    An alternative approach is to take a permutation of the 30 dice and label the first 5 with 1, the following 5 with 2 and so on. There are 30! permutations of the dice, and we need to compensate for the multiplicities during each of the 6 groups of labels. This leads to a total count of $\frac{30!}{5!^6} = 88832646059788350720$.
+
+    \vspace{2em}
+
+    Finally, we need to compute the probability of this throw. This is the above count divided by the total number of throws, i.e. $\frac{88832646059788350720}{30!} \approx 3.34897976 \cdot 10^{-13}$.
+
+    A different way to obtain this result is to notice that the second approach to counting the number of hands above was removing duplicities from the total number of hands, and in order to obtain the probability we have to divide by the number of hands. Hence, $\frac{30!}{5!^6} \cdot \frac{1}{30!} = \frac{1}{5!^6} \approx 3.34897976 \cdot 10^{-13}$.
+\end{proof}
+
+

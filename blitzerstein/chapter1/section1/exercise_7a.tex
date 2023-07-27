@@ -1,0 +1,25 @@
+\begin{exercise}{7a}
+Two chess players, A and B, are going to play 7 games. Each game has three possible
+outcomes: a win for A (which is a loss for B), a draw (tie), and a loss for A (which is
+a win for B). A win is worth 1 point, a draw is worth 0.5 points, and a loss is worth 0
+points.
+
+\vspace{1em}
+How many possible outcomes for the individual games are there, such that overall
+player A ends up with 3 wins, 2 draws, and 2 losses?
+\end{exercise}
+
+
+\begin{proof}
+    We can mark the win of player A with "W", the draw with "D" and the loss with "L". Then
+    the results of the games can be expressed as a sequence of Ws, Ds and Ls. Note that this problem
+    is entirely symmetric from the point of view of player B, switching wins with loses.
+
+    In order for A to end up with 3 wins, 2 draws, and 2 losses, in the game result sequence we need to have
+    3 Ws, 2 Ds and 2 Ls. So the number of outcomes we are interested in is the number of permutations of the string
+    WWWDDLL. There are 7 letters, so 7! possible permutations. And we need to remove from the computation the 3!
+    permutations of the 3 Ws and 2! permutations of the Ds and Ls, since they do not change the string. Therefore,
+    there are $\frac{7!}{3! \cdot 2! \cdot 2!} = 5 \cdot 6 \cdot 7 = 210$ possible outcomes.
+\end{proof}
+
+

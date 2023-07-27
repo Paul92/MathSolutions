@@ -1,0 +1,12 @@
+\begin{exercise}{36a}
+Tyrion, Cersei, and ten other people are sitting at a round table, with their seating
+arrangement having been randomly assigned. What is the probability that Tyrion and
+Cersei are sitting next to each other? Find this in two ways:
+
+1. using a sample space of size 12!, where an outcome is fully detailed about the seating;
+\end{exercise}
+
+\begin{proof}
+    In the 12! possible seatings, one of the 12 seats is always taken by Tyrion. This leaves two valid possibilities for Cersei, and the remaining 10 people can permute freely. This means that we have $12 \cdot 2 \cdot 10!$ valid arrangements. This means that the probability of Tyrion and Cersei to be seated together is $\frac{12 \cdot 2 \cdot 10!}{12!} = \frac{2}{11} \approx 0.1818$.
+\end{proof}
+

@@ -1,0 +1,16 @@
+\begin{exercise}{50}
+A car player is dealt a 13-card had from a well shiffled, standard deck of cards. What is the probability that the hand is void in at least one suit ("void in a suit" means having no cards of that suit)?
+\end{exercise}
+
+\begin{proof}
+    Let $A_i$ be the event that the hand is void of suit $i$. Then, $P(A_i) = \frac{{13 \choose 39}}{{13 \choose 52}}$, $P(A_i \cap A_j) = \frac{{13 \choose 26}}{{13 \choose 52}}$, $P(A_i \cap A_j \cap A_k) = \frac{1}{{13 \choose 52}}$, $P(A_i \cap A_j \cap A_k \cap A_l) = 0$ for $i \neq j \neq k \neq l$.
+
+    We are interested in the probability that the hand is void of at least one suit. That is,
+
+    \begin{align*}
+        P(A_1 \cup A_1 \cup A_3 \cup A_4) &= 4 P(A_i) - {4 \choose 2} P(A_i \cap A_j) + {4 \choose 3} P(A_i \cap A_j \cap A_k) \\
+        &= 4 \frac{{13 \choose 39}}{{13 \choose 52}} - {4 \choose 2} \frac{{13 \choose 26}}{{13 \choose 52}} + {4 \choose 3} \frac{1}{{13 \choose 52}} \approx 0.051
+    \end{align*}
+
+\end{proof}
+

@@ -1,0 +1,23 @@
+\begin{exercise}{18}
+    \begin{enumerate}
+        \item Show using a story proof that
+        $$\binom{k}{k} + \binom{k+1}{k} + \binom{k+2}{k} + ... + \binom{n}{k} = \binom{n+1}{k+1},$$
+        where $n$ and $k$ are positive integers with $n\geq k$. This is called the hockey stick identity.
+        \item Suppose that a large pack of Haribo gummi bears can have anywhere between $30$ and $50$ gummi bears. There are $5$ delicious flavors: pineapple (clear), raspberry (red), orange (orange), strawberry (green, mysteriously), and lemon (yellow). There are $0$ non-delicious flavors. How many possibilities are there for the composition of such a pack of gummi bears? You can leave your answer in terms of a couple binomial coefficients, but not a sum of lots of binomial coefficients.
+    \end{enumerate}
+\end{exercise}
+\begin{proof}
+\begin{enumerate}
+    \item Say we have a group of $n+1$ people all with different ages. We want to form a committee of $k+1$ people, this can happen in $\binom{n+1}{k+1}$ ways.\\
+    As another way of counting, rank everybody from $1$ to $n+1$ depending on their relative age, and consider the oldest person in the committee. The oldest person can have rank $k+1$ to $n+1$. All of these are different cases. Say the oldest person has rank $s\in \{k+1,...,n+1\}$, this means that everybody older cannot be chosen to the committee, so the committee must be chosen only from $\{1,...,s\}$. So to form the rest of the committee, we still have to choose $k$ from $s-1$. So the amount of possibilities here is $\binom{s-1}{k}$.\\
+    We can do this for all $s$ between $k+1$ and $n+1$, so the total number of ways we can do this is
+    $$\binom{n}{k} + \binom{n-1}{k} + \binom{n-2}{k} + ... + \binom{k}{k}.$$
+    \item Let's say the pack has $n\in {30,...,50}$ gummi bears. We want to choose $n$ gummy bears among $5$ flavors by replacement. This is Bose-Einstein statistics and can happen in $\binom{n+5-1}{5-1} = \binom{n+4}{4}$. So the total amount of combinations is 
+    $$\binom{34}{4} + \binom{35}{4} + ... \binom{54}{4}.$$
+    We see that this is
+    $$\sum_{k=4}^{54} \binom{k}{4} - \sum_{k=4}^{34}\binom{k}{4}.$$
+    By using the hockey-stick identity, this is the same as
+    $$\binom{55}{5} - \binom{35}{5} = 3154129.$$
+\end{enumerate}
+\end{proof}
+

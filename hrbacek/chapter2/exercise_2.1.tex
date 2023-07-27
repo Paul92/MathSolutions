@@ -1,0 +1,7 @@
+\subsection*{2.1} Let $R$ be a binary relation; let $A = \bigcup (\bigcup R)$. Prove that $(x,y) \in R$ implies $x \in A$ and $y \in A$. Conclude from this that $dom R$ and $ran R$ exist.
+
+\begin{proof}
+By definition, if $x \in R$ then $x = \{\{a\}, \{a, b\}\}$ for some $a,b$. This implies that, for all $(a,b) \in R$, we have $\{a\}$ and $\{a,b\}$ in $\bigcup R$ and hence $a, b \in \bigcup(\bigcup R)$. It follows that $\bigcup(\bigcup R) = \{a | (a,b) \in R~for~some~b\} \cup \{b | (a,b) \in R~for~some~a\} = dom~R \cup ran~R$.
+
+\end{proof}
+

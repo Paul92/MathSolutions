@@ -1,0 +1,15 @@
+\subsection*{2.3} Are the following sets transitive?
+
+\begin{itemize}
+    \item $S = \{\emptyset, \{\emptyset\}, \{\{\emptyset\}\}\}$
+     It is transitive, since $\emptyset \in S$ and $\emptyset \subset S$ (trivially), $\{\emptyset\} \in S$ and $\{\emptyset\} \subset S$ since $\emptyset \in S$ and finally $\{\{\emptyset\}\}\} \in S$ and $\{\{\emptyset\}\}\} \subset S$ since $\{\emptyset\} \in S$.
+
+     \item $S = \{\emptyset, \{\emptyset\}, \{\{\emptyset\}\}, \{\emptyset, \{\emptyset\}\}\}$
+
+     The first three elements are subsets, as shown in the previous part. For the last element, $\{\emptyset, \{\emptyset\}\} \in S$ we have that $\emptyset \in S$ and $\{\emptyset\} \in S$, and hence $\{\emptyset, \{\emptyset\}\} \subset S$. Therefore, $S$ is transitive.
+
+     \item $S = \{\emptyset, \{\{\emptyset\}\}\}$
+
+     This set is not transitive because $\{\{\emptyset\}\} \in S$, but since $\{\emptyset\} \notin S$, $\{\{\emptyset\}\} \nsubseteq S$
+\end{itemize}
+

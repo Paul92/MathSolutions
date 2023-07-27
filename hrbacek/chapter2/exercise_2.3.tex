@@ -1,0 +1,53 @@
+\subsection*{2.3} Let $R$ be a binary relation and $A$ and $B$ sets. Prove:
+
+\begin{itemize}
+    \item $R[A \cup B] = R[A] \cup R[B]$
+    
+    \begin{proof}
+    \begin{align*}
+    R[A \cup B] &= \{y \in ran~R~|~there~is~x \in A \cup B ~such~that~(x,y)\in R\}  \\
+                &= \{y \in ran~R~|~there~is~x \in A ~such~that~(x,y)\in R\} \cup \{y \in ran~R~|~there~is~x \in B ~such~that~(x,y)\in R\} \\
+                & = R[A] \cup R[B]
+    \end{align*}
+    \end{proof}
+    
+    \item $R[A\cap B] \subseteq R[A] \cap R[B]$
+    
+    \begin{align*}
+    R[A \cap B] &= \{y \in ran~R~|~there~is~x \in A \cap B ~such~that~(x,y)\in R\}  \\
+                &= \{y \in ran~R~|~there~is~x \in A ~and~x \in  B ~such~that~(x,y)\in R\}  \\
+                &\subseteq \{y \in ran~R~|~there~is~x \in A ~and~w \in  B ~such~that~(x,y)\in R~and~(w,y)\in R\}  \\
+                &= \{y \in ran~R~|~there~is~x \in A ~such~that~(x,y)\in R\} \cap \{y \in ran~R~|~there~is~x \in B ~such~that~(x,y)\in R\} \\
+                &= R[A] \cap R[B]
+    \end{align*}
+    
+    \item $R[A - B] \supseteq R[A] - R[B]$
+        \begin{align*}
+    R[A - B] &= \{y \in ran~R~|~there~is~x \in A - B ~such~that~(x,y)\in R\}  \\
+             &= \{y \in ran~R~|~there~is~x \in A~and~ x\notin B ~such~that~(x,y)\in R\} \\
+             &\supseteq \{y \in ran~R~|~there~is~x \in A~such~that~(x,y)\in R ~and~there~is~no~w \in B~such~that~(w,y) \in R\} \\
+             &= \{y \in ran~R | x \in R[A]~and~x \notin R[B]\} \\
+             &= R[A] - R[B]
+    \end{align*}
+    
+    \item Show an example that $\subseteq$ and $\supseteq$ above cannot be replaced by $=$.
+    
+    \begin{proof}
+    For the second property, consider the relation $R = \{(6, 2), (1,3), (1, 5)\}$. $R[\{2, 5\}] = \{1, 6\}$, $R[\{2, 3\}] = \{1, 6\}$. While $R[\{2, 5\}] \cap R[\{2, 3\}] = \{6\}$, $R[\{2,5\} \cap \{2,3\}] = R[\{2\}] = \{6\}$.
+    
+    For the third property, we use the same relation. While $R[\{2, 5\}] - R[\{2, 3\}] = \emptyset$, $R[\{2,5\} - \{2,3\}] = R[\{5\}] = \{1\}$.
+    \end{proof}
+    
+    \item $R^{-1}[R[A]] \supseteq A \cap dom~R$ and $R[R^{-1}[B]] \supseteq B \cap ran~R$.
+    
+    Pick $x \in A \cap dom~R$. Since $x \in dom~R$, there is some $y \in ran~R$ such that $(x,y) \in R$, and hence $y \in R[A]$. But since there is $x \in dom R$ such that $(x,y) \in R$, it follows that $x \in R^{-1}[R[A]]$. Therefore, $R^{-1}[R[A]] \supseteq A \cap dom~R$.
+    
+    \vspace{1em}
+    
+    For the second property, pick some $y \in B \cap ran~R$. Since $y \in ran~R$, it follows that there is some $x \in dom~R$ such that $(x,y) \in R$ and hence $x \in R^{-1}[B]$. But, since $(x,y) \in R$, it follows that $y \in R[R^{-1}[B]]$ and hence $R[R^{-1}[B]] \supseteq B \cap ran~R$
+    
+    \vspace{1em}
+    
+    The equality does not hold, for example, when $R = \{(1,5), (3, 5)\}$ and $A = \{3\}$, then $R[A] = \{5\}$ and $R^{-1}[R[A]] = \{1,3\} \supseteq A$. 
+\end{itemize}
+

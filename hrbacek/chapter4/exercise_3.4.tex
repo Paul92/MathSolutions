@@ -1,0 +1,4 @@
+\subsection*{3.4} If $A \neq 0$ is finite, then $Seq(A)$ is countable.
+
+The set of $A^n$ all $n$-tuples with elements from $A$ is finite, since $A$ is finite, with a cardinality of $|A^n| = |A|^n$. Remains to evaluate $|Seq(A)| = \bigcup_{i=0}^\infty A^i$. This is an uncountable union of disjoint, finite sets. We construct a bijection $h: N\times N \rightarrow Seq(A)$, $h(i,j)$ being the $j$-th $i$-tuple with elements of $A$, i.e. the $j$-th element of $A^i$ (this is possible since $A^i$ is enumerable). By induction it follows that $h$ is surjective, and it is injective by construction. Hence $h$ is bijective. Since $N \times N$ is countable, the conclusion follows.
+
