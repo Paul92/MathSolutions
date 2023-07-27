@@ -1,18 +1,148 @@
 This is tralics 2.15.1, a LaTeX to XML translator, running on JohnSmith
 Copyright INRIA/MIAOU/APICS/MARELLE 2002-2012, Jos\'e Grimm
 Licensed under the CeCILL Free Software Licensing Agreement
-Starting translation of file /tmp/polytex20230727-149771-tieekq.tex.
+Starting translation of file /tmp/polytex20230727-326194-i3x1n8.tex.
 Dummy default configuration file used.
-Translating section command div1: 5.3.
-Error signaled at line 47 of file /tmp/polytex20230727-149771-tieekq.tex:
-Current command should occur in tables only.
+Translating section command div0: Story proofs.
+Error signaled at line 43 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_15.tex.
+Error signaled at line 44 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_16.tex.
+Error signaled at line 45 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_17.tex.
+Error signaled at line 46 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_18.tex.
+Error signaled at line 47 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_19.tex.
+Error signaled at line 48 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_22.tex.
+Error signaled at line 49 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_23.tex.
+Error signaled at line 50 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_24a.tex.
+Error signaled at line 51 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_24b.tex.
+Error signaled at line 52 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_24.tex.
+Error signaled at line 53 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_25.tex.
+Error signaled at line 54 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_26.tex.
+Error signaled at line 55 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_27a.tex.
+Error signaled at line 56 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_27b.tex.
+Error signaled at line 57 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_28.tex.
+Error signaled at line 58 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_29.tex.
+Error signaled at line 59 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_30.tex.
+Error signaled at line 60 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_31a.tex.
+Error signaled at line 61 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_31b.tex.
+Error signaled at line 62 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_31c.tex.
+Error signaled at line 63 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_32a.tex.
+Error signaled at line 64 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_32b.tex.
+Error signaled at line 65 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_33.tex.
+Error signaled at line 66 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_34.tex.
+Error signaled at line 67 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_35a.tex.
+Error signaled at line 68 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_35b.tex.
+Error signaled at line 69 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_36a.tex.
+Error signaled at line 70 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_36b.tex.
+Error signaled at line 71 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_37.tex.
+Error signaled at line 72 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_38a.tex.
+Error signaled at line 73 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_38b.tex.
+Error signaled at line 74 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_39.tex.
+Error signaled at line 75 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_42.tex.
+Error signaled at line 76 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_43.tex.
+Error signaled at line 77 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_44.tex.
+Error signaled at line 78 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_45.tex.
+Error signaled at line 79 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_46.tex.
+Error signaled at line 80 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_47a.tex.
+Error signaled at line 81 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_47b.tex.
+Error signaled at line 82 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_47c.tex.
+Error signaled at line 83 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_48.tex.
+Error signaled at line 84 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_49.tex.
+Error signaled at line 85 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_50.tex.
+Error signaled at line 86 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_51.tex.
+Error signaled at line 87 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_52.tex.
+Error signaled at line 88 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_53a.tex.
+Error signaled at line 89 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_53b.tex.
+Error signaled at line 90 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_53c.tex.
+Error signaled at line 91 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_54.tex.
+Error signaled at line 92 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_55a.tex.
+Error signaled at line 93 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_55b.tex.
+Error signaled at line 94 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_56.tex.
+Error signaled at line 95 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_57.tex.
+Error signaled at line 96 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_58a.tex.
+Error signaled at line 97 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_58b.tex.
+Error signaled at line 98 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_59a.tex.
+Error signaled at line 99 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_59b.tex.
+Error signaled at line 100 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_59c.tex.
+Error signaled at line 101 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_59d.tex.
+Error signaled at line 102 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_60a.tex.
+Error signaled at line 103 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_60b.tex.
+Error signaled at line 104 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_60c.tex.
+Error signaled at line 105 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_61.tex.
+Error signaled at line 106 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_62a.tex.
+Error signaled at line 107 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_62b.tex.
+Error signaled at line 108 of file /tmp/polytex20230727-326194-i3x1n8.tex:
+Cannot open input file exercise_62c.tex.
 Bib stats: seen 0 entries.
 Math stats: formulas 0, kernels 0, trivial 0, \mbox 0, large 0, small 0.
-Buffer realloc 27, string 1912, size 31732, merge 1
+Buffer realloc 7, string 1662, size 17700, merge 0
 Macros created 202, deleted 10; hash size 2392; foonotes 0.
-Save stack +246 -246.
-Attribute list search 1966(1505) found 1227 in 1251 elements (1120 at boot).
+Save stack +19 -19.
+Attribute list search 1778(1505) found 1206 in 1189 elements (1120 at boot).
 Number of ref 0, of used labels 0, of defined labels 0, of ext. ref. 0.
-Output written on /tmp/polytex20230727-149771-tieekq.xml (7549 bytes).
-There was one error.
-(For more information, see transcript file /tmp/polytex20230727-149771-tieekq.log)
+Output written on /tmp/polytex20230727-326194-i3x1n8.xml (3536 bytes).
+There were 66 errors.
+(For more information, see transcript file /tmp/polytex20230727-326194-i3x1n8.log)

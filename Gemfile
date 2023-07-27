@@ -7,5 +7,3 @@ gemspec
 
 gem "webrick", "~> 1.8"
 gem 'jekyll-latex'
-
-gem "jekyll_include_plugin", "~> 1.1"

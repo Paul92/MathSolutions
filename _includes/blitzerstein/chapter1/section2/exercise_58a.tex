@@ -8,6 +8,6 @@
     Assume that, before re-testing the parts, the inspector aligns them in a row, in one of the 12! possible permutations. He won't test 9 or more parts if he manages to find all the defective parts in the first 8 parts. We now try to count the number of permutations of the parts where the three faulty parts are in the first 8 positions. There are $8 \choose 3$ positions where the faulty parts can be placed, each placement with 3! permutations. The remaining 9 parts have 9! permutations. This leads to a total of ${8 \choose 3} \cdot 3! \cdot 9!$ permutations where the faulty parts are amongst the first 8 parts.
     This means that the probability that the inspector has to test at least 9 parts is:
 
-    $$p = 1 - \frac{{8 \choose 3} \cdot 3! \cdot 9!}{12!} = \frac{41}{55} \approx 0.74545$$
+    $$p = 1 - \frac{ {8 \choose 3} \cdot 3! \cdot 9!}{12!} = \frac{41}{55} \approx 0.74545$$
 \end{proof}
 

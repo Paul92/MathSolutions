@@ -1,0 +1,16 @@
+\begin{exercise}{37}
+An organization with 2n people consists of n married couples. A committee of size k is selected, with all possibilities equally likely. Find the probability that there are exactly j married couples within the committee.
+\end{exercise}
+
+\begin{proof}
+    There are ${2n \choose k}$ ways of randomly choosing a group of k people.
+
+    In order to guarantee that the committee has j married couples, we start by selecting them first. This can be done in ${n \choose j}$ ways. We then need to choose the remaining $k-2j$ people in a way that does not include any other couple. But each of this person is a member of one of the $n-j$ remaining couples. So we first select $k-2j$ couples from the remaining ones, which can be done in ${ {n-j} \choose {k-2j}}$ ways, and for each of them we make a binary decision which member to keep, which can be done in $2^{k-2j}$ ways. In total, there are ${n \choose j} \cdot { {n-j} \choose {k-2j}} \cdot 2^{k-2j}$ ways of forming a valid committee.
+
+    It follows that the probability that a random sample of $k$ people out of the $n$ couples forms a committee with $j$ married couples is $\frac{ {n \choose j} \cdot { {n-j} \choose {k-2j}} \cdot 2^{k-2j}}{ {2n \choose k}}$.
+    
+
+\end{proof}
+
+
+
