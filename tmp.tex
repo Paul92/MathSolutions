@@ -1,0 +1,14 @@
+\begin{exercise}{10a}
+    To fulfill the requirements for a certain degree, a student can choose to take any 7 out
+of a list of 20 courses, with the constraint that at least 1 of the 7 courses must be a
+statistics course. Suppose that 5 of the 20 courses are statistics courses.
+
+\vspace{1em}
+How many choices are there for which 7 courses to take?
+\end{exercise}
+
+\begin{proof}
+    The total number of course choices, disregarding the requirement for a statistic class, are $20 \choose 7$ = 77520. From these, we should remove the ones that do not contain any statistics class. These are basically the course choices from the non-statistic classes, with
+    $15 \choose 7$ = 6435. This means that there are 77520 - 6435 = 71085 course choices that validate the requirement of one statistic course.
+\end{proof}
+
