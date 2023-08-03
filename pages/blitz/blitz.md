@@ -33,12 +33,12 @@ published: true
 [Exercise 19](../chapter1/section2/exercise_19)\
 [Exercise 22](../chapter1/section2/exercise_22)\
 [Exercise 23](../chapter1/section2/exercise_23)\
-[Exercise 24](..chapter1/section2/exercise_24)\
-[Exercise 25](..chapter1/section2/exercise_25)\
+[Exercise 24](../chapter1/section2/exercise_24)\
+[Exercise 25](../chapter1/section2/exercise_25)\
 [Exercise 26](../chapter1/section2/exercise_26)\
-[Exercise 27](..chapter1/section2/exercise_27)\
-[Exercise 28](..chapter1/section2/exercise_28)\
-[Exercise 29](..chapter1/section2/exercise_29)\
+[Exercise 27](../chapter1/section2/exercise_27)\
+[Exercise 28](../chapter1/section2/exercise_28)\
+[Exercise 29](../chapter1/section2/exercise_29)\
 [Exercise 30](../chapter1/section2/exercise_30)\
 [Exercise 31](../chapter1/section2/exercise_31)\
 [Exercise 32](../chapter1/section2/exercise_32)\
